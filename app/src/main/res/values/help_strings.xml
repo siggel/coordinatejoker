@@ -1,0 +1,7 @@
+<resources>
+    <string name="string_help"> <!-- Todo -->
+        <![CDATA[
+        <p>todo</p>
+        ]]>
+    </string>
+</resources>

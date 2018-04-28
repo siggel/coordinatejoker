@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_category_export_format">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/save_export_kml"
+            android:summary="@string/pref_description_export_kml"
+            android:title="@string/pref_title_export_kml" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="@string/save_export_kml"
+            android:key="@string/save_export_with_symbol"
+            android:summary="@string/pref_description_export_with_icon"
+            android:title="@string/pref_title_export_with_icon" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_export_behavior">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/save_export_for_view"
+            android:summary="@string/pref_description_export_for_view"
+            android:title="@string/pref_title_export_for_view" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

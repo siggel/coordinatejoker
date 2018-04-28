@@ -1,0 +1,10 @@
+<resources>
+    <string name="pref_category_export_format">Export format</string>
+    <string name="pref_title_export_kml">Send kml/kmz format</string>
+    <string name="pref_description_export_kml">Disable this for sending gpx format (if your waypoint app does not support Google\'s kml or kmz format)</string>
+    <string name="pref_title_export_with_icon">Use own symbol</string>
+    <string name="pref_description_export_with_icon">Use Coordinate Joker symbol for waypoints (if your waypoint app can handle symbols within the kmz file)</string>
+    <string name="pref_category_export_behavior">Export behavior</string>
+    <string name="pref_title_export_for_view">Immediate view</string>
+    <string name="pref_description_export_for_view">Enable this if you wish to view the waypoints immediately instead of sending the waypoint file</string>
+</resources>

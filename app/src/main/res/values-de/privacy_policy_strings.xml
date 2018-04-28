@@ -1,0 +1,9 @@
+<resources>
+    <string name="string_privacy_policy">
+        <![CDATA[
+        <p>Persönliche Daten werden durch diese App weder erfasst noch verarbeitet, gespeichert oder gelöscht.</p>
+        <p>Trotzdem solltest Du Dir bewusst sein, dass die App, die Du zur Darstellung der Wegpunkte nutzt, einen Hinweis darauf bekommt, wo Du Dich in Kürze aufhalten könntest ;)</p>
+        <p>Außerdem werden die eingegebenen Formeln im persönlichen Bereich der Anwendung zwischengespeichert, damit diese bei einem Wechsel zwischen Apps erhalten bleiben.</p>
+        ]]>
+    </string>
+</resources>

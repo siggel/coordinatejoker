@@ -1,0 +1,38 @@
+<resources>
+    <string name="title_app_name">Coordinate Joker</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="title_activity_help">Hilfe</string>
+    <string name="title_activity_open_source_licenses">Open Source Lizenzen</string>
+    <string-array name="stringarray_letters_latitude">
+        <item>"N"</item>    <!-- first entry is considered north to become language independent -->
+        <item>"S"</item>
+    </string-array>
+    <string-array name="stringarray_letters_longitude">
+        <item>"E"</item>    <!-- first entry is considered east to become language independent -->
+        <item>"W"</item>
+    </string-array>
+    <string name="string_send">Senden</string>
+    <string name="string_x_from">Variiere x von </string>
+    <string name="string_xto"> bis </string>
+    <string name="string_projection">Nutze Distanz "0", um keine Projektion durchzuführen.</string>
+    <string name="string_distance">Distanz: </string>
+    <string name="string_azimuth">Winkel: </string>
+    <string name="string_intro">Gib hier die Formeln ein und verwende dabei x als Variable. Wenn die Formel komplizierter wird als \"12.3x4\", schreibe besser \"(12304+10*x)/1000\".</string>
+    <string name="string_reset">Löschen</string>
+    <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
+    <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
+    <string name="string_kml_export_failed">Speichern der kml-Datei fehlgeschlagen.</string>
+    <string name="string_kmz_export_failed">Speichern der kmz-Datei fehlgeschlagen.</string>
+    <string name="string_exporter_missing">Keine Implementierung gefunden für ein Speichern nach </string>
+    <string name="string_sending_intent_failed">Das Senden der Wegpunkte an die App zur Darstellung ist fehlgeschlagen.</string>
+    <string name="string_empty_waypoints">Die Berechnung hat leider keine gültigen Koordinaten ergeben.</string>
+    <string name="string_some_invalid_waypoints">Nicht alle Berechnungen ergaben gültige Koordinaten.</string>
+    <string name="title_activity_terms_of_service">Nutzungsbedingungen</string>
+    <string name="title_activity_privacy_policy">Datenschutzerklärung</string>
+    <string name="title_activity_about">Über</string>
+    <string name="string_version">Version</string>
+    <string name="string_contact">Kontakt</string>
+    <string name="string_app_icon">App Icon</string>
+    <string name="string_view">Ansehen</string>
+    <string name="string_file_operation_failed">Dateioperation beim Export fehlgeschlagen.</string>
+</resources>

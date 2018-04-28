@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+    }
+    compileSdkVersion 27
+
+    // autoincrement version with each release assembly
+    Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists())
+        versionProps.load(new FileInputStream(versionPropsFile))
+    List<String> runTasks = gradle.startParameter.getTaskNames()
+    def value = 0
+    for (String item : runTasks)
+        if (item.contains("assembleRelease")) {
+            value = 1
+        }
+    def code = (versionProps['VERSION_CODE'] ?: "0").toInteger() + value
+    versionProps['VERSION_CODE'] = code.toString()
+    versionProps.store(versionPropsFile.newWriter(), null)
+
+    defaultConfig {
+        applicationId 'com.github.siggel.coordinatejoker'
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode code
+        versionName "1.0." + versionCode
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+/*
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+*/
+        }
+    }
+    productFlavors {
+    }
+}
+
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = applicationId
+        outputFileName += "-" + android.defaultConfig.versionName
+        if (variant.buildType.name == "release") {
+            outputFileName += ".apk"
+        } else {
+            outputFileName += "-debug.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
+
+    // add expression solver
+    implementation 'net.objecthunter:exp4j:0.4.8'
+
+    // no locus required yet
+    // implementation 'com.asamm:locus-api-android:0.2.20'
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="pref_category_export_format">Export-Format</string>
+    <string name="pref_title_export_kml">Sende im kml-/kmz-Format</string>
+    <string name="pref_description_export_kml">Deaktiviere diese Option, um im gpx-Format zu senden (falls Deine Wegpunkt-App Googles kml- oder kmz-Format nicht unterstützt)</string>
+    <string name="pref_title_export_with_icon">Nutze eigenes Symbol</string>
+    <string name="pref_description_export_with_icon">Verwende ein Coordinate Joker Symbol für die Wegpunkte (falls Deine Wegpunkt-App Symbole aus einer kmz-Datei darstellen kann)</string>
+    <string name="pref_category_export_behavior">Export-Verhalten</string>
+    <string name="pref_title_export_for_view">Sofortige Darstellung</string>
+    <string name="pref_description_export_for_view">Aktiviere diese Option, um die Wegpunkte direkt anzeigen zu lassen statt die Wegpunktdatei zu versenden</string>
+</resources>
