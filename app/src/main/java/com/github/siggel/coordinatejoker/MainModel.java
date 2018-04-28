@@ -53,9 +53,9 @@ class MainModel {
         isEast = true;
         degreesEast = "";
         minutesEast = "";
-        distance = "";
+        distance = "0";
         isFeet = false;
-        azimuth = "";
+        azimuth = "0";
         xFrom = 0;
         xTo = 9;
     }
