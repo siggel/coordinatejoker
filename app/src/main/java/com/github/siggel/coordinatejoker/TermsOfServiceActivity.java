@@ -42,7 +42,8 @@ public class TermsOfServiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_of_service);
 
-        final String html = getString(R.string.string_terms_of_service);
+        final String html = getString(R.string.string_terms_of_service)
+                + getString(R.string.string_license_text_gpl_3);
         ((TextView) findViewById(R.id.termsOfServiceTextView)).setText(Html.fromHtml(html));
     }
 

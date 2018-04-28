@@ -17,12 +17,19 @@
   ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources>
-    <string name="string_terms_of_service">
-        <![CDATA[
-        <p>Durch die Nutzung dieser App erklärst Du Dich mit nachfolgenden Nutzungsbedingungen einverstanden:</p>
-        <p>Alle Urheber- und anderen Rechte zum Schutze geistigen Eigentums dieser App liegen bei mir. Die Verwendung von Teilen des Locus Maps Logos erfolgt mit Erlaubnis von ASAMM software sro. Ich stimme der Wiedergabe aller Inhalte zum Zwecke der Präsentation dieser App zu, widerspreche aber der Nutzung des App-Namens und/oder des Icons für andere Apps oder sonstige Software-Anwendungen.</p>
-        <p>Diese App enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss haben. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden ich derartige Links umgehend entfernen.</p>
-        ]]>
-    </string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="string_terms_of_service" tools:ignore="TypographyOther">
+<![CDATA[
+<p>Copyright (c) 2018 by siggel &lt;siggel-apps@gmx.de&gt;
+</p><p>
+ Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public
+ License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren,
+ entweder gemäß Version 3 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version.
+</p><p>
+Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird,
+aber OHNE IRGENDEINE GARANTIE und mit HAFTUNGSBEGRENZUNG. Details finden Sie in der untenstehenden
+GNU General Public License.
+</p>
+]]>
+  </string>
 </resources>
