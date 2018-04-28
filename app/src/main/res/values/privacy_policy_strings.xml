@@ -21,7 +21,7 @@
     <string name="string_privacy_policy">
         <![CDATA[
         <p>This app does not collect, process, nor store/delete any personal data.</p>
-        <p>Nevertheless be aware that the app which you use for display will get a clue of possible locations where you may appear soon ;)</p>
+        <p>Nevertheless be aware that the app which you use for displaying the waypoints will get a clue of possible locations where you may appear soon ;)</p>
         <p>Furthermore the app will save the entered coordinate formulas in its personal area in order to be able to switch between apps without losing them.</p>
         ]]>
     </string>
