@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (c) 2018 by siggel <siggel-apps@gmx.de>
+  ~
+  ~     This file is part of Coordinate Joker.
+  ~
+  ~     Coordinate Joker is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Coordinate Joker is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="string_about">
+        <![CDATA[
+        <p>
+        Coordinate Joker ist ein Geocaching-Addon für Locus Map, funktioniert aber auch mit anderen
+        Apps, die Wegpunkte aus einer gpx-, kml- oder kmz-Datei darstellen können.
+        </p>
+        <p>
+        Da ist man seit drei Stunden bei einem Multi unterwegs und dann direkt vorm Final das:
+        Die Brücke, deren Bohlen man zählen sollte, wurde abgerissen. Was tun …? Telefonjoker?
+        Nein - da male ich mir doch lieber eine Linie auf die Karte, wo das Final bei fehlendem x
+        liegen könnte …
+        </p>
+        <p>
+        Das geht mit Coordinate Joker einfacher und komplett offline: Einfach die
+        Formeln für Nord und Ost eingeben, ggf. auch noch mit zusätzlicher Projektion und schon
+        schickt Coordinate Joker die Wegpunkte an deine bevorzugte Geocaching App. Mit ein wenig
+        Glück liegt genau eine Lösung am Wegesrand und die anderen weit, weit weg. Wo mag das Final
+        dann wohl liegen? :)
+        </p>
+    ]]></string>
+</resources>

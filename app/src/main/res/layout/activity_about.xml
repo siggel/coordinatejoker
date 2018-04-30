@@ -44,8 +44,7 @@
                 android:id="@+id/aboutTextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text=""
-                android:textSize="18sp" />
+                android:text="" />
 
             <Button
                 android:id="@+id/showTermsOfService"
@@ -56,8 +55,7 @@
                 android:onClick="openTermsOfService"
                 android:padding="0sp"
                 android:text="@string/title_activity_terms_of_service"
-                android:textAlignment="textStart"
-                android:textSize="18sp" />
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/showPrivacyPolicy"
@@ -68,8 +66,7 @@
                 android:onClick="openPrivacyPolicy"
                 android:padding="0sp"
                 android:text="@string/title_activity_privacy_policy"
-                android:textAlignment="textStart"
-                android:textSize="18sp" />
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/showOpenSourceLicenses"
@@ -80,8 +77,7 @@
                 android:onClick="openOpenSourceLicenses"
                 android:padding="0sp"
                 android:text="@string/title_activity_open_source_licenses"
-                android:textAlignment="textStart"
-                android:textSize="18sp" />
+                android:textAlignment="textStart" />
 
         </LinearLayout>
 

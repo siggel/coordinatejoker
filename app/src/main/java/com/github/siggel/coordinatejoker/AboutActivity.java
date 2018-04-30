@@ -55,7 +55,9 @@ public class AboutActivity extends AppCompatActivity {
         final String aboutHtml = name + linebreak
                 + getString(R.string.string_version) + ": " + version + linebreak
                 + linebreak
-                + getString(R.string.string_contact) + ": " + email + linebreak;
+                + getString(R.string.string_contact) + ": " + email + linebreak
+                + linebreak
+                + getString(R.string.string_about);
         ((TextView) findViewById(R.id.aboutTextView)).setText(Html.fromHtml(aboutHtml));
 
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)

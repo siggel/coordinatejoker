@@ -40,7 +40,7 @@
     <string name="string_projection">Leave distance zero if you don\'t need a projection.</string>
     <string name="string_distance">Distance: </string>
     <string name="string_azimuth">Azimuth: </string>
-    <string name="string_intro">Enter the coordinate formulas below using x as variable. If things get more complicated than \"12.3x4\" you better write it down like \"(12304+10*x)/1000\".</string>
+    <string name="string_intro">Enter the coordinate formulas below using x as variable. If things get more complicated than \"12.3x5\", please take a look into the help.</string>
     <string name="string_reset">Reset</string>
     <string name="string_formula_error">Could not solve formulas. Please check them for errors.</string>
     <string name="string_gpx_export_failed">Saving gpx failed.</string>

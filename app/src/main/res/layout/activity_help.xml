@@ -23,12 +23,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/helpTextView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="5sp"
-        android:text=""
-        android:textSize="18sp" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/helpTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="" />
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

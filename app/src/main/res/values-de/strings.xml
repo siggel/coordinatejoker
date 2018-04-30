@@ -36,7 +36,7 @@
     <string name="string_projection">Nutze Distanz "0", um keine Projektion durchzuführen.</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro">Gib hier die Formeln ein und verwende dabei x als Variable. Wenn die Formel komplizierter wird als \"12.3x4\", schreibe besser \"(12304+10*x)/1000\".</string>
+    <string name="string_intro">Gib hier die Formeln ein und verwende dabei x als Variable. Wenn die Formel komplizierter wird als \"12.3x5\", wirf einen Blick in die Hilfe.</string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
