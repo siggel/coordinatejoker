@@ -110,7 +110,7 @@
         <p>
         An error will be shown if the formulas cannot be solved and produce no result.
         It can happen, that some x-values result in valid coordinates, while others don\'t.
-        This case will result in a warning about having calculated less points than desired, but the
+        This case will result in a warning about having obtained less points than requested, but the
         valid points will be shown nevertheless.
         </p>
         <h2>Export Problems</h2>

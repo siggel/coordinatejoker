@@ -20,9 +20,8 @@
 <resources>
     <string name="string_privacy_policy">
         <![CDATA[
-        <p>Persönliche Daten werden durch diese App weder erfasst noch verarbeitet, gespeichert oder gelöscht.</p>
-        <p>Trotzdem solltest Du Dir bewusst sein, dass die App, die Du zur Darstellung der Wegpunkte nutzt, einen Hinweis darauf bekommt, wo Du Dich in Kürze aufhalten könntest ;)</p>
-        <p>Außerdem werden die eingegebenen Formeln im persönlichen Bereich der Anwendung zwischengespeichert, damit diese bei einem Wechsel zwischen Apps erhalten bleiben.</p>
+        <p>Persönliche Daten werden durch Coordinate Joker weder erfasst noch verarbeitet, gespeichert oder gelöscht.</p>
+        <p>Trotzdem sollte man sich bewusst sein, dass Coordinate Joker die generierten Wegpunkte an die vom Benutzer gewählte App zur Darstellung weitergibt. Eine mögliche Verknüpfung mit weiteren personenbezogenen Daten innerhalb jener App liegt außerhalb des Einflussbereichs von Coordinate Joker.</p>
         ]]>
     </string>
 </resources>
