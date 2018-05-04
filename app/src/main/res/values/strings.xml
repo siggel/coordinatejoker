@@ -58,4 +58,5 @@
     <string name="string_app_icon">App Icon</string>
     <string name="string_view">View</string>
     <string name="string_file_operation_failed">File operation during export failed.</string>
+    <string name="string_parse_integer_exception">Please use integer numbers only for defining the x range.</string>
 </resources>

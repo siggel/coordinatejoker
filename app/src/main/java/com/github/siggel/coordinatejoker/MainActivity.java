@@ -141,7 +141,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private void store() {
         final Preferences preferences = new Preferences(this);
-        fillModelFromGui();
+        try {
+            fillModelFromGui();
+        } catch (Exception e) {
+            // we should be prepared to get a ParseException here, this would be a warning, just
+            // some values won't be modified but we should store the others
+            showWarning(e.getMessage());
+        }
         preferences.saveFormulas(mainModel);
     }
 
@@ -190,10 +196,14 @@ public class MainActivity extends AppCompatActivity {
                 ((Spinner) findViewById(R.id.spinnerUnits)).getSelectedItemPosition() == 0);
         mainModel.setAzimuth(
                 ((EditText) findViewById(R.id.azimuthFormula)).getText().toString());
-        mainModel.setXFrom(
-                Integer.parseInt(((EditText) findViewById(R.id.xFrom)).getText().toString()));
-        mainModel.setXTo(
-                Integer.parseInt(((EditText) findViewById(R.id.xTo)).getText().toString()));
+        try {
+            mainModel.setXFrom(
+                    Integer.parseInt(((EditText) findViewById(R.id.xFrom)).getText().toString()));
+            mainModel.setXTo(
+                    Integer.parseInt(((EditText) findViewById(R.id.xTo)).getText().toString()));
+        } catch (Exception e) {
+            throw new ParseException(getString(R.string.string_parse_integer_exception));
+        }
     }
 
     /**
@@ -212,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view view just syntactically needed here
      */
     public void sendMessage(@SuppressWarnings("unused") View view) {
-        fillModelFromGui();
-
-        Integer requestedNumberOfPoints = mainModel.getXTo() - mainModel.getXFrom() + 1;
-
         try {
+            fillModelFromGui();
+
+            Integer requestedNumberOfPoints = mainModel.getXTo() - mainModel.getXFrom() + 1;
+
             // solve formulas for requested x-values
             Calculator calculator = new Calculator(this,
                     mainModel);
@@ -251,7 +261,9 @@ public class MainActivity extends AppCompatActivity {
             }
             exporter.export(waypoints);
 
-        } catch (Exception e) { // normally we expect CalculatorException or ExporterException here
+        } catch (Exception e) {
+            // we should be prepared to get CalculatorException, ExporterException or ParseException
+            // here, this would be an error resulting in no solution
             showError(e.getMessage());
             return;
         }
