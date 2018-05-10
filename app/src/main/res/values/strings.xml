@@ -53,10 +53,8 @@
     <string name="title_activity_terms_of_service">Terms of Service</string>
     <string name="title_activity_privacy_policy">Privacy Policy</string>
     <string name="title_activity_about">About</string>
-    <string name="string_version">Version</string>
-    <string name="string_contact">Contact</string>
-    <string name="string_app_icon">App Icon</string>
     <string name="string_view">View</string>
     <string name="string_file_operation_failed">File operation during export failed.</string>
     <string name="string_parse_integer_exception">Please use integer numbers only for defining the x range.</string>
+    <string name="string_html_page_language_id">en</string>
 </resources>

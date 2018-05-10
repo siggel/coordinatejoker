@@ -20,22 +20,14 @@
   -->
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.github.siggel.coordinatejoker.OpenSourceLicensesActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <WebView
+        android:id="@+id/openSourceLicensesWebView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/openSourceLicenseTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5sp"
-            android:text="@string/string_open_source_usage" />
-
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:text="" />
 
 </android.support.constraint.ConstraintLayout>

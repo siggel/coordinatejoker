@@ -22,15 +22,16 @@ package com.github.siggel.coordinatejoker;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 /**
  * Activity showing open source licenses page
  */
 public class OpenSourceLicensesActivity extends AppCompatActivity {
+
+    private WebView webView;
 
     /**
      * onCreate method
@@ -43,13 +44,21 @@ public class OpenSourceLicensesActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_open_source_licenses);
 
-        final String licenseHtml = "<p>" + getString(R.string.string_open_source_usage) + "</p>"
-                + getString(R.string.string_open_source_libraries_using_apache_2_0)
-                + getString(R.string.string_license_text_apache_2_0);
+        webView = findViewById(R.id.openSourceLicensesWebView);
 
-        TextView textView = findViewById(R.id.openSourceLicenseTextView);
-        textView.setText(Html.fromHtml(licenseHtml));
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        // the following code serves as workaround for being able to link from one asset html to
+        // another one
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+
+        webView.loadUrl("file:///android_asset/open_source_licenses_"
+                + getString(R.string.string_html_page_language_id)
+                + ".html");
     }
 
     /**
@@ -66,5 +75,18 @@ public class OpenSourceLicensesActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * method called when user pressed back
+     * do not go back to parent activity as long as we can go back within web view's pages
+     */
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

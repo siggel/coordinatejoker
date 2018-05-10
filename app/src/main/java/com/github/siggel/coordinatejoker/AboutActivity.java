@@ -28,10 +28,14 @@ import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.content.res.AppCompatResources;
-import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * Activity showing about page
@@ -48,22 +52,27 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        final String name = getString(R.string.title_app_name);
-        final String version = getVersion();
-        final String email = "coordinatejoker@gmx-topmail.de";
-        final String linebreak = "<br>";
-        final String aboutHtml = name + linebreak
-                + getString(R.string.string_version) + ": " + version + linebreak
-                + linebreak
-                + getString(R.string.string_contact) + ": " + email + linebreak
-                + linebreak
-                + getString(R.string.string_about);
-        ((TextView) findViewById(R.id.aboutTextView)).setText(Html.fromHtml(aboutHtml));
+        WebView webView = findViewById(R.id.aboutWebView);
+
+        String html = "";
+        try {
+            InputStream input = getAssets().open("about_"
+                    + getString(R.string.string_html_page_language_id)
+                    + ".html");
+            html = new Scanner(input).useDelimiter("\\A").next();
+        } catch (IOException e) {
+            // show an empty web view but continue showing at least the remaining elements
+        }
+
+        html = html.replace("%VERSION%", getVersion());
+
+        webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "utf-8", null);
 
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
         setRightDrawableOfTextView(R.id.showTermsOfService, R.drawable.arrow_right_icon);
         setRightDrawableOfTextView(R.id.showPrivacyPolicy, R.drawable.arrow_right_icon);
         setRightDrawableOfTextView(R.id.showOpenSourceLicenses, R.drawable.arrow_right_icon);
+
     }
 
     /**

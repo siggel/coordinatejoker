@@ -22,15 +22,17 @@ package com.github.siggel.coordinatejoker;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 /**
  * Activity showing privacy policy page
  */
 public class PrivacyPolicyActivity extends AppCompatActivity {
+
+    private WebView webView;
 
     /**
      * onCreate method
@@ -42,8 +44,21 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
 
-        String html = getString(R.string.string_privacy_policy);
-        ((TextView) findViewById(R.id.privacyPolicyTextView)).setText(Html.fromHtml(html));
+        webView = findViewById(R.id.privacyPolicyWebView);
+
+        // the following code serves as workaround for being able to link from one asset html to
+        // another one
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+
+        webView.loadUrl("file:///android_asset/privacy_policy_"
+                + getString(R.string.string_html_page_language_id)
+                + ".html");
     }
 
     /**
@@ -69,4 +84,16 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * method called when user pressed back
+     * do not go back to parent activity as long as we can go back within web view's pages
+     */
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
