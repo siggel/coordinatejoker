@@ -19,313 +19,306 @@
   ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.github.siggel.coordinatejoker.MainActivity">
+    android:padding="5sp">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:padding="5sp">
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:drawablePadding="5sp"
+        android:onClick="sendMessage"
+        android:text="@string/string_send"
+        android:textSize="18sp" />
 
-        <ScrollView
-            android:id="@+id/contentPanel"
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/sendButton"
+        android:drawablePadding="5sp"
+        android:onClick="resetFields"
+        android:text="@string/string_reset"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:id="@+id/contentPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/sendButton"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0">
+            android:orientation="vertical"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/mainTextViewIntro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_intro"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:rowCount="2">
+
+                <Spinner
+                    android:id="@+id/spinnerNorth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:entries="@array/stringarray_letters_latitude"
+                    android:nextFocusDown="@+id/degreesNorthFormula"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/degreesNorthFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="text"
+                    android:minEms="2"
+                    android:nextFocusDown="@+id/minutesNorthFormula"
+                    android:text="53"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="° "
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/minutesNorthFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="textPersonName"
+                    android:minEms="5"
+                    android:nextFocusDown="@+id/degreesEastFormula"
+                    android:text="12.3x4"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="'"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <Spinner
+                    android:id="@+id/spinnerEast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:entries="@array/stringarray_letters_longitude"
+                    android:nextFocusDown="@+id/degreesEastFormula"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/degreesEastFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="text"
+                    android:minEms="2"
+                    android:nextFocusDown="@+id/minutesEastFormula"
+                    android:text="10"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="° "
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/minutesEastFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="textPersonName"
+                    android:minEms="5"
+                    android:nextFocusDown="@+id/distanceFormula"
+                    android:text="(12304+10*x)/1000.0"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="'"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+            </GridLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_projection"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_distance"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/distanceFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="textPersonName"
+                    android:minEms="5"
+                    android:nextFocusDown="@+id/azimuthFormula"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <Spinner
+                    android:id="@+id/spinnerUnits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:entries="@array/stringarray_distance_units"
+                    android:nextFocusDown="@+id/azimuthFormula"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_azimuth"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/azimuthFormula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="textPersonName"
+                    android:minEms="5"
+                    android:nextFocusDown="@+id/xFrom"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="° TN"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+            </GridLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
 
             <LinearLayout
-                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="5sp">
-
-                <TextView
-                    android:id="@+id/mainTextViewIntro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/string_intro"
-                    android:textSize="18sp" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="5sp"
-                    tools:ignore="SmallSp" />
-
-                <GridLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:columnCount="5"
-                    android:rowCount="2">
-
-                    <Spinner
-                        android:id="@+id/spinnerNorth"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:entries="@array/stringarray_letters_latitude"
-                        android:nextFocusDown="@+id/degreesNorthFormula"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/degreesNorthFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="text"
-                        android:minEms="2"
-                        android:nextFocusDown="@+id/minutesNorthFormula"
-                        android:text="53"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="° "
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-
-                    <EditText
-                        android:id="@+id/minutesNorthFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="textPersonName"
-                        android:minEms="5"
-                        android:nextFocusDown="@+id/degreesEastFormula"
-                        android:text="12.3x4"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="'"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-
-                    <Spinner
-                        android:id="@+id/spinnerEast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:entries="@array/stringarray_letters_longitude"
-                        android:nextFocusDown="@+id/degreesEastFormula"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/degreesEastFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="text"
-                        android:minEms="2"
-                        android:nextFocusDown="@+id/minutesEastFormula"
-                        android:text="10"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="° "
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-
-                    <EditText
-                        android:id="@+id/minutesEastFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="textPersonName"
-                        android:minEms="5"
-                        android:nextFocusDown="@+id/distanceFormula"
-                        android:text="(12304+10*x)/1000.0"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="'"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-
-                </GridLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="5sp"
-                    tools:ignore="SmallSp" />
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/string_projection"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_x_from"
                     android:textSize="18sp" />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="5sp"
-                    tools:ignore="SmallSp" />
-
-                <GridLayout
+                <EditText
+                    android:id="@+id/xFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:columnCount="3"
-                    android:rowCount="2">
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="numberSigned"
+                    android:minEms="2"
+                    android:nextFocusDown="@+id/xTo"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="@string/string_distance"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/distanceFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="textPersonName"
-                        android:minEms="5"
-                        android:nextFocusDown="@+id/azimuthFormula"
-                        android:text="0"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <Spinner
-                        android:id="@+id/spinnerUnits"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:entries="@array/stringarray_distance_units"
-                        android:nextFocusDown="@+id/azimuthFormula"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="@string/string_azimuth"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/azimuthFormula"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="textPersonName"
-                        android:minEms="5"
-                        android:nextFocusDown="@+id/xFrom"
-                        android:text="0"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="° TN"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText" />
-
-                </GridLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="5sp"
-                    tools:ignore="SmallSp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_xto"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="@string/string_x_from"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/xFrom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="numberSigned"
-                        android:minEms="2"
-                        android:nextFocusDown="@+id/xTo"
-                        android:text="0"
-                        android:textAlignment="textEnd"
-                        android:textSize="18sp"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center_vertical"
-                        android:text="@string/string_xto"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/xTo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal|center_vertical"
-                        android:inputType="numberSigned"
-                        android:minEms="2"
-                        android:nextFocusDown="@id/mainTextViewIntro"
-                        android:text="9"
-                        android:textAlignment="textEnd"
-                        tools:ignore="HardcodedText,LabelFor,RtlCompat" />
-
-                </LinearLayout>
+                <EditText
+                    android:id="@+id/xTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="numberSigned"
+                    android:minEms="2"
+                    android:nextFocusDown="@id/mainTextViewIntro"
+                    android:text="9"
+                    android:textAlignment="textEnd"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
             </LinearLayout>
 
-        </ScrollView>
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/resetButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="5sp"
-                android:onClick="resetFields"
-                android:text="@string/string_reset"
-                android:textSize="18sp"
-                app:layout_constraintRight_toLeftOf="@id/sendButton"
-                app:layout_constraintBottom_toBottomOf="parent" />
+    </ScrollView>
 
-            <Button
-                android:id="@+id/sendButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="5sp"
-                android:onClick="sendMessage"
-                android:text="@string/string_send"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+</RelativeLayout>
 
-        </android.support.constraint.ConstraintLayout>
-
-</android.support.constraint.ConstraintLayout>
