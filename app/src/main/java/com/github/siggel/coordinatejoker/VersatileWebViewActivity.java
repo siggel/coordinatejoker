@@ -27,7 +27,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * Base activiy providing a versatile web view to be filled with specific content within derived
+ * Base activity providing a versatile web view to be filled with specific content within derived
  * classes
  */
 abstract class VersatileWebViewActivity extends AppCompatActivity {
