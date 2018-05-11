@@ -26,12 +26,15 @@
     android:layout_height="match_parent"
     tools:context="com.github.siggel.coordinatejoker.MainActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="0"
+        android:padding="5sp">
 
         <ScrollView
+            android:id="@+id/contentPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0">
@@ -301,18 +304,6 @@
 
         </ScrollView>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1" />
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:padding="5sp">
-
             <Button
                 android:id="@+id/resetButton"
                 android:layout_width="wrap_content"
@@ -322,7 +313,7 @@
                 android:text="@string/string_reset"
                 android:textSize="18sp"
                 app:layout_constraintRight_toLeftOf="@id/sendButton"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <Button
                 android:id="@+id/sendButton"
@@ -333,10 +324,8 @@
                 android:text="@string/string_send"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
