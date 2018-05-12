@@ -227,6 +227,12 @@ public class MainActivity extends AppCompatActivity {
 
             Integer requestedNumberOfPoints = mainModel.getXTo() - mainModel.getXFrom() + 1;
 
+            // keep number of generated points in a reasonable range
+            if (requestedNumberOfPoints > 100) {
+                showError(getString(R.string.string_too_many_points));
+                return;
+            }
+
             // solve formulas for requested x-values
             Calculator calculator = new Calculator(this,
                     mainModel);

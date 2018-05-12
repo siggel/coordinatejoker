@@ -53,4 +53,5 @@
     <string name="string_file_operation_failed">Dateioperation beim Export fehlgeschlagen.</string>
     <string name="string_parse_integer_exception">Für den Wertebereich x bitte nur ganze Zahlen verwenden.</string>
     <string name="string_html_page_language_id">de</string>
+    <string name="string_too_many_points">Bitte beschränke den Wertebereich auf maximal 100 Punkte.</string>
 </resources>
