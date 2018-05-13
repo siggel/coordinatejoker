@@ -54,4 +54,9 @@
     <string name="string_parse_integer_exception">Für den Wertebereich x bitte nur ganze Zahlen verwenden.</string>
     <string name="string_html_page_language_id">de</string>
     <string name="string_too_many_points">Bitte beschränke den Wertebereich auf maximal 100 Punkte.</string>
+    <string name="title_activity_intro">Erster Start</string>
+    <string name="string_intro_button_next">Weiter</string>
+    <string name="string_intro_button_skip">Überspringen</string>
+    <string name="htmlstring_intro_have_locus"><![CDATA[Super, Locus Map steht offensichtlich zur Verfügung. Wir haben die Einstellungen automatisch für das optimale Zusammenspiel mit Locus Map voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
+    <string name="htmlstring_intro_no_locus"><![CDATA[Scheinbar steht Locus Map nicht zur Verfügung. Wir haben die Einstellungen automatisch auf eine möglichst große Kompatiblität mit anderen Apps (z.B. c:geo) voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
 </resources>

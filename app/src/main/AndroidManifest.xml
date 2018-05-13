@@ -80,6 +80,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <!-- intro activity -->
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/title_activity_intro"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <!-- fileprovider for sharing files via intent without special filesystem rights -->
         <provider
             android:name="android.support.v4.content.FileProvider"

@@ -58,4 +58,9 @@
     <string name="string_parse_integer_exception">Please use integer numbers only for defining the x range.</string>
     <string name="string_html_page_language_id">en</string>
     <string name="string_too_many_points">Please limit the value range to a maximum of 100 points.</string>
+    <string name="title_activity_intro">First start</string>
+    <string name="string_intro_button_next">Next</string>
+    <string name="string_intro_button_skip">Skip</string>
+    <string name="htmlstring_intro_have_locus"><![CDATA[Great, Locus Map is available. We automatically preset the settings for best use with Locus Map.<br><br>Time for a short intro …]]></string>
+    <string name="htmlstring_intro_no_locus"><![CDATA[It seems you don\'t have Locus Map available. We automatically preset the settings for maximum compatibility with other apps (like c:geo).<br><br>Time for a short intro …]]></string>
 </resources>

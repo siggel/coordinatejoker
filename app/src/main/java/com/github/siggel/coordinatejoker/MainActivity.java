@@ -47,6 +47,8 @@ import java.util.Locale;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private static boolean firstRun = true; // TODO: currently each run for debugging purposes
+
     /**
      * model holding all values of the ui
      */
@@ -94,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setIcon(R.mipmap.ic_title);
         }
+
+        if (firstRun) {
+            firstRun = false;
+            startActivity(new Intent(this, IntroActivity.class));
+        }
+
     }
 
     /**
