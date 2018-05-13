@@ -18,18 +18,18 @@
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="save_is_north">ui_is_north</string>
-    <string name="save_degrees_north">ui_degrees_north</string>
-    <string name="save_minutes_north">ui_minutes_north</string>
-    <string name="save_is_east">ui_is_east</string>
-    <string name="save_degrees_east">ui_degrees_east</string>
-    <string name="save_minutes_east">ui_minutes_east</string>
-    <string name="save_distance">ui_distance</string>
-    <string name="save_is_feet">ui_is_feet</string>
-    <string name="save_azimuth">ui_azimuth</string>
-    <string name="save_x_from">ui_x_from</string>
-    <string name="save_x_to">ui_x_to</string>
-    <string name="save_export_kml">settings_export_kml</string>
-    <string name="save_export_with_symbol">settings_export_with_symbol</string>
-    <string name="save_export_for_view">settings_export_for_view</string>
+    <string name="save_is_north" translatable="false">ui_is_north</string>
+    <string name="save_degrees_north" translatable="false">ui_degrees_north</string>
+    <string name="save_minutes_north" translatable="false">ui_minutes_north</string>
+    <string name="save_is_east" translatable="false">ui_is_east</string>
+    <string name="save_degrees_east" translatable="false">ui_degrees_east</string>
+    <string name="save_minutes_east" translatable="false">ui_minutes_east</string>
+    <string name="save_distance" translatable="false">ui_distance</string>
+    <string name="save_is_feet" translatable="false">ui_is_feet</string>
+    <string name="save_azimuth" translatable="false">ui_azimuth</string>
+    <string name="save_x_from" translatable="false">ui_x_from</string>
+    <string name="save_x_to" translatable="false">ui_x_to</string>
+    <string name="save_export_kml" translatable="false">settings_export_kml</string>
+    <string name="save_export_with_symbol" translatable="false">settings_export_with_symbol</string>
+    <string name="save_export_for_view" translatable="false">settings_export_for_view</string>
 </resources>

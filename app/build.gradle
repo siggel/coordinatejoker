@@ -65,5 +65,5 @@ dependencies {
     implementation 'net.objecthunter:exp4j:0.4.8'
 
     // no locus required yet
-    // implementation 'com.asamm:locus-api-android:0.2.20'
+    implementation 'com.asamm:locus-api-android:0.2.20'
 }
