@@ -33,14 +33,25 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:onClick="next"
+        android:tag="1"
         android:text="@string/string_intro_button_next" />
+
+    <Button
+        android:id="@+id/introPreviousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/introNextButton"
+        android:onClick="next"
+        android:tag="-1"
+        android:text="@string/string_intro_button_previous" />
 
     <Button
         android:id="@+id/introSkipButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/introNextButton"
+        android:layout_toStartOf="@id/introPreviousButton"
         android:onClick="skipIntro"
         android:text="@string/string_intro_button_skip" />
 

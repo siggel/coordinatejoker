@@ -64,14 +64,14 @@ public class IntroActivity extends AppCompatActivity {
             editor.putBoolean(getString(R.string.save_export_kml), true);
             editor.putBoolean(getString(R.string.save_export_with_symbol), true);
             editor.putBoolean(getString(R.string.save_export_for_view), true);
-            textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
         } else {
             editor.putBoolean(getString(R.string.save_export_kml), false);
             editor.putBoolean(getString(R.string.save_export_with_symbol), false);
             editor.putBoolean(getString(R.string.save_export_for_view), false);
-            textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_no_locus)));
         }
         editor.apply();
+
+        adjustPageContent();
     }
 
     /**
@@ -89,35 +89,73 @@ public class IntroActivity extends AppCompatActivity {
      * @param view view just syntactically needed here
      */
     public void next(@SuppressWarnings("unused") View view) {
-        pageNumber++;
+        int increment = Integer.valueOf(view.getTag().toString());
+        pageNumber += increment;
+        adjustPageContent();
+    }
 
+    private void adjustPageContent() {
         TextView textView = findViewById(R.id.introTextView);
         ImageView imageView = findViewById(R.id.introImageView);
         Button nextButton = findViewById(R.id.introNextButton);
+        Button previousButton = findViewById(R.id.introPreviousButton);
         Button skipButton = findViewById(R.id.introSkipButton);
 
         if (haveLocus) {
             switch (pageNumber) {
+                case 0:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
+                    previousButton.setVisibility(View.INVISIBLE);
+                    break;
                 case 1:
-                    textView.setText(Html.fromHtml("On the main screen simply enter the coordinate formulas with x being the unknown variable. Select which x values shall be tried, then hit the 'Show'-button for displaying the points."));
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_show)));
+                    previousButton.setVisibility(View.VISIBLE);
                     setExampleFormulas();
                     break;
                 case 2:
-                    textView.setText(Html.fromHtml("If you have more apps than Locus which are able to receive kmz on the fly, Android may ask you to choose which app you would like to use."));
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_show_kmz)));
                     break;
                 case 3:
-                    textView.setText(Html.fromHtml("Locus will ask you where to import the waypoints. We suggest creating an own folder like 'joker'. Thus you can easily hide or clear all points at once instead of doing it for each point individually."));
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_import)));
+                    nextButton.setText(R.string.string_intro_button_next);
+                    skipButton.setVisibility(View.VISIBLE);
                     break;
                 case 4:
-                    textView.setText(Html.fromHtml("Locus will show the points on the map, so you may determine, which are worth visiting.\n\nGood luck!"));
-                    nextButton.setText("Ok");
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_shows_points)));
+                    nextButton.setText(R.string.string_intro_button_ok);
+                    skipButton.setVisibility(View.INVISIBLE);
+                    break;
+                default:
+                    NavUtils.navigateUpFromSameTask(this);
+            }
+        } else {
+            switch (pageNumber) {
+                case 0:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_no_locus)));
+                    previousButton.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_send)));
+                    previousButton.setVisibility(View.VISIBLE);
+                    setExampleFormulas();
+                    break;
+                case 2:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
+                    break;
+                case 3:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));
+                    nextButton.setText(R.string.string_intro_button_next);
+                    skipButton.setVisibility(View.VISIBLE);
+                    break;
+                case 4:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_app_shows_points)));
+                    nextButton.setText(R.string.string_intro_button_ok);
                     skipButton.setVisibility(View.INVISIBLE);
                     break;
                 default:
                     NavUtils.navigateUpFromSameTask(this);
             }
         }
-
     }
 
     /**
@@ -151,10 +189,10 @@ public class IntroActivity extends AppCompatActivity {
         editor.putString(getString(R.string.save_minutes_north), "12.3x5");
         editor.putBoolean(getString(R.string.save_is_east), true);
         editor.putString(getString(R.string.save_degrees_east), "10");
-        editor.putString(getString(R.string.save_minutes_east), "12.345");
-        editor.putString(getString(R.string.save_distance), "30*x");
+        editor.putString(getString(R.string.save_minutes_east), "(12305+10*x)/1000");
+        editor.putString(getString(R.string.save_distance), "x00");
         editor.putBoolean(getString(R.string.save_is_feet), false);
-        editor.putString(getString(R.string.save_azimuth), "20*x");
+        editor.putString(getString(R.string.save_azimuth), "x0");
         editor.putString(getString(R.string.save_x_from), "0");
         editor.putString(getString(R.string.save_x_to), "9");
         editor.apply();
