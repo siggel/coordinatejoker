@@ -97,4 +97,16 @@ class Preferences {
         editor.apply();
     }
 
+    int loadVersionCode() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPref.getInt(context.getString(R.string.save_version_code), -1);
+    }
+
+    void saveVersionCode(int versionCode) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(context.getString(R.string.save_version_code), versionCode);
+        editor.apply();
+    }
+
 }

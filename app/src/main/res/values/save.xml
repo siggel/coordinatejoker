@@ -32,4 +32,5 @@
     <string name="save_export_kml" translatable="false">settings_export_kml</string>
     <string name="save_export_with_symbol" translatable="false">settings_export_with_symbol</string>
     <string name="save_export_for_view" translatable="false">settings_export_for_view</string>
+    <string name="save_version_code">version_code</string>
 </resources>

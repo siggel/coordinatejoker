@@ -20,6 +20,7 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,8 +47,6 @@ import java.util.Locale;
  * class for showing main application page
  */
 public class MainActivity extends AppCompatActivity {
-
-    private static boolean firstRun = true; // TODO: currently each run for debugging purposes
 
     /**
      * model holding all values of the ui
@@ -97,11 +96,20 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setIcon(R.mipmap.ic_title);
         }
 
-        if (firstRun) {
-            firstRun = false;
-            mainModel.setExampleValues();
-            fillGuiFromModel();
-            startActivity(new Intent(this, IntroActivity.class));
+        // check if we run a new version for the first time
+        int currentVersion = getCurrentVersion();
+        int previousVersion = getPreviousVersion();
+        if (currentVersion > previousVersion) {
+            rememberVersion();
+            //noinspection StatementWithEmptyBody
+            if (previousVersion == -1) {
+                // in case of very first run show intro activity
+                mainModel.setExampleValues();
+                fillGuiFromModel();
+                startActivity(new Intent(this, IntroActivity.class));
+            } else {
+                // later on we may display change notes here
+            }
         }
     }
 
@@ -368,4 +376,23 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(view);
         toast.show();
     }
+
+    private int getCurrentVersion() {
+        try {
+            return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            return -1;
+        }
+    }
+
+    private int getPreviousVersion() {
+        final Preferences preferences = new Preferences(this);
+        return preferences.loadVersionCode();
+    }
+
+    private void rememberVersion() {
+        final Preferences preferences = new Preferences(this);
+        preferences.saveVersionCode(getCurrentVersion());
+    }
+
 }
