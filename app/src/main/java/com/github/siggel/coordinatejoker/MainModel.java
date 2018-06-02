@@ -60,6 +60,23 @@ class MainModel {
         xTo = 9;
     }
 
+    /**
+     * method for setting example values
+     */
+    void setExampleValues() {
+        isNorth = true;
+        degreesNorth = "53";
+        minutesNorth = "11.660";
+        isEast = true;
+        degreesEast = "10";
+        minutesEast = "(23400+20*x)/1000";
+        distance = "100";
+        isFeet = false;
+        azimuth = "20*x";
+        xFrom = 0;
+        xTo = 9;
+    }
+
 
     // the getters and setters need no explanation
     Boolean getNorth() {

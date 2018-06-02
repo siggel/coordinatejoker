@@ -32,6 +32,11 @@
         android:title="@string/title_activity_about"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_intro"
+        android:orderInCategory="300"
+        android:title="@string/title_activity_intro"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_help"
         android:orderInCategory="300"
         android:title="@string/title_activity_help"

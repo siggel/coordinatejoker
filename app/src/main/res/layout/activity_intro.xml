@@ -34,14 +34,15 @@
         android:layout_alignParentEnd="true"
         android:onClick="next"
         android:tag="1"
-        android:text="@string/string_intro_button_next" />
+        android:text="@string/string_intro_button_next"
+        http:ignore="RelativeOverlap" />
 
     <Button
         android:id="@+id/introPreviousButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/introNextButton"
+        android:layout_alignParentStart="true"
         android:onClick="next"
         android:tag="-1"
         android:text="@string/string_intro_button_previous" />
@@ -51,25 +52,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/introPreviousButton"
+        android:layout_centerHorizontal="true"
         android:onClick="skipIntro"
         android:text="@string/string_intro_button_skip" />
-
-    <ImageView
-        android:id="@+id/introImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/introNextButton"
-        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/introTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/introImageView"
         android:layout_alignParentTop="true"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/introImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/introNextButton"
+        android:layout_below="@id/introTextView"
+        android:contentDescription="@string/string_screenshot"
+        android:padding="5sp"
+        android:scaleType="fitCenter" />
+
 
 </RelativeLayout>

@@ -58,19 +58,21 @@
     <string name="string_parse_integer_exception">Please use integer numbers only for defining the x range.</string>
     <string name="string_html_page_language_id">en</string>
     <string name="string_too_many_points">Please limit the value range to a maximum of 100 points.</string>
-    <string name="title_activity_intro">First Start</string>
-    <string name="string_intro_button_next"><![CDATA[>]]></string>
+    <string name="title_activity_intro">First Steps</string>
+    <string name="string_intro_button_next" tools:ignore="MissingTranslation"><![CDATA[>]]></string>
     <string name="string_intro_button_skip">Skip</string>
-    <string name="htmlstring_intro_have_locus"><![CDATA[Great, Locus Map is available. We automatically preset the settings for best use with Locus Map.<br><br>Time for a short intro …]]></string>
-    <string name="htmlstring_intro_no_locus"><![CDATA[It seems you don\'t have Locus Map available. We automatically preset the settings for maximum compatibility with other apps (like c:geo).<br><br>Time for a short intro …]]></string>
-    <string name="string_intro_button_previous"><![CDATA[<]]></string>
+    <string name="htmlstring_intro_have_locus"><![CDATA[Great, Locus Map is available. Coordinate Joker automatically preset the settings for best use with Locus Map.<br><br>Time for a short intro …]]></string>
+    <string name="htmlstring_intro_no_locus"><![CDATA[It seems you don\'t have Locus Map available. Coordinate Joker automatically preset the settings for maximum compatibility with other apps (like c:geo).<br><br>Time for a short intro …]]></string>
+    <string name="string_intro_button_previous" tools:ignore="MissingTranslation"><![CDATA[<]]></string>
     <string name="htmlstring_intro_enter_formulas_and_show">On the main screen simply enter the coordinate formulas with x being the unknown variable. Select which x values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
     <string name="htmlstring_intro_enter_formulas_and_send">On the main screen simply enter the coordinate formulas with x being the unknown variable. Select which x values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
     <string name="string_intro_button_ok">OK</string>
     <string name="htmlstring_intro_select_app_for_show_kmz">If you have more apps than Locus which are able to receive kmz on the fly, Android may ask you to choose which app you would like to use.</string>
     <string name="htmlstring_intro_select_app_for_send_gpx">If you have more apps which can receive gpx files, Android may ask you to choose which app you would like to use. E.g. for using c:geo you should select some file browser app which enables you to save the gpx to your SD card (Coordinate Joker intentionally does not request Android rights for that).</string>
-    <string name="htmlstring_intro_locus_import">Locus will ask you where to import the waypoints. We suggest creating an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
-    <string name="htmlstring_intro_other_apps_import">If you then open the file with e.g. c:geo you will be asked where to import the waypoints. We suggest creating an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
+    <string name="htmlstring_intro_locus_import">Locus will ask you where to import the waypoints. Best create an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
+    <string name="htmlstring_intro_other_apps_import">If you use c:geo you will be asked where to import the waypoints. Best create an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
     <string name="htmlstring_intro_locus_shows_points"><![CDATA[Locus will show the points on the map, so you may determine, which are worth visiting. <br><b>Good luck!</b>]]></string>
     <string name="htmlstring_intro_other_app_shows_points"><![CDATA[You can then display the points on the map, so you may determine, which are worth visiting. <br><b>Good luck!</b>]]></string>
+    <string name="string_screenshot">Screenshot</string>
+    <string name="htmlstring_open_with_other_app">Afterwards open the file in the filemanager and then select your favorite app, e.g. c:geo.</string>
 </resources>

@@ -99,9 +99,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (firstRun) {
             firstRun = false;
+            mainModel.setExampleValues();
+            fillGuiFromModel();
             startActivity(new Intent(this, IntroActivity.class));
         }
-
     }
 
     /**
@@ -316,6 +317,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_about:
                 startActivity(new Intent(this, AboutActivity.class));
+                break;
+            case R.id.action_intro:
+                startActivity(new Intent(this, IntroActivity.class));
                 break;
             case R.id.action_help:
                 startActivity(new Intent(this, HelpActivity.class));

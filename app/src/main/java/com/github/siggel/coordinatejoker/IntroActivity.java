@@ -58,8 +58,6 @@ public class IntroActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        TextView textView = findViewById(R.id.introTextView);
-
         if (haveLocus) {
             editor.putBoolean(getString(R.string.save_export_kml), true);
             editor.putBoolean(getString(R.string.save_export_with_symbol), true);
@@ -70,7 +68,6 @@ public class IntroActivity extends AppCompatActivity {
             editor.putBoolean(getString(R.string.save_export_for_view), false);
         }
         editor.apply();
-
         adjustPageContent();
     }
 
@@ -105,23 +102,27 @@ public class IntroActivity extends AppCompatActivity {
             switch (pageNumber) {
                 case 0:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
+                    imageView.setImageResource(android.R.color.transparent);
                     previousButton.setVisibility(View.INVISIBLE);
                     break;
                 case 1:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_show)));
+                    imageView.setImageResource(R.drawable.enter_formulas_and_view);
                     previousButton.setVisibility(View.VISIBLE);
-                    setExampleFormulas();
                     break;
                 case 2:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_show_kmz)));
+                    imageView.setImageResource(android.R.color.transparent);
                     break;
                 case 3:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_import)));
+                    imageView.setImageResource(R.drawable.import_to_locus);
                     nextButton.setText(R.string.string_intro_button_next);
                     skipButton.setVisibility(View.VISIBLE);
                     break;
                 case 4:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_shows_points)));
+                    imageView.setImageResource(R.drawable.view_in_locus);
                     nextButton.setText(R.string.string_intro_button_ok);
                     skipButton.setVisibility(View.INVISIBLE);
                     break;
@@ -132,23 +133,31 @@ public class IntroActivity extends AppCompatActivity {
             switch (pageNumber) {
                 case 0:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_no_locus)));
+                    imageView.setImageResource(android.R.color.transparent);
                     previousButton.setVisibility(View.INVISIBLE);
                     break;
                 case 1:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_send)));
+                    imageView.setImageResource(R.drawable.enter_formulas_and_send);
                     previousButton.setVisibility(View.VISIBLE);
-                    setExampleFormulas();
                     break;
                 case 2:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
+                    imageView.setImageResource(R.drawable.choose_filemanager);
                     break;
                 case 3:
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_open_with_other_app)));
+                    imageView.setImageResource(R.drawable.open_with_cgeo);
+                    break;
+                case 4:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));
+                    imageView.setImageResource(R.drawable.import_to_cgeo);
                     nextButton.setText(R.string.string_intro_button_next);
                     skipButton.setVisibility(View.VISIBLE);
                     break;
-                case 4:
+                case 5:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_app_shows_points)));
+                    imageView.setImageResource(R.drawable.view_in_cgeo);
                     nextButton.setText(R.string.string_intro_button_ok);
                     skipButton.setVisibility(View.INVISIBLE);
                     break;
@@ -179,23 +188,6 @@ public class IntroActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setExampleFormulas() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean(getString(R.string.save_is_north), true);
-        editor.putString(getString(R.string.save_degrees_north), "53");
-        editor.putString(getString(R.string.save_minutes_north), "12.3x5");
-        editor.putBoolean(getString(R.string.save_is_east), true);
-        editor.putString(getString(R.string.save_degrees_east), "10");
-        editor.putString(getString(R.string.save_minutes_east), "(12305+10*x)/1000");
-        editor.putString(getString(R.string.save_distance), "x00");
-        editor.putBoolean(getString(R.string.save_is_feet), false);
-        editor.putString(getString(R.string.save_azimuth), "x0");
-        editor.putString(getString(R.string.save_x_from), "0");
-        editor.putString(getString(R.string.save_x_to), "9");
-        editor.apply();
     }
 
 }

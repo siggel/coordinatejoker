@@ -54,17 +54,19 @@
     <string name="string_parse_integer_exception">Für den Wertebereich x bitte nur ganze Zahlen verwenden.</string>
     <string name="string_html_page_language_id">de</string>
     <string name="string_too_many_points">Bitte beschränke den Wertebereich auf maximal 100 Punkte.</string>
-    <string name="title_activity_intro">Erster Start</string>
+    <string name="title_activity_intro">Erste Schritte</string>
     <string name="string_intro_button_skip">Überspringen</string>
-    <string name="htmlstring_intro_have_locus"><![CDATA[Super, Locus Map steht offensichtlich zur Verfügung. Wir haben die Einstellungen automatisch für das optimale Zusammenspiel mit Locus Map voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
-    <string name="htmlstring_intro_no_locus"><![CDATA[Scheinbar steht Locus Map nicht zur Verfügung. Wir haben die Einstellungen automatisch auf eine möglichst große Kompatiblität mit anderen Apps (z.B. c:geo) voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
+    <string name="htmlstring_intro_have_locus"><![CDATA[Super, Locus Map steht offensichtlich zur Verfügung. Coordinate Joker hat die Einstellungen automatisch für das optimale Zusammenspiel mit Locus Map voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
+    <string name="htmlstring_intro_no_locus"><![CDATA[Scheinbar steht Locus Map nicht zur Verfügung. Coordinate Joker hat die Einstellungen automatisch auf eine möglichst große Kompatiblität mit anderen Apps (z.B. c:geo) voreingestellt.<br><br>Zeit für eine kleine Einführung …]]></string>
     <string name="htmlstring_intro_enter_formulas_and_show">Gib einfach auf dem Hauptbildschirm die Formeln ein (mit x als unbekannte Variable). Wähle anschließend den x-Bereich aus, der ausprobiert werden soll und drücke \'Ansehen\', um die Punkte darzustellen zu lassen.</string>
     <string name="htmlstring_intro_enter_formulas_and_send">Gib einfach auf dem Hauptbildschirm die Formeln ein (mit x als unbekannte Variable). Wähle anschließend den x-Bereich aus, der ausprobiert werden soll und drücke \'Senden\', um die Punkte darzustellen zu lassen.</string>
     <string name="string_intro_button_ok">OK</string>
     <string name="htmlstring_intro_select_app_for_show_kmz">Wenn Du mehrere Apps hast, die wie Locus kmz-Dateien on-the-fly empfangen können, wird Android diese zur Auswahl anbieten.</string>
     <string name="htmlstring_intro_select_app_for_send_gpx">Wenn Du mehrere Apps hast, die gpx-Dateien empfangen können, wird Android diese zur Auswahl anbieten. Für c:geo solltest Du hier einen Dateimanager wählen, mit dem Du die Datei auf die SD-Karte schreiben kannst (Coordinate Joker selbst beantragt dieses Android Recht nicht).</string>
-    <string name="htmlstring_intro_locus_import">Locus wird fragen, wohin die Punkte importiert werden sollen. Wir schlagen vor, ein eigenes Verzeichnis \'joker\' anzulegen, um die Punkte später schneller gesammelt ausblenden oder löschen zu können.</string>
-    <string name="htmlstring_intro_other_apps_import">Wenn die Datei geöffnet wird, wird z.B. c:geo fragen, wohin die Punkte importiert werden sollen. Wir schlagen vor, ein eigenes Verzeichnis \'joker\' anzulegen, um die Punkte später schneller gesammelt ausblenden oder löschen zu können.</string>
+    <string name="htmlstring_intro_locus_import">Locus wird fragen, wohin die Punkte importiert werden sollen. Es empfiehlt sich, ein eigenes Verzeichnis \'joker\' anzulegen, um die Punkte später schneller gesammelt ausblenden oder löschen zu können.</string>
+    <string name="htmlstring_intro_other_apps_import">Wenn du c:geo gewählt hast, wird es Dich fragen, wohin die Punkte importiert werden sollen. Es empfiehlt sich, ein eigenes Verzeichnis \'joker\' anzulegen, um die Punkte später schneller gesammelt ausblenden oder löschen zu können.</string>
     <string name="htmlstring_intro_locus_shows_points"><![CDATA[Locus stellt die Punkte nun auf der Karte dar, so dass Du schnell feststellen kannst, welche Punkte einen Besuch lohnen. <br><b>Viel Erfolg!</b>]]></string>
     <string name="htmlstring_intro_other_app_shows_points"><![CDATA[Du kannst Dir dann die Punkte auf der Karte anzeigen lassen, so dass Du schnell feststellen kannst, welche Punkte einen Besuch lohnen. <br><b>Viel Erfolg!</b>]]></string>
+    <string name="string_screenshot">Screenshot</string>
+    <string name="htmlstring_open_with_other_app">Anschließend öffne die Datei im Dateimanager und wähle deine favorisierte App aus, z.B. c:geo.</string>
 </resources>
