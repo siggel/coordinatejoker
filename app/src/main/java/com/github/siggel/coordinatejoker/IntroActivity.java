@@ -75,6 +75,7 @@ public class IntroActivity extends AppCompatActivity {
      * @param view view just syntactically needed here
      */
     public void skipIntro(@SuppressWarnings("unused") View view) {
+        pageNumber = 0;
         NavUtils.navigateUpFromSameTask(this);
     }
 
@@ -125,6 +126,7 @@ public class IntroActivity extends AppCompatActivity {
                     skipButton.setVisibility(View.INVISIBLE);
                     break;
                 default:
+                    pageNumber = 0;
                     NavUtils.navigateUpFromSameTask(this);
             }
         } else {
@@ -160,6 +162,7 @@ public class IntroActivity extends AppCompatActivity {
                     skipButton.setVisibility(View.INVISIBLE);
                     break;
                 default:
+                    pageNumber = 0;
                     NavUtils.navigateUpFromSameTask(this);
             }
         }
@@ -179,6 +182,7 @@ public class IntroActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case android.R.id.home:
+                pageNumber = 0;
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
             default:
