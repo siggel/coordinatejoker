@@ -38,7 +38,7 @@ import locus.api.android.utils.LocusUtils;
  */
 public class IntroActivity extends AppCompatActivity {
 
-    private static int pageNumber;
+    private static int pageNumber = 0;
     private static boolean haveLocus;
 
     /**
@@ -51,8 +51,6 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_intro);
-
-        pageNumber = 0;
 
         haveLocus = LocusUtils.getActiveVersion(this) != null;
 
