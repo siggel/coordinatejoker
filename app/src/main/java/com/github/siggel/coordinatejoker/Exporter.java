@@ -21,7 +21,10 @@ package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 
 import java.io.File;
@@ -104,12 +107,33 @@ abstract class Exporter {
                 intent.putExtra(Intent.EXTRA_STREAM, sharedFileUri);
                 intent.setType(exportSettings.isUseMimeType() ? mimeType : "*/*");
             }
+
+            // if app was specified and is served, restrict intent to this app
+            String appName = exportSettings.getAppName();
+            if (appName != null) {
+                final String packageName = findPackageNameForAppName(intent, appName);
+                intent.setPackage(packageName);
+            }
             context.startActivity(intent);
         } catch (IOException e) {
             throw new ExportException(context.getString(R.string.string_file_operation_failed));
         } catch (Exception e) {
             throw new ExportException(context.getString(R.string.string_sending_intent_failed));
         }
+    }
+
+    @Nullable
+    private String findPackageNameForAppName(Intent intent, String appName) {
+        String packageName = null;
+        PackageManager manager = context.getPackageManager();
+        List<ResolveInfo> infoList = manager.queryIntentActivities(intent, 0);
+        for (ResolveInfo info : infoList) {
+            if (info.activityInfo.packageName.contains(appName + ".")) {
+                packageName = info.activityInfo.packageName;
+                break;
+            }
+        }
+        return packageName;
     }
 
     void writeContentToFile(File file, String content) {

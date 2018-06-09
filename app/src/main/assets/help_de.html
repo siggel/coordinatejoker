@@ -51,7 +51,7 @@
     leider nicht. Genaugenommen sind die Geocaching-Minuten eine Dezimalzahl mit drei
     Nachkommastellen:
     1*10 + 2*1 + 3*0.1 + (4+x)*0.01 + 5*0.001.
-    Du könntest die Formel also z.B. so schreiben, damit Coordinate Joker sie lösen kann:
+    Die Formel könnte also z.B. so geschrieben werden, damit Coordinate Joker sie lösen kann:
     <b><font color="green">12.305 + (4+x)*0.01</font></b>.
     Neben den 4 Grundrechenarten unterstützt Coordinate Joker folgende mathematische
     Operationen: <br>
@@ -83,36 +83,28 @@
 </p>
 <h3>Exportformate</h3>
 <p>
-    In den Einstellungen kann das Exportformat festgelegt werden. Es
-    stehen unterschiedliche Alternativen zur Verfügung (gpx, kml, kmz, sofortige Darstellung
-    oder Versand).
-<h4>Einstellung für Locus Map</h4>
-<p>
-    <b>Alle Einstellungen "ein".</b>
+    Im Einstellungsmenü kann zwischen Schnelleinstellungen und Experteneinstellungen gewählt werden.
 </p>
+<h4>Schnelleinstellungen</h4>
 <p>
-    Die Grundeinstellung (alle Einstellungen "ein") erzeugt die Wegpunkte im kmz-Format inkl.
-    eigenem Marker-Icon und sendet dieses direkt zur Darstellung an Apps, die dieses Format
-    unterstützen. Es wird empfohlen, die Wegpunkte beim Import in Locus in einen eigenen Ordner
-    abzulegen, der nur für diese Zwecke verwendet wird. So können sie leicht ein/ausgeblendet
-    werden.
+    Die Schnelleinstellungen bieten häufig verwendete Voreinstellungen. Wenn die gewünschte App
+    dort nicht aufgeführt ist, kannst stattdessen die Experteneinstellungen verwendet werden. Ggf.
+    kann ich auch weitere Apps in einer späteren Version von Coordinate Joker ergänzen.
 </p>
-<h4>Einstellungen für c:geo</h4>
+<h4>Experteneinstellungen</h4>
 <p>
-    <b>Alle Einstellungen "aus".</b>
+    In den Experteneinstellungen kann das Exportverhalten beeinflusst werden:
 </p>
-<p>
-    Für c:geo empfiehlt sich die Verwendung des gpx-Formats (erste Einstellung "aus"). Außerdem
-    empfängt c:geo dieses Format derzeit nicht direkt, kann es aber als Datei öffnen. Somit muss
-    "aus" für die sofortige Darstellung gewählt werden und die resultierenden gpx-Daten mit
-    einem Datei-Explorer (z.B. in den Downloads) abgespeichert werden, um diese Datei dann mit
-    c:geo zu öffnen. Auch hier empfiehlt sich der Import in eine eigens dafür angelegte Liste.
-</p>
-<p>
-    Anmerkung: Coordinate Joker soll bewusst ohne jegliche Android-Rechte auskommen und
-    speichert daher nicht selbst in den Download- oder andere Ordner. Stattdessen gibt es den
-    aufgerufenen Apps Zugriff auf die selbst erzeugte Datei.
-</p>
+<ul>
+    <li>Mit 'Exportformat' kann zwischen den Formaten GPX, KML oder KMZ gewechselt werden.</li>
+    <li>Die Übermittlung des MIME Types kann deaktiviert werden, wenn Android die gewünschte App zum
+        Betrachten der Wegpunkte nicht anbietet. Achtung: Android wird zahlreiche weitere,
+        ungeeignete Apps anbieten.
+    </li>
+    <li>'Teilen' dient dazu, die Ergebnisse per Messenger oder Mail zu teilen statt sie direkt auf
+        dem Smartphone anzusehen.
+    </li>
+</ul>
 <h3>Warnungen und Fehler</h3>
 <h4>Formelfehler</h4>
 <p>
@@ -131,9 +123,7 @@
     durchaus sein, dass die favorisierte App nicht angeboten wird, wenn sie das eingestellte
     Format nicht unterstützt oder aber die direkte Anzeige des Formats nicht beherrscht, sondern
     die Wegpunkte aus einer Datei lesen möchte. Es kann sogar passieren, dass Android überhaupt
-    keine geeignete App findet, in diesem Fall würde eine Fehlermeldung darüber informieren. In
-    all diesen Fällen sollten andere Einstellungen versucht werden, um eine Lösung zu finden.
-    Das Vorgehen wie weiter oben für c:geo beschrieben, sollte eigentlich immer funktionieren.
+    keine geeignete App findet, in diesem Fall würde eine Fehlermeldung darüber informieren.
 </p>
 <p>
     Ein weiteres häufiges Problem ist, dass Android sich evtl. die getätigte Auswahl einer App

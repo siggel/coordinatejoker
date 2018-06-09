@@ -23,6 +23,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import locus.api.android.utils.LocusUtils;
+
 /**
  * class for storing/loading ui formulas and settings to/from app's preferences
  */
@@ -106,6 +108,17 @@ class Preferences {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(context.getString(R.string.key_version_code), versionCode);
+        editor.apply();
+    }
+
+    void autoConfigureExportSettings() {
+        final boolean haveLocus = LocusUtils.getActiveVersion(context) != null;
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        if (haveLocus) {
+            editor.putString(context.getString(R.string.key_use_with), "locus");
+        } else {
+            editor.putString(context.getString(R.string.key_use_with), "cgeo");
+        }
         editor.apply();
     }
 

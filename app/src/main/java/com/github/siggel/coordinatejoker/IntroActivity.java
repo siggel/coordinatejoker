@@ -19,7 +19,6 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
@@ -31,15 +30,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import locus.api.android.utils.LocusUtils;
-
 /**
  * Activity showing help page
  */
 public class IntroActivity extends AppCompatActivity {
 
     private static int pageNumber = 0;
-    private static boolean haveLocus;
+    private static boolean useLocus;
 
     /**
      * Android onCreate method
@@ -52,16 +49,10 @@ public class IntroActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_intro);
 
-        haveLocus = LocusUtils.getActiveVersion(this) != null;
+        useLocus = PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(getString(R.string.key_use_with), "")
+                .equals("locus");
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        if (haveLocus) {
-            editor.putString(getString(R.string.key_use_with), "locus");
-        } else {
-            editor.putString(getString(R.string.key_use_with), "cgeo");
-        }
-        editor.apply();
         adjustPageContent();
     }
 
@@ -93,7 +84,7 @@ public class IntroActivity extends AppCompatActivity {
         Button previousButton = findViewById(R.id.introPreviousButton);
         Button skipButton = findViewById(R.id.introSkipButton);
 
-        if (haveLocus) {
+        if (useLocus) {
             switch (pageNumber) {
                 case 0:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
@@ -101,21 +92,17 @@ public class IntroActivity extends AppCompatActivity {
                     previousButton.setVisibility(View.INVISIBLE);
                     break;
                 case 1:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_show)));
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
                     imageView.setImageResource(R.drawable.enter_formulas_and_view);
                     previousButton.setVisibility(View.VISIBLE);
                     break;
                 case 2:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_show_kmz)));
-                    imageView.setImageResource(android.R.color.transparent);
-                    break;
-                case 3:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_import)));
                     imageView.setImageResource(R.drawable.import_to_locus);
                     nextButton.setText(R.string.string_intro_button_next);
                     skipButton.setVisibility(View.VISIBLE);
                     break;
-                case 4:
+                case 3:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_shows_points)));
                     imageView.setImageResource(R.drawable.view_in_locus);
                     nextButton.setText(R.string.string_intro_button_ok);
@@ -133,25 +120,21 @@ public class IntroActivity extends AppCompatActivity {
                     previousButton.setVisibility(View.INVISIBLE);
                     break;
                 case 1:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_send)));
-                    imageView.setImageResource(R.drawable.enter_formulas_and_send);
+                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
+                    imageView.setImageResource(R.drawable.enter_formulas_and_view);
                     previousButton.setVisibility(View.VISIBLE);
                     break;
                 case 2:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
-                    imageView.setImageResource(R.drawable.choose_filemanager);
+                    imageView.setImageResource(android.R.color.transparent);
                     break;
                 case 3:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_open_with_other_app)));
-                    imageView.setImageResource(R.drawable.open_with_cgeo);
-                    break;
-                case 4:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));
                     imageView.setImageResource(R.drawable.import_to_cgeo);
                     nextButton.setText(R.string.string_intro_button_next);
                     skipButton.setVisibility(View.VISIBLE);
                     break;
-                case 5:
+                case 4:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_app_shows_points)));
                     imageView.setImageResource(R.drawable.view_in_cgeo);
                     nextButton.setText(R.string.string_intro_button_ok);

@@ -49,7 +49,7 @@ class ExportSettings {
     }
 
     private void initialize() {
-        appName = "";
+        appName = null;
         format = "gpx";
         useMimeType = true;
         wantsToShare = false;
@@ -69,7 +69,6 @@ class ExportSettings {
         wantsToShare = false;
     }
 
-    @SuppressWarnings("unused")
     String getAppName() {
         return appName;
     }

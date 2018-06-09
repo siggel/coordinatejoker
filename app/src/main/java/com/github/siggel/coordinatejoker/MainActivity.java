@@ -99,18 +99,33 @@ public class MainActivity extends AppCompatActivity {
         // check if we run a new version for the first time
         int currentVersion = getCurrentVersion();
         int previousVersion = getPreviousVersion();
-        if (currentVersion > previousVersion) {
+
+        //noinspection StatementWithEmptyBody
+        if (previousVersion < 13) {
+            // very first startup
+
             rememberVersion();
-            //noinspection StatementWithEmptyBody
-            if (previousVersion == -1) {
-                // in case of very first run show intro activity
-                mainModel.setExampleValues();
-                fillGuiFromModel();
-                startActivity(new Intent(this, IntroActivity.class));
-            } else {
-                // later on we may display change notes here
-            }
+
+            // auto-configure for locus or cgeo
+            autoConfigureExportSettings();
+
+            // preset formulas with example values
+            mainModel.setExampleValues();
+            fillGuiFromModel();
+
+            // show intro
+            startActivity(new Intent(this, IntroActivity.class));
+        } else if (currentVersion > previousVersion) {
+            rememberVersion();
+
+            // we may display change notes here later
         }
+    }
+
+
+    private void autoConfigureExportSettings() {
+        final Preferences preferences = new Preferences(this);
+        preferences.autoConfigureExportSettings();
     }
 
     /**

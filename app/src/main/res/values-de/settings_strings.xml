@@ -38,7 +38,7 @@
     <string name="settings_title_format">Exportformat</string>
 
     <string name="settings_title_use_mime">MIME verwenden</string>
-    <string name="settings_summary_use_mime">Deaktiviere dies, wenn Android Dir Deine bevorzugte App zum Betrachten der Wegpunkte nicht anbietet. Achtung: Android wird evtl. zahlreiche weitere, ungeeignete Apps anbieten.</string>
+    <string name="settings_summary_use_mime">Deaktiviere dies, wenn Android die gewünschte App zum Betrachten der Wegpunkte nicht anbietet. Achtung: Android wird evtl. zahlreiche weitere, ungeeignete Apps anbieten.</string>
 
     <string name="settings_title_share">Teilen</string>
     <string name="settings_summary_share">Aktiviere dies, wenn Du die Ergebnisse lieber per Messenger oder Mail teilen möchtest statt sie direkt auf dem Smartphone anzusehen.</string>

@@ -24,7 +24,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Hilfe</title>
+    <title>Help</title>
 </head>
 
 <body>
@@ -79,40 +79,31 @@
 <h4>Reset</h4>
 <p>
     With "Reset" you can clear the formula lines. The projection will be reset to 0 and meter
-    units. The value range will be preset to rage 0 to 9.
+    units. The value range will be preset to range 0 to 9.
 </p>
 <h3>Export formats</h3>
 <p>
-    Within the settings menu you can choose between various export formats and behaviors
-    (gpx, kml, kmz, immediate display or sending file).
-<h4>Settings for Locus Map</h4>
-<p>
-    <b>All settings "on".</b>
+    Within the settings menu you can choose between quick settings and expert settings.
 </p>
+<h4>Quick Settings</h4>
 <p>
-    The delivery settings (all settings "on") generates waypoints in kmz-format incl. an own
-    marker icon and sends them to all apps, that Android offers for displaying that format
-    received in that way. We recommend that you import the points to an own folder which you
-    use exclusively for this purpose. Thus all Coordinate Joker waypoints can be easily shown
-    or hidden all at once.
+    Quick settings offer commonly used presets. If your favorite app is not mentioned there, you may
+    select expert settings. You may also contact me to extend presets for your favorite app in a
+    later version of Coordinate Joker.
 </p>
-<h4>Settings for c:geo</h4>
+<h4>Expert Settings</h4>
 <p>
-    <b>All settings "off".</b>
+    Within the expert settings the export behavior can be configured:
 </p>
-<p>
-    For c:geo we recommend using the gpx-format. Currently c:geo does not accept receiving the
-    waypoints directly but wants to read them from a file. Therefore you need to select
-    "off" for immediate display. The resulting gpx-file then needs to be saved with a file
-    explorer (e.g. to you Download folder) and opened afterwards with c:geo. We recommend that
-    you import the points to an own folder which you
-    use exclusively for this purpose.
-</p>
-<p>
-    Notice: Coordinate Joker shall consciously get along without any Android rights and
-    therefore does not save to the download or other folders. Instead called apps will receive
-    permission to access Coordiante Jokers internally generated files.
-</p>
+<ul>
+    <li>Use Export format to switch between GPX, KML, or KMZ.</li>
+    <li>You may disable using MIME type if Android does not offer your favorite app for viewing the
+        waypoints. Be aware that Android may offer many other apps which are not really useful.
+    </li>
+    <li>Select 'Share' if you want to share the results via messenger or email instead of viewing
+        them on your phone.
+    </li>
+</ul>
 <h3>Warnings and Errors</h3>
 <h4>Formula errors</h4>
 <p>
@@ -123,16 +114,13 @@
 </p>
 <h4>Export Problems</h4>
 <p>
-    Depending on chosen settings Coordinate Joker sends the resulting waypoints in gpx, kml or
-    kmz format to other apps for display. Android will offer apps that claim that they can
+    Depending on chosen settings Coordinate Joker sends the resulting waypoints in GPX, KML or
+    KMZ format to other apps for display. Android will offer apps that claim that they can
     handle that format. So it depends on one hand on your installed apps whether and which apps
     are offered to display the waypoints. On the other hand you decide within the Coordinate
     Joker settings which format will be made available. So don't wonder if your favorite
-    geocaching app is not offered in the Android app selection menu, maybe it is simply not
-    capable to receive the chosen format or is restricted to reading waypoints from file. It may
-    even happen that Android does not find any app supporting the format, then you
-    will receive an error message instead of the app selector menu. In any case try alternative
-    settings to find a solution (or try to proceed like described for c:geo above).
+    geocaching app is not offered in the Android app selection menu. It may even happen that no app
+    is available at all resulting in an export error message.
 </p>
 <p>
     A further common problem is that Android may have remembered which app you selected for
