@@ -19,30 +19,41 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/pref_category_export_format">
+    <PreferenceCategory android:title="@string/settings_category_title_quick">
 
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="@string/save_export_kml"
-            android:summary="@string/pref_description_export_kml"
-            android:title="@string/pref_title_export_kml" />
-
-        <SwitchPreference
-            android:defaultValue="true"
-            android:dependency="@string/save_export_kml"
-            android:key="@string/save_export_with_symbol"
-            android:summary="@string/pref_description_export_with_icon"
-            android:title="@string/pref_title_export_with_icon" />
+        <ListPreference
+            android:defaultValue="@string/settings_default_use_with_value"
+            android:entries="@array/settings_array_use_with"
+            android:entryValues="@array/settings_array_use_with_values"
+            android:key="@string/key_use_with"
+            android:summary=""
+            android:title="@string/settings_title_use_with" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/pref_category_export_behavior">
+    <PreferenceCategory
+        android:key="@string/key_expert_category"
+        android:title="@string/settings_category_title_experts">
+
+        <ListPreference
+            android:defaultValue="@string/settings_default_format_value"
+            android:entries="@array/settings_array_formats"
+            android:entryValues="@array/settings_array_formats_values"
+            android:key="@string/key_format"
+            android:summary=""
+            android:title="@string/settings_title_format" />
 
         <SwitchPreference
             android:defaultValue="true"
-            android:key="@string/save_export_for_view"
-            android:summary="@string/pref_description_export_for_view"
-            android:title="@string/pref_title_export_for_view" />
+            android:key="@string/key_use_mime"
+            android:summary="@string/settings_summary_use_mime"
+            android:title="@string/settings_title_use_mime" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_share"
+            android:summary="@string/settings_summary_share"
+            android:title="@string/settings_title_share" />
 
     </PreferenceCategory>
 

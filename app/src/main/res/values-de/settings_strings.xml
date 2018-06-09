@@ -18,12 +18,29 @@
   -->
 
 <resources>
-    <string name="pref_category_export_format">Export-Format</string>
-    <string name="pref_title_export_kml">Sende im kml-/kmz-Format</string>
-    <string name="pref_description_export_kml">Deaktiviere diese Option, um im gpx-Format zu senden (falls Deine Wegpunkt-App Googles kml- oder kmz-Format nicht unterstützt)</string>
-    <string name="pref_title_export_with_icon">Nutze eigenes Symbol</string>
-    <string name="pref_description_export_with_icon">Verwende ein Coordinate Joker Symbol für die Wegpunkte (falls Deine Wegpunkt-App Symbole aus einer kmz-Datei darstellen kann)</string>
-    <string name="pref_category_export_behavior">Export-Verhalten</string>
-    <string name="pref_title_export_for_view">Sofortige Darstellung</string>
-    <string name="pref_description_export_for_view">Aktiviere diese Option, um die Wegpunkte direkt anzeigen zu lassen statt die Wegpunktdatei zu versenden</string>
+
+    <string name="settings_category_title_quick">Schnelleinstellung</string>
+
+    <string name="settings_title_use_with">Verwende</string>
+    <string-array name="settings_array_use_with">
+        <item>Locus Map</item>
+        <item>c:geo</item>
+        <item>Experteneinstellungen</item>
+    </string-array>
+    <string-array name="settings_array_use_with_values">
+        <item>locus</item>
+        <item>cgeo</item>
+        <item>expert</item>
+    </string-array>
+
+    <string name="settings_category_title_experts">Experteneinstellungen</string>
+
+    <string name="settings_title_format">Exportformat</string>
+
+    <string name="settings_title_use_mime">MIME verwenden</string>
+    <string name="settings_summary_use_mime">Deaktiviere dies, wenn Android Dir Deine bevorzugte App zum Betrachten der Wegpunkte nicht anbietet. Achtung: Android wird evtl. zahlreiche weitere, ungeeignete Apps anbieten.</string>
+
+    <string name="settings_title_share">Teilen</string>
+    <string name="settings_summary_share">Aktiviere dies, wenn Du die Ergebnisse lieber per Messenger oder Mail teilen möchtest statt sie direkt auf dem Smartphone anzusehen.</string>
+
 </resources>

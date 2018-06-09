@@ -57,13 +57,9 @@ public class IntroActivity extends AppCompatActivity {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
         if (haveLocus) {
-            editor.putBoolean(getString(R.string.save_export_kml), true);
-            editor.putBoolean(getString(R.string.save_export_with_symbol), true);
-            editor.putBoolean(getString(R.string.save_export_for_view), true);
+            editor.putString(getString(R.string.key_use_with), "locus");
         } else {
-            editor.putBoolean(getString(R.string.save_export_kml), false);
-            editor.putBoolean(getString(R.string.save_export_with_symbol), false);
-            editor.putBoolean(getString(R.string.save_export_for_view), false);
+            editor.putString(getString(R.string.key_use_with), "cgeo");
         }
         editor.apply();
         adjustPageContent();

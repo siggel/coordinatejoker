@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.degreesNorthFormula).requestFocus();
 
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
-        Boolean useActionViewIntent = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(getString(R.string.save_export_for_view), true);
+        Boolean useActionViewIntent = !PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(getString(R.string.key_share), false);
         setLeftDrawableOfTextView((TextView) findViewById(R.id.resetButton),
                 R.drawable.reset_icon);
         setLeftDrawableOfTextView((TextView) findViewById(R.id.sendButton),
@@ -263,25 +263,23 @@ public class MainActivity extends AppCompatActivity {
                 showWarning(getString(R.string.string_some_invalid_waypoints));
             }
 
-            // export points according to export format from preferences
-            Exporter exporter;
-            Boolean useActionViewIntent = PreferenceManager.getDefaultSharedPreferences(this)
-                    .getBoolean(getString(R.string.save_export_for_view), true);
-            if (PreferenceManager.getDefaultSharedPreferences(this)
-                    .getBoolean(getString(R.string.save_export_kml), true)) {
-                // export kml or kmz
-                if (PreferenceManager.getDefaultSharedPreferences(this)
-                        .getBoolean(getString(R.string.save_export_with_symbol), true)) {
-                    // export kmz (= kml with symbol)
-                    exporter = ExporterFactory.getExporter(this, "kmz", useActionViewIntent);
-                } else {
-                    // export kml
-                    exporter = ExporterFactory.getExporter(this, "kml", useActionViewIntent);
-                }
+            // determine export format from preferences
+            ExportSettings exportSettings = new ExportSettings();
+            String app = PreferenceManager.getDefaultSharedPreferences(this)
+                    .getString(getString(R.string.key_use_with), "locus");
+            if (app.equals("expert")) {
+                exportSettings.setWantsToShare(PreferenceManager.getDefaultSharedPreferences(this)
+                        .getBoolean(getString(R.string.key_share), false));
+                exportSettings.setUseMimeType(PreferenceManager.getDefaultSharedPreferences(this)
+                        .getBoolean(getString(R.string.key_use_mime), true));
+                exportSettings.setFormat(PreferenceManager.getDefaultSharedPreferences(this)
+                        .getString(getString(R.string.key_format), "gpx"));
             } else {
-                // export gpx
-                exporter = ExporterFactory.getExporter(this, "gpx", useActionViewIntent);
+                exportSettings = new ExportSettings(app);
             }
+
+            // export
+            Exporter exporter = ExporterFactory.getExporter(this, exportSettings);
             exporter.export(waypoints);
 
         } catch (Exception e) {

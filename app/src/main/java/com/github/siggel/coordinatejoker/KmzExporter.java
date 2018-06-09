@@ -47,10 +47,10 @@ class KmzExporter extends Exporter {
      * constructor
      *
      * @param context             the app's main context required for sending intents, accessing resources etc.
-     * @param useActionViewIntent whether to send ACTION_VIEW or ACTION_SEND intent
+     * @param exportSettings      export parameters
      */
-    KmzExporter(Context context, Boolean useActionViewIntent) {
-        super(context, useActionViewIntent);
+    KmzExporter(Context context, ExportSettings exportSettings) {
+        super(context, exportSettings);
     }
 
     /**

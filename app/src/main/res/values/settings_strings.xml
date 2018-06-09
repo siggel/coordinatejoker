@@ -17,13 +17,42 @@
   ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources>
-    <string name="pref_category_export_format">Export format</string>
-    <string name="pref_title_export_kml">Send kml/kmz format</string>
-    <string name="pref_description_export_kml">Disable this for sending gpx format (if your waypoint app does not support Google\'s kml or kmz format)</string>
-    <string name="pref_title_export_with_icon">Use own symbol</string>
-    <string name="pref_description_export_with_icon">Use Coordinate Joker symbol for waypoints (if your waypoint app can handle symbols within the kmz file)</string>
-    <string name="pref_category_export_behavior">Export behavior</string>
-    <string name="pref_title_export_for_view">Immediate view</string>
-    <string name="pref_description_export_for_view">Enable this if you wish to view the waypoints immediately instead of sending the waypoint file</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="settings_category_title_quick">Quick settings</string>
+
+    <string name="settings_title_use_with">Use with</string>
+    <string-array name="settings_array_use_with">
+        <item>Locus Map</item>
+        <item>c:geo</item>
+        <item>expert settings</item>
+    </string-array>
+    <string-array name="settings_array_use_with_values" tools:ignore="MissingTranslation">
+        <item>locus</item>
+        <item>cgeo</item>
+        <item>expert</item>
+    </string-array>
+    <string name="settings_default_use_with_value" tools:ignore="MissingTranslation">locus</string>
+
+    <string name="settings_category_title_experts">Expert settings</string>
+
+    <string name="settings_title_format">Export format</string>
+    <string-array name="settings_array_formats" tools:ignore="MissingTranslation">
+        <item>GPX</item>
+        <item>KML</item>
+        <item>KMZ</item>
+    </string-array>
+    <string-array name="settings_array_formats_values" tools:ignore="MissingTranslation">
+        <item>gpx</item>
+        <item>kml</item>
+        <item>kmz</item>
+    </string-array>
+    <string name="settings_default_format_value" tools:ignore="MissingTranslation">gpx</string>
+
+    <string name="settings_title_use_mime">Use MIME type</string>
+    <string name="settings_summary_use_mime">Disable this if Android does not offer your favorite app for viewing the waypoints. Be aware that Android may offer many other apps which are not really useful.</string>
+
+    <string name="settings_title_share">Share</string>
+    <string name="settings_summary_share">Enable this if you want to share the results via messenger or email instead of viewing them on your phone.</string>
+
 </resources>

@@ -39,6 +39,8 @@ import java.util.List;
  */
 abstract class Exporter {
 
+    private final ExportSettings exportSettings;
+
     final File tmpDir;
     /**
      * the app's main context required for sending intents, accessing resources etc.
@@ -46,21 +48,17 @@ abstract class Exporter {
     final Context context;
 
     private final File sharedDir;
-    /**
-     * whether to use ACTION_VIEW or ACTION_SEND
-     */
-    private final Boolean useActionViewIntent;
 
     /**
      * constructor providing context and telling whether to send ACTION_VIEW or ACTION_SEND intent
      *
      * @param context             context to be used
-     * @param useActionViewIntent Boolean whether to use ACTION_VIEW or ACTION_SEND
+     * @param exportSettings      export parameters
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    Exporter(Context context, Boolean useActionViewIntent) {
+    Exporter(Context context, ExportSettings exportSettings) {
         this.context = context;
-        this.useActionViewIntent = useActionViewIntent;
+        this.exportSettings = exportSettings;
         tmpDir = new File(context.getFilesDir(), "tmp");
         tmpDir.mkdirs();
         // for being able to share a file via intent, shared dir must be contained in
@@ -97,13 +95,14 @@ abstract class Exporter {
                     out);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            if (useActionViewIntent) {
+            // start activity via intent view or send
+            if (!exportSettings.isWantsToShare()) {
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(sharedFileUri, mimeType);
+                intent.setDataAndType(sharedFileUri, exportSettings.isUseMimeType() ? mimeType : "*/*");
             } else {
                 intent.setAction(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_STREAM, sharedFileUri);
-                intent.setType(mimeType);
+                intent.setType(exportSettings.isUseMimeType() ? mimeType : "*/*");
             }
             context.startActivity(intent);
         } catch (IOException e) {

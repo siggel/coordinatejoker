@@ -74,5 +74,5 @@
     <string name="htmlstring_intro_locus_shows_points"><![CDATA[Locus will show the points on the map, so you may determine, which are worth visiting. <br><b>Good luck!</b>]]></string>
     <string name="htmlstring_intro_other_app_shows_points"><![CDATA[You can then display the points on the map, so you may determine, which are worth visiting. <br><b>Good luck!</b>]]></string>
     <string name="string_screenshot">Screenshot</string>
-    <string name="htmlstring_open_with_other_app">Afterwards open the file in the filemanager and then select your favorite app, e.g. c:geo.</string>
+    <string name="htmlstring_open_with_other_app">Afterwards open the file in the file manager and then select your favorite app, e.g. c:geo.</string>
 </resources>

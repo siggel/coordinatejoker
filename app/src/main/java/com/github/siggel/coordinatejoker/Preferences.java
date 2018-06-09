@@ -51,27 +51,27 @@ class Preferences {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         MainModel mainModel = new MainModel();
         mainModel.setNorth(
-                sharedPref.getBoolean(context.getString(R.string.save_is_north), true));
+                sharedPref.getBoolean(context.getString(R.string.key_is_north), true));
         mainModel.setDegreesNorth(
-                sharedPref.getString(context.getString(R.string.save_degrees_north), ""));
+                sharedPref.getString(context.getString(R.string.key_degrees_north), ""));
         mainModel.setMinutesNorth(
-                sharedPref.getString(context.getString(R.string.save_minutes_north), ""));
+                sharedPref.getString(context.getString(R.string.key_minutes_north), ""));
         mainModel.setEast(
-                sharedPref.getBoolean(context.getString(R.string.save_is_east), true));
+                sharedPref.getBoolean(context.getString(R.string.key_is_east), true));
         mainModel.setDegreesEast(
-                sharedPref.getString(context.getString(R.string.save_degrees_east), ""));
+                sharedPref.getString(context.getString(R.string.key_degrees_east), ""));
         mainModel.setMinutesEast(
-                sharedPref.getString(context.getString(R.string.save_minutes_east), ""));
+                sharedPref.getString(context.getString(R.string.key_minutes_east), ""));
         mainModel.setDistance(
-                sharedPref.getString(context.getString(R.string.save_distance), "0"));
+                sharedPref.getString(context.getString(R.string.key_distance), "0"));
         mainModel.setFeet(
-                sharedPref.getBoolean(context.getString(R.string.save_is_feet), false));
+                sharedPref.getBoolean(context.getString(R.string.key_is_feet), false));
         mainModel.setAzimuth(
-                sharedPref.getString(context.getString(R.string.save_azimuth), "0"));
+                sharedPref.getString(context.getString(R.string.key_azimuth), "0"));
         mainModel.setXFrom(
-                Integer.parseInt(sharedPref.getString(context.getString(R.string.save_x_from), "0")));
+                Integer.parseInt(sharedPref.getString(context.getString(R.string.key_x_from), "0")));
         mainModel.setXTo(
-                Integer.parseInt(sharedPref.getString(context.getString(R.string.save_x_to), "9")));
+                Integer.parseInt(sharedPref.getString(context.getString(R.string.key_x_to), "9")));
         return mainModel;
     }
 
@@ -83,29 +83,29 @@ class Preferences {
     void saveFormulas(MainModel mainModel) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean(context.getString(R.string.save_is_north), mainModel.getNorth());
-        editor.putString(context.getString(R.string.save_degrees_north), mainModel.getDegreesNorth());
-        editor.putString(context.getString(R.string.save_minutes_north), mainModel.getMinutesNorth());
-        editor.putBoolean(context.getString(R.string.save_is_east), mainModel.getEast());
-        editor.putString(context.getString(R.string.save_degrees_east), mainModel.getDegreesEast());
-        editor.putString(context.getString(R.string.save_minutes_east), mainModel.getMinutesEast());
-        editor.putString(context.getString(R.string.save_distance), mainModel.getDistance());
-        editor.putBoolean(context.getString(R.string.save_is_feet), mainModel.getFeet());
-        editor.putString(context.getString(R.string.save_azimuth), mainModel.getAzimuth());
-        editor.putString(context.getString(R.string.save_x_from), mainModel.getXFrom().toString());
-        editor.putString(context.getString(R.string.save_x_to), mainModel.getXTo().toString());
+        editor.putBoolean(context.getString(R.string.key_is_north), mainModel.getNorth());
+        editor.putString(context.getString(R.string.key_degrees_north), mainModel.getDegreesNorth());
+        editor.putString(context.getString(R.string.key_minutes_north), mainModel.getMinutesNorth());
+        editor.putBoolean(context.getString(R.string.key_is_east), mainModel.getEast());
+        editor.putString(context.getString(R.string.key_degrees_east), mainModel.getDegreesEast());
+        editor.putString(context.getString(R.string.key_minutes_east), mainModel.getMinutesEast());
+        editor.putString(context.getString(R.string.key_distance), mainModel.getDistance());
+        editor.putBoolean(context.getString(R.string.key_is_feet), mainModel.getFeet());
+        editor.putString(context.getString(R.string.key_azimuth), mainModel.getAzimuth());
+        editor.putString(context.getString(R.string.key_x_from), mainModel.getXFrom().toString());
+        editor.putString(context.getString(R.string.key_x_to), mainModel.getXTo().toString());
         editor.apply();
     }
 
     int loadVersionCode() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getInt(context.getString(R.string.save_version_code), -1);
+        return sharedPref.getInt(context.getString(R.string.key_version_code), -1);
     }
 
     void saveVersionCode(int versionCode) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(context.getString(R.string.save_version_code), versionCode);
+        editor.putInt(context.getString(R.string.key_version_code), versionCode);
         editor.apply();
     }
 

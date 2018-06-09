@@ -30,22 +30,22 @@ class ExporterFactory {
      * exporter generator method
      *
      * @param context             context required for sending intents, accessing resources etc.
-     * @param type                file type of exporter
-     * @param useActionViewIntent whether intent shall be sent as ACTION_VIEW or ACTION_SEND
+     * @param exportSettings      export parameters
      * @return exporter instance of requested type
      */
     static Exporter getExporter(Context context,
-                                String type,
-                                Boolean useActionViewIntent) {
-        if (type == null)
-            return null;
-        else if (type.equalsIgnoreCase("gpx"))
-            return new GpxExporter(context, useActionViewIntent);
-        else if (type.equalsIgnoreCase("kml"))
-            return new KmlExporter(context, useActionViewIntent);
-        else if (type.equalsIgnoreCase("kmz"))
-            return new KmzExporter(context, useActionViewIntent);
+                                ExportSettings exportSettings) {
 
-        throw new ExportException(context.getString(R.string.string_exporter_missing) + type + ".");
+        final String format = exportSettings.getFormat();
+        if (format == null)
+            throw new ExportException(context.getString(R.string.string_exporter_missing) + "unknown format.");
+        else if (format.equalsIgnoreCase("gpx"))
+            return new GpxExporter(context, exportSettings);
+        else if (format.equalsIgnoreCase("kml"))
+            return new KmlExporter(context, exportSettings);
+        else if (format.equalsIgnoreCase("kmz"))
+            return new KmzExporter(context, exportSettings);
+
+        throw new ExportException(context.getString(R.string.string_exporter_missing) + format + ".");
     }
 }
