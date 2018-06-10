@@ -29,8 +29,8 @@ class ExporterFactory {
     /**
      * exporter generator method
      *
-     * @param context             context required for sending intents, accessing resources etc.
-     * @param exportSettings      export parameters
+     * @param context        context required for sending intents, accessing resources etc.
+     * @param exportSettings export parameters
      * @return exporter instance of requested type
      */
     static Exporter getExporter(Context context,

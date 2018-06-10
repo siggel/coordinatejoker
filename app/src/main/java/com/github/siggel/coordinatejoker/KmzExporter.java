@@ -46,8 +46,8 @@ class KmzExporter extends Exporter {
     /**
      * constructor
      *
-     * @param context             the app's main context required for sending intents, accessing resources etc.
-     * @param exportSettings      export parameters
+     * @param context        the app's main context required for sending intents, accessing resources etc.
+     * @param exportSettings export parameters
      */
     KmzExporter(Context context, ExportSettings exportSettings) {
         super(context, exportSettings);

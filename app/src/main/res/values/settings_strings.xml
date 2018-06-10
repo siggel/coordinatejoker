@@ -50,7 +50,7 @@
     <string name="settings_default_format_value" tools:ignore="MissingTranslation">gpx</string>
 
     <string name="settings_title_use_mime">Use MIME type</string>
-    <string name="settings_summary_use_mime">Disable this if Android does not offer your favorite app for viewing the waypoints. Be aware that Android may offer many other apps which are not really useful.</string>
+    <string name="settings_summary_use_mime">Disable this if Android does not offer your favorite app for viewing the waypoints. Be aware that Android may offer many other apps then which are not really useful.</string>
 
     <string name="settings_title_share">Share</string>
     <string name="settings_summary_share">Enable this if you want to share the results via messenger or email instead of viewing them on your phone.</string>

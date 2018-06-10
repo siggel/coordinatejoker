@@ -42,21 +42,19 @@ import java.util.List;
  */
 abstract class Exporter {
 
-    private final ExportSettings exportSettings;
-
     final File tmpDir;
     /**
      * the app's main context required for sending intents, accessing resources etc.
      */
     final Context context;
-
+    private final ExportSettings exportSettings;
     private final File sharedDir;
 
     /**
      * constructor providing context and telling whether to send ACTION_VIEW or ACTION_SEND intent
      *
-     * @param context             context to be used
-     * @param exportSettings      export parameters
+     * @param context        context to be used
+     * @param exportSettings export parameters
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
     Exporter(Context context, ExportSettings exportSettings) {

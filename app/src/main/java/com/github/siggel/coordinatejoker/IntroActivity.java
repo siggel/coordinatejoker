@@ -126,7 +126,7 @@ public class IntroActivity extends AppCompatActivity {
                     break;
                 case 2:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
-                    imageView.setImageResource(android.R.color.transparent);
+                    imageView.setImageResource(R.drawable.select_app);
                     break;
                 case 3:
                     textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));

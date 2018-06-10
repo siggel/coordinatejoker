@@ -62,7 +62,7 @@
     <string name="string_intro_button_next" tools:ignore="MissingTranslation"><![CDATA[>]]></string>
     <string name="string_intro_button_skip">Skip</string>
     <string name="htmlstring_intro_have_locus"><![CDATA[Currently Coordinate Joker is configured for use with Locus Map.<br><br>Time for a short intro …]]></string>
-    <string name="htmlstring_intro_no_locus"><![CDATA[Currently Coordinate Joker is not configured for use with Locus Map, so this introduction uses c:geo as an example of another app. Expert settings offer a variety of further scenarios.<br><br>Time for a short intro …]]></string>
+    <string name="htmlstring_intro_no_locus"><![CDATA[Currently Coordinate Joker is not configured for use with Locus Map, so we describe use with c:geo as another app example. Expert settings offer a variety of further scenarios.<br><br>Time for a short intro …]]></string>
     <string name="string_intro_button_previous" tools:ignore="MissingTranslation"><![CDATA[<]]></string>
     <string name="htmlstring_intro_enter_formulas_and_view">On the main screen enter the coordinate formulas with x being the unknown variable. Select which x values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
     <string name="string_intro_button_ok">OK</string>
