@@ -122,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * auto configuration to be called if app has never run before
+     */
     private void autoConfigureExportSettings() {
         final Preferences preferences = new Preferences(this);
         preferences.autoConfigureExportSettings();
@@ -390,6 +392,11 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    /**
+     * get current version code of app
+     *
+     * @return version code
+     */
     private int getCurrentVersion() {
         try {
             return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
@@ -398,11 +405,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * get version code of previous app run (stored in preferences)
+     *
+     * @return version code
+     */
     private int getPreviousVersion() {
         final Preferences preferences = new Preferences(this);
         return preferences.loadVersionCode();
     }
 
+    /**
+     * store current version in preferences
+     */
     private void rememberVersion() {
         final Preferences preferences = new Preferences(this);
         preferences.saveVersionCode(getCurrentVersion());

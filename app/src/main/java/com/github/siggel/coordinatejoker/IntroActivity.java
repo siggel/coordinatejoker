@@ -35,7 +35,15 @@ import android.widget.TextView;
  */
 public class IntroActivity extends AppCompatActivity {
 
+    /**
+     * current page number to be remembered if going through multiple onCreate (e.g. due to
+     * switching between portrait and landscape)
+     */
     private static int pageNumber = 0;
+
+    /**
+     * whether locus is selected in preferences in order not to check it again and again
+     */
     private static boolean useLocus;
 
     /**
@@ -77,6 +85,9 @@ public class IntroActivity extends AppCompatActivity {
         adjustPageContent();
     }
 
+    /**
+     * adjust page Content according to current page number
+     */
     private void adjustPageContent() {
         TextView textView = findViewById(R.id.introTextView);
         ImageView imageView = findViewById(R.id.introImageView);

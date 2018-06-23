@@ -31,6 +31,9 @@ import java.util.List;
  */
 class Calculator {
 
+    /**
+     * constant for meter to feet conversion
+     */
     final private static double meterPerFeet = 0.3048;
 
     /**

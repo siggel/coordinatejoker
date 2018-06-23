@@ -24,10 +24,20 @@ package com.github.siggel.coordinatejoker;
  */
 class Point {
 
-    // point values
-    private String name; // name
-    private double latitude; // latitude in degrees
-    private double longitude; // longitude in degrees
+    /**
+     * name of point
+     */
+    private String name;
+
+    /**
+     * latitude of point in degrees
+     */
+    private double latitude;
+
+    /**
+     * longitude of point in degrees
+     */
+    private double longitude;
 
     /**
      * constructor

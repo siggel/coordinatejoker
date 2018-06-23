@@ -99,11 +99,21 @@ class Preferences {
         editor.apply();
     }
 
+    /**
+     * get version code from preferences
+     *
+     * @return version code
+     */
     int loadVersionCode() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPref.getInt(context.getString(R.string.key_version_code), -1);
     }
 
+    /**
+     * save version code in preference
+     *
+     * @param versionCode version code
+     */
     void saveVersionCode(int versionCode) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -111,6 +121,9 @@ class Preferences {
         editor.apply();
     }
 
+    /**
+     * check if Locus Map is available and autoconfigure for Locus Map, otherwise for c:geo
+     */
     void autoConfigureExportSettings() {
         final boolean haveLocus = LocusUtils.getActiveVersion(context) != null;
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
