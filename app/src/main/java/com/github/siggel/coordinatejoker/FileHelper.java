@@ -33,12 +33,15 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * class providing file helper functions
+ */
 final class FileHelper {
 
     /**
      * helper function for writing content to file, also available for derived classes
      *
-     * @param context application context
+     * @param context application context (for accessing resource strings)
      * @param file    file to write to
      * @param content string content to be written to file
      */
@@ -57,7 +60,7 @@ final class FileHelper {
     /**
      * helper function for writing content to file, also available for derived classes
      *
-     * @param context application context
+     * @param context application context (for accessing resource strings)
      * @param file    file to write to
      * @param content inputstream content to be written to file
      */
@@ -83,7 +86,7 @@ final class FileHelper {
     /**
      * helper function for zipping
      *
-     * @param context  application context
+     * @param context  application context (for accessing resource strings)
      * @param zipFile  resulting zip file to be created
      * @param fileList files to be zipped into zip file
      */
