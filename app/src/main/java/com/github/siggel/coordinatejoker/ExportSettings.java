@@ -25,15 +25,39 @@ package com.github.siggel.coordinatejoker;
  */
 class ExportSettings {
 
+    /**
+     * app name if intent shall be served with a specific app
+     */
     private String appName;
+
+    /**
+     * waypoint file format to be used for export
+     */
     private String format;
+
+    /**
+     * whether to use mime type in intent or not (false may help if app does not officially serve
+     * a certain type)
+     */
     private boolean useMimeType;
+
+    /**
+     * whether to use share intent instead of viewing intent
+     */
     private boolean wantsToShare;
 
+    /**
+     * default constructor
+     */
     ExportSettings() {
         initialize();
     }
 
+    /**
+     * constructor using presets for common apps
+     *
+     * @param appName app name to optimize the export for
+     */
     ExportSettings(String appName) {
         switch (appName) {
             case "locus":
@@ -48,13 +72,19 @@ class ExportSettings {
         }
     }
 
+    /**
+     * initialize with default settings, that should work for most apps
+     */
     private void initialize() {
-        appName = null;
+        appName = "";
         format = "gpx";
         useMimeType = true;
         wantsToShare = false;
     }
 
+    /**
+     * initialize with settings optimized for Locus Map
+     */
     private void initializeForLocus() {
         appName = "locus";
         format = "kmz";
@@ -62,6 +92,9 @@ class ExportSettings {
         wantsToShare = false;
     }
 
+    /**
+     * initialize with settings optimized for c:geo
+     */
     private void initializeForCGeo() {
         appName = "cgeo";
         format = "gpx";
@@ -69,35 +102,75 @@ class ExportSettings {
         wantsToShare = false;
     }
 
+    /**
+     * get app name
+     *
+     * @return app name
+     */
     String getAppName() {
         return appName;
     }
 
+    /**
+     * set app name
+     *
+     * @param appName app name
+     */
     @SuppressWarnings("unused")
     void setAppName(String appName) {
         this.appName = appName;
     }
 
+    /**
+     * get file format
+     *
+     * @return format
+     */
     String getFormat() {
         return format;
     }
 
+    /**
+     * set file format
+     *
+     * @param format format
+     */
     void setFormat(String format) {
         this.format = format;
     }
 
+    /**
+     * shall mime type be announced during export?
+     *
+     * @return true or false
+     */
     boolean isUseMimeType() {
         return useMimeType;
     }
 
+    /**
+     * set if mime type shall be announced during export
+     *
+     * @param useMimeType true or false
+     */
     void setUseMimeType(boolean useMimeType) {
         this.useMimeType = useMimeType;
     }
 
+    /**
+     * shall waypoints be shared rather than viewed?
+     *
+     * @return true or false
+     */
     boolean isWantsToShare() {
         return wantsToShare;
     }
 
+    /**
+     * set whether waypoints shall be shared rather than viewed
+     *
+     * @param wantsToShare true or false
+     */
     void setWantsToShare(boolean wantsToShare) {
         this.wantsToShare = wantsToShare;
     }

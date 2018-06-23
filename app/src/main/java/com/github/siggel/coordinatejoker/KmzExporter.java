@@ -72,14 +72,14 @@ class KmzExporter extends Exporter {
             addWaypoints(waypoints);
             addFooter();
 
-            File kmlFile = new File(tmpDir, "doc.kml");
+            File kmlFile = new File(baseDirForTemporaryFiles, "doc.kml");
             writeContentToFile(kmlFile, kmlData.toString());
 
-            File pngFile = new File(tmpDir, "joker.png");
+            File pngFile = new File(baseDirForTemporaryFiles, "joker.png");
             writeContentToFile(pngFile, context.getResources().openRawResource(R.raw.joker));
 
 
-            file = new File(tmpDir, "coordinatejoker.kmz");
+            file = new File(baseDirForTemporaryFiles, "coordinatejoker.kmz");
             List<File> list = new ArrayList<>();
             list.add(pngFile);
             list.add(kmlFile);
@@ -144,6 +144,12 @@ class KmzExporter extends Exporter {
         }
     }
 
+    /**
+     * helper function for zipping
+     *
+     * @param zipFile  resulting zip file to be created
+     * @param fileList files to be zipped into zip file
+     */
     @SuppressWarnings("ResultOfMethodCallIgnored")
     private void zipContentToFile(File zipFile, List<File> fileList) {
         final int bufferSize = 1024;

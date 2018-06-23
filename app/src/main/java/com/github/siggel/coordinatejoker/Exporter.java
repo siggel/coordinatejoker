@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 
 import java.io.File;
@@ -37,18 +36,27 @@ import java.util.List;
 /**
  * abstract parent class for various exporters
  * requiring export() to be individually implemented in derived exporters
- * those implementations may use sendFileViaIntent() of this parent to perform the intent sending
+ * those implementations may use sendFileViaIntent() of this class to perform the intent sending
  * part
  */
 abstract class Exporter {
 
-    final File tmpDir;
+    /**
+     * base directory for temporary files to be used by this and derived exporters, initialized at
+     * class creation
+     */
+    final File baseDirForTemporaryFiles;
+
     /**
      * the app's main context required for sending intents, accessing resources etc.
      */
     final Context context;
+
+
+    /**
+     * set of export parameters impacting the kind of export
+     */
     private final ExportSettings exportSettings;
-    private final File sharedDir;
 
     /**
      * constructor providing context and telling whether to send ACTION_VIEW or ACTION_SEND intent
@@ -60,12 +68,8 @@ abstract class Exporter {
     Exporter(Context context, ExportSettings exportSettings) {
         this.context = context;
         this.exportSettings = exportSettings;
-        tmpDir = new File(context.getFilesDir(), "tmp");
-        tmpDir.mkdirs();
-        // for being able to share a file via intent, shared dir must be contained in
-        // project's res/xml/filepaths.xml
-        sharedDir = new File(context.getFilesDir(), "shared");
-        sharedDir.mkdirs();
+        baseDirForTemporaryFiles = new File(context.getFilesDir(), "tmp");
+        baseDirForTemporaryFiles.mkdirs();
     }
 
     /**
@@ -84,6 +88,13 @@ abstract class Exporter {
      */
     void sendFileViaIntent(File file, String mimeType) {
         try {
+            // for being able to share a file via intent, shared dir must be contained in
+            // project's res/xml/filepaths.xml
+            final File sharedDir;
+            sharedDir = new File(context.getFilesDir(), "shared");
+            //noinspection ResultOfMethodCallIgnored
+            sharedDir.mkdirs();
+
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
             writeContentToFile(out, new FileInputStream(file));
@@ -107,9 +118,9 @@ abstract class Exporter {
             }
 
             // if app was specified and is served, restrict intent to this app
-            String appName = exportSettings.getAppName();
-            if (appName != null) {
-                final String packageName = findPackageNameForAppName(intent, appName);
+            final String appName = exportSettings.getAppName();
+            final String packageName = findPackageNameForAppName(intent, appName);
+            if (!packageName.isEmpty()) {
                 intent.setPackage(packageName);
             }
             context.startActivity(intent);
@@ -120,20 +131,35 @@ abstract class Exporter {
         }
     }
 
-    @Nullable
+    /**
+     * method for finding which package containing appName would serve the intent
+     *
+     * @param intent  intent to be used
+     * @param appName app name to be searched in package list serving the intent
+     * @return first matching package name
+     */
     private String findPackageNameForAppName(Intent intent, String appName) {
-        String packageName = null;
-        PackageManager manager = context.getPackageManager();
-        List<ResolveInfo> infoList = manager.queryIntentActivities(intent, 0);
-        for (ResolveInfo info : infoList) {
-            if (info.activityInfo.packageName.contains(appName + ".")) {
-                packageName = info.activityInfo.packageName;
-                break;
+        String packageName = "";
+        if (!appName.isEmpty()) {
+            PackageManager manager = context.getPackageManager();
+            List<ResolveInfo> infoList = manager.queryIntentActivities(intent, 0);
+            for (ResolveInfo info : infoList) {
+                if (info.activityInfo.packageName.contains(appName + ".")) {
+                    packageName = info.activityInfo.packageName;
+                    break;
+                }
             }
         }
+
         return packageName;
     }
 
+    /**
+     * helper function for writing content to file, also available for derived classes
+     *
+     * @param file    file to write to
+     * @param content string content to be written to file
+     */
     void writeContentToFile(File file, String content) {
         try {
             FileOutputStream outputStream = new FileOutputStream(file);
@@ -144,6 +170,12 @@ abstract class Exporter {
         }
     }
 
+    /**
+     * helper function for writing content to file, also available for derived classes
+     *
+     * @param file    file to write to
+     * @param content inputstream content to be written to file
+     */
     @SuppressWarnings("ResultOfMethodCallIgnored")
     void writeContentToFile(File file, InputStream content) {
         final int bufferSize = 1024;

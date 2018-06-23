@@ -64,7 +64,7 @@ class GpxExporter extends Exporter {
             addWaypoints(waypoints);
             addFooter();
 
-            file = new File(tmpDir, "coordinatejoker.gpx");
+            file = new File(baseDirForTemporaryFiles, "coordinatejoker.gpx");
             writeContentToFile(file, gpxData.toString());
 
         } catch (Exception e) {

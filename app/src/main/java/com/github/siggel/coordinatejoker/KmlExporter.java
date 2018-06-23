@@ -64,7 +64,7 @@ class KmlExporter extends Exporter {
             addWaypoints(waypoints);
             addFooter();
 
-            file = new File(tmpDir, "coordinatejoker.kml");
+            file = new File(baseDirForTemporaryFiles, "coordinatejoker.kml");
             writeContentToFile(file, kmlData.toString());
 
         } catch (Exception e) {
