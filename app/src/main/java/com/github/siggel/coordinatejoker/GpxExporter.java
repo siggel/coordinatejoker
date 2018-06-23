@@ -65,7 +65,7 @@ class GpxExporter extends Exporter {
             addFooter();
 
             file = new File(baseDirForTemporaryFiles, "coordinatejoker.gpx");
-            writeContentToFile(file, gpxData.toString());
+            FileHelper.writeContentToFile(context, file, gpxData.toString());
 
         } catch (Exception e) {
             throw new ExportException(context.getString(R.string.string_gpx_export_failed));

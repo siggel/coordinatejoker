@@ -28,9 +28,7 @@ import android.support.v4.content.FileProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -51,7 +49,6 @@ abstract class Exporter {
      * the app's main context required for sending intents, accessing resources etc.
      */
     final Context context;
-
 
     /**
      * set of export parameters impacting the kind of export
@@ -97,7 +94,7 @@ abstract class Exporter {
 
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
-            writeContentToFile(out, new FileInputStream(file));
+            FileHelper.writeContentToFile(context, out, new FileInputStream(file));
 
             Intent intent = new Intent();
 
@@ -154,42 +151,4 @@ abstract class Exporter {
         return packageName;
     }
 
-    /**
-     * helper function for writing content to file, also available for derived classes
-     *
-     * @param file    file to write to
-     * @param content string content to be written to file
-     */
-    void writeContentToFile(File file, String content) {
-        try {
-            FileOutputStream outputStream = new FileOutputStream(file);
-            outputStream.write(content.getBytes("UTF-8"));
-            outputStream.close();
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_file_operation_failed));
-        }
-    }
-
-    /**
-     * helper function for writing content to file, also available for derived classes
-     *
-     * @param file    file to write to
-     * @param content inputstream content to be written to file
-     */
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    void writeContentToFile(File file, InputStream content) {
-        final int bufferSize = 1024;
-        try {
-            file.createNewFile();
-            FileOutputStream out = new FileOutputStream(file);
-            byte[] buffer = new byte[bufferSize];
-            int numberOfBytesRead;
-            while ((numberOfBytesRead = content.read(buffer, 0, bufferSize)) != -1) {
-                out.write(buffer, 0, numberOfBytesRead);
-            }
-            out.close();
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_file_operation_failed));
-        }
-    }
 }

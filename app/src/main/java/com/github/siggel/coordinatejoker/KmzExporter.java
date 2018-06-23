@@ -21,16 +21,9 @@ package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 /**
  * Exporter for sending waypoints via kmz file
@@ -73,17 +66,17 @@ class KmzExporter extends Exporter {
             addFooter();
 
             File kmlFile = new File(baseDirForTemporaryFiles, "doc.kml");
-            writeContentToFile(kmlFile, kmlData.toString());
+            FileHelper.writeContentToFile(context, kmlFile, kmlData.toString());
 
             File pngFile = new File(baseDirForTemporaryFiles, "joker.png");
-            writeContentToFile(pngFile, context.getResources().openRawResource(R.raw.joker));
+            FileHelper.writeContentToFile(context, pngFile, context.getResources().openRawResource(R.raw.joker));
 
 
             file = new File(baseDirForTemporaryFiles, "coordinatejoker.kmz");
             List<File> list = new ArrayList<>();
             list.add(pngFile);
             list.add(kmlFile);
-            zipContentToFile(file, list);
+            FileHelper.zipContentToFile(context, file, list);
         } catch (Exception e) {
             throw new ExportException(context.getString(R.string.string_kmz_export_failed));
         }
@@ -144,41 +137,4 @@ class KmzExporter extends Exporter {
         }
     }
 
-    /**
-     * helper function for zipping
-     *
-     * @param zipFile  resulting zip file to be created
-     * @param fileList files to be zipped into zip file
-     */
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private void zipContentToFile(File zipFile, List<File> fileList) {
-        final int bufferSize = 1024;
-        try {
-
-            zipFile.createNewFile();
-            FileOutputStream destination = new FileOutputStream(zipFile);
-            ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));
-            byte data[] = new byte[bufferSize];
-
-            for (File file : fileList) {
-                FileInputStream in = new FileInputStream(file);
-                BufferedInputStream origin = new BufferedInputStream(in, bufferSize);
-
-                ZipEntry entry = new ZipEntry(
-                        file.getPath().substring(file.getPath().lastIndexOf("/") + 1));
-                out.putNextEntry(entry);
-                int numberOfBytesRead;
-                while ((numberOfBytesRead = origin.read(data, 0, bufferSize)) != -1) {
-                    out.write(data, 0, numberOfBytesRead);
-                }
-                origin.close();
-            }
-
-            out.close();
-            destination.close();
-
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_kmz_export_failed));
-        }
-    }
 }
