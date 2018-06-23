@@ -65,7 +65,7 @@ class KmlExporter extends Exporter {
             addFooter();
 
             file = new File(baseDirForTemporaryFiles, "coordinatejoker.kml");
-            FileHelper.writeContentToFile(context, file, kmlData.toString());
+            FileHelper.writeContentToFile(file, kmlData.toString());
 
         } catch (Exception e) {
             throw new ExportException(context.getString(R.string.string_kml_export_failed));

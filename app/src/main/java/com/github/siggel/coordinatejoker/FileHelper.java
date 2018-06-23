@@ -19,7 +19,6 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 
 import java.io.BufferedInputStream;
@@ -41,87 +40,67 @@ final class FileHelper {
     /**
      * helper function for writing content to file, also available for derived classes
      *
-     * @param context application context (for accessing resource strings)
      * @param file    file to write to
      * @param content string content to be written to file
      */
-    static void writeContentToFile(@NonNull Context context,
-                                   @NonNull File file,
-                                   @NonNull String content) {
-        try {
-            FileOutputStream outputStream = new FileOutputStream(file);
-            outputStream.write(content.getBytes("UTF-8"));
-            outputStream.close();
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_file_operation_failed));
-        }
+    static void writeContentToFile(@NonNull File file,
+                                   @NonNull String content) throws IOException {
+        FileOutputStream outputStream = new FileOutputStream(file);
+        outputStream.write(content.getBytes("UTF-8"));
+        outputStream.close();
     }
 
     /**
      * helper function for writing content to file, also available for derived classes
      *
-     * @param context application context (for accessing resource strings)
      * @param file    file to write to
      * @param content inputstream content to be written to file
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    static void writeContentToFile(@NonNull Context context,
-                                   @NonNull File file,
-                                   @NonNull InputStream content) {
+    static void writeContentToFile(@NonNull File file,
+                                   @NonNull InputStream content) throws IOException {
         final int bufferSize = 1024;
-        try {
-            file.createNewFile();
-            FileOutputStream out = new FileOutputStream(file);
-            byte[] buffer = new byte[bufferSize];
-            int numberOfBytesRead;
-            while ((numberOfBytesRead = content.read(buffer, 0, bufferSize)) != -1) {
-                out.write(buffer, 0, numberOfBytesRead);
-            }
-            out.close();
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_file_operation_failed));
+        file.createNewFile();
+        FileOutputStream out = new FileOutputStream(file);
+        byte[] buffer = new byte[bufferSize];
+        int numberOfBytesRead;
+        while ((numberOfBytesRead = content.read(buffer, 0, bufferSize)) != -1) {
+            out.write(buffer, 0, numberOfBytesRead);
         }
+        out.close();
     }
 
     /**
      * helper function for zipping
      *
-     * @param context  application context (for accessing resource strings)
      * @param zipFile  resulting zip file to be created
      * @param fileList files to be zipped into zip file
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    static void zipContentToFile(@NonNull Context context,
-                                 @NonNull File zipFile,
-                                 @NonNull List<File> fileList) {
+    static void zipContentToFile(@NonNull File zipFile,
+                                 @NonNull List<File> fileList) throws IOException {
         final int bufferSize = 1024;
-        try {
+        zipFile.createNewFile();
+        FileOutputStream destination = new FileOutputStream(zipFile);
+        ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));
+        byte data[] = new byte[bufferSize];
 
-            zipFile.createNewFile();
-            FileOutputStream destination = new FileOutputStream(zipFile);
-            ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));
-            byte data[] = new byte[bufferSize];
+        for (File file : fileList) {
+            FileInputStream in = new FileInputStream(file);
+            BufferedInputStream origin = new BufferedInputStream(in, bufferSize);
 
-            for (File file : fileList) {
-                FileInputStream in = new FileInputStream(file);
-                BufferedInputStream origin = new BufferedInputStream(in, bufferSize);
-
-                ZipEntry entry = new ZipEntry(
-                        file.getPath().substring(file.getPath().lastIndexOf("/") + 1));
-                out.putNextEntry(entry);
-                int numberOfBytesRead;
-                while ((numberOfBytesRead = origin.read(data, 0, bufferSize)) != -1) {
-                    out.write(data, 0, numberOfBytesRead);
-                }
-                origin.close();
+            ZipEntry entry = new ZipEntry(
+                    file.getPath().substring(file.getPath().lastIndexOf("/") + 1));
+            out.putNextEntry(entry);
+            int numberOfBytesRead;
+            while ((numberOfBytesRead = origin.read(data, 0, bufferSize)) != -1) {
+                out.write(data, 0, numberOfBytesRead);
             }
-
-            out.close();
-            destination.close();
-
-        } catch (IOException e) {
-            throw new ExportException(context.getString(R.string.string_kmz_export_failed));
+            origin.close();
         }
+
+        out.close();
+        destination.close();
     }
 
 }

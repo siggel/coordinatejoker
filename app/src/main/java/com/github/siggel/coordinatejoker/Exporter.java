@@ -94,7 +94,7 @@ abstract class Exporter {
 
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
-            FileHelper.writeContentToFile(context, out, new FileInputStream(file));
+            FileHelper.writeContentToFile(out, new FileInputStream(file));
 
             Intent intent = new Intent();
 

@@ -66,17 +66,17 @@ class KmzExporter extends Exporter {
             addFooter();
 
             File kmlFile = new File(baseDirForTemporaryFiles, "doc.kml");
-            FileHelper.writeContentToFile(context, kmlFile, kmlData.toString());
+            FileHelper.writeContentToFile(kmlFile, kmlData.toString());
 
             File pngFile = new File(baseDirForTemporaryFiles, "joker.png");
-            FileHelper.writeContentToFile(context, pngFile, context.getResources().openRawResource(R.raw.joker));
+            FileHelper.writeContentToFile(pngFile, context.getResources().openRawResource(R.raw.joker));
 
 
             file = new File(baseDirForTemporaryFiles, "coordinatejoker.kmz");
             List<File> list = new ArrayList<>();
             list.add(pngFile);
             list.add(kmlFile);
-            FileHelper.zipContentToFile(context, file, list);
+            FileHelper.zipContentToFile(file, list);
         } catch (Exception e) {
             throw new ExportException(context.getString(R.string.string_kmz_export_failed));
         }
