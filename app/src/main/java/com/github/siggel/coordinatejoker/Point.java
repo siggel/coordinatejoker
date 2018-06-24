@@ -19,6 +19,8 @@
 
 package com.github.siggel.coordinatejoker;
 
+import android.support.annotation.NonNull;
+
 /**
  * a named waypoint
  */
@@ -46,13 +48,13 @@ class Point {
      * @param latitude  latitude value in degrees
      * @param longitude longitude value in degrees
      */
-    Point(String name, double latitude, double longitude) {
+    Point(@NonNull String name, double latitude, double longitude) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    // getters and setters need no explanation
+    // no trivial javadoc explanation for getters and setters
 
     double getLatitude() {
         return latitude;
@@ -72,12 +74,13 @@ class Point {
         this.longitude = longitude;
     }
 
+    @NonNull
     String getName() {
         return name;
     }
 
     @SuppressWarnings("unused")
-    void setName(String name) {
+    void setName(@NonNull String name) {
         this.name = name;
     }
 }
