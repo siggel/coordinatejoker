@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
             // solve formulas for requested x-values
             Calculator calculator = new Calculator(this,
                     mainModel);
-            List<Point> waypoints = calculator.solveX();
+            List<Point> waypoints = calculator.solveForAllX();
 
             if (waypoints.size() == 0) {
                 showError(getString(R.string.string_empty_waypoints));
