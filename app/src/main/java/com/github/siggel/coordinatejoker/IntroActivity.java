@@ -47,6 +47,31 @@ public class IntroActivity extends AppCompatActivity {
     private static boolean useLocus;
 
     /**
+     * text element of page
+     */
+    private TextView textView;
+
+    /**
+     * image element of page
+     */
+    private ImageView imageView;
+
+    /**
+     * "next" button of page
+     */
+    private Button nextButton;
+
+    /**
+     * "previous" button of page
+     */
+    private Button previousButton;
+
+    /**
+     * "skip" button of page
+     */
+    private Button skipButton;
+
+    /**
      * Android onCreate method
      *
      * @param savedInstanceState as defined by android
@@ -60,6 +85,12 @@ public class IntroActivity extends AppCompatActivity {
         useLocus = PreferenceManager.getDefaultSharedPreferences(this)
                 .getString(getString(R.string.key_use_with), "")
                 .equals("locus");
+
+        textView = findViewById(R.id.introTextView);
+        imageView = findViewById(R.id.introImageView);
+        nextButton = findViewById(R.id.introNextButton);
+        previousButton = findViewById(R.id.introPreviousButton);
+        skipButton = findViewById(R.id.introSkipButton);
 
         adjustPageContent();
     }
@@ -86,75 +117,85 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     /**
-     * adjust page Content according to current page number
+     * adjust page content according to current page number
      */
     private void adjustPageContent() {
-        TextView textView = findViewById(R.id.introTextView);
-        ImageView imageView = findViewById(R.id.introImageView);
-        Button nextButton = findViewById(R.id.introNextButton);
-        Button previousButton = findViewById(R.id.introPreviousButton);
-        Button skipButton = findViewById(R.id.introSkipButton);
-
         if (useLocus) {
-            switch (pageNumber) {
-                case 0:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
-                    imageView.setImageResource(android.R.color.transparent);
-                    previousButton.setVisibility(View.INVISIBLE);
-                    break;
-                case 1:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
-                    imageView.setImageResource(R.drawable.enter_formulas_and_view);
-                    previousButton.setVisibility(View.VISIBLE);
-                    break;
-                case 2:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_import)));
-                    imageView.setImageResource(R.drawable.import_to_locus);
-                    nextButton.setText(R.string.string_intro_button_next);
-                    skipButton.setVisibility(View.VISIBLE);
-                    break;
-                case 3:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_shows_points)));
-                    imageView.setImageResource(R.drawable.view_in_locus);
-                    nextButton.setText(R.string.string_intro_button_ok);
-                    skipButton.setVisibility(View.INVISIBLE);
-                    break;
-                default:
-                    pageNumber = 0;
-                    NavUtils.navigateUpFromSameTask(this);
-            }
+            adjustPageContentForLocus();
         } else {
-            switch (pageNumber) {
-                case 0:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_no_locus)));
-                    imageView.setImageResource(android.R.color.transparent);
-                    previousButton.setVisibility(View.INVISIBLE);
-                    break;
-                case 1:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
-                    imageView.setImageResource(R.drawable.enter_formulas_and_view);
-                    previousButton.setVisibility(View.VISIBLE);
-                    break;
-                case 2:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
-                    imageView.setImageResource(R.drawable.select_app);
-                    break;
-                case 3:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));
-                    imageView.setImageResource(R.drawable.import_to_cgeo);
-                    nextButton.setText(R.string.string_intro_button_next);
-                    skipButton.setVisibility(View.VISIBLE);
-                    break;
-                case 4:
-                    textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_app_shows_points)));
-                    imageView.setImageResource(R.drawable.view_in_cgeo);
-                    nextButton.setText(R.string.string_intro_button_ok);
-                    skipButton.setVisibility(View.INVISIBLE);
-                    break;
-                default:
-                    pageNumber = 0;
-                    NavUtils.navigateUpFromSameTask(this);
-            }
+            adjustPageContentForCgeo();
+        }
+    }
+
+    /**
+     * adjust page content for Locus Map according to current page number
+     */
+    private void adjustPageContentForLocus() {
+
+        switch (pageNumber) {
+            case 0:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_have_locus)));
+                imageView.setImageResource(android.R.color.transparent);
+                previousButton.setVisibility(View.INVISIBLE);
+                break;
+            case 1:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
+                imageView.setImageResource(R.drawable.enter_formulas_and_view);
+                previousButton.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_import)));
+                imageView.setImageResource(R.drawable.import_to_locus);
+                nextButton.setText(R.string.string_intro_button_next);
+                skipButton.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_locus_shows_points)));
+                imageView.setImageResource(R.drawable.view_in_locus);
+                nextButton.setText(R.string.string_intro_button_ok);
+                skipButton.setVisibility(View.INVISIBLE);
+                break;
+            default:
+                pageNumber = 0;
+                NavUtils.navigateUpFromSameTask(this);
+        }
+    }
+
+    /**
+     * adjust page content for c:geo according to current page number
+     */
+    private void adjustPageContentForCgeo() {
+
+        switch (pageNumber) {
+            case 0:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_no_locus)));
+                imageView.setImageResource(android.R.color.transparent);
+                previousButton.setVisibility(View.INVISIBLE);
+                break;
+            case 1:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_enter_formulas_and_view)));
+                imageView.setImageResource(R.drawable.enter_formulas_and_view);
+                previousButton.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_select_app_for_send_gpx)));
+                imageView.setImageResource(R.drawable.select_app);
+                break;
+            case 3:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_apps_import)));
+                imageView.setImageResource(R.drawable.import_to_cgeo);
+                nextButton.setText(R.string.string_intro_button_next);
+                skipButton.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                textView.setText(Html.fromHtml(getString(R.string.htmlstring_intro_other_app_shows_points)));
+                imageView.setImageResource(R.drawable.view_in_cgeo);
+                nextButton.setText(R.string.string_intro_button_ok);
+                skipButton.setVisibility(View.INVISIBLE);
+                break;
+            default:
+                pageNumber = 0;
+                NavUtils.navigateUpFromSameTask(this);
         }
     }
 
