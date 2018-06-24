@@ -20,6 +20,7 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -59,6 +60,21 @@ class Calculator {
     }
 
     /**
+     * evaluate a formula for given value x
+     *
+     * @param formula formula to be evaluated
+     * @param x       value of x for formula evaluation
+     * @return result
+     */
+    private double evaluateFormula(@NonNull String formula, int x) {
+        return new ExpressionBuilder(formula)
+                .variables("x")
+                .build()
+                .setVariable("x", 1.0 * x)
+                .evaluate();
+    }
+
+    /**
      * method for calculating coordinates from the formulas given in the mainModel
      *
      * @return list of calculated waypoints
@@ -94,34 +110,18 @@ class Calculator {
                 // first evaluate north and east coordinate
                 double degrees;
                 double minutes;
-                degrees = new ExpressionBuilder(degreesNorth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                minutes = new ExpressionBuilder(minutesNorth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                if (invalidLatitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                degrees = evaluateFormula(degreesNorth, x);
+                minutes = evaluateFormula(minutesNorth, x);
+                if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
                     // skip invalid waypoints
                     continue;
                 }
                 double coordinateNorth =
                         (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
 
-                degrees = new ExpressionBuilder(degreesEast)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                minutes = new ExpressionBuilder(minutesEast)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                if (invalidLongitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                degrees = evaluateFormula(degreesEast, x);
+                minutes = evaluateFormula(minutesEast, x);
+                if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
                     // skip invalid waypoints
                     continue;
                 }
@@ -129,19 +129,11 @@ class Calculator {
                         (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
 
                 // calculate projection delta
-                double deltaDistance = new ExpressionBuilder(distance)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
+                double deltaDistance = evaluateFormula(distance, x);
                 if (mainModel.getFeet())
                     deltaDistance *= meterPerFeet;
 
-                double deltaAzimuth = new ExpressionBuilder(azimuth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
+                double deltaAzimuth = evaluateFormula(azimuth, x);
                 double deltaCoordinateNorth =
                         Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
                 double deltaCoordinateEast =
@@ -173,7 +165,7 @@ class Calculator {
      * @param minutes latitude or longitude minutes
      * @return true if minutes are outside range 0 <= minutes < 60
      */
-    private boolean invalidMinutes(double minutes) {
+    private boolean checkInvalidMinutes(double minutes) {
         return minutes < 0 || minutes >= 60.0;
     }
 
@@ -183,7 +175,7 @@ class Calculator {
      * @param degrees latitude degrees
      * @return true if degrees are outside range 0 <= minutes < 90
      */
-    private boolean invalidLatitudeDegrees(double degrees) {
+    private boolean checkInvalidLatitudeDegrees(double degrees) {
         return degrees < 0 || degrees >= 90.0;
     }
 
@@ -193,7 +185,7 @@ class Calculator {
      * @param degrees longitude degrees
      * @return true if degrees are outside range 0 <= minutes < 90
      */
-    private boolean invalidLongitudeDegrees(double degrees) {
+    private boolean checkInvalidLongitudeDegrees(double degrees) {
         return degrees < 0 || degrees >= 180.0;
     }
 }
