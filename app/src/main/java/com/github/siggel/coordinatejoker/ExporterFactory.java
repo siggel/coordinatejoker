@@ -20,9 +20,15 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+
+import java.lang.reflect.Constructor;
 
 /**
- * factory for creating various exporters (currently locus and gpx supported)
+ * A factory for creating various exporters
+ *
+ * By convention derived Exporter classes must be named "XyzExporter" for exportSettings.format
+ * "xyz" if you want to use this factory for getting an instance
  */
 class ExporterFactory {
 
@@ -33,19 +39,26 @@ class ExporterFactory {
      * @param exportSettings export parameters
      * @return exporter instance of requested type
      */
-    static Exporter getExporter(Context context,
-                                ExportSettings exportSettings) {
+    @NonNull
+    static Exporter getExporter(@NonNull Context context,
+                                @NonNull ExportSettings exportSettings) {
 
         final String format = exportSettings.getFormat();
+
         if (format == null)
             throw new ExportException(context.getString(R.string.string_exporter_missing) + "unknown format.");
-        else if (format.equalsIgnoreCase("gpx"))
-            return new GpxExporter(context, exportSettings);
-        else if (format.equalsIgnoreCase("kml"))
-            return new KmlExporter(context, exportSettings);
-        else if (format.equalsIgnoreCase("kmz"))
-            return new KmzExporter(context, exportSettings);
 
-        throw new ExportException(context.getString(R.string.string_exporter_missing) + format + ".");
+        // format to class name convention: xyz > fullPackageName.XyzExporter
+        final String className = Exporter.class.getPackage().getName() + "." +
+                format.substring(0, 1).toUpperCase() + format.substring(1) + "Exporter";
+        try {
+            // find class by class name and return new instance
+            Class<?> aClass = Class.forName(className);
+            Constructor<?> constructor = aClass.getDeclaredConstructor(Context.class,
+                    ExportSettings.class);
+            return (Exporter) constructor.newInstance(context, exportSettings);
+        } catch (Exception e) {
+            throw new ExportException(context.getString(R.string.string_exporter_missing) + " " + format + ".");
+        }
     }
 }
