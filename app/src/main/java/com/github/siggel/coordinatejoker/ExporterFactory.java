@@ -26,7 +26,7 @@ import java.lang.reflect.Constructor;
 
 /**
  * A factory for creating various exporters
- *
+ * <p>
  * By convention derived Exporter classes must be named "XyzExporter" for exportSettings.format
  * "xyz" if you want to use this factory for getting an instance
  */

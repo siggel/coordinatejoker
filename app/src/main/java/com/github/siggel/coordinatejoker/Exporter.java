@@ -36,7 +36,7 @@ import java.util.List;
  * requiring export() to be individually implemented in derived exporters
  * those implementations may use sendFileViaIntent() of this class to perform the intent sending
  * part
- *
+ * <p>
  * By convention derived classes must be named "XyzExporter" for format "xyz" if you want to create
  * an instance via ExporterFactory
  */

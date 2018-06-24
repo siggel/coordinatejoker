@@ -37,10 +37,13 @@ class KmlExporter extends Exporter {
 
     /**
      * constructor
+     * <p>
+     * looks unused as constructor is used in exporter factory via reflection
      *
      * @param context        the app's main context required for sending intents, accessing resources etc.
      * @param exportSettings export parameters
      */
+    @SuppressWarnings("unused")
     KmlExporter(Context context, ExportSettings exportSettings) {
         super(context, exportSettings);
     }
@@ -50,7 +53,6 @@ class KmlExporter extends Exporter {
      *
      * @param waypoints waypoints to be exported
      */
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     @Override
     public void export(List<Point> waypoints) {
 
