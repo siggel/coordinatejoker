@@ -267,7 +267,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             fillModelFromGui();
 
-            Integer requestedNumberOfPoints = mainModel.getXTo() - mainModel.getXFrom() + 1;
+            Integer requestedNumberOfPoints = (mainModel.getXTo() - mainModel.getXFrom() + 1) *
+                    (mainModel.getYTo() - mainModel.getYFrom() + 1);
 
             // keep number of generated points in a reasonable range
             if (requestedNumberOfPoints > 100) {
@@ -278,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
             // solve formulas for requested x-values
             Calculator calculator = new Calculator(this,
                     mainModel);
-            List<Point> waypoints = calculator.solveX();
+            List<Point> waypoints = calculator.solve();
 
             if (waypoints.size() == 0) {
                 showError(getString(R.string.string_empty_waypoints));

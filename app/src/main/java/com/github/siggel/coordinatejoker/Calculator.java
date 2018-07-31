@@ -63,7 +63,7 @@ class Calculator {
      *
      * @return list of calculated waypoints
      */
-    List<Point> solveX() {
+    List<Point> solve() {
 
         try {
             // initialize return list

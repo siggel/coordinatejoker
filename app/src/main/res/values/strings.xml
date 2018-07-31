@@ -51,7 +51,7 @@
     <string name="string_exporter_missing">No implementation found for export to </string>
     <string name="string_sending_intent_failed">Failed sending the waypoints to another app for displaying them.</string>
     <string name="string_empty_waypoints">Sorry, the calculation did not result in any valid coordinates.</string>
-    <string name="string_some_invalid_waypoints">Some x that did not result in valid coordinates have been omitted.</string>
+    <string name="string_some_invalid_waypoints">Some x or y that did not result in valid coordinates have been omitted.</string>
     <string name="title_activity_terms_of_service">Terms of Service</string>
     <string name="title_activity_privacy_policy">Privacy Policy</string>
     <string name="title_activity_about">About</string>
