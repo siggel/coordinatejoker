@@ -35,6 +35,8 @@ class MainModel {
     private String azimuth; // in degrees
     private Integer xFrom; // string representation of variable x start value
     private Integer xTo; // string representation of variable x end value
+    private Integer yFrom; // string representation of variable y start value
+    private Integer yTo; // string representation of variable y end value
 
     /**
      * constructor
@@ -58,6 +60,8 @@ class MainModel {
         azimuth = "0";
         xFrom = 0;
         xTo = 9;
+        yFrom = 0;
+        yTo = 0;
     }
 
     /**
@@ -66,15 +70,17 @@ class MainModel {
     void setExampleValues() {
         isNorth = true;
         degreesNorth = "53";
-        minutesNorth = "11.660";
+        minutesNorth = "11.6y6";
         isEast = true;
         degreesEast = "10";
         minutesEast = "(23400+20*x)/1000";
         distance = "100";
         isFeet = false;
         azimuth = "20*x";
-        xFrom = 0;
+        xFrom = 3;
         xTo = 9;
+        yFrom = 4;
+        yTo = 6;
     }
 
 
@@ -165,5 +171,21 @@ class MainModel {
 
     void setXTo(Integer xTo) {
         this.xTo = xTo;
+    }
+
+    Integer getYFrom() {
+        return yFrom;
+    }
+
+    void setYFrom(Integer yFrom) {
+        this.yFrom = yFrom;
+    }
+
+    Integer getYTo() {
+        return yTo;
+    }
+
+    void setYTo(Integer yTo) {
+        this.yTo = yTo;
     }
 }

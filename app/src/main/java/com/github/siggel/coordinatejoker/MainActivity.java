@@ -204,6 +204,10 @@ public class MainActivity extends AppCompatActivity {
                 Locale.GERMAN, "%d", mainModel.getXFrom()));
         ((EditText) findViewById(R.id.xTo)).setText(String.format(
                 Locale.GERMAN, "%d", mainModel.getXTo()));
+        ((EditText) findViewById(R.id.yFrom)).setText(String.format(
+                Locale.GERMAN, "%d", mainModel.getYFrom()));
+        ((EditText) findViewById(R.id.yTo)).setText(String.format(
+                Locale.GERMAN, "%d", mainModel.getYTo()));
     }
 
     /**
@@ -235,6 +239,10 @@ public class MainActivity extends AppCompatActivity {
                     Integer.parseInt(((EditText) findViewById(R.id.xFrom)).getText().toString()));
             mainModel.setXTo(
                     Integer.parseInt(((EditText) findViewById(R.id.xTo)).getText().toString()));
+            mainModel.setYFrom(
+                    Integer.parseInt(((EditText) findViewById(R.id.yFrom)).getText().toString()));
+            mainModel.setYTo(
+                    Integer.parseInt(((EditText) findViewById(R.id.yTo)).getText().toString()));
         } catch (Exception e) {
             throw new ParseException(getString(R.string.string_parse_integer_exception));
         }

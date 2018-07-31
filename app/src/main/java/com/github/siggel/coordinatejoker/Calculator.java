@@ -70,94 +70,69 @@ class Calculator {
             List<Point> list = new ArrayList<>();
 
             for (Integer x = mainModel.getXFrom(); x <= mainModel.getXTo(); ++x) {
+                for (Integer y = mainModel.getYFrom(); y <= mainModel.getYTo(); ++y) {
 
-                // get formulas from mainModel
-                String degreesNorth = mainModel.getDegreesNorth();
-                String degreesEast = mainModel.getDegreesEast();
-                String minutesNorth = mainModel.getMinutesNorth();
-                String minutesEast = mainModel.getMinutesEast();
-                String distance = mainModel.getDistance();
-                String azimuth = mainModel.getAzimuth();
+                    // get formulas from mainModel
+                    String degreesNorth = mainModel.getDegreesNorth();
+                    String degreesEast = mainModel.getDegreesEast();
+                    String minutesNorth = mainModel.getMinutesNorth();
+                    String minutesEast = mainModel.getMinutesEast();
+                    String distance = mainModel.getDistance();
+                    String azimuth = mainModel.getAzimuth();
 
-                // for non-negative x do simple replacement so we support formulas like 12.34x,
-                // but don't replace "exp" as it serves as exponential function
-                if (x >= 0) {
-                    final String xString = "" + x;
-                    degreesNorth = degreesNorth.replaceAll("(?<!e)x(?!p)", xString);
-                    degreesEast = degreesEast.replaceAll("(?<!e)x(?!p)", xString);
-                    minutesNorth = minutesNorth.replaceAll("(?<!e)x(?!p)", xString);
-                    minutesEast = minutesEast.replaceAll("(?<!e)x(?!p)", xString);
-                    distance = distance.replaceAll("(?<!e)x(?!p)", xString);
-                    azimuth = azimuth.replaceAll("(?<!e)x(?!p)", xString);
+                    // first evaluate north and east coordinate
+                    double degrees = evaluate(degreesNorth, x, y);
+                    double minutes = evaluate(minutesNorth, x, y);
+                    if (invalidLatitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                        // skip invalid waypoints
+                        continue;
+                    }
+                    double coordinateNorth =
+                            (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                    degrees = evaluate(degreesEast, x, y);
+                    minutes = evaluate(minutesEast, x, y);
+                    if (invalidLongitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                        // skip invalid waypoints
+                        continue;
+                    }
+                    double coordinateEast =
+                            (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                    // calculate projection delta
+                    double deltaDistance = evaluate(distance, x, y);
+                    if (mainModel.getFeet())
+                        deltaDistance *= meterPerFeet;
+
+                    double deltaAzimuth = evaluate(azimuth, x, y);
+                    double deltaCoordinateNorth =
+                            Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
+                    double deltaCoordinateEast =
+                            Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
+                                    / Math.cos(Math.toRadians(coordinateNorth));
+
+                    // add projection delta to coordinate
+                    coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
+                    coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
+
+                    StringBuilder name = new StringBuilder();
+                    if (mainModel.getXFrom().intValue() != mainModel.getXTo().intValue()) {
+                        name.append("x=").append(x);
+                    }
+                    if (mainModel.getYFrom().intValue() != mainModel.getYTo().intValue()) {
+                        if (name.length() > 0) {
+                            name.append(", ");
+                        }
+                        name.append("y=").append(y);
+                    }
+
+                    // add waypoint to list
+                    Point point = new Point(
+                            name.toString(),
+                            coordinateNorth,
+                            coordinateEast);
+                    list.add(point);
                 }
-
-                // first evaluate north and east coordinate
-                double degrees;
-                double minutes;
-                degrees = new ExpressionBuilder(degreesNorth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                minutes = new ExpressionBuilder(minutesNorth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                if (invalidLatitudeDegrees(degrees) || invalidMinutes(minutes)) {
-                    // skip invalid waypoints
-                    continue;
-                }
-                double coordinateNorth =
-                        (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                degrees = new ExpressionBuilder(degreesEast)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                minutes = new ExpressionBuilder(minutesEast)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                if (invalidLongitudeDegrees(degrees) || invalidMinutes(minutes)) {
-                    // skip invalid waypoints
-                    continue;
-                }
-                double coordinateEast =
-                        (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                // calculate projection delta
-                double deltaDistance = new ExpressionBuilder(distance)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                if (mainModel.getFeet())
-                    deltaDistance *= meterPerFeet;
-
-                double deltaAzimuth = new ExpressionBuilder(azimuth)
-                        .variables("x")
-                        .build()
-                        .setVariable("x", 1.0 * x)
-                        .evaluate();
-                double deltaCoordinateNorth =
-                        Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
-                double deltaCoordinateEast =
-                        Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
-                                / Math.cos(Math.toRadians(coordinateNorth));
-
-                // add projection delta to coordinate
-                coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
-                coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
-
-                // add waypoint to list
-                Point point = new Point(
-                        "x=" + String.valueOf(x),
-                        coordinateNorth,
-                        coordinateEast);
-                list.add(point);
             }
 
             return list;
@@ -165,6 +140,22 @@ class Calculator {
         } catch (Exception e) { // also catches RuntimeException
             throw new CalculatorException(context.getString(R.string.string_formula_error));
         }
+    }
+
+    private static double evaluate(String formula, Integer x, Integer y) {
+        // for non-negative x and y do simple replacement so we support formulas like 12.34x,
+        // but don't replace "exp" as it serves as exponential function
+        final String xString = "" + x;
+        formula = formula.replaceAll("(?<!e)x(?!p)", xString);
+        final String yString = "" + y;
+        formula = formula.replace("y", yString);
+
+        return new ExpressionBuilder(formula)
+                .variables("x", "y")
+                .build()
+                .setVariable("x", 1.0 * x)
+                .setVariable("y", 1.0 * y)
+                .evaluate();
     }
 
     /**

@@ -313,7 +313,51 @@
                     android:text="9"
                     android:textAlignment="textEnd"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_y_from"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/yFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="numberSigned"
+                    android:minEms="2"
+                    android:nextFocusDown="@+id/yTo"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/string_yto"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/yTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal|center_vertical"
+                    android:inputType="numberSigned"
+                    android:minEms="2"
+                    android:nextFocusDown="@id/mainTextViewIntro"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
             </LinearLayout>
 
         </LinearLayout>
