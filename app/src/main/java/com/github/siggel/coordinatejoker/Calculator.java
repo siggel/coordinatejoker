@@ -23,6 +23,7 @@ import android.content.Context;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -153,7 +154,23 @@ class Calculator {
         }
     }
 
-    private static double evaluate(String formula, Integer x, Integer y) {
+    private static DecimalFormat df = new DecimalFormat("0.##");
+
+    public static double evaluate(String formula, Integer x, Integer y) {
+        // Check if there are any parenthesis. If so then evaluate it first and
+        // replace it with the value.
+        formula = formula.replace(" ", "");
+        int openIndex = formula.indexOf('(');
+        int closeIndex = findCosingParenthesis(formula, openIndex);
+        while (openIndex != -1 && closeIndex != -1 && openIndex < closeIndex) {
+            String subFormula = formula.substring(openIndex + 1, closeIndex);
+            double value = evaluate(subFormula, x, y);
+            String replacement = df.format(value);
+            formula = formula.substring(0, openIndex) + replacement + formula.substring(closeIndex + 1);
+            openIndex = formula.indexOf('(');
+            closeIndex = findCosingParenthesis(formula, openIndex);
+        }
+
         // for non-negative x and y do simple replacement so we support formulas like 12.34x,
         // but don't replace "exp" as it serves as exponential function
         final String xString = "" + x;
@@ -164,9 +181,24 @@ class Calculator {
         return new ExpressionBuilder(formula)
                 .variables("x", "y")
                 .build()
-                .setVariable("x", 1.0 * x)
-                .setVariable("y", 1.0 * y)
+                .setVariable("x", x)
+                .setVariable("y", y)
                 .evaluate();
+    }
+
+    private static int findCosingParenthesis(final String text, final int indexOfOpenParenthesis) {
+        int index = indexOfOpenParenthesis + 1;
+        int numberOpens = 1;
+        while (index < text.length() && numberOpens > 0) {
+            char nextChar = text.charAt(index);
+            if (nextChar == '(') {
+                numberOpens++;
+            } else if (nextChar == ')') {
+                numberOpens--;
+            }
+            index++;
+        }
+        return numberOpens == 0 ? index - 1: -1;
     }
 
     /**
