@@ -115,11 +115,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="textPersonName"
-                    android:minEms="5"
+                    android:inputType="textUri"
+                    android:minEms="8"
                     android:nextFocusDown="@+id/degreesEastFormula"
                     android:text="12.3x4"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -166,11 +166,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="textPersonName"
-                    android:minEms="5"
+                    android:inputType="textUri"
+                    android:minEms="8"
                     android:nextFocusDown="@+id/distanceFormula"
                     android:text="(12304+10*x)/1000.0"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -222,7 +222,7 @@
                     android:minEms="5"
                     android:nextFocusDown="@+id/azimuthFormula"
                     android:text="0"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -249,9 +249,9 @@
                     android:layout_gravity="fill_horizontal|center_vertical"
                     android:inputType="textPersonName"
                     android:minEms="5"
-                    android:nextFocusDown="@+id/xFrom"
+                    android:nextFocusDown="@+id/xValues"
                     android:text="0"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -279,40 +279,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center_vertical"
-                    android:text="@string/string_x_from"
+                    android:text="@string/string_x_values"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/xFrom"
+                    android:id="@+id/xValues"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="numberSigned"
-                    android:minEms="2"
-                    android:nextFocusDown="@+id/xTo"
-                    android:text="0"
-                    android:textAlignment="textEnd"
+                    android:inputType="textUri|number"
+                    android:minEms="6"
+                    android:nextFocusDown="@+id/yValues"
+                    android:text="0-9"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:text="@string/string_xto"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/xTo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="numberSigned"
-                    android:minEms="2"
-                    android:nextFocusDown="@id/mainTextViewIntro"
-                    android:text="9"
-                    android:textAlignment="textEnd"
-                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
             </LinearLayout>
 
             <LinearLayout
@@ -324,40 +306,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center_vertical"
-                    android:text="@string/string_y_from"
+                    android:text="@string/string_y_values"
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/yFrom"
+                    android:id="@+id/yValues"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="numberSigned"
-                    android:minEms="2"
-                    android:nextFocusDown="@+id/yTo"
-                    android:text="0"
-                    android:textAlignment="textEnd"
+                    android:inputType="textUri|number"
+                    android:minEms="6"
+                    android:text=""
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:text="@string/string_yto"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/yTo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="fill_horizontal|center_vertical"
-                    android:inputType="numberSigned"
-                    android:minEms="2"
-                    android:nextFocusDown="@id/mainTextViewIntro"
-                    android:text="0"
-                    android:textAlignment="textEnd"
-                    tools:ignore="HardcodedText,LabelFor,RtlCompat" />
             </LinearLayout>
 
         </LinearLayout>

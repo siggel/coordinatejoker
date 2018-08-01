@@ -27,8 +27,8 @@
     <string name="key_distance" translatable="false">ui_distance</string>
     <string name="key_is_feet" translatable="false">ui_is_feet</string>
     <string name="key_azimuth" translatable="false">ui_azimuth</string>
-    <string name="key_x_from" translatable="false">ui_x_from</string>
-    <string name="key_x_to" translatable="false">ui_x_to</string>
+    <string name="key_x_values" translatable="false">ui_x_values</string>
+    <string name="key_y_values" translatable="false">ui_y_values</string>
     <string name="key_version_code" translatable="false">version_code</string>
     <string name="key_use_with" translatable="false">settings_use_with</string>
     <string name="key_expert_category" translatable="false">settings_expert</string>

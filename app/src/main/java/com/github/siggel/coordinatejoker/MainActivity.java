@@ -41,7 +41,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
-import java.util.Locale;
 
 /**
  * class for showing main application page
@@ -200,14 +199,8 @@ public class MainActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.distanceFormula)).setText(mainModel.getDistance());
         ((Spinner) findViewById(R.id.spinnerUnits)).setSelection(mainModel.getFeet() ? 0 : 1);
         ((EditText) findViewById(R.id.azimuthFormula)).setText(mainModel.getAzimuth());
-        ((EditText) findViewById(R.id.xFrom)).setText(String.format(
-                Locale.GERMAN, "%d", mainModel.getXFrom()));
-        ((EditText) findViewById(R.id.xTo)).setText(String.format(
-                Locale.GERMAN, "%d", mainModel.getXTo()));
-        ((EditText) findViewById(R.id.yFrom)).setText(String.format(
-                Locale.GERMAN, "%d", mainModel.getYFrom()));
-        ((EditText) findViewById(R.id.yTo)).setText(String.format(
-                Locale.GERMAN, "%d", mainModel.getYTo()));
+        ((EditText) findViewById(R.id.xValues)).setText(mainModel.getXText());
+        ((EditText) findViewById(R.id.yValues)).setText(mainModel.getYText());
     }
 
     /**
@@ -235,14 +228,8 @@ public class MainActivity extends AppCompatActivity {
         mainModel.setAzimuth(
                 ((EditText) findViewById(R.id.azimuthFormula)).getText().toString());
         try {
-            mainModel.setXFrom(
-                    Integer.parseInt(((EditText) findViewById(R.id.xFrom)).getText().toString()));
-            mainModel.setXTo(
-                    Integer.parseInt(((EditText) findViewById(R.id.xTo)).getText().toString()));
-            mainModel.setYFrom(
-                    Integer.parseInt(((EditText) findViewById(R.id.yFrom)).getText().toString()));
-            mainModel.setYTo(
-                    Integer.parseInt(((EditText) findViewById(R.id.yTo)).getText().toString()));
+            mainModel.setXText(((EditText)findViewById(R.id.xValues)).getText().toString());
+            mainModel.setYText(((EditText)findViewById(R.id.yValues)).getText().toString());
         } catch (Exception e) {
             throw new ParseException(getString(R.string.string_parse_integer_exception));
         }
@@ -267,8 +254,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             fillModelFromGui();
 
-            Integer requestedNumberOfPoints = (mainModel.getXTo() - mainModel.getXFrom() + 1) *
-                    (mainModel.getYTo() - mainModel.getYFrom() + 1);
+            Integer requestedNumberOfPoints = Math.max(1, mainModel.getXValues().size()) *
+                    Math.max(1, mainModel.getYValues().size());
 
             // keep number of generated points in a reasonable range
             if (requestedNumberOfPoints > 100) {

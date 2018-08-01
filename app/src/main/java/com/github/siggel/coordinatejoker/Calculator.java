@@ -69,8 +69,19 @@ class Calculator {
             // initialize return list
             List<Point> list = new ArrayList<>();
 
-            for (Integer x = mainModel.getXFrom(); x <= mainModel.getXTo(); ++x) {
-                for (Integer y = mainModel.getYFrom(); y <= mainModel.getYTo(); ++y) {
+            List<Integer> xValues = mainModel.getXValues();
+            if (xValues.size() == 0) {
+                xValues = new ArrayList<>(1);
+                xValues.add(0);
+            }
+            List<Integer> yValues = mainModel.getYValues();
+            if (yValues.size() == 0) {
+                yValues = new ArrayList<>(1);
+                yValues.add(0);
+            }
+
+            for (int x : xValues) {
+                for (int y : yValues) {
 
                     // get formulas from mainModel
                     String degreesNorth = mainModel.getDegreesNorth();
@@ -116,10 +127,10 @@ class Calculator {
                     coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
 
                     StringBuilder name = new StringBuilder();
-                    if (mainModel.getXFrom().intValue() != mainModel.getXTo().intValue()) {
+                    if (mainModel.getXValues().size() > 0) {
                         name.append("x=").append(x);
                     }
-                    if (mainModel.getYFrom().intValue() != mainModel.getYTo().intValue()) {
+                    if (mainModel.getYValues().size() > 0) {
                         if (name.length() > 0) {
                             name.append(", ");
                         }

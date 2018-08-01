@@ -35,10 +35,8 @@
         <item>"m"</item>
     </string-array>
     <string name="string_send">Send</string>
-    <string name="string_x_from">Vary x from </string>
-    <string name="string_xto"> to </string>
-    <string name="string_y_from">Vary y from </string>
-    <string name="string_yto"> to </string>
+    <string name="string_x_values">x values: </string>
+    <string name="string_y_values">y values: </string>
     <string name="string_projection">Leave distance zero if you don\'t need a projection.</string>
     <string name="string_distance">Distance: </string>
     <string name="string_azimuth">Azimuth: </string>
@@ -57,7 +55,7 @@
     <string name="title_activity_about">About</string>
     <string name="string_view">View</string>
     <string name="string_file_operation_failed">File operation during export failed.</string>
-    <string name="string_parse_integer_exception">Please use integer numbers only for defining the x and y ranges.</string>
+    <string name="string_parse_integer_exception">See the help for valid values for the x and y ranges.</string>
     <string name="string_html_page_language_id">en</string>
     <string name="string_too_many_points">Please limit the value ranges to a maximum of 100 points.</string>
     <string name="title_activity_intro">First Steps</string>
