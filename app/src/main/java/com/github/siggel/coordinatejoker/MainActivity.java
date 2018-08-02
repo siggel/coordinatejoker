@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        this.finish();
+// We want to come back!        this.finish();
     }
 
     /**
