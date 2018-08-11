@@ -58,7 +58,7 @@
     <string name="string_intro_button_skip">Überspringen</string>
     <string name="htmlstring_intro_have_locus"><![CDATA[Coordinate Joker ist aktuell für die Verwendung von Locus Map konfiguriert.<br><br>Zeit für eine kleine Einführung …]]></string>
     <string name="htmlstring_intro_no_locus"><![CDATA[Da Coordinate Joker aktuell nicht für die Verwendung von Locus Map konfiguriert ist, wird hier beispielhaft die Verwendung von c:geo beschrieben. Die Experteneinstellungen ermöglichen weitere Szenarios.<br><br>Zeit für eine kleine Einführung …]]></string>
-    <string name="htmlstring_intro_enter_formulas_and_view">Gib auf dem Hauptbildschirm die Formeln ein (mit x als unbekannte Variable). Wähle anschließend den x-Bereich aus, der ausprobiert werden soll und drücke \'Ansehen\', um die Punkte darzustellen zu lassen.</string>
+    <string name="htmlstring_intro_enter_formulas_and_view">Gib auf dem Hauptbildschirm die Formeln ein (mit x als unbekannte Variable). Wähle anschließend den x-Bereich aus, der ausprobiert werden soll und drücke \'Ansehen\', um die Punkte darstellen zu lassen.</string>
     <string name="string_intro_button_ok">OK</string>
     <string name="htmlstring_intro_select_app_for_send_gpx">Wenn Coordinate Joker für die Verwendung von c:geo konfiguriert ist, dies aber nicht gefunden wird, muss eine alternative App manuell aus den Vorschlägen von Android ausgewählt werden.</string>
     <string name="htmlstring_intro_locus_import">Locus wird fragen, wohin die Punkte importiert werden sollen. Es empfiehlt sich, ein eigenes Verzeichnis \'joker\' anzulegen, um die Punkte später schneller gesammelt ausblenden oder löschen zu können.</string>
