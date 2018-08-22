@@ -156,18 +156,28 @@ class Calculator {
 
     private static DecimalFormat df = new DecimalFormat("0.##");
 
+    /**
+     * Evaluates a 'geocaching-mathematical' formula
+     * @param formula
+     * @param x
+     * @param y
+     * @return
+     */
     public static double evaluate(String formula, Integer x, Integer y) {
         // Check if there are any parenthesis. If so then evaluate it first and
         // replace it with the value.
         formula = formula.replace(" ", "");
-        int openIndex = formula.indexOf('(');
+        int openIndex = findOpeningParenthesis(formula);
         int closeIndex = findCosingParenthesis(formula, openIndex);
         while (openIndex != -1 && closeIndex != -1 && openIndex < closeIndex) {
+            // Evaluate the expression within the parenthesis and replace the
+            // parenthesis-expression with the result. Repeat this until
+            // there are no more parenthesis.
             String subFormula = formula.substring(openIndex + 1, closeIndex);
             double value = evaluate(subFormula, x, y);
             String replacement = df.format(value);
             formula = formula.substring(0, openIndex) + replacement + formula.substring(closeIndex + 1);
-            openIndex = formula.indexOf('(');
+            openIndex = findOpeningParenthesis(formula);
             closeIndex = findCosingParenthesis(formula, openIndex);
         }
 
@@ -186,7 +196,39 @@ class Calculator {
                 .evaluate();
     }
 
+    private static int findOpeningParenthesis(final String text) {
+        return findOpeningParenthesis(text, 0);
+    }
+
+    private static int findOpeningParenthesis(final String text, int startIndex) {
+        int index = text.indexOf('(', startIndex);
+        if (index == -1) {
+            return -1;
+        }
+
+        // Do not use the parenthesis if it is preceeded by a character a-w
+        // Most likely this parenthesis is used for a function call.
+        if (index > 0) {
+            char charBefore = text.charAt(index - 1);
+            if (charBefore >= 'a' && charBefore <= 'w') {
+                return findOpeningParenthesis(text, index + 1);
+            }
+        }
+        return index;
+    }
+
+    /**
+     * Search the matching closing parenthesis given a text and the position of the
+     * opening parenthesis.
+     * @param text The text
+     * @param indexOfOpenParenthesis The index of the opeing parenthesis
+     * @return The index within text of the matching closing parenthesis or -1 if there is
+     * no such closing parenthesis.
+     */
     private static int findCosingParenthesis(final String text, final int indexOfOpenParenthesis) {
+        if (indexOfOpenParenthesis == -1) {
+            return -1;
+        }
         int index = indexOfOpenParenthesis + 1;
         int numberOpens = 1;
         while (index < text.length() && numberOpens > 0) {
