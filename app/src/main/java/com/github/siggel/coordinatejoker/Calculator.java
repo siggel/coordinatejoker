@@ -95,7 +95,7 @@ class Calculator {
                     // first evaluate north and east coordinate
                     double degrees = evaluate(degreesNorth, x, y);
                     double minutes = evaluate(minutesNorth, x, y);
-                    if (invalidLatitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                    if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
                         // skip invalid waypoints
                         continue;
                     }
@@ -104,7 +104,7 @@ class Calculator {
 
                     degrees = evaluate(degreesEast, x, y);
                     minutes = evaluate(minutesEast, x, y);
-                    if (invalidLongitudeDegrees(degrees) || invalidMinutes(minutes)) {
+                    if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
                         // skip invalid waypoints
                         continue;
                     }
@@ -249,7 +249,7 @@ class Calculator {
      * @param minutes latitude or longitude minutes
      * @return true if minutes are outside range 0 <= minutes < 60
      */
-    private boolean invalidMinutes(double minutes) {
+    private boolean checkInvalidMinutes(double minutes) {
         return minutes < 0 || minutes >= 60.0;
     }
 
@@ -259,7 +259,7 @@ class Calculator {
      * @param degrees latitude degrees
      * @return true if degrees are outside range 0 <= minutes < 90
      */
-    private boolean invalidLatitudeDegrees(double degrees) {
+    private boolean checkInvalidLatitudeDegrees(double degrees) {
         return degrees < 0 || degrees >= 90.0;
     }
 
@@ -269,7 +269,7 @@ class Calculator {
      * @param degrees longitude degrees
      * @return true if degrees are outside range 0 <= minutes < 90
      */
-    private boolean invalidLongitudeDegrees(double degrees) {
+    private boolean checkInvalidLongitudeDegrees(double degrees) {
         return degrees < 0 || degrees >= 180.0;
     }
 }
