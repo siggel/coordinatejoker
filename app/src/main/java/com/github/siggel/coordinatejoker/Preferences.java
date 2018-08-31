@@ -70,10 +70,18 @@ class Preferences {
                 sharedPref.getBoolean(context.getString(R.string.key_is_feet), false));
         mainModel.setAzimuth(
                 sharedPref.getString(context.getString(R.string.key_azimuth), "0"));
-        mainModel.setXFrom(
-                Integer.parseInt(sharedPref.getString(context.getString(R.string.key_x_from), "0")));
-        mainModel.setXTo(
-                Integer.parseInt(sharedPref.getString(context.getString(R.string.key_x_to), "9")));
+        try {
+            mainModel.setXText(
+                    sharedPref.getString(context.getString(R.string.key_x_values), "0-9"));
+        } catch (Exception e) {
+            // Ignore
+        }
+        try {
+        mainModel.setYText(
+                sharedPref.getString(context.getString(R.string.key_y_values), ""));
+        } catch (Exception e) {
+            // Ignore
+        }
         return mainModel;
     }
 
@@ -94,8 +102,8 @@ class Preferences {
         editor.putString(context.getString(R.string.key_distance), mainModel.getDistance());
         editor.putBoolean(context.getString(R.string.key_is_feet), mainModel.getFeet());
         editor.putString(context.getString(R.string.key_azimuth), mainModel.getAzimuth());
-        editor.putString(context.getString(R.string.key_x_from), mainModel.getXFrom().toString());
-        editor.putString(context.getString(R.string.key_x_to), mainModel.getXTo().toString());
+        editor.putString(context.getString(R.string.key_x_values), mainModel.getXText());
+        editor.putString(context.getString(R.string.key_y_values), mainModel.getYText());
         editor.apply();
     }
 

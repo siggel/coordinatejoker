@@ -19,6 +19,8 @@
 
 package com.github.siggel.coordinatejoker;
 
+import java.util.List;
+
 /**
  * class containing formulas of the main gui
  */
@@ -33,8 +35,8 @@ class MainModel {
     private String distance; // in meter or feet
     private Boolean isFeet; // distance given in feet instead of meter
     private String azimuth; // in degrees
-    private Integer xFrom; // string representation of variable x start value
-    private Integer xTo; // string representation of variable x end value
+    private IntegerRange xValues = new IntegerRange(); // the x values
+    private IntegerRange yValues = new IntegerRange(); // the y values
 
     /**
      * constructor
@@ -56,8 +58,8 @@ class MainModel {
         distance = "0";
         isFeet = false;
         azimuth = "0";
-        xFrom = 0;
-        xTo = 9;
+        xValues.setText("0-9");
+        yValues.setText("");
     }
 
     /**
@@ -66,15 +68,15 @@ class MainModel {
     void setExampleValues() {
         isNorth = true;
         degreesNorth = "53";
-        minutesNorth = "11.660";
+        minutesNorth = "11.6y6";
         isEast = true;
         degreesEast = "10";
         minutesEast = "(23400+20*x)/1000";
         distance = "100";
         isFeet = false;
         azimuth = "20*x";
-        xFrom = 0;
-        xTo = 9;
+        xValues.setText("2,4,5,6");
+        yValues.setText("0-9@2");
     }
 
 
@@ -151,19 +153,28 @@ class MainModel {
         this.azimuth = azimuth;
     }
 
-    Integer getXFrom() {
-        return xFrom;
+    public List<Integer> getXValues() {
+        return xValues.getValues();
     }
 
-    void setXFrom(Integer xFrom) {
-        this.xFrom = xFrom;
+    public List<Integer> getYValues() {
+        return yValues.getValues();
     }
 
-    Integer getXTo() {
-        return xTo;
+    public void setXText(String text) {
+        xValues.setText(text);
     }
 
-    void setXTo(Integer xTo) {
-        this.xTo = xTo;
+    public String getXText() {
+        return xValues.getText();
     }
+
+    public void setYText(String text) {
+        yValues.setText(text);
+    }
+
+    public String getYText() {
+        return yValues.getText();
+    }
+
 }

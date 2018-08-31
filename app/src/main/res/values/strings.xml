@@ -35,12 +35,12 @@
         <item>"m"</item>
     </string-array>
     <string name="string_send">Send</string>
-    <string name="string_x_from">Vary x from </string>
-    <string name="string_xto"> to </string>
+    <string name="string_x_values">x values: </string>
+    <string name="string_y_values">y values: </string>
     <string name="string_projection">Leave distance zero if you don\'t need a projection.</string>
     <string name="string_distance">Distance: </string>
     <string name="string_azimuth">Azimuth: </string>
-    <string name="string_intro">Enter the coordinate formulas below using x as variable. If things get more complicated than \"12.3x5\", please take a look into the help.</string>
+    <string name="string_intro">Enter the coordinate formulas below using x and y as variables. If things get more complicated than \"12.3x5\", please take a look into the help.</string>
     <string name="string_reset">Reset</string>
     <string name="string_formula_error">Could not solve formulas. Please check them for errors.</string>
     <string name="string_gpx_export_failed">Saving gpx failed.</string>
@@ -49,22 +49,22 @@
     <string name="string_exporter_missing">No implementation found for export to </string>
     <string name="string_sending_intent_failed">Failed sending the waypoints to another app for displaying them.</string>
     <string name="string_empty_waypoints">Sorry, the calculation did not result in any valid coordinates.</string>
-    <string name="string_some_invalid_waypoints">Some x that did not result in valid coordinates have been omitted.</string>
+    <string name="string_some_invalid_waypoints">Some x or y that did not result in valid coordinates have been omitted.</string>
     <string name="title_activity_terms_of_service">Terms of Service</string>
     <string name="title_activity_privacy_policy">Privacy Policy</string>
     <string name="title_activity_about">About</string>
     <string name="string_view">View</string>
     <string name="string_file_operation_failed">File operation during export failed.</string>
-    <string name="string_parse_integer_exception">Please use integer numbers only for defining the x range.</string>
+    <string name="string_parse_integer_exception">See the help for valid values for the x and y ranges.</string>
     <string name="string_html_page_language_id">en</string>
-    <string name="string_too_many_points">Please limit the value range to a maximum of 100 points.</string>
+    <string name="string_too_many_points">Please limit the value ranges to a maximum of 100 points.</string>
     <string name="title_activity_intro">First Steps</string>
     <string name="string_intro_button_next" tools:ignore="MissingTranslation"><![CDATA[>]]></string>
     <string name="string_intro_button_skip">Skip</string>
     <string name="htmlstring_intro_have_locus"><![CDATA[Currently Coordinate Joker is configured for use with Locus Map.<br><br>Time for a short intro …]]></string>
     <string name="htmlstring_intro_no_locus"><![CDATA[Currently Coordinate Joker is not configured for use with Locus Map, so we describe use with c:geo as another app example. Expert settings offer a variety of further scenarios.<br><br>Time for a short intro …]]></string>
     <string name="string_intro_button_previous" tools:ignore="MissingTranslation"><![CDATA[<]]></string>
-    <string name="htmlstring_intro_enter_formulas_and_view">On the main screen enter the coordinate formulas with x being the unknown variable. Select which x values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
+    <string name="htmlstring_intro_enter_formulas_and_view">On the main screen enter the coordinate formulas with x and y being the unknown variables. Select which x and y values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
     <string name="string_intro_button_ok">OK</string>
     <string name="htmlstring_intro_select_app_for_send_gpx">If Coordinate Joker is configured for use with c:geo but does not find it, you will need to select an alternative app manually when Android asks you.</string>
     <string name="htmlstring_intro_locus_import">Locus will ask you where to import the waypoints. Best create an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
