@@ -36,13 +36,11 @@ class Calculator {
      * constant for meter to feet conversion
      */
     final private static double meterPerFeet = 0.3048;
-
+    private static DecimalFormat df = new DecimalFormat("0.##");
     /**
      * the formula mainModel
      */
     private final MainModel mainModel;
-
-
     /**
      * the app's main context (for accessing resource strings)
      */
@@ -60,108 +58,12 @@ class Calculator {
     }
 
     /**
-     * method for calculating coordinates from the formulas given in the mainModel
-     *
-     * @return list of calculated waypoints
-     */
-    List<Point> solve() {
-
-        try {
-            // initialize return list
-            List<Point> list = new ArrayList<>();
-
-            List<Integer> xValues = mainModel.getXValues();
-            if (xValues.size() == 0) {
-                xValues = new ArrayList<>(1);
-                xValues.add(0);
-            }
-            List<Integer> yValues = mainModel.getYValues();
-            if (yValues.size() == 0) {
-                yValues = new ArrayList<>(1);
-                yValues.add(0);
-            }
-
-            for (int x : xValues) {
-                for (int y : yValues) {
-
-                    // get formulas from mainModel
-                    String degreesNorth = mainModel.getDegreesNorth();
-                    String degreesEast = mainModel.getDegreesEast();
-                    String minutesNorth = mainModel.getMinutesNorth();
-                    String minutesEast = mainModel.getMinutesEast();
-                    String distance = mainModel.getDistance();
-                    String azimuth = mainModel.getAzimuth();
-
-                    // first evaluate north and east coordinate
-                    double degrees = evaluate(degreesNorth, x, y);
-                    double minutes = evaluate(minutesNorth, x, y);
-                    if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
-                        // skip invalid waypoints
-                        continue;
-                    }
-                    double coordinateNorth =
-                            (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                    degrees = evaluate(degreesEast, x, y);
-                    minutes = evaluate(minutesEast, x, y);
-                    if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
-                        // skip invalid waypoints
-                        continue;
-                    }
-                    double coordinateEast =
-                            (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                    // calculate projection delta
-                    double deltaDistance = evaluate(distance, x, y);
-                    if (mainModel.getFeet())
-                        deltaDistance *= meterPerFeet;
-
-                    double deltaAzimuth = evaluate(azimuth, x, y);
-                    double deltaCoordinateNorth =
-                            Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
-                    double deltaCoordinateEast =
-                            Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
-                                    / Math.cos(Math.toRadians(coordinateNorth));
-
-                    // add projection delta to coordinate
-                    coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
-                    coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
-
-                    StringBuilder name = new StringBuilder();
-                    if (mainModel.getXValues().size() > 0) {
-                        name.append("x=").append(x);
-                    }
-                    if (mainModel.getYValues().size() > 0) {
-                        if (name.length() > 0) {
-                            name.append(", ");
-                        }
-                        name.append("y=").append(y);
-                    }
-
-                    // add waypoint to list
-                    Point point = new Point(
-                            name.toString(),
-                            coordinateNorth,
-                            coordinateEast);
-                    list.add(point);
-                }
-            }
-
-            return list;
-
-        } catch (Exception e) { // also catches RuntimeException
-            throw new CalculatorException(context.getString(R.string.string_formula_error));
-        }
-    }
-
-    private static DecimalFormat df = new DecimalFormat("0.##");
-
-    /**
      * Evaluates a 'geocaching-mathematical' formula
-     * @param formula
-     * @param x
-     * @param y
-     * @return
+     *
+     * @param formula   the coordinate formula
+     * @param x         value to enter for x
+     * @param y         value to enter for y
+     * @return calcluated result
      */
     public static double evaluate(String formula, Integer x, Integer y) {
         // Check if there are any parenthesis. If so then evaluate it first and
@@ -220,7 +122,8 @@ class Calculator {
     /**
      * Search the matching closing parenthesis given a text and the position of the
      * opening parenthesis.
-     * @param text The text
+     *
+     * @param text                   The text
      * @param indexOfOpenParenthesis The index of the opeing parenthesis
      * @return The index within text of the matching closing parenthesis or -1 if there is
      * no such closing parenthesis.
@@ -240,7 +143,102 @@ class Calculator {
             }
             index++;
         }
-        return numberOpens == 0 ? index - 1: -1;
+        return numberOpens == 0 ? index - 1 : -1;
+    }
+
+    /**
+     * method for calculating coordinates from the formulas given in the mainModel
+     *
+     * @return list of calculated waypoints
+     */
+    List<Point> solve() {
+
+        try {
+            // initialize return list
+            List<Point> list = new ArrayList<>();
+
+            List<Integer> xValues = IntegerRange.getValues(mainModel.getXRange());
+            if (xValues.size() == 0) {
+                xValues = new ArrayList<>(1);
+                xValues.add(0);
+            }
+            List<Integer> yValues = IntegerRange.getValues(mainModel.getYRange());
+            if (yValues.size() == 0) {
+                yValues = new ArrayList<>(1);
+                yValues.add(0);
+            }
+
+            for (int x : xValues) {
+                for (int y : yValues) {
+
+                    // get formulas from mainModel
+                    String degreesNorth = mainModel.getDegreesNorth();
+                    String degreesEast = mainModel.getDegreesEast();
+                    String minutesNorth = mainModel.getMinutesNorth();
+                    String minutesEast = mainModel.getMinutesEast();
+                    String distance = mainModel.getDistance();
+                    String azimuth = mainModel.getAzimuth();
+
+                    // first evaluate north and east coordinate
+                    double degrees = evaluate(degreesNorth, x, y);
+                    double minutes = evaluate(minutesNorth, x, y);
+                    if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
+                        // skip invalid waypoints
+                        continue;
+                    }
+                    double coordinateNorth =
+                            (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                    degrees = evaluate(degreesEast, x, y);
+                    minutes = evaluate(minutesEast, x, y);
+                    if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
+                        // skip invalid waypoints
+                        continue;
+                    }
+                    double coordinateEast =
+                            (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                    // calculate projection delta
+                    double deltaDistance = evaluate(distance, x, y);
+                    if (mainModel.getFeet())
+                        deltaDistance *= meterPerFeet;
+
+                    double deltaAzimuth = evaluate(azimuth, x, y);
+                    double deltaCoordinateNorth =
+                            Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
+                    double deltaCoordinateEast =
+                            Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
+                                    / Math.cos(Math.toRadians(coordinateNorth));
+
+                    // add projection delta to coordinate
+                    coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
+                    coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
+
+                    StringBuilder name = new StringBuilder();
+                    if (IntegerRange.getValues(mainModel.getXRange()).size() > 0) {
+                        name.append("x=").append(x);
+                    }
+                    if (IntegerRange.getValues(mainModel.getYRange()).size() > 0) {
+                        if (name.length() > 0) {
+                            name.append(", ");
+                        }
+                        name.append("y=").append(y);
+                    }
+
+                    // add waypoint to list
+                    Point point = new Point(
+                            name.toString(),
+                            coordinateNorth,
+                            coordinateEast);
+                    list.add(point);
+                }
+            }
+
+            return list;
+
+        } catch (Exception e) { // also catches RuntimeException
+            throw new CalculatorException(context.getString(R.string.string_formula_error));
+        }
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by bubendorf <markus@bubendorf.ch>
+ * Copyright (c) 2018 by siggel <siggel-apps@gmx.de>
  *
  *     This file is part of Coordinate Joker.
  *
@@ -28,10 +28,10 @@ import java.util.Set;
 /**
  * Provides a List<Integer> based on some input text.<br/>
  * The input text may look like "1,3,5,6", "1-5,7", "2-5,7-12,33-42"
- * or "1-99/2".
+ * or "1-99#2".
  * The resulting list of integers is ordered in ascending order.
  */
-public class IntegerRange {
+class IntegerRange {
 
     // Regex used to split the input text in parts.
     private static final String SPLIT_REGEX = ",";
@@ -40,21 +40,10 @@ public class IntegerRange {
     private static final char FROM_TO_CHAR = '-';
 
     // Character used to separate the step size
-    private static final char STEP_CHAR = '/';
+    private static final char STEP_CHAR = '#';
 
-    private List<Integer> values;
-    private String text;
-
-    public IntegerRange() {
-        values = Collections.emptyList();
-    }
-
-    public IntegerRange(String text) {
-        setText(text);
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    static List<Integer> getValues(String text) {
+        text = text.trim(); // avoid string containing just blanks
         Set<Integer> numbers = new HashSet<>();
         if (text.length() > 0) {
             String[] splits = text.split(SPLIT_REGEX);
@@ -92,15 +81,8 @@ public class IntegerRange {
             }
         }
 
-        values = new ArrayList<>(numbers);
+        List<Integer> values = new ArrayList<>(numbers);
         Collections.sort(values);
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public List<Integer> getValues() {
         return values;
     }
 }

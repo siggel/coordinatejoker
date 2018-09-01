@@ -199,8 +199,8 @@ public class MainActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.distanceFormula)).setText(mainModel.getDistance());
         ((Spinner) findViewById(R.id.spinnerUnits)).setSelection(mainModel.getFeet() ? 0 : 1);
         ((EditText) findViewById(R.id.azimuthFormula)).setText(mainModel.getAzimuth());
-        ((EditText) findViewById(R.id.xValues)).setText(mainModel.getXText());
-        ((EditText) findViewById(R.id.yValues)).setText(mainModel.getYText());
+        ((EditText) findViewById(R.id.xValues)).setText(mainModel.getXRange());
+        ((EditText) findViewById(R.id.yValues)).setText(mainModel.getYRange());
     }
 
     /**
@@ -227,12 +227,10 @@ public class MainActivity extends AppCompatActivity {
                 ((Spinner) findViewById(R.id.spinnerUnits)).getSelectedItemPosition() == 0);
         mainModel.setAzimuth(
                 ((EditText) findViewById(R.id.azimuthFormula)).getText().toString());
-        try {
-            mainModel.setXText(((EditText)findViewById(R.id.xValues)).getText().toString());
-            mainModel.setYText(((EditText)findViewById(R.id.yValues)).getText().toString());
-        } catch (Exception e) {
-            throw new ParseException(getString(R.string.string_parse_integer_exception));
-        }
+        mainModel.setXRange(
+                ((EditText) findViewById(R.id.xValues)).getText().toString());
+        mainModel.setYRange(
+                ((EditText) findViewById(R.id.yValues)).getText().toString());
     }
 
     /**
@@ -254,8 +252,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             fillModelFromGui();
 
-            Integer requestedNumberOfPoints = Math.max(1, mainModel.getXValues().size()) *
-                    Math.max(1, mainModel.getYValues().size());
+            final Integer requestedNumberOfPoints = Math.max(1,
+                    IntegerRange.getValues(mainModel.getXRange()).size())
+                    * Math.max(1,
+                    IntegerRange.getValues(mainModel.getYRange()).size());
 
             // keep number of generated points in a reasonable range
             if (requestedNumberOfPoints > 100) {
@@ -291,6 +291,8 @@ public class MainActivity extends AppCompatActivity {
                 exportSettings = new ExportSettings(app);
             }
 
+            store();
+
             // export
             Exporter exporter = ExporterFactory.getExporter(this, exportSettings);
             exporter.export(waypoints);
@@ -299,10 +301,7 @@ public class MainActivity extends AppCompatActivity {
             // we should be prepared to get CalculatorException, ExporterException or ParseException
             // here, this would be an error resulting in no solution
             showError(e.getMessage());
-            return;
         }
-
-// We want to come back!        this.finish();
     }
 
     /**

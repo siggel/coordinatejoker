@@ -316,6 +316,7 @@
                     android:layout_gravity="fill_horizontal|center_vertical"
                     android:inputType="text|number"
                     android:minEms="6"
+                    android:nextFocusDown="@id/mainTextViewIntro"
                     android:text=""
                     android:textAlignment="textStart"
                     android:textSize="18sp"

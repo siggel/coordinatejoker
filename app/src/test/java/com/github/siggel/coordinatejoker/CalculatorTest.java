@@ -27,55 +27,61 @@ public class CalculatorTest {
 
     @Test
     public void simple() {
-        assertEquals(30.0,Calculator.evaluate("x+y", 10, 20));
+        assertEquals(30.0, Calculator.evaluate("x+y", 10, 20));
     }
 
     @Test
     public void aLittleMoreComplex() {
-        assertEquals(105.0,Calculator.evaluate("10*x + y/4", 10, 20));
+        assertEquals(105.0, Calculator.evaluate("10*x + y/4", 10, 20));
     }
 
     @Test
     public void oneParenthesis() {
-        assertEquals(30.0,Calculator.evaluate("(x + y)", 10, 20));
+        assertEquals(30.0, Calculator.evaluate("(x + y)", 10, 20));
     }
 
     @Test
     public void substitutionParenthesis() {
-        assertEquals(344.0,Calculator.evaluate("x(y/5)4", 3, 20));
+        assertEquals(344.0, Calculator.evaluate("x(y/5)4", 3, 20));
     }
 
     @Test
-    public void multipleParenthesis() {
-        assertEquals(324.0,Calculator.evaluate("(x+y)(x+x)(y+y)", 1, 2));
+    public void multipleParentheses() {
+        assertEquals(324.0, Calculator.evaluate("(x+y)(x+x)(y+y)", 1, 2));
     }
 
     @Test
-    public void multipleParenthesisWithProduct() {
-        assertEquals(24.0,Calculator.evaluate("(x+y)*(x+x)*(y+y)", 1, 2));
+    public void multipleParenthesesWithProduct() {
+        assertEquals(24.0, Calculator.evaluate("(x+y)*(x+x)*(y+y)", 1, 2));
     }
 
     @Test
-    public void nestedParenthesis() {
-        assertEquals(42.0,Calculator.evaluate("(x+(x+y)) (x+x)", 1, 2));
-        assertEquals(42.0,Calculator.evaluate("(x+(x+y))(x+x)", 1, 2));
+    public void nestedParentheses() {
+        assertEquals(42.0, Calculator.evaluate("(x+(x+y)) (x+x)", 1, 2));
+        assertEquals(42.0, Calculator.evaluate("(x+(x+y))(x+x)", 1, 2));
+    }
+
+    @Test
+    public void twoParenthesesGivingThreeDigits() {
+        assertEquals(101.0, Calculator.evaluate("(10*x) (x)", 1, 0));
+        assertEquals(101.0, Calculator.evaluate("(10*x)(x)", 1, 0));
     }
 
     @Test
     public void buildInFunction() {
-        assertEquals(12.0,Calculator.evaluate("abs(-12)", 0, 0));
-        assertEquals(12.0,Calculator.evaluate("abs(x)", -12, 0));
-        assertEquals(11.0,Calculator.evaluate("abs(x+1)", -12, 0));
-        assertEquals(10.0,Calculator.evaluate("abs(y(x+1))", -12, 1));
+        assertEquals(12.0, Calculator.evaluate("abs(-12)", 0, 0));
+        assertEquals(12.0, Calculator.evaluate("abs(x)", -12, 0));
+        assertEquals(11.0, Calculator.evaluate("abs(x+1)", -12, 0));
+        assertEquals(10.0, Calculator.evaluate("abs(y(x+1))", -12, 1));
     }
 
     @Test
     public void allTogether() {
-        assertEquals(45.0,Calculator.evaluate("(y-1) abs(-x)+1 x", 5, 7));
-        assertEquals(45.0,Calculator.evaluate("(y-1)abs(-x)+1x", 5, 7));
+        assertEquals(45.0, Calculator.evaluate("(y-1) abs(-x)+1 x", 5, 7));
+        assertEquals(45.0, Calculator.evaluate("(y-1)abs(-x)+1x", 5, 7));
 
-        assertEquals(665.0,Calculator.evaluate("(y-1) (abs(-x)+1) (x)", 5, 7));
-        assertEquals(665.0,Calculator.evaluate("(y-1)(abs(-x)+1)(x)", 5, 7));
+        assertEquals(665.0, Calculator.evaluate("(y-1) (abs(-x)+1) (x)", 5, 7));
+        assertEquals(665.0, Calculator.evaluate("(y-1)(abs(-x)+1)(x)", 5, 7));
     }
 
     @Test(expected = IllegalArgumentException.class)
