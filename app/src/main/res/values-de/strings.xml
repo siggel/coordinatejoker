@@ -31,12 +31,12 @@
         <item>"W"</item>
     </string-array>
     <string name="string_send">Senden</string>
-    <string name="string_x_values">x Werte: </string>
-    <string name="string_y_values">y Werte: </string>
+    <string name="string_x_values">x-Werte: </string>
+    <string name="string_y_values">y-Werte: </string>
     <string name="string_projection">Nutze Distanz "0", um keine Projektion durchzuführen.</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro">Gib hier die Formeln ein und verwende dabei x und y als Variablen. Wenn die Formel komplizierter wird als \"12.3x5\", wirf einen Blick in die Hilfe.</string>
+    <string name="string_intro">Gib hier die Formeln ein mit x, y als Variablen, z.B. \"12.(3+x)yx\". Wertebereiche gib bitte wie folgt ein: \"1-5#2,9\", mit \"#2\" für Schrittweite 2.</string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
@@ -48,6 +48,7 @@
     <string name="string_some_invalid_waypoints">Nicht alle Berechnungen ergaben gültige Koordinaten.</string>
     <string name="title_activity_terms_of_service">Nutzungsbedingungen</string>
     <string name="title_activity_privacy_policy">Datenschutzerklärung</string>
+    <string name="title_activity_acknowledgements">Danksagung</string>
     <string name="title_activity_about">Über</string>
     <string name="string_view">Ansehen</string>
     <string name="string_file_operation_failed">Dateioperation beim Export fehlgeschlagen.</string>

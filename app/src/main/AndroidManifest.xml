@@ -60,6 +60,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AboutActivity" />
         </activity>
+        <!-- acknowledgements activity -->
+        <activity
+            android:name=".AcknowledgementsActivity"
+            android:label="@string/title_activity_acknowledgements"
+            android:parentActivityName=".AboutActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AboutActivity" />
+        </activity>
         <!-- open source license activity -->
         <activity
             android:name=".OpenSourceLicensesActivity"

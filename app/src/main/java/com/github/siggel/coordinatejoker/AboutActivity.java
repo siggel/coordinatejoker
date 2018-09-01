@@ -71,6 +71,7 @@ public class AboutActivity extends AppCompatActivity {
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
         setRightDrawableOfTextView(R.id.showTermsOfService, R.drawable.arrow_right_icon);
         setRightDrawableOfTextView(R.id.showPrivacyPolicy, R.drawable.arrow_right_icon);
+        setRightDrawableOfTextView(R.id.showAcknowledgements, R.drawable.arrow_right_icon);
         setRightDrawableOfTextView(R.id.showOpenSourceLicenses, R.drawable.arrow_right_icon);
 
     }
@@ -158,5 +159,9 @@ public class AboutActivity extends AppCompatActivity {
      */
     public void openOpenSourceLicenses(@SuppressWarnings("unused") View view) {
         startActivity(new Intent(this, OpenSourceLicensesActivity.class));
+    }
+
+    public void openAcknowledgements(View view) {
+        startActivity(new Intent(this, AcknowledgementsActivity.class));
     }
 }
