@@ -68,7 +68,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void buildInFunction() {
+    public void builtInFunction() {
         assertEquals(12.0, Calculator.evaluate("abs(-12)", 0, 0));
         assertEquals(12.0, Calculator.evaluate("abs(x)", -12, 0));
         assertEquals(11.0, Calculator.evaluate("abs(x+1)", -12, 0));
