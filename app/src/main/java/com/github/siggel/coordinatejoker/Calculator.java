@@ -63,7 +63,7 @@ class Calculator {
      * @param formula the coordinate formula
      * @param x       value to enter for x
      * @param y       value to enter for y
-     * @return calcluated result
+     * @return calculated result
      */
     static double evaluate(String formula, Integer x, Integer y) {
         // Check if there are any parenthesis. If so then evaluate it first and
@@ -108,7 +108,7 @@ class Calculator {
             return -1;
         }
 
-        // Do not use the parenthesis if it is preceeded by a character a-w
+        // Do not use the parenthesis if it is preceded by a character a-w
         // Most likely this parenthesis is used for a function call.
         if (index > 0) {
             char charBefore = text.charAt(index - 1);
@@ -124,7 +124,7 @@ class Calculator {
      * opening parenthesis.
      *
      * @param text                   The text
-     * @param indexOfOpenParenthesis The index of the opeing parenthesis
+     * @param indexOfOpenParenthesis The index of the opening parenthesis
      * @return The index within text of the matching closing parenthesis or -1 if there is
      * no such closing parenthesis.
      */

@@ -66,15 +66,15 @@ class MainModel {
     void setExampleValues() {
         isNorth = true;
         degreesNorth = "53";
-        minutesNorth = "11.6y6";
+        minutesNorth = "11.6(x-3)6";
         isEast = true;
         degreesEast = "10";
-        minutesEast = "(23400+20*x)/1000";
-        distance = "100";
+        minutesEast = "23.456";
+        distance = "100+10*x";
         isFeet = false;
-        azimuth = "20*x";
-        xRange = "2,4,5,6";
-        yRange = "0-9#2";
+        azimuth = "55*y";
+        xRange = "3-9#3";
+        yRange = "0-2,9";
     }
 
 

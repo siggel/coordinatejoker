@@ -70,4 +70,6 @@
     <string name="string_parse_error_from_bigger_than_to">\'Von\' muss kleiner als \'bis\' sein bei der Wertebereich-Definition.</string>
     <string name="string_parse_error_negative_step_size">Negative Schrittweiten sind in der Wertebereich-Definition nicht erlaubt.</string>
     <string name="string_parse_error_non_integer">Die Syntax der Wertebereich-Definition ist falsch, bitte nutze die Hilfe.</string>
+    <string name="title_activity_change_history">Änderungshistorie</string>
+    <string name="htmlstring_no_change_history_found">Keine Änderungshistorie gefunden.</string>
 </resources>

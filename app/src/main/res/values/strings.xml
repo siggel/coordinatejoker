@@ -76,4 +76,6 @@
     <string name="string_parse_error_from_bigger_than_to">\'From\' must be smaller than \'to\' in the value range definition.</string>
     <string name="string_parse_error_negative_step_size">Negative step sizes are not supported in the value range definition.</string>
     <string name="string_parse_error_non_integer">The value range definition uses incorrect syntax, please consult the help.</string>
+    <string name="title_activity_change_history">Change history</string>
+    <string name="htmlstring_no_change_history_found">No change history found.</string>
 </resources>

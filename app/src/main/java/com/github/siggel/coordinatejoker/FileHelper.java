@@ -54,7 +54,7 @@ final class FileHelper {
      * helper function for writing content to file, also available for derived classes
      *
      * @param file    file to write to
-     * @param content inputstream content to be written to file
+     * @param content input stream content to be written to file
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
     static void writeContentToFile(@NonNull File file,
@@ -103,4 +103,18 @@ final class FileHelper {
         destination.close();
     }
 
+    static String readContentFromInputStream(InputStream input) {
+        String result = "";
+        try {
+            int size = input.available();
+            byte[] buffer = new byte[size];
+            //noinspection ResultOfMethodCallIgnored
+            input.read(buffer);
+            result = new String(buffer);
+            input.close();
+        } catch (IOException e) {
+            // ignore, just keep result as is
+        }
+        return result;
+    }
 }

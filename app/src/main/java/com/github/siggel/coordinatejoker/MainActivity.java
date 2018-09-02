@@ -117,7 +117,10 @@ public class MainActivity extends AppCompatActivity {
         } else if (currentVersion > previousVersion) {
             rememberVersion();
 
-            // we may display change notes here later
+            // display change notes
+            Intent intent = new Intent(this, ChangeHistoryActivity.class);
+            intent.putExtra("previousVersion", previousVersion);
+            startActivity(intent);
         }
     }
 
@@ -332,6 +335,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_intro:
                 startActivity(new Intent(this, IntroActivity.class));
+                break;
+            case R.id.action_change_history:
+                // intent without extra previousVersion, i.e. from the beginning
+                startActivity(new Intent(this, ChangeHistoryActivity.class));
                 break;
             case R.id.action_help:
                 startActivity(new Intent(this, HelpActivity.class));
