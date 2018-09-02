@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2018 by siggel <siggel-apps@gmx.de>
- *  
+ * Copyright (c) 2018 by bubendorf <markus@bubendorf.ch> and siggel <siggel-apps@gmx.de>
+ *
  *     This file is part of Coordinate Joker.
  *
  *     Coordinate Joker is free software: you can redistribute it and/or modify
