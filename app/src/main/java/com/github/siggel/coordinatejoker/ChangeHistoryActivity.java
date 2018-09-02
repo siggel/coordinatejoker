@@ -86,7 +86,7 @@ public class ChangeHistoryActivity extends VersatileWebViewActivity {
         // footer
         html.append("</body></html>");
 
-        webView.loadData(html.toString(), "text/html", "utf-8");
+        webView.loadDataWithBaseURL("file:///android_asset/", html.toString(), "text/html", "utf-8", null);
     }
 
 }
