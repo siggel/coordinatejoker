@@ -174,13 +174,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void store() {
         final Preferences preferences = new Preferences(this);
-        try {
-            fillModelFromGui();
-        } catch (Exception e) {
-            // we should be prepared to get a ParseException here, this would be a warning, just
-            // some values won't be modified but we should store the others
-            showWarning(e.getMessage());
-        }
+        fillModelFromGui();
         preferences.saveFormulas(mainModel);
     }
 
@@ -253,9 +247,9 @@ public class MainActivity extends AppCompatActivity {
             fillModelFromGui();
 
             final Integer requestedNumberOfPoints = Math.max(1,
-                    IntegerRange.getValues(mainModel.getXRange()).size())
+                    IntegerRange.getValues(this, mainModel.getXRange()).size())
                     * Math.max(1,
-                    IntegerRange.getValues(mainModel.getYRange()).size());
+                    IntegerRange.getValues(this, mainModel.getYRange()).size());
 
             // keep number of generated points in a reasonable range
             if (requestedNumberOfPoints > 100) {

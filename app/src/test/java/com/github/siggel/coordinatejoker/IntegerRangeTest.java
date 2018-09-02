@@ -29,20 +29,20 @@ public class IntegerRangeTest {
 
     @Test
     public void empty() {
-        List<Integer> values = IntegerRange.getValues(" ");
+        List<Integer> values = IntegerRange.getValues(null, " ");
         assertEquals(0, values.size());
     }
 
     @Test
     public void singleNumber() {
-        List<Integer> values = IntegerRange.getValues("42");
+        List<Integer> values = IntegerRange.getValues(null, "42");
         assertEquals(1, values.size());
         assertEquals(42, values.get(0).intValue());
     }
 
     @Test
     public void multipleNumbers() {
-        List<Integer> values = IntegerRange.getValues("42,13,45");
+        List<Integer> values = IntegerRange.getValues(null, "42,13,45");
         assertEquals(3, values.size());
         assertEquals(13, values.get(0).intValue());
         assertEquals(42, values.get(1).intValue());
@@ -51,7 +51,7 @@ public class IntegerRangeTest {
 
     @Test
     public void range() {
-        List<Integer> values = IntegerRange.getValues("13-15");
+        List<Integer> values = IntegerRange.getValues(null, "13-15");
         assertEquals(3, values.size());
         assertEquals(13, values.get(0).intValue());
         assertEquals(14, values.get(1).intValue());
@@ -60,7 +60,7 @@ public class IntegerRangeTest {
 
     @Test
     public void rangeWithStep() {
-        List<Integer> values = IntegerRange.getValues("2-8#2");
+        List<Integer> values = IntegerRange.getValues(null, "2-8#2");
         assertEquals(4, values.size());
         assertEquals(2, values.get(0).intValue());
         assertEquals(4, values.get(1).intValue());
@@ -70,7 +70,7 @@ public class IntegerRangeTest {
 
     @Test
     public void complex() {
-        List<Integer> values = IntegerRange.getValues("0,2-4,7,10-20#5,33");
+        List<Integer> values = IntegerRange.getValues(null, "0,2-4,7,10-20#5,33");
         assertEquals(9, values.size());
         assertEquals(0, values.get(0).intValue());
         assertEquals(2, values.get(1).intValue());
@@ -85,7 +85,7 @@ public class IntegerRangeTest {
 
     @Test
     public void complexWithSpaces() {
-        List<Integer> values = IntegerRange.getValues(" 0 , 2 - 4, 7 , 10 - 20 # 5 , 33");
+        List<Integer> values = IntegerRange.getValues(null, " 0 , 2 - 4, 7 , 10 - 20 # 5 , 33");
         assertEquals(9, values.size());
         assertEquals(0, values.get(0).intValue());
         assertEquals(2, values.get(1).intValue());
@@ -98,24 +98,24 @@ public class IntegerRangeTest {
         assertEquals(33, values.get(8).intValue());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ParseException.class)
     public void noNegativeNumbers() {
-        IntegerRange.getValues("-42");
+        IntegerRange.getValues(null, "-42");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ParseException.class)
     public void fromIsHigherThanTo() {
-        IntegerRange.getValues("30-20");
+        IntegerRange.getValues(null, "30-20");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ParseException.class)
     public void negativeStep() {
-        IntegerRange.getValues("10-20#-5");
+        IntegerRange.getValues(null, "10-20#-5");
     }
 
-    @Test(expected = NumberFormatException.class)
+    @Test(expected = ParseException.class)
     public void noDigits() {
-        IntegerRange.getValues("12,abc");
+        IntegerRange.getValues(null, "12,abc");
     }
 
 }

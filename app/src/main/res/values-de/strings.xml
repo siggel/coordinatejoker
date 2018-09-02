@@ -17,7 +17,7 @@
   ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="title_app_name">Coordinate Joker</string>
     <string name="title_settings">Einstellungen</string>
     <string name="title_activity_help">Hilfe</string>
@@ -36,7 +36,7 @@
     <string name="string_projection">Nutze Distanz "0", um keine Projektion durchzuführen.</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro">Gib hier die Formeln ein mit x, y als Variablen, z.B. \"12.(3+x)yx\". Wertebereiche gib bitte wie folgt ein: \"1-5#2,9\", mit \"#2\" für Schrittweite 2.</string>
+    <string name="string_intro" tools:ignore="TypographyDashes">Gib hier die Formeln ein mit x, y als Variablen, z.B. \"12.(3+x)yx\". Wertebereiche gib bitte wie folgt ein: \"1-5#2,9\", mit \"#2\" für Schrittweite 2.</string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
@@ -52,7 +52,6 @@
     <string name="title_activity_about">Über</string>
     <string name="string_view">Ansehen</string>
     <string name="string_file_operation_failed">Dateioperation beim Export fehlgeschlagen.</string>
-    <string name="string_parse_integer_exception">Schaue in der Hilfe wie die x und y Wertebereiche definiert werden.</string>
     <string name="string_html_page_language_id">de</string>
     <string name="string_too_many_points">Bitte beschränke die Wertebereiche auf maximal 100 Punkte.</string>
     <string name="title_activity_intro">Erste Schritte</string>
@@ -67,4 +66,8 @@
     <string name="htmlstring_intro_locus_shows_points"><![CDATA[Locus stellt die Punkte nun auf der Karte dar, so dass Du schnell feststellen kannst, welche Punkte einen Besuch lohnen.<br><br><b>Viel Erfolg!</b><br>]]></string>
     <string name="htmlstring_intro_other_app_shows_points"><![CDATA[Du kannst Dir dann die Punkte auf der Karte anzeigen lassen, so dass Du schnell feststellen kannst, welche Punkte einen Besuch lohnen.<br><br><b>Viel Erfolg!</b><br>]]></string>
     <string name="string_screenshot">Screenshot</string>
+    <string name="string_parse_error_negative_number">Negative Zahlen werden in der Wertebereich-Definition nicht unterstützt.</string>
+    <string name="string_parse_error_from_bigger_than_to">\'Von\' muss kleiner als \'bis\' sein bei der Wertebereich-Definition.</string>
+    <string name="string_parse_error_negative_step_size">Negative Schrittweiten sind in der Wertebereich-Definition nicht erlaubt.</string>
+    <string name="string_parse_error_non_integer">Die Syntax der Wertebereich-Definition ist falsch, bitte nutze die Hilfe.</string>
 </resources>

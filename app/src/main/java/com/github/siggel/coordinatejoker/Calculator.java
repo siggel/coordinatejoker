@@ -35,8 +35,8 @@ class Calculator {
     /**
      * constant for meter to feet conversion
      */
-    final private static double meterPerFeet = 0.3048;
-    private static DecimalFormat df = new DecimalFormat("0.##");
+    private static final double meterPerFeet = 0.3048;
+    private static final DecimalFormat df = new DecimalFormat("0.##");
     /**
      * the formula mainModel
      */
@@ -60,12 +60,12 @@ class Calculator {
     /**
      * Evaluates a 'geocaching-mathematical' formula
      *
-     * @param formula   the coordinate formula
-     * @param x         value to enter for x
-     * @param y         value to enter for y
+     * @param formula the coordinate formula
+     * @param x       value to enter for x
+     * @param y       value to enter for y
      * @return calcluated result
      */
-    public static double evaluate(String formula, Integer x, Integer y) {
+    static double evaluate(String formula, Integer x, Integer y) {
         // Check if there are any parenthesis. If so then evaluate it first and
         // replace it with the value.
         formula = formula.replace(" ", "");
@@ -157,12 +157,12 @@ class Calculator {
             // initialize return list
             List<Point> list = new ArrayList<>();
 
-            List<Integer> xValues = IntegerRange.getValues(mainModel.getXRange());
+            List<Integer> xValues = IntegerRange.getValues(context, mainModel.getXRange());
             if (xValues.size() == 0) {
                 xValues = new ArrayList<>(1);
                 xValues.add(0);
             }
-            List<Integer> yValues = IntegerRange.getValues(mainModel.getYRange());
+            List<Integer> yValues = IntegerRange.getValues(context, mainModel.getYRange());
             if (yValues.size() == 0) {
                 yValues = new ArrayList<>(1);
                 yValues.add(0);
@@ -215,10 +215,10 @@ class Calculator {
                     coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
 
                     StringBuilder name = new StringBuilder();
-                    if (IntegerRange.getValues(mainModel.getXRange()).size() > 0) {
+                    if (IntegerRange.getValues(context, mainModel.getXRange()).size() > 0) {
                         name.append("x=").append(x);
                     }
-                    if (IntegerRange.getValues(mainModel.getYRange()).size() > 0) {
+                    if (IntegerRange.getValues(context, mainModel.getYRange()).size() > 0) {
                         if (name.length() > 0) {
                             name.append(", ");
                         }
