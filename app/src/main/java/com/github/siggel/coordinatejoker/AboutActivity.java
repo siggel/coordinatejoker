@@ -161,7 +161,7 @@ public class AboutActivity extends AppCompatActivity {
         startActivity(new Intent(this, OpenSourceLicensesActivity.class));
     }
 
-    public void openAcknowledgements(View view) {
+    public void openAcknowledgements(@SuppressWarnings("unused") View view) {
         startActivity(new Intent(this, AcknowledgementsActivity.class));
     }
 }
