@@ -64,7 +64,7 @@
     <string name="htmlstring_intro_have_locus"><![CDATA[Currently Coordinate Joker is configured for use with Locus Map.<br><br>Time for a short intro …]]></string>
     <string name="htmlstring_intro_no_locus"><![CDATA[Currently Coordinate Joker is not configured for use with Locus Map, so we describe use with c:geo as another app example. Expert settings offer a variety of further scenarios.<br><br>Time for a short intro …]]></string>
     <string name="string_intro_button_previous" tools:ignore="MissingTranslation"><![CDATA[<]]></string>
-    <string name="htmlstring_intro_enter_formulas_and_view">On the main screen enter the coordinate formulas with x and y being the unknown variables. Select which x and y values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
+    <string name="htmlstring_intro_enter_formulas_and_view">On the main screen enter the coordinate formulas with x, y being the unknown variables. Define which x and y values shall be tried, then hit the \'Show\'-button for displaying the points.</string>
     <string name="string_intro_button_ok">OK</string>
     <string name="htmlstring_intro_select_app_for_send_gpx">If Coordinate Joker is configured for use with c:geo but does not find it, you will need to select an alternative app manually when Android asks you.</string>
     <string name="htmlstring_intro_locus_import">Locus will ask you where to import the waypoints. Best create an own folder like \'joker\'. Thus you can easily hide or clear all points at once instead of doing it for each point individually.</string>
