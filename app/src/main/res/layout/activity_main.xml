@@ -96,7 +96,7 @@
                     android:minEms="2"
                     android:nextFocusDown="@+id/minutesNorthFormula"
                     android:text="53"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -147,7 +147,7 @@
                     android:minEms="2"
                     android:nextFocusDown="@+id/minutesEastFormula"
                     android:text="10"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
