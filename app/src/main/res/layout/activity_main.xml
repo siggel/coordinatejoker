@@ -96,7 +96,7 @@
                     android:minEms="2"
                     android:nextFocusDown="@+id/minutesNorthFormula"
                     android:text="53"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -117,7 +117,7 @@
                     android:minEms="8"
                     android:nextFocusDown="@+id/degreesEastFormula"
                     android:text="12.3x4"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -147,7 +147,7 @@
                     android:minEms="2"
                     android:nextFocusDown="@+id/minutesEastFormula"
                     android:text="10"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -168,7 +168,7 @@
                     android:minEms="8"
                     android:nextFocusDown="@+id/distanceFormula"
                     android:text="(12304+10*x)/1000.0"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -220,7 +220,7 @@
                     android:minEms="5"
                     android:nextFocusDown="@+id/azimuthFormula"
                     android:text="0"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -249,7 +249,7 @@
                     android:minEms="5"
                     android:nextFocusDown="@+id/xValues"
                     android:text="0"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -301,7 +301,7 @@
                     android:minEms="6"
                     android:nextFocusDown="@+id/yValues"
                     android:text="0-9"
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
@@ -321,7 +321,7 @@
                     android:minEms="6"
                     android:nextFocusDown="@id/mainTextViewIntro"
                     android:text=""
-                    android:textAlignment="textStart"
+                    android:textAlignment="textEnd"
                     android:textSize="18sp"
                     tools:ignore="HardcodedText,LabelFor,RtlCompat" />
 
