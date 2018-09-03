@@ -37,10 +37,10 @@
     <string name="string_send">Send</string>
     <string name="string_x_values">x values: </string>
     <string name="string_y_values">y values: </string>
-    <string name="string_projection">Leave distance zero if you don\'t need a projection.</string>
+    <string name="string_projection">Select unit \"m\" or \"ft\", leave distance \"0\" if you don\'t need a projection:</string>
     <string name="string_distance">Distance: </string>
     <string name="string_azimuth">Azimuth: </string>
-    <string name="string_intro" tools:ignore="TypographyDashes">Enter the coordinate formulas below using x, y as variables, e.g. \"12.(3+x)yx\". Value ranges can be defined like \"1-5#2,9\", \"#2\" indicating step size 2.</string>
+    <string name="string_intro" tools:ignore="TypographyDashes">Enter formulas with x, y being unknown, e.g. \"12.(3+x)yx\":</string>
     <string name="string_reset">Reset</string>
     <string name="string_formula_error">Could not solve formulas. Please check them for errors.</string>
     <string name="string_gpx_export_failed">Saving gpx failed.</string>
@@ -78,4 +78,5 @@
     <string name="string_parse_error_non_integer">The value range definition uses incorrect syntax, please consult the help.</string>
     <string name="title_activity_change_history">Change history</string>
     <string name="htmlstring_no_change_history_found">No change history found.</string>
+    <string name="string_range" tools:ignore="TypographyDashes">Enter range like \"1-5#2,7-9,20\" (\"#2\" means step size 2) or leave empty:</string>
 </resources>

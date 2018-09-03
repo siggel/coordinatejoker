@@ -33,10 +33,10 @@
     <string name="string_send">Senden</string>
     <string name="string_x_values">x-Werte: </string>
     <string name="string_y_values">y-Werte: </string>
-    <string name="string_projection">Nutze Distanz "0", um keine Projektion durchzuführen.</string>
+    <string name="string_projection">Einheit \"m\" oder \"ft\" einstellen, nutze Distanz \"0\", um keine Projektion durchzuführen:</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro" tools:ignore="TypographyDashes">Gib hier die Formeln ein mit x, y als Variablen, z.B. \"12.(3+x)yx\". Wertebereiche gib bitte wie folgt ein: \"1-5#2,9\", mit \"#2\" für Schrittweite 2.</string>
+    <string name="string_intro" tools:ignore="TypographyDashes">Formeln mit x, y als Unbekannten eingeben, z.B. \"12.(3+x)yx\":</string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
@@ -72,4 +72,5 @@
     <string name="string_parse_error_non_integer">Die Syntax der Wertebereich-Definition ist falsch, bitte nutze die Hilfe.</string>
     <string name="title_activity_change_history">Änderungshistorie</string>
     <string name="htmlstring_no_change_history_found">Keine Änderungshistorie gefunden.</string>
+    <string name="string_range" tools:ignore="TypographyDashes">Wertebereich im Format \"1-5#2,7-9,20\" eingeben (\"#2\" für Schrittweite 2) oder leer lassen:</string>
 </resources>
