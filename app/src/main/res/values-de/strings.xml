@@ -36,7 +36,7 @@
     <string name="string_projection">Einheit \"m\" oder \"ft\" einstellen, nutze Distanz \"0\", um keine Projektion durchzuführen:</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro" tools:ignore="TypographyDashes">Formeln mit x, y als Unbekannten eingeben, z.B. \"12.(3+x)yx\":</string>
+    <string name="string_intro" tools:ignore="TypographyDashes">Formeln mit x, y als Unbekannten eingeben, z.B. \"12.(3+x)4y\":</string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
