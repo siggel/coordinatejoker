@@ -56,6 +56,17 @@ public class ChangeHistoryActivity extends VersatileWebViewActivity {
         }
 
         // add relevant change notes
+        if (previousVersion < 16) {
+            try {
+                html.append(FileHelper.readContentFromInputStream(
+                        getAssets().open("changes_version_16_" +
+                                getString(R.string.string_html_page_language_id) + ".html")));
+                haveNothingToShow = false;
+            } catch (IOException e) {
+                // ignore
+            }
+        }
+
         if (previousVersion < 15) {
             try {
                 html.append(FileHelper.readContentFromInputStream(

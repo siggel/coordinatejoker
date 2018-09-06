@@ -71,7 +71,7 @@ class Preferences {
         mainModel.setAzimuth(
                 sharedPref.getString(context.getString(R.string.key_azimuth), "0"));
         mainModel.setXRange(sharedPref.getString(context.getString(R.string.key_x_range), "0-9"));
-        mainModel.setYRange(sharedPref.getString(context.getString(R.string.key_y_range), "0-9"));
+        mainModel.setYRange(sharedPref.getString(context.getString(R.string.key_y_range), ""));
         return mainModel;
     }
 
