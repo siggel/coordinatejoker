@@ -145,6 +145,18 @@ public class ImportActivity extends AppCompatActivity {
         fillGuiFromModel();
     }
 
+    private String orderLikeTargetLetters(String letters) {
+        // if letters contains first target letter, bring it to the front
+        letters = letters.replaceAll(
+                "(.*)(" + String.valueOf(targetLetters.charAt(0)) + ")(.*)",
+                "$2$1$3");
+        // if letters contains second target letter, bring it to the end
+        letters = letters.replaceAll(
+                "(.*)(" + String.valueOf(targetLetters.charAt(1)) + ")(.*)",
+                "$1$3$2");
+        return letters;
+    }
+
     private void tryToReplaceVariables() {
         // number of distinct letters in degrees' and minutes' formulas
         foundLetters = extractDistinctLetters(
@@ -153,6 +165,10 @@ public class ImportActivity extends AppCompatActivity {
 
         // replace letters (variables) with x, y if no more than two letters were found
         if (foundLetters.length() <= 2) {
+
+            // it is mandatory to order the found letters, so that we do not replace a>>x, then x>>y
+            foundLetters = orderLikeTargetLetters(foundLetters);
+
             for (int i = 0; i < foundLetters.length(); ++i) {
                 model.setDegreesNorth(
                         model.getDegreesNorth().replaceAll(String.valueOf(foundLetters.charAt(i)),
