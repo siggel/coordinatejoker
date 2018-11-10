@@ -51,8 +51,8 @@ public class ImportActivity extends AppCompatActivity {
     private final String targetLetters = "xy"; // variables x and y are supported
     private final int DARK_GREEN = 0xFF00AA00;
     private final int RED = Color.RED;
-    private String foundLetters;
     private final MainModel model;
+    private String foundLetters;
     private EditText editText;
     private TextView textViewNorth;
     private TextView textViewDegreesNorth;
