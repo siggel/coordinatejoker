@@ -45,124 +45,137 @@
         android:text="@string/string_cancel"
         android:textSize="18sp" />
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/useButton"
+        android:layout_alignParentTop="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:padding="5sp">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/string_import_explanation"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/clipboardContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textNoSuggestions|textMultiLine"
-            android:maxLines="4"
-            android:minEms="2"
-            android:text=""
-            android:textAlignment="textStart"
-            android:textSize="18sp"
-            tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5sp"
-            tools:ignore="SmallSp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/string_import_result_explanation"
-            android:textSize="18sp" />
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="2">
+            android:orientation="vertical"
+            android:padding="5sp">
 
             <TextView
-                android:id="@+id/importResultNorth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="18sp"
+                android:text="@string/string_import_explanation"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/clipboardContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textNoSuggestions|textMultiLine"
+                android:maxLines="4"
+                android:minEms="2"
                 android:text=""
-                android:textColor="@android:color/black"
+                android:textAlignment="textStart"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
+                tools:ignore="Autofill,HardcodedText,LabelFor,RtlCompat" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/importResultDegreesNorth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="18sp"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
+                android:text="@string/string_import_result_explanation"
+                android:textSize="18sp" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="2">
+
+                <TextView
+                    android:id="@+id/importResultNorth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18sp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/importResultDegreesNorth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18sp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/importResultMinutesNorth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/importResultEast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18sp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/importResultDegreesEast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18sp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/importResultMinutesEast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </GridLayout>
 
             <TextView
-                android:id="@+id/importResultMinutesNorth"
+                android:id="@+id/importReplacementInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/importResultEast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="18sp"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
+                android:text="@string/string_import_no_projection_explanation"
+                android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/importResultDegreesEast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="18sp"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/importResultMinutesEast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </GridLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5sp"
-            tools:ignore="SmallSp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/string_import_no_projection_explanation"
-            android:textSize="14sp" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

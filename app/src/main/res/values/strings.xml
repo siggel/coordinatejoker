@@ -76,13 +76,17 @@
     <string name="string_parse_error_negative_number">Negative numbers are not supported in the value range definition.</string>
     <string name="string_parse_error_from_bigger_than_to">\'From\' must be smaller than \'to\' in the value range definition.</string>
     <string name="string_parse_error_negative_step_size">Negative step sizes are not supported in the value range definition.</string>
-    <string name="string_parse_error_non_integer">The value range definition uses incorrect syntax, please consult the help.</string>
+    <string name="string_parse_error_non_integer">Please fix the value range definition.</string>
     <string name="title_activity_change_history">Change history</string>
     <string name="htmlstring_no_change_history_found">No change history found.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Enter range like \"1-5#2,7-9,20\" (\"#2\" means step size 2) or leave empty:</string>
-    <string name="string_import_explanation">Edit the content of the clipboard according to the following format: N …° …\' E …° …\' (or S/W instead of N/E). Replace the unknown variables by x and/or y.</string>
+    <string name="string_import_explanation">If the clipboard analysis does not succeed, please fix the input to match the following format: N …° …\' E …° …\' (or S/W instead of N/E) and replace the unknown variables by x and y.</string>
     <string name="string_import_result_explanation">Result:</string>
     <string name="string_use">Use result</string>
     <string name="string_cancel">Cancel</string>
-    <string name="string_import_no_projection_explanation">The import cannot extract projection data, so you may need to add them manually. Also remember to set x and/or y ranges matching to the task.</string>
+    <string name="string_import_no_projection_explanation">You may need to add projection data manually. You will also have to set x and/or y ranges manually.</string>
+    <string name="string_replacement_info">with variable replacement</string>
+    <string name="string_no_replacement_info">Automatic variable replacement could not be applied due to too many variables or use of function names. Please replace them manually.</string>
+    <string name="string_error_big_clipboard">The clipboard contained too much data to be processed. Please copy just the formula to the clipboard.</string>
+    <string name="string_error_clipboard_failed">Pasting from the clipboard did not succeed. You may try to insert it here manually.</string>
 </resources>
