@@ -21,6 +21,7 @@
     <string name="title_app_name">Coordinate Joker</string>
     <string name="title_settings">Einstellungen</string>
     <string name="title_activity_help">Hilfe</string>
+    <string name="title_activity_import">Import aus Zwischenablage</string>
     <string name="title_activity_open_source_licenses">Open Source Lizenzen</string>
     <string-array name="stringarray_letters_latitude">
         <item>"N"</item>    <!-- first entry is considered north to become language independent -->
@@ -36,7 +37,7 @@
     <string name="string_projection">Einheit \"m\" oder \"ft\" einstellen, nutze Distanz \"0\", um keine Projektion durchzuführen:</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
-    <string name="string_intro" tools:ignore="TypographyDashes">Formeln mit x, y als Unbekannten eingeben, z.B. \"12.(3+x)4y\":</string>
+    <string name="htmlstring_intro"><![CDATA[Formeln mit x, y als Unbekannten eingeben, z.B. "12.(3+x)4y", oder aus der Zwischenablage <a href="coordinatejoker_import://">importieren</a>.]]></string>
     <string name="string_reset">Löschen</string>
     <string name="string_formula_error">Die Formeln konnten nicht gelöst werden. Bitte überprüfe sie auf Fehler.</string>
     <string name="string_gpx_export_failed">Speichern der gpx-Datei fehlgeschlagen.</string>
@@ -73,4 +74,9 @@
     <string name="title_activity_change_history">Änderungshistorie</string>
     <string name="htmlstring_no_change_history_found">Keine Änderungshistorie gefunden.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Wertebereich im Format \"1-5#2,7-9,20\" eingeben (\"#2\" für Schrittweite 2) oder leer lassen:</string>
+    <string name="string_import_explanation">Bringe den Inhalt der Zwischenablage in folgendes Format: N …° …\' E …° …\' (oder S/W statt N/E). Ersetze die Unbekannten durch x und/oder y.</string>
+    <string name="string_import_result_explanation">Ergebnis:</string>
+    <string name="string_use">Verwenden</string>
+    <string name="string_cancel">Abbrechen</string>
+    <string name="string_import_no_projection_explanation">Der Import kann keine Projektions-Angaben auswerten, diese müssen also ggf. manuell ergänzt werden. Außerdem müssen noch die Wertebereiche von x und/oder y manuell entsprechend der Aufgabe festgelegt werden.</string>
 </resources>
