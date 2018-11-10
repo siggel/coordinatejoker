@@ -45,7 +45,7 @@ public class ChangeHistoryActivity extends VersatileWebViewActivity {
         final int previousVersion = intent.getIntExtra("previousVersion", 0);
         boolean haveNothingToShow = true;
 
-        StringBuilder html = new StringBuilder("");
+        StringBuilder html = new StringBuilder();
 
         // header
         try {

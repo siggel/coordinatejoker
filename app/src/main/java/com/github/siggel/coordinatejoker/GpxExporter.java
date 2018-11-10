@@ -82,7 +82,7 @@ class GpxExporter extends Exporter {
      * clear gpxData to begin a new gpx file
      */
     private void init() {
-        this.gpxData = new StringBuffer("");
+        this.gpxData = new StringBuffer();
     }
 
     /**

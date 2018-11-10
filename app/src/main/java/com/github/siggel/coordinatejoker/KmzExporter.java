@@ -92,7 +92,7 @@ class KmzExporter extends Exporter {
      * clear kmlData to begin a new kml file
      */
     private void init() {
-        this.kmlData = new StringBuffer("");
+        this.kmlData = new StringBuffer();
     }
 
     /**
