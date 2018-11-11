@@ -83,4 +83,6 @@
     <string name="string_no_replacement_info">Die Variablen konnten wegen zu vieler Variablen oder der Verwendung von Funktionsnamen nicht automatisch ersetzt werden. Bitte passe sie manuell an.</string>
     <string name="string_error_big_clipboard">Die Zwischenablage enthält zu viele Daten für die Analyse. Bitte kopiere nur die Formel in die Zwischenablage.</string>
     <string name="string_error_clipboard_failed">Der Import aus der Zwischenablage ist fehlgeschlagen. Du kannst aber versuchen, sie hier manuell einzufügen.</string>
+    <string name="string_import_projection">Proj.</string>
+    <string name="string_x_used_for_multiplication">x als Malzeichen</string>
 </resources>

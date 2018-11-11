@@ -89,4 +89,6 @@
     <string name="string_no_replacement_info">Automatic variable replacement could not be applied due to too many variables or use of function names. Please replace them manually.</string>
     <string name="string_error_big_clipboard">The clipboard contained too much data to be processed. Please copy just the formula to the clipboard.</string>
     <string name="string_error_clipboard_failed">Pasting from the clipboard did not succeed. You may try to insert it here manually.</string>
+    <string name="string_import_projection">Proj.</string>
+    <string name="string_x_used_for_multiplication">x as multiplication sign</string>
 </resources>
