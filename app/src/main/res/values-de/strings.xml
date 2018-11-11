@@ -80,7 +80,7 @@
     <string name="string_cancel">Abbrechen</string>
     <string name="string_import_no_projection_explanation">Ggf. müssen manuell Angaben zur Projektion ergänzt werden. Außerdem müssen noch die Wertebereiche von x und/oder y manuell festgelegt werden.</string>
     <string name="string_replacement_info">mit Ersetzung</string>
-    <string name="string_no_replacement_info">Die Variablen konnten wegen zu vieler Variablen oder der Verwendung von Funktionsnamen nicht automatisch ersetzt werden. Bitte passe sie manuell an.</string>
+    <string name="string_no_replacement_info">Die Variablen konnten nicht automatisch zu x, y angepasst werden. Bitte passe sie ggf. oben manuell an.</string>
     <string name="string_error_big_clipboard">Die Zwischenablage enthält zu viele Daten für die Analyse. Bitte kopiere nur die Formel in die Zwischenablage.</string>
     <string name="string_error_clipboard_failed">Der Import aus der Zwischenablage ist fehlgeschlagen. Du kannst aber versuchen, sie hier manuell einzufügen.</string>
     <string name="string_import_projection">Proj.</string>

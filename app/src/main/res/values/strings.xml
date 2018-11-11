@@ -86,7 +86,7 @@
     <string name="string_cancel">Cancel</string>
     <string name="string_import_no_projection_explanation">You may need to add projection data manually. You will also have to set x and/or y ranges manually.</string>
     <string name="string_replacement_info">with variable replacement</string>
-    <string name="string_no_replacement_info">Automatic variable replacement could not be applied due to too many variables or use of function names. Please replace them manually.</string>
+    <string name="string_no_replacement_info">Automatic variable replacement by x, y did not succeed. Please adjust them manually above.</string>
     <string name="string_error_big_clipboard">The clipboard contained too much data to be processed. Please copy just the formula to the clipboard.</string>
     <string name="string_error_clipboard_failed">Pasting from the clipboard did not succeed. You may try to insert it here manually.</string>
     <string name="string_import_projection">Proj.</string>

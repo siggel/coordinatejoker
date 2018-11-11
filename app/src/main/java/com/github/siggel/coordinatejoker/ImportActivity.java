@@ -39,20 +39,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import static android.content.ClipDescription.MIMETYPE_TEXT_HTML;
 import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 public class ImportActivity extends AppCompatActivity {
 
-    private final String INVALID = "???"; // descriptive string indicating an invalid formula/range
-    private final String targetLetters = "xy"; // variables x and y are supported
     private final int DARK_GREEN = 0xFF00AA00;
     private final int RED = Color.RED;
-    private final MainModel model;
-    private String foundLetters;
+    private final CoordinateParser coordinateParser = new CoordinateParser();
     private EditText editText;
     private TextView textViewNorth;
     private TextView textViewDegreesNorth;
@@ -65,25 +59,6 @@ public class ImportActivity extends AppCompatActivity {
     private TextView textViewAzimuth;
     private TextView textViewReplacementInfo;
     private Button buttonUseResult;
-    private boolean replaceLowercaseXByStar = false;
-    private boolean replaceDiagonalCrossByStar = false;
-
-    public ImportActivity() {
-        model = new MainModel();
-
-        // set defaults
-        model.setNorth(true);
-        model.setDegreesNorth(INVALID);
-        model.setMinutesNorth(INVALID);
-        model.setEast(true);
-        model.setDegreesEast(INVALID);
-        model.setMinutesEast(INVALID);
-        model.setDistance("0");
-        model.setFeet(false);
-        model.setAzimuth("0");
-        model.setXRange(INVALID); // fill x with invalid value, so user cannot forget to adjust it
-        model.setYRange("");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,20 +66,11 @@ public class ImportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_import);
 
         connectToUiElements();
+        addListeners();
+        importClipboard();
+    }
 
-        // add change listener for editable input field trying to parse the input
-        editText.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                processInput();
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-        });
-
+    private void importClipboard() {
         // copy clipboard to input field and try to parse it
         String clipboardContent = "";
         try {
@@ -136,6 +102,21 @@ public class ImportActivity extends AppCompatActivity {
         editText.setText(clipboardContent);
     }
 
+    private void addListeners() {
+        // add change listener for editable input field trying to parse the input
+        editText.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                processInput();
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+        });
+    }
+
     private void connectToUiElements() {
         // shortcuts to ui elements
         editText = findViewById(R.id.clipboardContent);
@@ -152,142 +133,9 @@ public class ImportActivity extends AppCompatActivity {
         buttonUseResult = findViewById(R.id.useButton);
     }
 
-    private String orderLikeTargetLetters(String letters) {
-        // if letters contains first target letter, bring it to the front
-        letters = letters.replaceAll(
-                "(.*)(" + String.valueOf(targetLetters.charAt(0)) + ")(.*)",
-                "$2$1$3");
-        // if letters contains second target letter, bring it to the end
-        letters = letters.replaceAll(
-                "(.*)(" + String.valueOf(targetLetters.charAt(1)) + ")(.*)",
-                "$1$3$2");
-        return letters;
-    }
-
-    private void tryToReplaceVariables() {
-        // number of distinct letters in degrees' and minutes' formulas
-        foundLetters = extractDistinctLetters(
-                model.getDegreesNorth() + model.getMinutesNorth()
-                        + model.getDegreesEast() + model.getMinutesEast());
-
-        // replace letters (variables) with x, y if no more than two letters were found
-        if (foundLetters.length() <= 2) {
-
-            // it is mandatory to order the found letters, so that we do not replace a>>x, then x>>y
-            foundLetters = orderLikeTargetLetters(foundLetters);
-
-            for (int i = 0; i < foundLetters.length(); ++i) {
-                model.setDegreesNorth(
-                        model.getDegreesNorth().replaceAll(String.valueOf(foundLetters.charAt(i)),
-                                String.valueOf(targetLetters.charAt(i))));
-                model.setMinutesNorth(
-                        model.getMinutesNorth().replaceAll(String.valueOf(foundLetters.charAt(i)),
-                                String.valueOf(targetLetters.charAt(i))));
-                model.setDegreesEast(
-                        model.getDegreesEast().replaceAll(String.valueOf(foundLetters.charAt(i)),
-                                String.valueOf(targetLetters.charAt(i))));
-                model.setMinutesEast(
-                        model.getMinutesEast().replaceAll(String.valueOf(foundLetters.charAt(i)),
-                                String.valueOf(targetLetters.charAt(i))));
-            }
-        }
-
-        // fill y with invalid value if more than one variable is used, so user cannot forget it
-        if (foundLetters.length() >= 2) {
-            model.setYRange(INVALID);
-        } else {
-            model.setYRange("");
-        }
-    }
-
-    private void parseString(String input) {
-        final String formulaPattern = "[\\w.\\s+\\-*/^()]*"; // alphanumeric.space+-*/^()
-        final String northDegreePattern = "([N,S])(" + formulaPattern + ")°?";
-        final String eastDegreePattern = "([E,W])(" + formulaPattern + ")°?";
-        final String minutesPattern = "(" + formulaPattern + ")'?";
-        final String distancePattern = "(" + formulaPattern + ")(m|ft)";
-        final String azimuthPattern = "(" + formulaPattern + ")°\\s*TN";
-        final String spacePattern = "\\s*";
-        final String spaceOrCommaPattern = "[\\s,]*";
-        final Pattern patternIncludingProjection = Pattern.compile(
-                northDegreePattern + spacePattern + minutesPattern + spaceOrCommaPattern +
-                        eastDegreePattern + spacePattern + minutesPattern + spaceOrCommaPattern +
-                        distancePattern + spacePattern + azimuthPattern,
-                Pattern.DOTALL);
-        final Pattern patternWithoutProjection = Pattern.compile(
-                northDegreePattern + spacePattern + minutesPattern + spaceOrCommaPattern +
-                        eastDegreePattern + spacePattern + minutesPattern,
-                Pattern.DOTALL);
-
-        Matcher matcher = patternIncludingProjection.matcher(input);
-        boolean matched = matcher.find();
-        if (!matched) {
-            // can we recognize coordinates without a projection?
-            matcher = patternWithoutProjection.matcher(input);
-            matched = matcher.find();
-        }
-        int matches = matched ? matcher.groupCount() : 0;
-
-        // store extracted values in result model
-        if (matches >= 6) {
-            // we found at least coordinates
-            model.setNorth(matcher.group(1).trim().equals("N"));
-            model.setDegreesNorth(matcher.group(2).trim());
-            model.setMinutesNorth(matcher.group(3).trim());
-            model.setEast(!matcher.group(4).trim().equals("W"));
-            model.setDegreesEast(matcher.group(5).trim());
-            model.setMinutesEast(matcher.group(6).trim());
-            if (matches == 9) {
-                // we also found projection data
-                model.setDistance(matcher.group(7).trim());
-                model.setFeet(matcher.group(8).trim().equals("ft"));
-                model.setAzimuth(matcher.group(9).trim());
-            } else {
-                model.setDistance("0");
-                model.setFeet(false);
-                model.setAzimuth("0");
-            }
-        } else {
-            // mark invalid in result model
-            fillModelWithInvalidValues();
-        }
-
-    }
-
-    private void fillModelWithInvalidValues() {
-        model.setNorth(true);
-        model.setDegreesNorth(INVALID);
-        model.setMinutesNorth(INVALID);
-        model.setEast(true);
-        model.setDegreesEast(INVALID);
-        model.setMinutesEast(INVALID);
-        model.setDistance(INVALID);
-        model.setAzimuth(INVALID);
-    }
-
-    private String preprocessMultiplicationOperator(String input) {
-        if (replaceLowercaseXByStar) {
-            input = input.replaceAll("x", "*");
-        } else if (replaceDiagonalCrossByStar) {
-            input = input.replaceAll("×", "*");
-        }
-        return input;
-    }
-
-    private String extractDistinctLetters(String input) {
-        // remove all but letters (variables and function names remain)
-        String cleanedInput = input.replaceAll("[^A-Za-z]", "");
-        StringBuilder extractedLetters = new StringBuilder();
-        for (int i = 0; i < cleanedInput.length(); ++i) {
-            if (!extractedLetters.toString().contains(String.valueOf(cleanedInput.charAt(i)))) {
-                extractedLetters.append(cleanedInput.charAt(i));
-            }
-        }
-        return extractedLetters.toString();
-    }
-
     @SuppressLint("SetTextI18n") // no i18n for ° ' N S E W required
     private void fillGuiFromModel() {
+        MainModel model = coordinateParser.getModel();
         textViewNorth.setText(model.getNorth() ? "N" : "S");
         textViewDegreesNorth.setText(model.getDegreesNorth() + "°");
         textViewMinutesNorth.setText(model.getMinutesNorth() + "'");
@@ -297,13 +145,13 @@ public class ImportActivity extends AppCompatActivity {
         textViewDistance.setText(model.getDistance() + (model.getFeet() ? " ft" : " m"));
         textViewAzimuth.setText(model.getAzimuth() + "° TN");
 
-        if (!model.getMinutesEast().equals(INVALID)) {
+        showReplacementInfo();
+
+        if (coordinateParser.isModelValid()) {
             colorifyResult(DARK_GREEN);
-            showReplacementInfo(true);
             buttonUseResult.setEnabled(true);
         } else {
             colorifyResult(RED);
-            showReplacementInfo(false);
             buttonUseResult.setEnabled(false);
         }
     }
@@ -320,33 +168,23 @@ public class ImportActivity extends AppCompatActivity {
         textViewAzimuth.setTextColor(color);
     }
 
-    private void showReplacementInfo(boolean resultIsValid) {
-        if (resultIsValid) {
-            String variableReplacementInfo = "";
-            if (foundLetters.length() <= 2) {
-                variableReplacementInfo += getString(R.string.string_replacement_info);
-                if (foundLetters.length() >= 1) {
-                    variableReplacementInfo += " ";
-                    variableReplacementInfo += foundLetters.charAt(0) + " >> "
-                            + targetLetters.charAt(0);
-                }
-                if (foundLetters.length() == 2) {
-                    variableReplacementInfo += ", ";
-                    variableReplacementInfo += foundLetters.charAt(1) + " >> "
-                            + targetLetters.charAt(1);
-                }
-                textViewReplacementInfo.setTextColor(DARK_GREEN);
-
-            } else {
-                variableReplacementInfo += getString(R.string.string_no_replacement_info);
-                textViewReplacementInfo.setTextColor(RED);
-
-            }
-            textViewReplacementInfo.setText(variableReplacementInfo);
+    private void showReplacementInfo() {
+        String variableReplacementInfo = "";
+        if (coordinateParser.isModelValid()) {
             textViewReplacementInfo.setVisibility(View.VISIBLE);
+            String replacementString = coordinateParser.getReplacementInfo();
+            if (!replacementString.isEmpty()) {
+                variableReplacementInfo = getString(R.string.string_replacement_info) + " " +
+                        replacementString;
+                textViewReplacementInfo.setTextColor(DARK_GREEN);
+            } else {
+                variableReplacementInfo = getString(R.string.string_no_replacement_info);
+                textViewReplacementInfo.setTextColor(RED);
+            }
         } else {
             textViewReplacementInfo.setVisibility(View.INVISIBLE);
         }
+        textViewReplacementInfo.setText(variableReplacementInfo);
     }
 
     /**
@@ -365,7 +203,7 @@ public class ImportActivity extends AppCompatActivity {
      */
     public void useResult(@SuppressWarnings("unused") View view) {
         final Preferences preferences = new Preferences(this);
-        preferences.saveFormulas(model);
+        preferences.saveFormulas(coordinateParser.getModel());
         NavUtils.navigateUpFromSameTask(this);
     }
 
@@ -415,25 +253,20 @@ public class ImportActivity extends AppCompatActivity {
     public void onRadioButtonClicked(View view) {
         switch (view.getId()) {
             case R.id.importPreprocessLowerX:
-                replaceLowercaseXByStar = true;
-                replaceDiagonalCrossByStar = false;
+                coordinateParser.setLetterToBeReplacedByStar('x');
                 break;
             case R.id.importPreprocessDiagonalCross:
-                replaceDiagonalCrossByStar = true;
-                replaceLowercaseXByStar = false;
+                coordinateParser.setLetterToBeReplacedByStar('×');
                 break;
             default:
-                replaceLowercaseXByStar = false;
-                replaceDiagonalCrossByStar = false;
+                coordinateParser.setLetterToBeReplacedByStar('*');
                 break;
         }
+        processInput();
     }
 
     private void processInput() {
-        String result;
-        result = preprocessMultiplicationOperator(editText.getText().toString());
-        parseString(result);
-        tryToReplaceVariables();
+        coordinateParser.processInput(editText.getText().toString());
         fillGuiFromModel();
     }
 }
