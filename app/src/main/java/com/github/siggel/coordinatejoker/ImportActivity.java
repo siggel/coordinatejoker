@@ -195,7 +195,7 @@ public class ImportActivity extends AppCompatActivity {
 
     private void parseString(String input) {
         final String pattern = "([N,S])([^°]*)°([^']*)'?.*([E,W])([^°]*)°([^']*)'?";
-        Matcher matcher = Pattern.compile(pattern).matcher(input);
+        Matcher matcher = Pattern.compile(pattern, Pattern.DOTALL).matcher(input);
         if (matcher.find()) {
             // store extracted values in result model
             model.setNorth(matcher.group(1).trim().equals("N"));
