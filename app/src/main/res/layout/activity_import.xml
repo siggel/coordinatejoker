@@ -230,12 +230,6 @@
                 android:layout_height="5sp"
                 tools:ignore="SmallSp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/string_import_no_projection_explanation"
-                android:textSize="14sp" />
-
         </LinearLayout>
 
     </ScrollView>

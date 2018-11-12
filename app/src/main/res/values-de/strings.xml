@@ -74,11 +74,10 @@
     <string name="title_activity_change_history">Änderungshistorie</string>
     <string name="htmlstring_no_change_history_found">Keine Änderungshistorie gefunden.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Wertebereich im Format \"1-5#2,7-9,20\" eingeben (\"#2\" für Schrittweite 2) oder leer lassen:</string>
-    <string name="string_import_explanation">Falls die automatische Analyse der Zwischenablage fehlschlägt, bringe die Formel bitte in folgendes Format: N …° …\' E …° …\' (oder S/W statt N/E) und ersetze die Unbekannten durch x und ggf. y.</string>
+    <string name="string_import_explanation">Falls die automatische Analyse der Zwischenablage fehlschlägt, bringe die Formel bitte in folgendes Format: N …° …\' E …° …\' …m …°TN (oder S/W/ft statt N/E/m, die Projektion kann auch weggelassen werden) und ersetze die Unbekannten durch x und ggf. y.</string>
     <string name="string_import_result_explanation">Ergebnis:</string>
     <string name="string_use">Verwenden</string>
     <string name="string_cancel">Abbrechen</string>
-    <string name="string_import_no_projection_explanation">Ggf. müssen manuell Angaben zur Projektion ergänzt werden. Außerdem müssen noch die Wertebereiche von x und/oder y manuell festgelegt werden.</string>
     <string name="string_replacement_info">mit Ersetzung</string>
     <string name="string_no_replacement_info">Die Variablen konnten nicht automatisch zu x, y angepasst werden. Bitte passe sie ggf. oben manuell an.</string>
     <string name="string_error_big_clipboard">Die Zwischenablage enthält zu viele Daten für die Analyse. Bitte kopiere nur die Formel in die Zwischenablage.</string>

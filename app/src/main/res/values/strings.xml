@@ -80,11 +80,10 @@
     <string name="title_activity_change_history">Change history</string>
     <string name="htmlstring_no_change_history_found">No change history found.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Enter range like \"1-5#2,7-9,20\" (\"#2\" means step size 2) or leave empty:</string>
-    <string name="string_import_explanation">If the clipboard analysis does not succeed, please fix the input to match the following format: N …° …\' E …° …\' (or S/W instead of N/E) and replace the unknown variables by x and y.</string>
+    <string name="string_import_explanation">If the clipboard analysis does not succeed, please fix the input to match the following format: N …° …\' E …° …\' …m …°TN (or S/W/ft instead of N/E/m, you may omit the projection part) and replace the unknown variables by x and y.</string>
     <string name="string_import_result_explanation">Result:</string>
     <string name="string_use">Use result</string>
     <string name="string_cancel">Cancel</string>
-    <string name="string_import_no_projection_explanation">You may need to add projection data manually. You will also have to set x and/or y ranges manually.</string>
     <string name="string_replacement_info">with variable replacement</string>
     <string name="string_no_replacement_info">Automatic variable replacement by x, y did not succeed. Please adjust them manually above.</string>
     <string name="string_error_big_clipboard">The clipboard contained too much data to be processed. Please copy just the formula to the clipboard.</string>
