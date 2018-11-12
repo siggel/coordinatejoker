@@ -28,18 +28,69 @@
 </head>
 
 <body>
-<h3>Generelle Funktion</h3>
+<h3>Inhaltsverzeichnis</h3>
+<ol type="1">
+    <li>
+        <a href="#generalFunctionality">Generelle Funktionsweise</a>
+        <ol type="a">
+            <li>
+                <a href="#enteringFormulas">Formeleingabe</a>
+            </li>
+            <li>
+                <a href="#importFromClipboard">Import aus der Zwischenablage</a>
+            </li>
+            <li>
+                <a href="#definitionOfValueRange">Festlegen des Wertebereichs</a>
+            </li>
+            <li>
+                <a href="#reset">Löschen</a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#exportFormats">Exportformate</a>
+        <ol type="a">
+            <li>
+                <a href="#quickSettings">Schnelleinstellungen</a>
+            </li>
+            <li>
+                <a href="#expertSettings">Experteneinstellungen</a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#warningsAndErrors">Warnungen und Fehler</a>
+        <ol type="a">
+            <li>
+                <a href="#formulaErrors">Formelfehler</a>
+            </li>
+            <li>
+                <a href="#exportProblems">Exportprobleme</a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h3 id="generalFunctionality">Generelle Funktionsweise</h3>
 <p>
     Die Benutzung von Coordinate Joker ist hoffentlich einigermaßen selbsterklärend:
 </p>
-<p>
-    <b>1. Koordinaten</b> eingeben,<br>
-    <b>2. ggf. Projektion</b> eingeben (Einheit Meter oder feet beachten!), sonst Distanz und Winkel
-    0,<br>
-    <b>3. Wertebereich</b> für x, y festlegen und<br>
-    <b>4. </b>mit "<b>Ansehen</b>" oder "Senden" an die gewünschte App schicken.<br>
-</p>
-<h4>Formeleingabe</h4>
+<ol type="1">
+    <li>
+        <b>Koordinaten</b> eingeben (alternativ importieren),
+    </li>
+    <li>
+        <b>ggf. Projektion</b> eingeben (Einheit Meter oder feet beachten!), sonst Distanz und
+        Winkel 0,
+    </li>
+    <li>
+        <b>Wertebereich</b> für x, y festlegen und
+    </li>
+    <li>
+        mit "<b>Ansehen</b>" oder "Senden" an die gewünschte App schicken.
+    </li>
+</ol>
+<h4 id="enteringFormulas">Formeleingabe</h4>
 <p>
     Die Eingabe der Formeln sollte den üblichen mathematischen Regeln folgen. Es ist aber zulässig,
     Ausdrücke - wie in vielen Listings üblich - in runde Klammern zu setzen, etwa
@@ -77,7 +128,35 @@
     tan(a): Tangens <br>
     tanh(a): Tangens hyperbolicus <br>
 </p>
-<h4>Festlegen des Wertebereichs</h4>
+<h4 id="importFromClipboard">Import aus der Zwischenablage</h4>
+<p>
+    Statt die Formeln manuell einzugeben, können sie auch aus der Zwischenablage übernommen werden.
+    Ein Klick auf den hervorgehobenen Link über der Formeleingabe führt auf die Import-Seite.
+    Coordinate Joker kopiert dann den Inhalt der Zwischenablage in die Eingabezeile und analysiert
+    diese sofort. Dabei sollte das Format<br>
+    <b>N …° …' E …° …' …m …°TN</b><br>
+    eingehalten werden, z.B. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45°TN. Natürlich können auch
+    S/W/ft statt N/E/m verwendet werden, außerdem kann der Projektionsteil weggelassen werden. Statt
+    ein *-Zeichen für die Multiplikation zu verwenden, lässt Coordinate Joker auch × oder x zu, die
+    in Listings weit verbreitet sind. Dafür muss die entsprechende Auswahl unterhalb der
+    Eingabezeile getroffen werden.<br>
+    Die Ergebnisse der automatischen Analyse werden weiter unten angezeigt. Wenn die
+    Formelextraktion fehlschlägt (rot), passe die Eingabe so lange an das o.g. Format an, bis die
+    Extraktion gelingt (grün).<br>
+    Wenn die Ergebnisse keine Funktionsnamen und nicht mehr als zwei Variablen enthalten, wird
+    Coordinate Joker zusätzlich die im Listing verwendeten Variablen erkennen und durch x (und y)
+    ersetzen. Die Ersetzung wird ebenfalls angezeigt, damit Du auf der Hauptseite die korrekten
+    Wertebereiche für x (und y) eingeben kannst. Wenn die Ersetzung nicht gelingt, musst du die
+    Variablen in der Eingabezeile manuell durch x (und y) ersetzen.<br>
+    Achtung: Die Analyse evaluiert beim Import noch nicht die Formeln, so dass es passieren kann,
+    dass das grün angezeigte Ergebnis nicht der gewünschten Zerlegung entspricht. Dann muss die
+    Eingabe manuell besser an das o.g. Format angepasst werden.<br>
+    Abschließend kannst Du entscheiden, ob die extrahierten Ergebnisse zur Hauptseite übernommen
+    werden sollen (die Wertebereiche werden dabei mit ??? gefüllt und müssen noch manuell
+    eingetragen werden), oder ob die Ergebnisse stattdessen verworfen werden sollen und zur
+    unveränderten Hauptseite zurückgekehrt werden soll.
+</p>
+<h4 id="definitionOfValueRange">Festlegen des Wertebereichs</h4>
 <p>
     Der Wertebereich kann in der Form von mit Kommata getrennten <i>positiven (inkl. 0)</i>
     Ganzzahlen erfolgen (z.B. wenn im Listing 3 mögliche Werte zur Auswahl angeboten werden). Statt
@@ -90,22 +169,22 @@
     Wenn in den Formeln nur x genutzt wird, sollte y leer gelassen werden, um nicht unnötig die
     gleiche Koordinate für unterschiedliche y zu generieren.
 </p>
-<h4>Löschen</h4>
+<h4 id="reset">Löschen</h4>
 <p>
     Mit "Löschen" können die Zeilen zur Formeleingabe gelöscht werden. Dabei wird die Projektion
     auf 0 und Einheit Meter zurückgesetzt. Der Wertebereich wird auf 0 bis 9 voreingestellt.
 </p>
-<h3>Exportformate</h3>
+<h3 id="exportFormats">Exportformate</h3>
 <p>
     Im Einstellungsmenü kann zwischen Schnelleinstellungen und Experteneinstellungen gewählt werden.
 </p>
-<h4>Schnelleinstellungen</h4>
+<h4 id="quickSettings">Schnelleinstellungen</h4>
 <p>
     Die Schnelleinstellungen bieten häufig verwendete Voreinstellungen. Wenn die gewünschte App
     dort nicht aufgeführt ist, kann stattdessen die Experteneinstellungen verwendet werden. Ggf.
     kann ich auch weitere Apps in einer späteren Version von Coordinate Joker ergänzen.
 </p>
-<h4>Experteneinstellungen</h4>
+<h4 id="expertSettings">Experteneinstellungen</h4>
 <p>
     In den Experteneinstellungen kann das Exportverhalten beeinflusst werden:
 </p>
@@ -119,8 +198,8 @@
         dem Smartphone anzusehen.
     </li>
 </ul>
-<h3>Warnungen und Fehler</h3>
-<h4>Formelfehler</h4>
+<h3 id="warningsAndErrors">Warnungen und Fehler</h3>
+<h4 id="formulaErrors">Formelfehler</h4>
 <p>
     Wenn eine eingegebene Formel nicht ausgewertet werden kann, wird dies als Fehler angezeigt
     und kein Ergebnis erzeugt.
@@ -128,7 +207,7 @@
     ungültige. In diesem Fall erfolgt eine Warnung, dass weniger Punkte als gewünscht berechnet
     werden konnten. Die gültigen Teilergebnisse werden trotzdem zur Darstellung gesendet.
 </p>
-<h4>Exportprobleme</h4>
+<h4 id="exportProblems">Exportprobleme</h4>
 <p>
     Je nach Einstellung verschickt Coordinate Joker die resultierenden Wegpunkte als gpx, kml
     oder kmz an andere Apps zur Darstellung. Android bietet dann die jeweiligen Apps an, die

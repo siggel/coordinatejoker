@@ -28,18 +28,69 @@
 </head>
 
 <body>
-<h3>General function</h3>
+<h3>Table of Contents</h3>
+<ol type="1">
+    <li>
+        <a href="#generalFunctionality">General functionality</a>
+        <ol type="a">
+            <li>
+                <a href="#enteringFormulas">Entering formulas</a>
+            </li>
+            <li>
+                <a href="#importFromClipboard">Import from clipboard</a>
+            </li>
+            <li>
+                <a href="#definitionOfValueRange">Definition of value range</a>
+            </li>
+            <li>
+                <a href="#reset">Reset</a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#exportFormats">Export formats</a>
+        <ol type="a">
+            <li>
+                <a href="#quickSettings">Quick Settings</a>
+            </li>
+            <li>
+                <a href="#expertSettings">Expert Settings</a>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#warningsAndErrors">Warnings and Errors</a>
+        <ol type="a">
+            <li>
+                <a href="#formulaErrors">Formula errors</a>
+            </li>
+            <li>
+                <a href="#exportProblems">Export Problems</a>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h3 id="generalFunctionality">General functionality</h3>
 <p>
     Hopefully usage of Coordinate Joker is rather self explanatory:
 </p>
-<p>
-    <b>1. </b>Enter <b>coordinates</b>,<br>
-    <b>2. Possibly</b> enter <b>projection</b> (mind for unit meter or feet!), otherwise leave
-    distance and azimuth 0,<br>
-    <b>3. </b>Set <b>value range</b> for x, y and<br>
-    <b>4. </b>send to your desired App with "<b>View</b>" or "Send".<br>
-</p>
-<h4>Entering formulas</h4>
+<ol type="1">
+    <li>
+        Enter <b>coordinates</b> (alternatively import them),
+    </li>
+    <li>
+        <b>possibly</b> enter <b>projection</b> (mind for unit meter or feet!), otherwise leave
+        distance and azimuth 0,
+    </li>
+    <li>
+        set <b>value range</b> for x, y and
+    </li>
+    <li>
+        send to your desired App with "<b>View</b>" or "Send".
+    </li>
+</ol>
+<h4 id="enteringFormulas">Entering formulas</h4>
 <p>
     Entering formulas should follow general mathematical rules, but you may add ()-brackets like you
     find them in many listings, e.g.
@@ -76,7 +127,32 @@
     tan(a): tangent <br>
     tanh(a): hyperbolic tangent <br>
 </p>
-<h4>Definition of value range</h4>
+<h4 id="importFromClipboard">Import from clipboard</h4>
+<p>
+    Instead of entering the formulas manually you may try to import them from the clipboard. Just
+    click the highlighted link above the formulas to get to the import page. Coordinate Joker will
+    copy the clipboard content to its input line and immediately analyse it. The format should
+    match<br>
+    <b>N …° …' E …° …' …m …°TN</b><br>
+    e.g. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45°TN. Of course S/W/ft can be used instead of N/E/m,
+    and the projection part may be omitted. Instead of using a *-sign for multiplication, Coordinate
+    Joker also supports × or x which are widely used as alternatives in listings. Just select the
+    desired sign below the input line.<br>
+    The results of the automatic analysis will be shown further below. If the formula extraction
+    fails with a red result indication, please edit the input manually to better match the desired
+    format until the extraction succeeds with a green result indication.<br>
+    If the results contain no function names and not more than two variables, Coordinate Joker will
+    additionally detect the variables and replace them with x (and y) and give you an indication of
+    the replacement, such that you can assign the correct value ranges to x (and y) in the main
+    dialog. Otherwise you need to replace the variables manually with x (and y).<br>
+    Attention: The analysis does not really evaluate the formulas, so be prepared to obtain a green
+    indication although the extraction result is wrong. Edit the input manually to better match the
+    desired format then.<br>
+    Finally you have to decide whether you want to transfer the extracted results to the main page
+    (value ranges will be set to ??? and need to be entered manually), or whether you want to
+    discard the results and let the main page untouched.
+</p>
+<h4 id="definitionOfValueRange">Definition of value range</h4>
 <p>
     The value range can be defined by a comma-separated list of <i>positive (incl. 0)</i>
     integer numbers (e.g. if you need to choose one out of three values offered in the listing).
@@ -88,22 +164,22 @@
     If the formulas don't contain y, you should leave y empty in order not to create multiple
     instances of the same coordinate for different y values.
 </p>
-<h4>Reset</h4>
+<h4 id="reset">Reset</h4>
 <p>
     With "Reset" you can clear the formula lines. The projection will be reset to 0 and meter
     units. The value range will be preset to range 0 to 9.
 </p>
-<h3>Export formats</h3>
+<h3 id="exportFormats">Export formats</h3>
 <p>
     Within the settings menu you can choose between quick settings and expert settings.
 </p>
-<h4>Quick Settings</h4>
+<h4 id="quickSettings">Quick Settings</h4>
 <p>
     Quick settings offer commonly used presets. If your favorite app is not mentioned there, you may
     select expert settings. You may also contact me to extend presets for your favorite app in a
     later version of Coordinate Joker.
 </p>
-<h4>Expert Settings</h4>
+<h4 id="expertSettings">Expert Settings</h4>
 <p>
     Within the expert settings the export behavior can be configured:
 </p>
@@ -116,15 +192,15 @@
         them on your phone.
     </li>
 </ul>
-<h3>Warnings and Errors</h3>
-<h4>Formula errors</h4>
+<h3 id="warningsAndErrors">Warnings and Errors</h3>
+<h4 id="formulaErrors">Formula errors</h4>
 <p>
     An error will be shown if the formulas cannot be solved and produce no result.
     It can happen, that some x-values result in valid coordinates, while others don't.
     This case will result in a warning about having obtained less points than requested, but the
     valid points will be shown nevertheless.
 </p>
-<h4>Export Problems</h4>
+<h4 id="exportProblems">Export Problems</h4>
 <p>
     Depending on chosen settings Coordinate Joker sends the resulting waypoints in GPX, KML or
     KMZ format to other apps for display. Android will offer apps that claim that they can
