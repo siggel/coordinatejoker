@@ -133,14 +133,24 @@
     click the highlighted link above the formulas to get to the import page. Coordinate Joker will
     copy the clipboard content to its input line and immediately analyse it. The format should
     match<br>
-    <b>N …° …' E …° …' …m …°TN</b><br>
-    e.g. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45°TN. Of course S/W/ft can be used instead of N/E/m,
-    and the projection part may be omitted. Instead of using a *-sign for multiplication, Coordinate
-    Joker also supports × or x which are widely used as alternatives in listings. Just select the
-    desired sign below the input line.<br>
+    <b>N …° …' E …° …' …m …° TN</b><br>
+    or with line breaks (to avoid entering °, ')<br>
+    <b>
+        N … <br>
+        … <br>
+        E … <br>
+        … <br>
+        … m <br>
+        … TN <br>
+    </b>
+    e.g. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45° TN. Of course S/W/ft can be used instead of
+    N/E/m,
+    and spaces may be omitted. Additionally the projection part may be omitted completely.<br>
+    Instead of using a *-sign for multiplication, Coordinate Joker also supports × or x which are
+    widely used as alternatives in listings. Just select the desired sign below the input line.<br>
     The results of the automatic analysis will be shown further below. If the formula extraction
-    fails with a red result indication, please edit the input manually to better match the desired
-    format until the extraction succeeds with a green result indication.<br>
+    fails with a red result indication, please edit the input manually to better match one of the
+    desired formats until the extraction succeeds with a green result indication.<br>
     If the results contain no function names and not more than two variables, Coordinate Joker will
     additionally detect the variables and replace them with x (and y) and give you an indication of
     the replacement, such that you can assign the correct value ranges to x (and y) in the main

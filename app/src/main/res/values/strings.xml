@@ -80,7 +80,7 @@
     <string name="title_activity_change_history">Change history</string>
     <string name="htmlstring_no_change_history_found">No change history found.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Enter range like \"1-5#2,7-9,20\" (\"#2\" means step size 2) or leave empty:</string>
-    <string name="string_import_explanation">If the clipboard analysis does not succeed, please fix the input to match the following format: N …° …\' E …° …\' …m …°TN (or S/W/ft instead of N/E/m, you may omit the projection part) and replace the unknown variables by x and y.</string>
+    <string name="string_import_explanation">Adjust the input to match the following format: N …° …\' E …° …\' …m …° TN (or ft instead of m, you may omit the projection part). You may use linebreaks instead of °, \'. Finally replace the unknown variables by x (and y).</string>
     <string name="string_import_result_explanation">Result:</string>
     <string name="string_use">Use result</string>
     <string name="string_cancel">Cancel</string>

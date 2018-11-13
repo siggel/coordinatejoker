@@ -74,7 +74,7 @@
     <string name="title_activity_change_history">Änderungshistorie</string>
     <string name="htmlstring_no_change_history_found">Keine Änderungshistorie gefunden.</string>
     <string name="string_range" tools:ignore="TypographyDashes">Wertebereich im Format \"1-5#2,7-9,20\" eingeben (\"#2\" für Schrittweite 2) oder leer lassen:</string>
-    <string name="string_import_explanation">Falls die automatische Analyse der Zwischenablage fehlschlägt, bringe die Formel bitte in folgendes Format: N …° …\' E …° …\' …m …°TN (oder S/W/ft statt N/E/m, die Projektion kann auch weggelassen werden) und ersetze die Unbekannten durch x und ggf. y.</string>
+    <string name="string_import_explanation">Bring die Formel auf folgendes Format: N …° …\' E …° …\' …m …° TN (oder ft statt m, die Projektion kann auch weggelassen werden). Zeilenumbrüche statt °, \' sind zulässig. Abschließend ersetze die Unbekannten durch x (und y).</string>
     <string name="string_import_result_explanation">Ergebnis:</string>
     <string name="string_use">Verwenden</string>
     <string name="string_cancel">Abbrechen</string>

@@ -134,15 +134,25 @@
     Ein Klick auf den hervorgehobenen Link über der Formeleingabe führt auf die Import-Seite.
     Coordinate Joker kopiert dann den Inhalt der Zwischenablage in die Eingabezeile und analysiert
     diese sofort. Dabei sollte das Format<br>
-    <b>N …° …' E …° …' …m …°TN</b><br>
-    eingehalten werden, z.B. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45°TN. Natürlich können auch
-    S/W/ft statt N/E/m verwendet werden, außerdem kann der Projektionsteil weggelassen werden. Statt
-    ein *-Zeichen für die Multiplikation zu verwenden, lässt Coordinate Joker auch × oder x zu, die
-    in Listings weit verbreitet sind. Dafür muss die entsprechende Auswahl unterhalb der
+    <b>N …° …' E …° …' …m …° TN</b><br>
+    oder mit Zeilenumbrüchen (um die Eingabe von °, ' zu vermeiden)<br>
+    <b>
+        N … <br>
+        … <br>
+        E … <br>
+        … <br>
+        …m <br>
+        … TN <br>
+    </b>
+    eingehalten werden, z.B. N 12° 34.567' E 12° 34.a56' 12*(b+3)m 45° TN. Natürlich können auch
+    S/W/ft statt N/E/m verwendet werden und die Leerzeichen weggelassen werden. Außerdem kann der
+    Projektionsteil ganz weggelassen werden.<br>
+    Statt ein *-Zeichen für die Multiplikation zu verwenden, lässt Coordinate Joker auch × oder x
+    zu, die in Listings weit verbreitet sind. Dafür muss die entsprechende Auswahl unterhalb der
     Eingabezeile getroffen werden.<br>
     Die Ergebnisse der automatischen Analyse werden weiter unten angezeigt. Wenn die
-    Formelextraktion fehlschlägt (rot), passe die Eingabe so lange an das o.g. Format an, bis die
-    Extraktion gelingt (grün).<br>
+    Formelextraktion fehlschlägt (rot), passe die Eingabe so lange an eines der o.g. Formate an, bis
+    die Extraktion gelingt (grün).<br>
     Wenn die Ergebnisse keine Funktionsnamen und nicht mehr als zwei Variablen enthalten, wird
     Coordinate Joker zusätzlich die im Listing verwendeten Variablen erkennen und durch x (und y)
     ersetzen. Die Ersetzung wird ebenfalls angezeigt, damit auf der Hauptseite die korrekten

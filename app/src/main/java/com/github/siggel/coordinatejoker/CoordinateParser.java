@@ -29,12 +29,12 @@ class CoordinateParser {
     // constants
     private final String INVALID = "???"; // descriptive string indicating an invalid formula/range
     private final String targetLetters = "xy"; // variables x and y are supported
-    private final String formulaPattern = "[\\w.\\s+\\-*/^()]*"; // alphanumeric.space+-*/^()
+    private final String formulaPattern = "[\\w.\\s+\\-*/^()&&[^\\n]]*"; // alphanumeric.space+-*/^()
     private final String northDegreePattern = "([N,S])(" + formulaPattern + ")°?";
     private final String eastDegreePattern = "([E,W])(" + formulaPattern + ")°?";
     private final String minutesPattern = "(" + formulaPattern + ")'?";
     private final String distancePattern = "(" + formulaPattern + ")(m|ft)";
-    private final String azimuthPattern = "(" + formulaPattern + ")°\\s*TN";
+    private final String azimuthPattern = "(" + formulaPattern + ")°?\\s*TN";
     private final String spacePattern = "\\s*";
     private final String spaceOrCommaPattern = "[\\s,]*";
     private final MainModel model;
@@ -79,7 +79,8 @@ class CoordinateParser {
         // number of distinct letters in degrees' and minutes' formulas
         foundLetters = extractDistinctLetters(
                 model.getDegreesNorth() + model.getMinutesNorth()
-                        + model.getDegreesEast() + model.getMinutesEast());
+                        + model.getDegreesEast() + model.getMinutesEast()
+                        + model.getDistance() + model.getAzimuth());
 
         // replace letters (variables) with x, y if no more than two letters were found
         if (foundLetters.length() <= 2) {
@@ -99,6 +100,12 @@ class CoordinateParser {
                                 String.valueOf(targetLetters.charAt(i))));
                 model.setMinutesEast(
                         model.getMinutesEast().replaceAll(String.valueOf(foundLetters.charAt(i)),
+                                String.valueOf(targetLetters.charAt(i))));
+                model.setDistance(
+                        model.getDistance().replaceAll(String.valueOf(foundLetters.charAt(i)),
+                                String.valueOf(targetLetters.charAt(i))));
+                model.setAzimuth(
+                        model.getAzimuth().replaceAll(String.valueOf(foundLetters.charAt(i)),
                                 String.valueOf(targetLetters.charAt(i))));
             }
         }
