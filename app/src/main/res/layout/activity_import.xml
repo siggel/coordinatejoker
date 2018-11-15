@@ -117,106 +117,114 @@
                 android:text="@string/string_import_result_explanation"
                 android:textSize="18sp" />
 
-            <GridLayout
+            <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:columnCount="3"
-                android:rowCount="3">
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideInset">
 
-                <TextView
-                    android:id="@+id/importResultNorth"
-                    android:layout_width="match_parent"
+                <GridLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    android:columnCount="3"
+                    android:rowCount="3">
 
-                <TextView
-                    android:id="@+id/importResultDegreesNorth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    <TextView
+                        android:id="@+id/importResultNorth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-                <TextView
-                    android:id="@+id/importResultMinutesNorth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/importResultDegreesNorth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-                <TextView
-                    android:id="@+id/importResultEast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    <TextView
+                        android:id="@+id/importResultMinutesNorth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/importResultDegreesEast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    <TextView
+                        android:id="@+id/importResultEast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-                <TextView
-                    android:id="@+id/importResultMinutesEast"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/importResultDegreesEast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-                <TextView
-                    android:id="@+id/importResultProjectionTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text="@string/string_import_projection"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    <TextView
+                        android:id="@+id/importResultMinutesEast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/importResultDistance"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="18sp"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                    <TextView
+                        android:id="@+id/importResultProjectionTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text="@string/string_import_projection"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-                <TextView
-                    android:id="@+id/importResultAzimuth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/importResultDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="18sp"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
 
-            </GridLayout>
+                    <TextView
+                        android:id="@+id/importResultAzimuth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </GridLayout>
+
+            </HorizontalScrollView>
 
             <TextView
                 android:id="@+id/importReplacementInfo"
