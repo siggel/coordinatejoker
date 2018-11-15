@@ -90,4 +90,5 @@
     <string name="string_error_clipboard_failed">Pasting from the clipboard did not succeed. You may try to insert it here manually.</string>
     <string name="string_import_projection">Proj.</string>
     <string name="string_x_used_for_multiplication">x as multiplication sign</string>
+    <string name="string_error_parsing_failed">The input could not be analysed.</string>
 </resources>

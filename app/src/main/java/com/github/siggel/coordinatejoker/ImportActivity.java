@@ -266,7 +266,11 @@ public class ImportActivity extends AppCompatActivity {
     }
 
     private void processInput() {
-        coordinateParser.processInput(editText.getText().toString());
-        fillGuiFromModel();
+        try {
+            coordinateParser.processInput(editText.getText().toString());
+            fillGuiFromModel();
+        } catch (Exception e) {
+            showError(getString(R.string.string_error_parsing_failed));
+        }
     }
 }

@@ -84,4 +84,5 @@
     <string name="string_error_clipboard_failed">Der Import aus der Zwischenablage ist fehlgeschlagen. Du kannst aber versuchen, sie hier manuell einzufügen.</string>
     <string name="string_import_projection">Proj.</string>
     <string name="string_x_used_for_multiplication">x als Malzeichen</string>
+    <string name="string_error_parsing_failed">Die Eingabezeile konnte nicht analysiert werden.</string>
 </resources>
