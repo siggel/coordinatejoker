@@ -33,7 +33,6 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -238,7 +237,7 @@ public class ImportActivity extends AppCompatActivity {
     private void showError(String message) {
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.custom_error_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_container));
+                findViewById(R.id.custom_toast_container));
 
         TextView textView = view.findViewById(R.id.text);
         textView.setText(message);

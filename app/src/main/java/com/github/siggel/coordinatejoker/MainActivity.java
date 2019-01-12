@@ -35,7 +35,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -85,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
         Boolean useActionViewIntent = !PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(getString(R.string.key_share), false);
-        setLeftDrawableOfTextView((TextView) findViewById(R.id.resetButton),
+        setLeftDrawableOfTextView(findViewById(R.id.resetButton),
                 R.drawable.reset_icon);
-        setLeftDrawableOfTextView((TextView) findViewById(R.id.sendButton),
+        setLeftDrawableOfTextView(findViewById(R.id.sendButton),
                 useActionViewIntent ? R.drawable.view_icon : R.drawable.share_icon);
 
         // adapt button text according to configured export behavior
@@ -367,7 +366,7 @@ public class MainActivity extends AppCompatActivity {
     private void showError(String message) {
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.custom_error_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_container));
+                findViewById(R.id.custom_toast_container));
 
         TextView textView = view.findViewById(R.id.text);
         textView.setText(message);
@@ -386,7 +385,7 @@ public class MainActivity extends AppCompatActivity {
     private void showWarning(String message) {
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.custom_warning_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_container));
+                findViewById(R.id.custom_toast_container));
 
         TextView textView = view.findViewById(R.id.text);
         textView.setText(message);
