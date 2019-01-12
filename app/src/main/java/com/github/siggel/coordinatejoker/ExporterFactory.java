@@ -23,14 +23,29 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import java.lang.reflect.Constructor;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * A factory for creating various exporters
+ * A factory for creating various exporter instances
  * <p>
- * By convention derived Exporter classes must be named "XyzExporter" for exportSettings.format
- * "xyz" if you want to use this factory for getting an instance
+ * you may register any further exporter as long as it derives from this package's Exporter
  */
 class ExporterFactory {
+
+    private static final Map<String, Class<?>> registeredExporters = new HashMap<>();
+
+    static {
+        register("gpx", GpxExporter.class);
+        register("kml", KmlExporter.class);
+        register("kmz", KmzExporter.class);
+    }
+
+    private static void register(String name, Class<?> exporter) {
+        if (Exporter.class.isAssignableFrom(exporter)) {
+            registeredExporters.put(name, exporter);
+        }
+    }
 
     /**
      * exporter generator method
@@ -42,23 +57,28 @@ class ExporterFactory {
     @NonNull
     static Exporter getExporter(@NonNull Context context,
                                 @NonNull ExportSettings exportSettings) {
-
-        final String format = exportSettings.getFormat();
-
-        if (format == null)
-            throw new ExportException(context.getString(R.string.string_exporter_missing) + "unknown format.");
-
-        // format to class name convention: xyz > fullPackageName.XyzExporter
-        final String className = Exporter.class.getPackage().getName() + "." +
-                format.substring(0, 1).toUpperCase() + format.substring(1) + "Exporter";
+        final String format = exportSettings.getFormat().toLowerCase();
         try {
-            // find class by class name and return new instance
-            Class<?> aClass = Class.forName(className);
-            Constructor<?> constructor = aClass.getDeclaredConstructor(Context.class,
-                    ExportSettings.class);
-            return (Exporter) constructor.newInstance(context, exportSettings);
+            Class<?> clazz = getRegisteredExporter(format);
+            return createExporterInstance(context, exportSettings, clazz);
         } catch (Exception e) {
-            throw new ExportException(context.getString(R.string.string_exporter_missing) + " " + format + ".");
+            throw new ExportException(context.getString(R.string.string_exporter_missing) + " \"" + format + "\".");
         }
     }
+
+    @NonNull
+    private static Class<?> getRegisteredExporter(@NonNull String format) {
+        Class<?> result = registeredExporters.get(format);
+        if (result == null) {
+            throw new RuntimeException();
+        }
+        return result;
+    }
+
+    @NonNull
+    private static Exporter createExporterInstance(@NonNull Context context, @NonNull ExportSettings exportSettings, @NonNull Class<?> clazz) throws Exception {
+        Constructor<?> constructor = clazz.getDeclaredConstructor(Context.class, ExportSettings.class);
+        return (Exporter) constructor.newInstance(context, exportSettings);
+    }
+
 }
