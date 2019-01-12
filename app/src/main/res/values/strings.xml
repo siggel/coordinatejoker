@@ -47,7 +47,7 @@
     <string name="string_gpx_export_failed">Saving gpx failed.</string>
     <string name="string_kml_export_failed">Saving kml failed.</string>
     <string name="string_kmz_export_failed">Saving kmz failed.</string>
-    <string name="string_exporter_missing">No implementation found for export to </string>
+    <string name="string_exporter_missing">No implementation found for export to format</string>
     <string name="string_sending_intent_failed">Failed sending the waypoints to another app for displaying them.</string>
     <string name="string_empty_waypoints">Sorry, the calculation did not result in any valid coordinates.</string>
     <string name="string_some_invalid_waypoints">Some x or y that did not result in valid coordinates have been omitted.</string>
