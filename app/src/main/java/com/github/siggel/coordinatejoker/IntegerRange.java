@@ -20,6 +20,7 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,6 +45,7 @@ class IntegerRange {
     // Character used to separate the step size
     private static final char STEP_CHAR = '#';
 
+    @NonNull
     static List<Integer> getValues(Context context, String text) {
         try {
             text = text.trim(); // avoid string containing just blanks
