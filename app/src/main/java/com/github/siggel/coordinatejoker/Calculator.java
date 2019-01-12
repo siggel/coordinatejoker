@@ -20,6 +20,7 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -157,16 +158,8 @@ class Calculator {
             // initialize return list
             List<Point> list = new ArrayList<>();
 
-            List<Integer> xValues = IntegerRange.getValues(context, mainModel.getXRange());
-            if (xValues.size() == 0) {
-                xValues = new ArrayList<>(1);
-                xValues.add(0);
-            }
-            List<Integer> yValues = IntegerRange.getValues(context, mainModel.getYRange());
-            if (yValues.size() == 0) {
-                yValues = new ArrayList<>(1);
-                yValues.add(0);
-            }
+            List<Integer> xValues = replaceWithDefaultIfEmpty(IntegerRange.getValues(context, mainModel.getXRange()));
+            List<Integer> yValues = replaceWithDefaultIfEmpty(IntegerRange.getValues(context, mainModel.getYRange()));
 
             for (int x : xValues) {
                 for (int y : yValues) {
@@ -214,20 +207,9 @@ class Calculator {
                     coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
                     coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
 
-                    StringBuilder name = new StringBuilder();
-                    if (IntegerRange.getValues(context, mainModel.getXRange()).size() > 0) {
-                        name.append("x=").append(x);
-                    }
-                    if (IntegerRange.getValues(context, mainModel.getYRange()).size() > 0) {
-                        if (name.length() > 0) {
-                            name.append(", ");
-                        }
-                        name.append("y=").append(y);
-                    }
-
                     // add waypoint to list
                     Point point = new Point(
-                            name.toString(),
+                            createPointName(x, y),
                             coordinateNorth,
                             coordinateEast);
                     list.add(point);
@@ -239,6 +221,30 @@ class Calculator {
         } catch (Exception e) { // also catches RuntimeException
             throw new CalculatorException(context.getString(R.string.string_formula_error));
         }
+    }
+
+    @NonNull
+    private List<Integer> replaceWithDefaultIfEmpty(@NonNull List<Integer> xValues) {
+        if (xValues.size() == 0) {
+            xValues = new ArrayList<>(1);
+            xValues.add(0);
+        }
+        return xValues;
+    }
+
+    @NonNull
+    private String createPointName(int x, int y) {
+        StringBuilder name = new StringBuilder();
+        if (IntegerRange.getValues(context, mainModel.getXRange()).size() > 0) {
+            name.append("x=").append(x);
+        }
+        if (IntegerRange.getValues(context, mainModel.getYRange()).size() > 0) {
+            if (name.length() > 0) {
+                name.append(", ");
+            }
+            name.append("y=").append(y);
+        }
+        return name.toString();
     }
 
     /**
