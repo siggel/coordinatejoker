@@ -43,8 +43,6 @@ import java.util.Scanner;
  */
 public class AboutActivity extends AppCompatActivity {
 
-    private WebView webView = null;
-
     /**
      * Android onCreate method
      *
@@ -110,12 +108,16 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     private void setContentOfWebView() {
-        webView = findViewById(R.id.aboutWebView);
+        WebView webView = findViewById(R.id.aboutWebView);
         String html = readFromAsset("about_"
                 + getString(R.string.string_html_page_language_id)
                 + ".html");
         html = insertCurrentVersion(html);
-        webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "utf-8", null);
+        webView.loadDataWithBaseURL(
+                "file:///android_asset/",
+                html, "text/html",
+                "utf-8",
+                null);
     }
 
     private void addIconsToButtons() {
