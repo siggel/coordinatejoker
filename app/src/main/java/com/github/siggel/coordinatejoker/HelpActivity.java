@@ -19,22 +19,13 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.os.Bundle;
-
 /**
  * Activity showing help page
  */
-public class HelpActivity extends VersatileWebViewActivity {
+public class HelpActivity extends AbstractWebViewActivity {
 
-    /**
-     * Android onCreate method
-     *
-     * @param savedInstanceState as defined by android
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void setContent() {
         webView.loadUrl("file:///android_asset/help_"
                 + getString(R.string.string_html_page_language_id)
                 + ".html");

@@ -19,25 +19,16 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.os.Bundle;
-
-
 /**
  * Activity showing privacy policy page
  */
-public class PrivacyPolicyActivity extends VersatileWebViewActivity {
+public class PrivacyPolicyActivity extends AbstractWebViewActivity {
 
-    /**
-     * onCreate method
-     *
-     * @param savedInstanceState as defined by android
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void setContent() {
         webView.loadUrl("file:///android_asset/privacy_policy_"
                 + getString(R.string.string_html_page_language_id)
                 + ".html");
     }
+
 }

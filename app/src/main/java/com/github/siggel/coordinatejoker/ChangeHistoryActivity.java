@@ -20,7 +20,6 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 import java.io.IOException;
 
@@ -29,17 +28,10 @@ import java.io.IOException;
  * <p>
  * If the intent provides previousVersion only the delta to previous version will be shown
  */
-public class ChangeHistoryActivity extends VersatileWebViewActivity {
+public class ChangeHistoryActivity extends AbstractWebViewActivity {
 
-    /**
-     * Android onCreate method
-     *
-     * @param savedInstanceState as defined by android
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void setContent() {
         final Intent intent = getIntent();
         final int currentVersion = intent.getIntExtra("currentVersion", 0);
         final int previousVersion = intent.getIntExtra("previousVersion", 0);

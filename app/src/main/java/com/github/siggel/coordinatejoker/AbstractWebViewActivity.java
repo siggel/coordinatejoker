@@ -30,8 +30,10 @@ import android.webkit.WebViewClient;
  * Base activity providing a versatile web view to be filled with specific content within derived
  * classes
  */
-abstract class VersatileWebViewActivity extends AppCompatActivity {
-    WebView webView;
+abstract class AbstractWebViewActivity extends AppCompatActivity {
+    protected WebView webView;
+
+    protected abstract void setContent();
 
     /**
      * onCreate method
@@ -54,6 +56,8 @@ abstract class VersatileWebViewActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        setContent();
     }
 
     /**

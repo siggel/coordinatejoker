@@ -19,23 +19,13 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.os.Bundle;
-
-
 /**
  * Activity showing terms of service page
  */
-public class TermsOfServiceActivity extends VersatileWebViewActivity {
+public class TermsOfServiceActivity extends AbstractWebViewActivity {
 
-    /**
-     * onCreate method
-     *
-     * @param savedInstanceState as defined by android
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void setContent() {
         webView.loadUrl("file:///android_asset/terms_of_service_"
                 + getString(R.string.string_html_page_language_id)
                 + ".html");

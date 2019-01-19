@@ -19,22 +19,13 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.os.Bundle;
-
 /**
  * Activity showing open source licenses page
  */
-public class OpenSourceLicensesActivity extends VersatileWebViewActivity {
+public class OpenSourceLicensesActivity extends AbstractWebViewActivity {
 
-    /**
-     * onCreate method
-     *
-     * @param savedInstanceState as defined by android
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void setContent() {
         webView.loadUrl("file:///android_asset/open_source_licenses_"
                 + getString(R.string.string_html_page_language_id)
                 + ".html");
