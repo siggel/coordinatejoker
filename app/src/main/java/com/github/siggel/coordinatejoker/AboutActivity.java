@@ -24,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +43,8 @@ import java.util.Scanner;
  */
 public class AboutActivity extends AppCompatActivity {
 
+    private WebView webView = null;
+
     /**
      * Android onCreate method
      *
@@ -51,87 +54,8 @@ public class AboutActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-
-        WebView webView = findViewById(R.id.aboutWebView);
-
-        String html = "";
-        try {
-            InputStream input = getAssets().open("about_"
-                    + getString(R.string.string_html_page_language_id)
-                    + ".html");
-            html = new Scanner(input).useDelimiter("\\A").next();
-        } catch (IOException e) {
-            // show an empty web view but continue showing at least the remaining elements
-        }
-
-        html = html.replace("%VERSION%", getVersion());
-
-        webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "utf-8", null);
-
-        // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
-        setRightDrawableOfTextView(R.id.showTermsOfService, R.drawable.arrow_right_icon);
-        setRightDrawableOfTextView(R.id.showPrivacyPolicy, R.drawable.arrow_right_icon);
-        setRightDrawableOfTextView(R.id.showAcknowledgements, R.drawable.arrow_right_icon);
-        setRightDrawableOfTextView(R.id.showOpenSourceLicenses, R.drawable.arrow_right_icon);
-
-    }
-
-    /**
-     * method for adding text view's right drawable programmatically
-     *
-     * @param viewId     text view's id
-     * @param drawableId drawable id
-     */
-    @SuppressWarnings("SameParameterValue")
-    private void setRightDrawableOfTextView(int viewId, int drawableId) {
-        Drawable drawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = AppCompatResources
-                    .getDrawable(this, drawableId);
-        } else {
-            drawable = VectorDrawableCompat
-                    .create(this.getResources(), drawableId, null);
-        }
-        TextView textView = findViewById(viewId);
-        textView.setCompoundDrawablesWithIntrinsicBounds(
-                null, null, drawable, null);
-    }
-
-
-    /**
-     * method called when user selected an item from the options menu
-     *
-     * @param item as defined by android
-     * @return boolean as defined by android
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * get app's version number
-     *
-     * @return app version as string
-     */
-    private String getVersion() {
-        try {
-            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            return "unknown";
-        }
+        setContentOfWebView();
+        addIconsToButtons();
     }
 
     /**
@@ -164,4 +88,93 @@ public class AboutActivity extends AppCompatActivity {
     public void openAcknowledgements(@SuppressWarnings("unused") View view) {
         startActivity(new Intent(this, AcknowledgementsActivity.class));
     }
+
+    /**
+     * method called when user selected an item from the options menu
+     *
+     * @param item as defined by android
+     * @return boolean as defined by android
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        if (android.R.id.home == item.getItemId()) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setContentOfWebView() {
+        webView = findViewById(R.id.aboutWebView);
+        String html = readFromAsset("about_"
+                + getString(R.string.string_html_page_language_id)
+                + ".html");
+        html = insertCurrentVersion(html);
+        webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "utf-8", null);
+    }
+
+    private void addIconsToButtons() {
+        // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
+        setRightDrawableOfTextView(R.id.showTermsOfService, R.drawable.arrow_right_icon);
+        setRightDrawableOfTextView(R.id.showPrivacyPolicy, R.drawable.arrow_right_icon);
+        setRightDrawableOfTextView(R.id.showAcknowledgements, R.drawable.arrow_right_icon);
+        setRightDrawableOfTextView(R.id.showOpenSourceLicenses, R.drawable.arrow_right_icon);
+    }
+
+    @NonNull
+    private String insertCurrentVersion(@NonNull String html) {
+        return html.replace("%VERSION%", getVersion());
+    }
+
+    @NonNull
+    private String readFromAsset(@NonNull String fileName) {
+        String html = "";
+        try {
+            InputStream input = getAssets().open(fileName);
+            html = new Scanner(input).useDelimiter("\\A").next();
+        } catch (IOException e) {
+            // show an empty web view but continue showing at least the remaining elements
+        }
+        return html;
+    }
+
+    /**
+     * method for adding text view's right drawable programmatically
+     *
+     * @param viewId     text view's id
+     * @param drawableId drawable id
+     */
+    @SuppressWarnings("SameParameterValue")
+    private void setRightDrawableOfTextView(int viewId, int drawableId) {
+        Drawable drawable;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            drawable = AppCompatResources
+                    .getDrawable(this, drawableId);
+        } else {
+            drawable = VectorDrawableCompat
+                    .create(this.getResources(), drawableId, null);
+        }
+        TextView textView = findViewById(viewId);
+        textView.setCompoundDrawablesWithIntrinsicBounds(
+                null, null, drawable, null);
+    }
+
+    /**
+     * get app's version number
+     *
+     * @return app version as string
+     */
+    private String getVersion() {
+        try {
+            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            return "unknown";
+        }
+    }
+
 }
