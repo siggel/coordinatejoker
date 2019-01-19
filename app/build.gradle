@@ -5,6 +5,7 @@ android {
     }
     compileSdkVersion 28
 
+    /*
     // autoincrement version with each release assembly
     Properties versionProps = new Properties()
     def versionPropsFile = file('version.properties')
@@ -19,6 +20,12 @@ android {
     def code = (versionProps['VERSION_CODE'] ?: "0").toInteger() + value
     versionProps['VERSION_CODE'] = code.toString()
     versionProps.store(versionPropsFile.newWriter(), null)
+    */
+    Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.exists())
+        versionProps.load(new FileInputStream(versionPropsFile))
+    def code = (versionProps['VERSION_CODE'] ?: "0").toInteger()
 
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
@@ -59,16 +66,10 @@ android.applicationVariants.all { variant ->
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    /*
-        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-        implementation 'com.android.support:design:27.1.1'
-        implementation 'com.android.support:support-v4:27.1.1'
-        implementation 'com.android.support:support-vector-drawable:27.1.1'
-        */
-    // add expression solver
     implementation 'net.objecthunter:exp4j:0.4.8'
-    // no locus required yet
     implementation 'com.asamm:locus-api-android:0.2.20'
+
+    // test
     androidTestImplementation 'junit:junit:4.12'
     testImplementation 'junit:junit:4.12'
 }
