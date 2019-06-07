@@ -33,7 +33,7 @@ abstract class AbstractWebViewActivity extends AppCompatActivity {
     /**
      * WebView to be used in implementations
      */
-    protected WebView webView;
+    WebView webView;
 
     /**
      * abstract method to be implemented for setting webView's content
