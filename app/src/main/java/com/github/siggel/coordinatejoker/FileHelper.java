@@ -46,6 +46,7 @@ final class FileHelper {
     static void writeContentToFile(@NonNull File file,
                                    @NonNull String content) throws IOException {
         FileOutputStream outputStream = new FileOutputStream(file);
+        //noinspection CharsetObjectCanBeUsed // StandardCharsets not supported by API level 17
         outputStream.write(content.getBytes("UTF-8"));
         outputStream.close();
     }

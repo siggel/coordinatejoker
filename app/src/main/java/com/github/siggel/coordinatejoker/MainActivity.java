@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.degreesNorthFormula).requestFocus();
 
         // programmatically add icons to buttons (as it does not work from xml for pre-Lollipop)
-        Boolean useActionViewIntent = !PreferenceManager.getDefaultSharedPreferences(this)
+        boolean useActionViewIntent = !PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(getString(R.string.key_share), false);
         setLeftDrawableOfTextView(findViewById(R.id.resetButton),
                 R.drawable.reset_icon);
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             fillModelFromGui();
 
-            final Integer requestedNumberOfPoints = Math.max(1,
+            final int requestedNumberOfPoints = Math.max(1,
                     IntegerRange.getValues(this, mainModel.getXRange()).size())
                     * Math.max(1,
                     IntegerRange.getValues(this, mainModel.getYRange()).size());
