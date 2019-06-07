@@ -29,6 +29,8 @@ import android.preference.SwitchPreference;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import java.util.Objects;
+
 
 @SuppressWarnings("deprecation")
 public class SettingsActivity extends AppCompatPreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -85,7 +87,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
         if (key.equals(getString(R.string.key_use_with))) {
             final String stringValue = sharedPreferences.getString(key, "");
 
-            if (!stringValue.equals("expert")) {
+            if (!Objects.requireNonNull(stringValue).equals("expert")) {
                 ExportSettings exportSettings = new ExportSettings(stringValue);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(getString(R.string.key_share), exportSettings.isWantsToShare());

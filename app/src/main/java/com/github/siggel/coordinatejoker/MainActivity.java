@@ -42,6 +42,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * class for showing main application page
@@ -104,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         int currentVersion = getCurrentVersion();
         int previousVersion = getPreviousVersion();
 
-        //noinspection StatementWithEmptyBody
         if (previousVersion < 13) {
             // very first startup
 
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
             ExportSettings exportSettings = new ExportSettings();
             String app = PreferenceManager.getDefaultSharedPreferences(this)
                     .getString(getString(R.string.key_use_with), "locus");
-            if (app.equals("expert")) {
+            if (Objects.requireNonNull(app).equals("expert")) {
                 exportSettings.setWantsToShare(PreferenceManager.getDefaultSharedPreferences(this)
                         .getBoolean(getString(R.string.key_share), false));
                 exportSettings.setUseMimeType(PreferenceManager.getDefaultSharedPreferences(this)

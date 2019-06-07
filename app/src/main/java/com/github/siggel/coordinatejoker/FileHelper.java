@@ -84,7 +84,7 @@ final class FileHelper {
         zipFile.createNewFile();
         FileOutputStream destination = new FileOutputStream(zipFile);
         ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));
-        byte data[] = new byte[bufferSize];
+        byte[] data = new byte[bufferSize];
 
         for (File file : fileList) {
             FileInputStream in = new FileInputStream(file);
