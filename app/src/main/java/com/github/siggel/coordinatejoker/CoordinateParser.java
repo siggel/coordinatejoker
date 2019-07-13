@@ -66,11 +66,11 @@ class CoordinateParser {
     private String orderLikeTargetLetters(String letters) {
         // if letters contains first target letter, bring it to the front
         letters = letters.replaceAll(
-                "(.*)(" + String.valueOf(targetLetters.charAt(0)) + ")(.*)",
+                "(.*)(" + targetLetters.charAt(0) + ")(.*)",
                 "$2$1$3");
         // if letters contains second target letter, bring it to the end
         letters = letters.replaceAll(
-                "(.*)(" + String.valueOf(targetLetters.charAt(1)) + ")(.*)",
+                "(.*)(" + targetLetters.charAt(1) + ")(.*)",
                 "$1$3$2");
         return letters;
     }

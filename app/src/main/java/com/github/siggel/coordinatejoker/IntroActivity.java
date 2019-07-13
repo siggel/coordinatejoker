@@ -82,9 +82,8 @@ public class IntroActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_intro);
 
-        useLocus = PreferenceManager.getDefaultSharedPreferences(this)
-                .getString(getString(R.string.key_use_with), "")
-                .equals("locus");
+        useLocus = "locus".equals(PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(getString(R.string.key_use_with), ""));
 
         textView = findViewById(R.id.introTextView);
         imageView = findViewById(R.id.introImageView);
@@ -211,13 +210,10 @@ public class IntroActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                pageNumber = 0;
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            pageNumber = 0;
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

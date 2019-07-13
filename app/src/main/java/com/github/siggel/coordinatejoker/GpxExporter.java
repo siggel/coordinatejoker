@@ -93,7 +93,6 @@ class GpxExporter extends Exporter {
         gpxData.append("<gpx version=\"1.1\" creator=\"Coordinate Joker, Android\"\n");
         gpxData.append("  xmlns=\"http://www.topografix.com/GPX/1/1\"\n");
         gpxData.append("  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n");
-        //noinspection StringConcatenationInsideStringBufferAppend
         gpxData.append("  xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 " +
                 "http://www.topografix.com/GPX/1/1/gpx.xsd\"\n");
         gpxData.append("  xmlns:gpx_style=\"http://www.topografix.com/GPX/gpx_style/0/2\">\n");
