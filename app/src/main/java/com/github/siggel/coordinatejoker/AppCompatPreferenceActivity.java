@@ -17,7 +17,7 @@ import android.view.ViewGroup;
  * A PreferenceActivity which implements and proxies the necessary calls to be used with AppCompat.
  * This class was generated from Android studio, so no modifications and no further JavaDoc here.
  */
-@SuppressWarnings({"WeakerAccess", "unused"})
+@SuppressWarnings({"unused"})
 public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
 
     private AppCompatDelegate mDelegate;
