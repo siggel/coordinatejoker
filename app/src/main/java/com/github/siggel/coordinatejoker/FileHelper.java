@@ -43,6 +43,7 @@ final class FileHelper {
      * @param file    file to write to
      * @param content string content to be written to file
      */
+    @SuppressWarnings("CharsetObjectCanBeUsed") // because that would require API level 19
     static void writeContentToFile(@NonNull File file,
                                    @NonNull String content) throws IOException {
         FileOutputStream outputStream = new FileOutputStream(file);

@@ -85,9 +85,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
 
         // update expert settings if "use with" changed
         if (key.equals(getString(R.string.key_use_with))) {
-            final String stringValue = sharedPreferences.getString(key, "");
+            final String stringValue = Objects.requireNonNull(sharedPreferences.getString(key, ""));
 
-            if (!Objects.requireNonNull(stringValue).equals("expert")) {
+            if (!("expert".equals(stringValue))) {
                 ExportSettings exportSettings = new ExportSettings(stringValue);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(getString(R.string.key_share), exportSettings.isWantsToShare());

@@ -27,7 +27,7 @@ import static org.junit.Assert.assertTrue;
 
 public class CoordinateParserTest {
 
-    private static CoordinateParser coordinateParser = new CoordinateParser();
+    private static final CoordinateParser coordinateParser = new CoordinateParser();
 
     @SuppressWarnings("MethodWithTooManyParameters")
     private static void assertModelValues(MainModel model,

@@ -281,9 +281,9 @@ public class MainActivity extends AppCompatActivity {
 
             // determine export format from preferences
             ExportSettings exportSettings = new ExportSettings();
-            String app = PreferenceManager.getDefaultSharedPreferences(this)
-                    .getString(getString(R.string.key_use_with), "locus");
-            if (Objects.requireNonNull(app).equals("expert")) {
+            String app = Objects.requireNonNull(PreferenceManager.getDefaultSharedPreferences(this)
+                    .getString(getString(R.string.key_use_with), "locus"));
+            if ("expert".equals(app)) {
                 exportSettings.setWantsToShare(PreferenceManager.getDefaultSharedPreferences(this)
                         .getBoolean(getString(R.string.key_share), false));
                 exportSettings.setUseMimeType(PreferenceManager.getDefaultSharedPreferences(this)

@@ -30,8 +30,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Objects;
-
 /**
  * Activity showing help page
  */
@@ -84,9 +82,8 @@ public class IntroActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_intro);
 
-        useLocus = Objects.requireNonNull(PreferenceManager.getDefaultSharedPreferences(this)
-                .getString(getString(R.string.key_use_with), ""))
-                .equals("locus");
+        useLocus = "locus".equals(PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(getString(R.string.key_use_with), ""));
 
         textView = findViewById(R.id.introTextView);
         imageView = findViewById(R.id.introImageView);
