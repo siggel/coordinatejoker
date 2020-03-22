@@ -147,15 +147,15 @@ public class ImportActivity extends AppCompatActivity {
         showReplacementInfo();
 
         if (coordinateParser.isModelValid()) {
-            colorifyResult(DARK_GREEN);
+            colorizeResult(DARK_GREEN);
             buttonUseResult.setEnabled(true);
         } else {
-            colorifyResult(RED);
+            colorizeResult(RED);
             buttonUseResult.setEnabled(false);
         }
     }
 
-    private void colorifyResult(int color) {
+    private void colorizeResult(int color) {
         textViewNorth.setTextColor(color);
         textViewDegreesNorth.setTextColor(color);
         textViewMinutesNorth.setTextColor(color);
