@@ -1,1 +1,4 @@
 /build
+/src/main/gen/com/github/siggel/coordinatejoker/BuildConfig.java
+/src/main/gen/com/github/siggel/coordinatejoker/Manifest.java
+/src/main/gen/com/github/siggel/coordinatejoker/R.java
