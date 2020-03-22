@@ -110,7 +110,7 @@ public class IntroActivity extends AppCompatActivity {
      * @param view view just syntactically needed here
      */
     public void next(@SuppressWarnings("unused") View view) {
-        int increment = Integer.valueOf(view.getTag().toString());
+        int increment = Integer.parseInt(view.getTag().toString());
         pageNumber += increment;
         adjustPageContent();
     }
