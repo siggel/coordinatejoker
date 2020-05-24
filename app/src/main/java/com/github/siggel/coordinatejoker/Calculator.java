@@ -25,8 +25,10 @@ import android.support.annotation.NonNull;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Class performing the calculations given string formulas and x value
@@ -37,7 +39,10 @@ class Calculator {
      * constant for meter to feet conversion
      */
     private static final double meterPerFeet = 0.3048;
-    private static final DecimalFormat df = new DecimalFormat("0.##");
+    /**
+     * decimal format conversion to remove fractional zeros (use locale US to keep . instead of , if fractional part is nonzero)
+     */
+    private static final DecimalFormat df = new DecimalFormat("0.########", new DecimalFormatSymbols(Locale.US));
     /**
      * the formula mainModel
      */
@@ -164,55 +169,59 @@ class Calculator {
             for (int x : xValues) {
                 for (int y : yValues) {
 
-                    // get formulas from mainModel
-                    String degreesNorth = mainModel.getDegreesNorth();
-                    String degreesEast = mainModel.getDegreesEast();
-                    String minutesNorth = mainModel.getMinutesNorth();
-                    String minutesEast = mainModel.getMinutesEast();
-                    String distance = mainModel.getDistance();
-                    String azimuth = mainModel.getAzimuth();
+                    try {
+                        // get formulas from mainModel
+                        String degreesNorth = mainModel.getDegreesNorth();
+                        String degreesEast = mainModel.getDegreesEast();
+                        String minutesNorth = mainModel.getMinutesNorth();
+                        String minutesEast = mainModel.getMinutesEast();
+                        String distance = mainModel.getDistance();
+                        String azimuth = mainModel.getAzimuth();
 
-                    // first evaluate north and east coordinate
-                    double degrees = evaluate(degreesNorth, x, y);
-                    double minutes = evaluate(minutesNorth, x, y);
-                    if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
-                        // skip invalid waypoints
-                        continue;
+                        // first evaluate north and east coordinate
+                        double degrees = evaluate(degreesNorth, x, y);
+                        double minutes = evaluate(minutesNorth, x, y);
+                        if (checkInvalidLatitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
+                            // skip invalid waypoints
+                            continue;
+                        }
+                        double coordinateNorth =
+                                (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                        degrees = evaluate(degreesEast, x, y);
+                        minutes = evaluate(minutesEast, x, y);
+                        if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
+                            // skip invalid waypoints
+                            continue;
+                        }
+                        double coordinateEast =
+                                (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
+
+                        // calculate projection delta
+                        double deltaDistance = evaluate(distance, x, y);
+                        if (mainModel.getFeet())
+                            deltaDistance *= meterPerFeet;
+
+                        double deltaAzimuth = evaluate(azimuth, x, y);
+                        double deltaCoordinateNorth =
+                                Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
+                        double deltaCoordinateEast =
+                                Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
+                                        / Math.cos(Math.toRadians(coordinateNorth));
+
+                        // add projection delta to coordinate
+                        coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
+                        coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
+
+                        // add waypoint to list
+                        Point point = new Point(
+                                createPointName(x, y),
+                                coordinateNorth,
+                                coordinateEast);
+                        list.add(point);
+                    } catch (java.lang.NumberFormatException e) { // omit points with wrong number format, e.g. 11.(1001/4)=11.250.25
+                        // just continue with next point
                     }
-                    double coordinateNorth =
-                            (mainModel.getNorth() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                    degrees = evaluate(degreesEast, x, y);
-                    minutes = evaluate(minutesEast, x, y);
-                    if (checkInvalidLongitudeDegrees(degrees) || checkInvalidMinutes(minutes)) {
-                        // skip invalid waypoints
-                        continue;
-                    }
-                    double coordinateEast =
-                            (mainModel.getEast() ? 1 : -1) * (degrees + (minutes / 60.0));
-
-                    // calculate projection delta
-                    double deltaDistance = evaluate(distance, x, y);
-                    if (mainModel.getFeet())
-                        deltaDistance *= meterPerFeet;
-
-                    double deltaAzimuth = evaluate(azimuth, x, y);
-                    double deltaCoordinateNorth =
-                            Math.cos(Math.toRadians(deltaAzimuth)) * deltaDistance;
-                    double deltaCoordinateEast =
-                            Math.sin(Math.toRadians(deltaAzimuth)) * deltaDistance
-                                    / Math.cos(Math.toRadians(coordinateNorth));
-
-                    // add projection delta to coordinate
-                    coordinateNorth += deltaCoordinateNorth / 1850.0 / 60.0;
-                    coordinateEast += deltaCoordinateEast / 1850.0 / 60.0;
-
-                    // add waypoint to list
-                    Point point = new Point(
-                            createPointName(x, y),
-                            coordinateNorth,
-                            coordinateEast);
-                    list.add(point);
                 }
             }
 
