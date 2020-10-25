@@ -38,7 +38,7 @@
     <string name="string_send">Send</string>
     <string name="string_x_values">x values: </string>
     <string name="string_y_values">y values: </string>
-    <string name="string_checkbox_minutes_replacement">Replace minutes mm.mmm with mm+(mmm)/1000.0</string>
+    <string name="string_checkbox_minutes_replacement">Replace minutes mm.mmm with mm + (mmm)/1000.0</string>
     <string name="htmlstring_checkbox_explanation_link"><![CDATA[An explanation for the above selection is given <a href="coordinatejoker_checkbox_explanation://">here</a>.]]></string>
     <string name="string_projection">Select unit \"m\" or \"ft\", leave distance \"0\" if you don\'t need a projection:</string>
     <string name="string_distance">Distance: </string>
