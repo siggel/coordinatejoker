@@ -36,6 +36,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
         // set text from html again to support links
         ((TextView) findViewById(R.id.mainTextViewIntro)).setText(Html.fromHtml(getString(R.string.htmlstring_intro)));
         ((TextView) findViewById(R.id.mainTextViewIntro)).setMovementMethod(LinkMovementMethod.getInstance());
+        ((TextView) findViewById(R.id.checkboxExplanationLink)).setText(Html.fromHtml(getString(R.string.htmlstring_checkbox_explanation_link)));
+        ((TextView) findViewById(R.id.checkboxExplanationLink)).setMovementMethod(LinkMovementMethod.getInstance());
 
         // set focus to top left element (except North/South selector)
         findViewById(R.id.degreesNorthFormula).requestFocus();
@@ -199,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.degreesEastFormula)).setText(mainModel.getDegreesEast());
         ((EditText) findViewById(R.id.minutesNorthFormula)).setText(mainModel.getMinutesNorth());
         ((EditText) findViewById(R.id.minutesEastFormula)).setText(mainModel.getMinutesEast());
+        ((CheckBox) findViewById(R.id.doReplaceMinutes)).setChecked(mainModel.getDoReplaceMinutes());
         ((EditText) findViewById(R.id.distanceFormula)).setText(mainModel.getDistance());
         ((Spinner) findViewById(R.id.spinnerUnits)).setSelection(mainModel.getFeet() ? 0 : 1);
         ((EditText) findViewById(R.id.azimuthFormula)).setText(mainModel.getAzimuth());
@@ -224,6 +228,8 @@ public class MainActivity extends AppCompatActivity {
                 ((EditText) findViewById(R.id.minutesNorthFormula)).getText().toString());
         mainModel.setMinutesEast(
                 ((EditText) findViewById(R.id.minutesEastFormula)).getText().toString());
+        mainModel.setDoReplaceMinutes(
+                ((CheckBox) findViewById(R.id.doReplaceMinutes)).isChecked());
         mainModel.setDistance(
                 ((EditText) findViewById(R.id.distanceFormula)).getText().toString());
         mainModel.setFeet(

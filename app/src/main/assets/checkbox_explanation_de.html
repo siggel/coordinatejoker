@@ -1,0 +1,63 @@
+<!--
+  ~ Copyright (c) 2020 by siggel <siggel-apps@gmx.de>
+  ~
+  ~     This file is part of Coordinate Joker.
+  ~
+  ~     Coordinate Joker is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Coordinate Joker is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+</head>
+
+<body>
+<h4>Kurzversion</h4>
+<p>
+    Wenn der Punkt zwischen Vor- und Nachkommastellen der Minuten (mm.mmm) der einzige oder
+    zumindest der erste Punkt in der Formel ist, dann sollte die Option angewählt werden.
+</p>
+<h4>Warum brauche ich das?</h4>
+<p>
+    Die Minuten mm.mmm beim Geocaching bezeichnen eine Zahl mit 3 Nachkommastellen. Dabei sind recht
+    unmathematische Formelnotationen gebräuchlich. Statt einer Schreibweise 12.(x+3)(y+4)5 wäre
+    mathematisch korrekt: 12 + (x+3)/10 + (y+4)/100 + 5/1000. So wird man
+    das aber in den seltensten Fällen im Listing vorfinden.
+</p>
+<p>
+    Coordinate Joker versucht daher, auch die erste Schreibweise korrekt zu interpretieren. Dabei
+    läuft es aber manchmal gegen die Wand, denn eine Formel wie (1+2).(345-321) ergibt 3.24 (wenn
+    man die Klammern auflöst ohne das große Ganze zu kennen) statt wie hier ziemlich offensichtlich
+    gewünscht 3.024. Durch Anwählen der Option formt Coordinate Joker das Beispiel zu
+    (1+2) + ((345-321))/1000.0 um, so dass sich korrekt 3.024 ergibt.
+</p>
+<p>
+    Allerdings hat auch dieses Vorgehen einen Fallstrick, denn die Trennung in Vor- und
+    Nachkommastellen der Minuten ist u.U. auch nicht ganz einfach. <b>Coordinate Joker trennt die
+    Formel einfachstmöglich am ersten Punkt in Vor- und Nachkommastellen!</b> Das dürfte in den
+    allermeisten Fällen gut funktionieren, da für die Berechnung häufig nur ganze Zahlen verwendet
+    werden.
+</p>
+<p>
+    In seltenen Fällen mag es aber vorkommen, dass dies nicht der Fall ist, dann muss die Option
+    abgewählt werden und ggf. eine Umformung von Hand erfolgen, indem die Minuten folgendermaßen
+    aufgeschrieben werden: Vorkommastellen + ( Nachkommastellen ) / 1000.0
+</p>
+</body>
+</html>
+

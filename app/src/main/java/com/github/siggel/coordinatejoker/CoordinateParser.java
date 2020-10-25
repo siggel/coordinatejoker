@@ -173,6 +173,7 @@ class CoordinateParser {
         model.setDegreesNorth(INVALID);
         model.setMinutesNorth(INVALID);
         model.setEast(true);
+        model.setDoReplaceMinutes(true);
         model.setDegreesEast(INVALID);
         model.setMinutesEast(INVALID);
         model.setDistance(INVALID);

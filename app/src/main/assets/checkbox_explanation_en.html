@@ -1,0 +1,61 @@
+<!--
+  ~ Copyright (c) 2020 by siggel <siggel-apps@gmx.de>
+  ~
+  ~     This file is part of Coordinate Joker.
+  ~
+  ~     Coordinate Joker is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Coordinate Joker is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+</head>
+
+<body>
+<h4>Short Version</h4>
+<p>
+    If the dot between integer and decimal places (mm.mmm) is the only or at least the very first
+    dot in the formula, then please select this option.
+</p>
+<h4>Why do I need this?</h4>
+<p>
+    The minutes mm.mmm in Geocaching denote a number with 3 decimal places. Most listings use a
+    quite non-mathematical formula notation. Instead of writing 12.(x+3)(y+4)5 the mathematically
+    correct formula would be: 12 + (x+3)/10 + (y+4)/100 + 5/1000. However, you will not find that
+    notation in the majority of listings.
+</p>
+<p>
+    Coordinate Joker therefore tries to interpret the first notation, too. However, sometimes it
+    runs it's head against a wall, e.g. a formula like (1+2).(345-321) results in 3.24 (simply
+    solving the brackets without knowing the big picture), but obviously 3.024 was intended here. By
+    selecting the option Coordinate Joker will modify the above given example to
+    (1+2) + ((345-321))/1000.0, such that the correct result 3.024 is obtained.
+</p>
+<p>
+    Unfortunately doing so has one pitfall, too, because it may not be trivial to identify the
+    integer and decimal part of the minutes. <b>Coordinate Joker will simply use the very first dot
+    to separate between integer and decimal parts of the formula!</b> That should work well in the
+    vast majority of cases, as most formulas will involve only integer numbers.
+</p>
+<p>
+    In rare cases this may not be the case, then the option must be deselected and, if necessary,
+    the formula should be manually rewritten as follows: integer part + ( decimal part ) / 1000.0
+</p>
+</body>
+</html>
+

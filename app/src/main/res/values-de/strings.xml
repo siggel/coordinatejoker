@@ -34,6 +34,8 @@
     <string name="string_send">Senden</string>
     <string name="string_x_values">x-Werte: </string>
     <string name="string_y_values">y-Werte: </string>
+    <string name="string_checkbox_minutes_replacement">Ersetze Minuten mm.mmm durch mm+(mmm)/1000.0</string>
+    <string name="htmlstring_checkbox_explanation_link"><![CDATA[Eine Erläuterung zur vorstehenden Auswahl findet sich <a href="coordinatejoker_checkbox_explanation://">hier</a>.]]></string>
     <string name="string_projection">Einheit \"m\" oder \"ft\" einstellen, nutze Distanz \"0\", um keine Projektion durchzuführen:</string>
     <string name="string_distance">Distanz: </string>
     <string name="string_azimuth">Winkel: </string>
@@ -85,4 +87,5 @@
     <string name="string_import_projection">Proj.</string>
     <string name="string_x_used_for_multiplication">x als Malzeichen</string>
     <string name="string_error_parsing_failed">Die Eingabezeile konnte nicht analysiert werden.</string>
+    <string name="title_activity_checkbox_explanation">Erläuterung</string>
 </resources>

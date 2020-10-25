@@ -35,6 +35,7 @@ class MainModel {
     private String azimuth; // in degrees
     private String xRange; // string defining x range
     private String yRange; // string defining y range
+    private Boolean doReplaceMinutes; // true means replace mm.mmm by mm+(mmm)/1000
 
     /**
      * constructor
@@ -58,6 +59,7 @@ class MainModel {
         azimuth = "0";
         xRange = "0-9";
         yRange = "";
+        doReplaceMinutes = true;
     }
 
     /**
@@ -75,6 +77,7 @@ class MainModel {
         azimuth = "55*y";
         xRange = "3-9#3";
         yRange = "0-2,9";
+        doReplaceMinutes = true;
     }
 
 
@@ -167,4 +170,11 @@ class MainModel {
         this.yRange = yRange;
     }
 
+    public Boolean getDoReplaceMinutes() {
+        return doReplaceMinutes;
+    }
+
+    public void setDoReplaceMinutes(Boolean replaceMinutes) {
+        doReplaceMinutes = replaceMinutes;
+    }
 }

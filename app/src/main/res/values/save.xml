@@ -24,6 +24,7 @@
     <string name="key_is_east" translatable="false">ui_is_east</string>
     <string name="key_degrees_east" translatable="false">ui_degrees_east</string>
     <string name="key_minutes_east" translatable="false">ui_minutes_east</string>
+    <string name="key_do_replace_minutes" translatable="false">ui_do_replace_minutes</string>
     <string name="key_distance" translatable="false">ui_distance</string>
     <string name="key_is_feet" translatable="false">ui_is_feet</string>
     <string name="key_azimuth" translatable="false">ui_azimuth</string>

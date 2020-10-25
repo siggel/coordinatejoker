@@ -172,7 +172,7 @@
                         android:layout_gravity="fill_horizontal|center_vertical"
                         android:inputType="textNoSuggestions"
                         android:minEms="2"
-                        android:nextFocusDown="@+id/distanceFormula"
+                        android:nextFocusDown="@+id/doReplaceMinutes"
                         android:text="(12304+10*x)/1000.0"
                         android:textAlignment="textEnd"
                         android:textSize="18sp"
@@ -189,6 +189,26 @@
                 </GridLayout>
 
             </HorizontalScrollView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5sp"
+                tools:ignore="SmallSp" />
+
+            <CheckBox
+                android:id="@+id/doReplaceMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:nextFocusDown="@+id/distanceFormula"
+                android:text="@string/string_checkbox_minutes_replacement"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/checkboxExplanationLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp" />
 
             <Space
                 android:layout_width="match_parent"

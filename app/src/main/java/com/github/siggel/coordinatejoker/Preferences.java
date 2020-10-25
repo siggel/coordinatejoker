@@ -64,6 +64,8 @@ class Preferences {
                 sharedPref.getString(context.getString(R.string.key_degrees_east), ""));
         mainModel.setMinutesEast(
                 sharedPref.getString(context.getString(R.string.key_minutes_east), ""));
+        mainModel.setDoReplaceMinutes(
+                sharedPref.getBoolean(context.getString(R.string.key_do_replace_minutes), true));
         mainModel.setDistance(
                 sharedPref.getString(context.getString(R.string.key_distance), "0"));
         mainModel.setFeet(
@@ -89,6 +91,7 @@ class Preferences {
         editor.putBoolean(context.getString(R.string.key_is_east), mainModel.getEast());
         editor.putString(context.getString(R.string.key_degrees_east), mainModel.getDegreesEast());
         editor.putString(context.getString(R.string.key_minutes_east), mainModel.getMinutesEast());
+        editor.putBoolean(context.getString(R.string.key_do_replace_minutes), mainModel.getDoReplaceMinutes());
         editor.putString(context.getString(R.string.key_distance), mainModel.getDistance());
         editor.putBoolean(context.getString(R.string.key_is_feet), mainModel.getFeet());
         editor.putString(context.getString(R.string.key_azimuth), mainModel.getAzimuth());

@@ -91,6 +91,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <!-- checkbox explanation activity -->
+        <activity
+            android:name=".CheckboxExplanationActivity"
+            android:label="@string/title_activity_checkbox_explanation"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="coordinatejoker_checkbox_explanation" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <!-- intro activity -->
         <activity
             android:name=".IntroActivity"

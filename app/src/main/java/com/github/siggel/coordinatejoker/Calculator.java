@@ -178,6 +178,13 @@ class Calculator {
                         String distance = mainModel.getDistance();
                         String azimuth = mainModel.getAzimuth();
 
+                        // if user prefers replace mm.mmm with mm+(mmm)/1000 such that calculations
+                        // like 12.(124-123) do not become 21.1 but 21.001
+                        if (mainModel.getDoReplaceMinutes()) {
+                            minutesNorth = minutesNorth.replaceFirst("\\.", "+(") + ")/1000.0";
+                            minutesEast = minutesEast.replaceFirst("\\.", "+(") + ")/1000.0";
+                        }
+
                         // first evaluate north and east coordinate
                         double degrees = evaluate(degreesNorth, x, y);
                         double minutes = evaluate(minutesNorth, x, y);
