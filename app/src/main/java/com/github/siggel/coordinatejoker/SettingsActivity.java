@@ -26,8 +26,9 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
-import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+
+import androidx.core.app.NavUtils;
 
 import java.util.Objects;
 

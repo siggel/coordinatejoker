@@ -19,7 +19,7 @@
 
 package com.github.siggel.coordinatejoker;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * a named waypoint

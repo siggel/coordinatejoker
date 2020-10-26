@@ -20,7 +20,8 @@
 package com.github.siggel.coordinatejoker;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import net.objecthunter.exp4j.ExpressionBuilder;
 

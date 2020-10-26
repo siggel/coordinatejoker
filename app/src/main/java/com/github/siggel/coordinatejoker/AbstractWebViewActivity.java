@@ -20,9 +20,10 @@
 package com.github.siggel.coordinatejoker;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Base activity providing a versatile web view to be filled with specific content within derived
