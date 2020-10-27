@@ -339,27 +339,20 @@ public class MainActivity extends AppCompatActivity {
         // be sure to save preferences before switching to another activity
         this.store();
 
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
-            case R.id.action_about:
-                startActivity(new Intent(this, AboutActivity.class));
-                break;
-            case R.id.action_intro:
-                startActivity(new Intent(this, IntroActivity.class));
-                break;
-            case R.id.action_change_history:
-                // intent without extra previousVersion, i.e. from the beginning
-                Intent intent = new Intent(this, ChangeHistoryActivity.class);
-                intent.putExtra("currentVersion", getCurrentVersion());
-                startActivity(intent);
-                break;
-            case R.id.action_help:
-                startActivity(new Intent(this, HelpActivity.class));
-                break;
-            default:
-                break;
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+        } else if (id == R.id.action_about) {
+            startActivity(new Intent(this, AboutActivity.class));
+        } else if (id == R.id.action_intro) {
+            startActivity(new Intent(this, IntroActivity.class));
+        } else if (id == R.id.action_change_history) {
+            // intent without extra previousVersion, i.e. from the beginning
+            Intent intent = new Intent(this, ChangeHistoryActivity.class);
+            intent.putExtra("currentVersion", getCurrentVersion());
+            startActivity(intent);
+        } else if (id == R.id.action_help) {
+            startActivity(new Intent(this, HelpActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

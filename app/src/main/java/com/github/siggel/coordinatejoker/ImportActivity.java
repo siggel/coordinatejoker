@@ -76,13 +76,13 @@ public class ImportActivity extends AppCompatActivity {
         try {
             ClipboardManager clipboard =
                     (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            //noinspection ConstantConditions // NullPointerException is handled
+            // NullPointerException is handled
             if (clipboard.getPrimaryClipDescription().hasMimeType(MIMETYPE_TEXT_PLAIN)) {
-                //noinspection ConstantConditions // NullPointerException is handled
+                // NullPointerException is handled
                 ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
                 clipboardContent = item.getText().toString();
             } else if (clipboard.getPrimaryClipDescription().hasMimeType(MIMETYPE_TEXT_HTML)) {
-                //noinspection ConstantConditions // NullPointerException is handled
+                // NullPointerException is handled
                 ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
                 clipboardContent = Html.fromHtml(item.getHtmlText()).toString();
             } else {
@@ -248,16 +248,13 @@ public class ImportActivity extends AppCompatActivity {
 
 
     public void onRadioButtonClicked(View view) {
-        switch (view.getId()) {
-            case R.id.importPreprocessLowerX:
-                coordinateParser.setLetterToBeReplacedByStar('x');
-                break;
-            case R.id.importPreprocessDiagonalCross:
-                coordinateParser.setLetterToBeReplacedByStar('×');
-                break;
-            default:
-                coordinateParser.setLetterToBeReplacedByStar('*');
-                break;
+        int id = view.getId();
+        if (id == R.id.importPreprocessLowerX) {
+            coordinateParser.setLetterToBeReplacedByStar('x');
+        } else if (id == R.id.importPreprocessDiagonalCross) {
+            coordinateParser.setLetterToBeReplacedByStar('×');
+        } else {
+            coordinateParser.setLetterToBeReplacedByStar('*');
         }
         processInput();
     }
