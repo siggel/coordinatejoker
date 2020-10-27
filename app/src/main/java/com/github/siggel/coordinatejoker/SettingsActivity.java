@@ -103,12 +103,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
 
     private void toggleExpertSettings(String stringValue) {
         final PreferenceCategory expertCategory = (PreferenceCategory) findPreference(getString(R.string.key_expert_category));
-        if (stringValue.equals("expert")) {
-            expertCategory.setEnabled(true);
-        } else {
-            expertCategory.setEnabled(false);
-        }
-
+        expertCategory.setEnabled(stringValue.equals("expert"));
     }
 
     @Override
