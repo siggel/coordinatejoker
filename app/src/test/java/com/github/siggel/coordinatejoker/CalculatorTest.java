@@ -59,6 +59,7 @@ public class CalculatorTest {
     public void nestedParentheses() {
         assertEquals(42.0, Calculator.evaluate("(x+(x+y)) (x+x)", 1, 2));
         assertEquals(42.0, Calculator.evaluate("(x+(x+y))(x+x)", 1, 2));
+        assertEquals(42.0, Calculator.evaluate("(x+[x+y])[x+x]", 1, 2));
     }
 
     @Test

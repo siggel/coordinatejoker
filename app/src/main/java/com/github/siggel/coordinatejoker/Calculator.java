@@ -73,9 +73,9 @@ class Calculator {
      * @return calculated result
      */
     static double evaluate(String formula, Integer x, Integer y) {
+        formula = simplify(formula);
         // Check if there are any parenthesis. If so then evaluate it first and
         // replace it with the value.
-        formula = formula.replace(" ", "");
         int openIndex = findOpeningParenthesis(formula);
         int closeIndex = findCosingParenthesis(formula, openIndex);
         while (openIndex != -1 && closeIndex != -1 && openIndex < closeIndex) {
@@ -103,6 +103,21 @@ class Calculator {
                 .setVariable("x", x)
                 .setVariable("y", y)
                 .evaluate();
+    }
+
+    /**
+     * simplify formula string so calculation can start
+     *
+     * @param formula the coordinate formula before simplification
+     * @return the coordinate formula after simplification
+     */
+    private static String simplify(String formula) {
+        // get rid of whitespace
+        formula = formula.replace(" ", "");
+        // handle []-brackets like ()-brackets
+        formula = formula.replace("[", "(");
+        formula = formula.replace("]", ")");
+        return formula;
     }
 
     private static int findOpeningParenthesis(final String text) {
