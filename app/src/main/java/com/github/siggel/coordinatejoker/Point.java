@@ -60,7 +60,7 @@ class Point {
         return latitude;
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -69,7 +69,7 @@ class Point {
         return longitude;
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     void setLongitude(double longitude) {
         this.longitude = longitude;
     }
@@ -79,7 +79,7 @@ class Point {
         return name;
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     void setName(@NonNull String name) {
         this.name = name;
     }

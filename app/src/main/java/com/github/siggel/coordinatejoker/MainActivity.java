@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void resetFields(@SuppressWarnings("unused") View view) {
+    public void resetFields(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         mainModel.reset();
         fillGuiFromModel();
     }
@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void sendMessage(@SuppressWarnings("unused") View view) {
+    public void sendMessage(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         try {
             fillModelFromGui();
 

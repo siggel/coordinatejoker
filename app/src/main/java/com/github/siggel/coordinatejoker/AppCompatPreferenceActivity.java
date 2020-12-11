@@ -18,7 +18,6 @@ import androidx.appcompat.widget.Toolbar;
  * A PreferenceActivity which implements and proxies the necessary calls to be used with AppCompat.
  * This class was generated from Android studio, so no modifications and no further JavaDoc here.
  */
-@SuppressWarnings({"unused"})
 public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
 
     private AppCompatDelegate mDelegate;
@@ -36,10 +35,12 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
         getDelegate().onPostCreate(savedInstanceState);
     }
 
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     public ActionBar getSupportActionBar() {
         return getDelegate().getSupportActionBar();
     }
 
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     public void setSupportActionBar(@Nullable Toolbar toolbar) {
         getDelegate().setSupportActionBar(toolbar);
     }

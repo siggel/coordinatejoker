@@ -43,7 +43,7 @@ class KmlExporter extends Exporter {
      * @param context        the app's main context required for sending intents, accessing resources etc.
      * @param exportSettings export parameters
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     KmlExporter(Context context, ExportSettings exportSettings) {
         super(context, exportSettings);
     }

@@ -62,7 +62,7 @@ public class AboutActivity extends AppCompatActivity {
      *
      * @param view view just required syntactically here
      */
-    public void openTermsOfService(@SuppressWarnings("unused") View view) {
+    public void openTermsOfService(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }
 
@@ -71,7 +71,7 @@ public class AboutActivity extends AppCompatActivity {
      *
      * @param view view just required syntactically here
      */
-    public void openPrivacyPolicy(@SuppressWarnings("unused") View view) {
+    public void openPrivacyPolicy(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         startActivity(new Intent(this, PrivacyPolicyActivity.class));
     }
 
@@ -80,11 +80,11 @@ public class AboutActivity extends AppCompatActivity {
      *
      * @param view view just required syntactically here
      */
-    public void openOpenSourceLicenses(@SuppressWarnings("unused") View view) {
+    public void openOpenSourceLicenses(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         startActivity(new Intent(this, OpenSourceLicensesActivity.class));
     }
 
-    public void openAcknowledgements(@SuppressWarnings("unused") View view) {
+    public void openAcknowledgements(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         startActivity(new Intent(this, AcknowledgementsActivity.class));
     }
 

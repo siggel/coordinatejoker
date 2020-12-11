@@ -100,7 +100,7 @@ public class IntroActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void skipIntro(@SuppressWarnings("unused") View view) {
+    public void skipIntro(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         pageNumber = 0;
         NavUtils.navigateUpFromSameTask(this);
     }
@@ -110,7 +110,7 @@ public class IntroActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void next(@SuppressWarnings("unused") View view) {
+    public void next(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         int increment = Integer.parseInt(view.getTag().toString());
         pageNumber += increment;
         adjustPageContent();

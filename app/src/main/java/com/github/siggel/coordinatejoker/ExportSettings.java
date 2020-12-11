@@ -116,7 +116,7 @@ class ExportSettings {
      *
      * @param appName app name
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "RedundantSuppression"})
     void setAppName(String appName) {
         this.appName = appName;
     }

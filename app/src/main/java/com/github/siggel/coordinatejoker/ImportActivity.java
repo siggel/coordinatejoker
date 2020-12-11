@@ -192,7 +192,7 @@ public class ImportActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void cancelImport(@SuppressWarnings("unused") View view) {
+    public void cancelImport(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         NavUtils.navigateUpFromSameTask(this);
     }
 
@@ -201,7 +201,7 @@ public class ImportActivity extends AppCompatActivity {
      *
      * @param view view just syntactically needed here
      */
-    public void useResult(@SuppressWarnings("unused") View view) {
+    public void useResult(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
         final Preferences preferences = new Preferences(this);
         preferences.saveFormulas(coordinateParser.getModel());
         NavUtils.navigateUpFromSameTask(this);
