@@ -182,8 +182,20 @@ class CoordinateParser {
 
     private String preprocessMultiplicationOperator(String input) {
         if (letterToBeReplacedByStar != '*') {
-            input = input.replaceAll(String.valueOf(letterToBeReplacedByStar), "*");
+            input = input.replace(String.valueOf(letterToBeReplacedByStar), "*");
         }
+        return input;
+    }
+
+    private String preprocessSubtractionOperator(String input) {
+        // replace long minus by normal minus
+        input = input.replace("−", "-");
+        return input;
+    }
+
+    private String preprocessBrackets(String input) {
+        input = input.replace("[", "(");
+        input = input.replace("]", ")");
         return input;
     }
 
@@ -200,8 +212,10 @@ class CoordinateParser {
     }
 
     void processInput(String input) {
-        String result;
-        result = preprocessMultiplicationOperator(input);
+        String result = input;
+        result = preprocessMultiplicationOperator(result);
+        result = preprocessSubtractionOperator(result);
+        result = preprocessBrackets(result);
         parseString(result);
         tryToReplaceVariables();
     }
