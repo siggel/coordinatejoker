@@ -1,1 +1,1 @@
-geocaching – generate waypoints from formulas with up to two unknown variables
+A geocaching add-on – generates waypoints from formulas with up to 2 variables
