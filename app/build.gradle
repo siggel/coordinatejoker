@@ -75,3 +75,25 @@ dependencies {
     androidTestImplementation 'junit:junit:4.12'
     testImplementation 'junit:junit:4.12'
 }
+
+afterEvaluate {
+    assembleRelease.finalizedBy(copyEnglishReleaseNotesForFDroid)
+    assembleRelease.finalizedBy(copyGermanReleaseNotesForFDroid)
+    assembleDebug.finalizedBy(copyEnglishReleaseNotesForFDroid)
+    assembleDebug.finalizedBy(copyGermanReleaseNotesForFDroid)
+}
+
+task copyGermanReleaseNotesForFDroid(type: Copy) {
+    from "src/main/assets"
+    include "changes_version_*_de.html"
+    into "../fastlane/metadata/android/de-DE/changelogs"
+    rename '.+_([0-9]+)_de.html', '$1.txt'
+}
+
+task copyEnglishReleaseNotesForFDroid(type: Copy) {
+    from "src/main/assets"
+    include "changes_version_*_en.html"
+    into "../fastlane/metadata/android/en-US/changelogs"
+    rename '.+_([0-9]+)_en.html', '$1.txt'
+}
+

@@ -1,0 +1,6 @@
+<p>Version 1.2.22:</p>
+<ul>
+    <li>Improvement: Optional, automatic transformation of formulas in order to avoid missing
+        leading zeros in minute's decimal places
+    </li>
+</ul>

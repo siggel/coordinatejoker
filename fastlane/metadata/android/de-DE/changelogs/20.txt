@@ -1,0 +1,17 @@
+<p>Version 1.2.20:</p>
+<ul>
+    <li>Korrektur: Darstellung von langen Formeln, die über die Seite hinausgehen</li>
+    <li>Verbesserung: Zeilenumbrüche als Trenner beim Import</li>
+    <li>Verbesserung: Hilfe für Import-Funktion</li>
+</ul>
+<p>Version 1.2.19:</p>
+<ul>
+    <li>Verbesserung: Import inkl. Projektion</li>
+    <li>Verbesserung: Verwendung von *, × oder x als Malzeichen beim Import</li>
+</ul>
+<p>Version 1.2.18:</p>
+<ul>
+    <li>Neu: Import aus der Zwischenablage</li>
+</ul>
+
+

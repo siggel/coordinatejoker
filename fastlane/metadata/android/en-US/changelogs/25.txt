@@ -1,0 +1,7 @@
+<p>Version 1.2.25:</p>
+<ul>
+    <li>Improvement: Handle []-brackets in formula import
+    </li>
+    <li>Improvement: Treat long hyphen as minus in formula import
+    </li>
+</ul>
