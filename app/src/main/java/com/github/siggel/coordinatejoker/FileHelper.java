@@ -58,11 +58,12 @@ final class FileHelper {
      * @param file    file to write to
      * @param content input stream content to be written to file
      */
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     static void writeContentToFile(@NonNull File file,
                                    @NonNull InputStream content) throws IOException {
         final int bufferSize = 1024;
-        file.createNewFile();
+        if (!file.createNewFile()) {
+            throw new IOException("error creating new file");
+        }
         FileOutputStream out = new FileOutputStream(file);
         byte[] buffer = new byte[bufferSize];
         int numberOfBytesRead;
@@ -78,11 +79,12 @@ final class FileHelper {
      * @param zipFile  resulting zip file to be created
      * @param fileList files to be zipped into zip file
      */
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     static void zipContentToFile(@NonNull File zipFile,
                                  @NonNull List<File> fileList) throws IOException {
         final int bufferSize = 1024;
-        zipFile.createNewFile();
+        if (!zipFile.createNewFile()) {
+            throw new IOException("error creating new zip file");
+        }
         FileOutputStream destination = new FileOutputStream(zipFile);
         ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));
         byte[] data = new byte[bufferSize];
@@ -110,8 +112,9 @@ final class FileHelper {
         try {
             int size = input.available();
             byte[] buffer = new byte[size];
-            //noinspection ResultOfMethodCallIgnored
-            input.read(buffer);
+            if (input.read(buffer) != size) {
+                throw new IOException("unexpected amount read");
+            }
             result = new String(buffer);
             input.close();
         } catch (IOException e) {

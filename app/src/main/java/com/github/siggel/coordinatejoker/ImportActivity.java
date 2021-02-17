@@ -105,13 +105,16 @@ public class ImportActivity extends AppCompatActivity {
     private void addListeners() {
         // add change listener for editable input field trying to parse the input
         editText.addTextChangedListener(new TextWatcher() {
+            @Override
             public void afterTextChanged(Editable s) {
                 processInput();
             }
 
+            @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
+            @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
         });

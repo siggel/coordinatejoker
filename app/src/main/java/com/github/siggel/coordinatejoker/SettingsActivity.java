@@ -64,6 +64,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
         return super.onMenuItemSelected(featureId, item);
     }
 
+    @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
         final Preference preference = findPreference(key);

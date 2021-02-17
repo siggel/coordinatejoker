@@ -108,12 +108,17 @@ public class IntroActivity extends AppCompatActivity {
     /**
      * method called when user clicked the next button
      *
-     * @param view view just syntactically needed here
+     * @param view view
      */
-    public void next(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
-        int increment = Integer.parseInt(view.getTag().toString());
-        pageNumber += increment;
-        adjustPageContent();
+    public void next(View view) {
+        try {
+            int increment = Integer.parseInt(view.getTag().toString());
+            pageNumber += increment;
+            adjustPageContent();
+        } catch (NumberFormatException e) {
+            // should never happen
+            skipIntro(view);
+        }
     }
 
     /**
