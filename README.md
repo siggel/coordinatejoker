@@ -1,3 +1,15 @@
+Coordinate Joker
+================
+
+A geocaching add-on – Generates waypoints from formulas with up to 2 variables 
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.github.siggel.coordinatejoker/)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=com.github.siggel.coordinatejoker)
+
 Copyright (c) 2018-2021 by siggel <siggel-apps@gmx.de>
 
     This file is part of Coordinate Joker.
