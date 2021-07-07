@@ -30,6 +30,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -98,7 +99,9 @@ abstract class Exporter {
 
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
-            FileHelper.writeContentToFile(out, new FileInputStream(file));
+            try (InputStream inputStream = new FileInputStream(file)) {
+                FileHelper.writeContentToFile(out, inputStream);
+            }
 
             Intent intent = new Intent();
 
