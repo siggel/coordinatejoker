@@ -46,6 +46,11 @@ final class FileHelper {
     @SuppressWarnings("CharsetObjectCanBeUsed") // because that would require API level 19
     static void writeContentToFile(@NonNull File file,
                                    @NonNull String content) throws IOException {
+        if (!file.exists()) {
+            if (!file.createNewFile()) {
+                throw new IOException("error creating new file");
+            }
+        }
         try (FileOutputStream outputStream = new FileOutputStream(file)) {
             //noinspection CharsetObjectCanBeUsed // StandardCharsets not supported by API level 17
             outputStream.write(content.getBytes("UTF-8"));
@@ -61,8 +66,10 @@ final class FileHelper {
     static void writeContentToFile(@NonNull File file,
                                    @NonNull InputStream content) throws IOException {
         final int bufferSize = 1024;
-        if (!file.createNewFile()) {
-            throw new IOException("error creating new file");
+        if (!file.exists()) {
+            if (!file.createNewFile()) {
+                throw new IOException("error creating new file");
+            }
         }
         FileOutputStream out = new FileOutputStream(file);
         byte[] buffer = new byte[bufferSize];
@@ -82,8 +89,10 @@ final class FileHelper {
     static void zipContentToFile(@NonNull File zipFile,
                                  @NonNull List<File> fileList) throws IOException {
         final int bufferSize = 1024;
-        if (!zipFile.createNewFile()) {
-            throw new IOException("error creating new zip file");
+        if (!zipFile.exists()) {
+            if (!zipFile.createNewFile()) {
+                throw new IOException("error creating new zip file");
+            }
         }
         FileOutputStream destination = new FileOutputStream(zipFile);
         ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(destination));

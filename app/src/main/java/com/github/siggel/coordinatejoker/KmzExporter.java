@@ -73,7 +73,6 @@ class KmzExporter extends Exporter {
             File pngFile = new File(baseDirForTemporaryFiles, "joker.png");
             FileHelper.writeContentToFile(pngFile, context.getResources().openRawResource(R.raw.joker));
 
-
             file = new File(baseDirForTemporaryFiles, "coordinatejoker.kmz");
             List<File> list = new ArrayList<>();
             list.add(pngFile);
