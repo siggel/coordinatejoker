@@ -34,7 +34,8 @@
         android:drawablePadding="5sp"
         android:onClick="sendMessage"
         android:text="@string/string_send"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/resetButton"
@@ -45,7 +46,8 @@
         android:drawablePadding="5sp"
         android:onClick="resetFields"
         android:text="@string/string_reset"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:ignore="UsingOnClickInXml" />
 
     <ScrollView
         android:id="@+id/contentPanel"

@@ -48,7 +48,8 @@
             android:padding="0sp"
             android:text="@string/title_activity_terms_of_service"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/showPrivacyPolicy"
@@ -60,7 +61,8 @@
             android:padding="0sp"
             android:text="@string/title_activity_privacy_policy"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/showAcknowledgements"
@@ -72,7 +74,8 @@
             android:padding="0sp"
             android:text="@string/title_activity_acknowledgements"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/showOpenSourceLicenses"
@@ -84,7 +87,8 @@
             android:padding="0sp"
             android:text="@string/title_activity_open_source_licenses"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
 
     </LinearLayout>
 

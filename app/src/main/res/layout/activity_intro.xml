@@ -35,7 +35,7 @@
         android:onClick="next"
         android:tag="1"
         android:text="@string/string_intro_button_next"
-        http:ignore="RelativeOverlap" />
+        http:ignore="RelativeOverlap,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/introPreviousButton"
@@ -45,7 +45,8 @@
         android:layout_alignParentBottom="true"
         android:onClick="next"
         android:tag="-1"
-        android:text="@string/string_intro_button_previous" />
+        android:text="@string/string_intro_button_previous"
+        http:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/introSkipButton"
@@ -54,7 +55,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="skipIntro"
-        android:text="@string/string_intro_button_skip" />
+        android:text="@string/string_intro_button_skip"
+        http:ignore="UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/introTextView"
