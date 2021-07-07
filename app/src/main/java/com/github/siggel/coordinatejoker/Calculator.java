@@ -113,10 +113,10 @@ class Calculator {
      */
     private static String simplify(String formula) {
         // get rid of whitespace
-        formula = formula.replace(" ", "");
+        formula = formula.replaceAll("\\s", "");
         // handle []-brackets like ()-brackets
-        formula = formula.replace("[", "(");
-        formula = formula.replace("]", ")");
+        formula = formula.replace('[', '(');
+        formula = formula.replace(']', ')');
         return formula;
     }
 
