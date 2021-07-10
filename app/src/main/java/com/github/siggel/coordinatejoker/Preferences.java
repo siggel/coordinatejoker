@@ -126,7 +126,7 @@ class Preferences {
      * check if Locus Map is available and autoconfigure for Locus Map, otherwise for c:geo
      */
     void autoConfigureExportSettings() {
-        final boolean haveLocus = LocusUtils.getActiveVersion(context) != null;
+        final boolean haveLocus = LocusUtils.INSTANCE.getActiveVersion(context) != null;
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
         if (haveLocus) {
             editor.putString(context.getString(R.string.key_use_with), "locus");
