@@ -19,11 +19,11 @@
 
 package com.github.siggel.coordinatejoker;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class IntegerRangeTest {
 

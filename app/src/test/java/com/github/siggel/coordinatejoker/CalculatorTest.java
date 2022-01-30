@@ -19,9 +19,9 @@
 
 package com.github.siggel.coordinatejoker;
 
-import static junit.framework.TestCase.assertEquals;
-
 import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class CalculatorTest {
 
