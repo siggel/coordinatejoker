@@ -24,15 +24,6 @@
         </activity>
         <!-- settings activity -->
         <activity
-            android:name=".NewSettingsActivity"
-            android:label="@string/title_settings"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.github.siggel.coordinatejoker.MainActivity" />
-        </activity>
-        <!-- old settings activity -->
-        <activity
             android:name=".SettingsActivity"
             android:label="@string/title_settings"
             android:parentActivityName=".MainActivity">

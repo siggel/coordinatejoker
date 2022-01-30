@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, NewSettingsActivity.class));
+            startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.action_about) {
             startActivity(new Intent(this, AboutActivity.class));
         } else if (id == R.id.action_intro) {
