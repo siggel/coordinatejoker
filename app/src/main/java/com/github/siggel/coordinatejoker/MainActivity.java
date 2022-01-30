@@ -22,7 +22,6 @@ package com.github.siggel.coordinatejoker;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
@@ -41,7 +40,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import java.util.List;
 import java.util.Objects;
@@ -150,15 +148,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setLeftDrawableOfTextView(TextView textView, int drawableId) {
         Drawable drawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = AppCompatResources
-                    .getDrawable(this, drawableId);
-        } else {
-            drawable = VectorDrawableCompat
-                    .create(this.getResources(), drawableId, null);
-        }
-        textView.setCompoundDrawablesWithIntrinsicBounds(
-                drawable, null, null, null);
+        drawable = AppCompatResources.getDrawable(this, drawableId);
+        textView.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
     }
 
     /**
@@ -341,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, NewSettingsActivity.class));
+            startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.action_about) {
             startActivity(new Intent(this, AboutActivity.class));
         } else if (id == R.id.action_intro) {

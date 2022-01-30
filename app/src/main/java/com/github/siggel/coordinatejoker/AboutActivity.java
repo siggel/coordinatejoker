@@ -22,7 +22,6 @@ package com.github.siggel.coordinatejoker;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,7 +32,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.NavUtils;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -155,16 +153,9 @@ public class AboutActivity extends AppCompatActivity {
     @SuppressWarnings("SameParameterValue")
     private void setRightDrawableOfTextView(int viewId, int drawableId) {
         Drawable drawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = AppCompatResources
-                    .getDrawable(this, drawableId);
-        } else {
-            drawable = VectorDrawableCompat
-                    .create(this.getResources(), drawableId, null);
-        }
+        drawable = AppCompatResources.getDrawable(this, drawableId);
         TextView textView = findViewById(viewId);
-        textView.setCompoundDrawablesWithIntrinsicBounds(
-                null, null, drawable, null);
+        textView.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
     }
 
     /**

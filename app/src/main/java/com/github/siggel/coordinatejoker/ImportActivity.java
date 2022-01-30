@@ -19,6 +19,9 @@
 
 package com.github.siggel.coordinatejoker;
 
+import static android.content.ClipDescription.MIMETYPE_TEXT_HTML;
+import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
+
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -38,9 +41,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
-
-import static android.content.ClipDescription.MIMETYPE_TEXT_HTML;
-import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 public class ImportActivity extends AppCompatActivity {
 
