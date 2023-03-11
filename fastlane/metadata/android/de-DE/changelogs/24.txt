@@ -1,5 +1,4 @@
-<p>Version 1.2.24:</p>
-<ul>
-    <li>Neu: []-Klammern in Formeln
-    </li>
-</ul>
+Version 1.2.24:
+
+- Neu: []-Klammern in Formeln
+

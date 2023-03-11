@@ -1,0 +1,4 @@
+Version 1.3.32:
+
+- Fix: Change history displayed wrong in F-Droid
+

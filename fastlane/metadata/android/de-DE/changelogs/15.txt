@@ -1,9 +1,9 @@
-<p>Version 1.1.15:</p>
-<ul>
-    <li>Neu: Formeln mit Geocaching-typischen Klammern, z.B. "12.3(x+4)5"</li>
-    <li>Neu: Formeln mit zwei Unbekannten</li>
-    <li>Neu: Verbesserte Wertebereich-Festlegung, z.B. "1-5#2,9-11,20" ("#2" für Schrittweite 2)
-    </li>
-</ul>
+Version 1.1.15:
+
+- Neu: Formeln mit Geocaching-typischen Klammern, z.B. "12.3(x+4)5"
+- Neu: Formeln mit zwei Unbekannten
+- Neu: Verbesserte Wertebereich-Festlegung, z.B. "1-5#2,9-11,20" ("#2" für Schrittweite 2)
+
+
 
 

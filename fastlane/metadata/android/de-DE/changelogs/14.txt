@@ -1,33 +1,33 @@
-<p>Version 1.0.14:</p>
-<ul>
-    <li>Verbesserung: Screenshot- und Text-Aktualisierungen</li>
-</ul>
-<p>Version 1.0.13:</p>
-<ul>
-    <li>Neu: Voreinstellungen für Locus Map und c:geo</li>
-    <li>Neu: Einfachere Handhabung mit c:geo</li>
-    <li>Neu: Automatische App-Auswahl wenn voreingestellt</li>
-    <li>Korrektur: keine Autokonfiguration wenn Erste-Schritte-Einführung über Menü betreten</li>
-</ul>
-<p>Version 1.0.12:</p>
-<ul>
-    <li>Neu: Autokonfiguration beim ersten Start</li>
-    <li>Neu: Erste-Schritte-Einführung beim ersten Start</li>
-</ul>
-<p>Version 1.0.11:</p>
-<ul>
-    <li>Korrektur: Layout-Verbesserung für Button-Sichtbarkeit</li>
-    <li>Verbesserung: Beschränkung auf max. 100 x-Werte</li>
-</ul>
-<p>Version 1.0.10:</p>
-<ul>
-    <li>Korrektur: Buttons fehlen in Landscape-Modus (Lösung noch suboptimal)</li>
-    <li>Korrektur: Nutzungsbedingungen stürzen auf Oreo ab</li>
-    <li>Korrektur: Fehlende Ausnahmebehandlung beim Parsen des x-Wertebereichs</li>
-    <li>Verbesserung: Menü-Inhalte</li>
-    <li>Verbesserung: Code-Strukturierung</li>
-</ul>
-<p>Version 1.0.9:</p>
-<ul>
-    <li>erste öffentliche Version (offener Betatest)</li>
-</ul>
+Version 1.0.14:
+
+- Verbesserung: Screenshot- und Text-Aktualisierungen
+
+Version 1.0.13:
+
+- Neu: Voreinstellungen für Locus Map und c:geo
+- Neu: Einfachere Handhabung mit c:geo
+- Neu: Automatische App-Auswahl wenn voreingestellt
+- Korrektur: keine Autokonfiguration wenn Erste-Schritte-Einführung über Menü betreten
+
+Version 1.0.12:
+
+- Neu: Autokonfiguration beim ersten Start
+- Neu: Erste-Schritte-Einführung beim ersten Start
+
+Version 1.0.11:
+
+- Korrektur: Layout-Verbesserung für Button-Sichtbarkeit
+- Verbesserung: Beschränkung auf max. 100 x-Werte
+
+Version 1.0.10:
+
+- Korrektur: Buttons fehlen in Landscape-Modus (Lösung noch suboptimal)
+- Korrektur: Nutzungsbedingungen stürzen auf Oreo ab
+- Korrektur: Fehlende Ausnahmebehandlung beim Parsen des x-Wertebereichs
+- Verbesserung: Menü-Inhalte
+- Verbesserung: Code-Strukturierung
+
+Version 1.0.9:
+
+- erste öffentliche Version (offener Betatest)
+

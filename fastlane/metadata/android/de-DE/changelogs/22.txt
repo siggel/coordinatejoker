@@ -1,6 +1,4 @@
-<p>Version 1.2.22:</p>
-<ul>
-    <li>Verbesserung: Optionale, automatische Transformation der Formeln, um fehlende führende
-        Nullen bei den Nachkommastellen der Minuten zu vermeiden
-    </li>
-</ul>
+Version 1.2.22:
+
+- Verbesserung: Optionale, automatische Transformation der Formeln, um fehlende führende Nullen bei den Nachkommastellen der Minuten zu vermeiden
+

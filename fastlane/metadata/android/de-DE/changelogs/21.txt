@@ -1,7 +1,5 @@
-<p>Version 1.2.21:</p>
-<ul>
-    <li>Korrektur: Kein Abbruch bei entstehenden Nicht-Zahlen, z.B. 01.(x/4)23 für x=1, sondern
-        Fortsetzen mit nächstem Punkt
-    </li>
-    <li>Verbesserung: Diverse Updates (Android SDK, Java, Refactoring)</li>
-</ul>
+Version 1.2.21:
+
+- Korrektur: Kein Abbruch bei entstehenden Nicht-Zahlen, z.B. 01.(x/4)23 für x=1, sondern Fortsetzen mit nächstem Punkt
+- Verbesserung: Diverse Updates (Android SDK, Java, Refactoring)
+

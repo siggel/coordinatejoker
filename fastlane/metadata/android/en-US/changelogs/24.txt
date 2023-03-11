@@ -1,5 +1,4 @@
-<p>Version 1.2.24:</p>
-<ul>
-    <li>New: Handle []-brackets in formulas
-    </li>
-</ul>
+Version 1.2.24:
+
+- New: Handle []-brackets in formulas
+

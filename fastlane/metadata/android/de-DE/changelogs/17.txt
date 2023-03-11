@@ -1,6 +1,6 @@
-<p>Version 1.1.17:</p>
-<ul>
-    <li>Verbesserung: Reduktion der apk-Größe</li>
-</ul>
+Version 1.1.17:
+
+- Verbesserung: Reduktion der apk-Größe
+
 
 

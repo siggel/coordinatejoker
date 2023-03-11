@@ -1,9 +1,6 @@
-<p>Version 1.2.28:</p>
-<ul>
-    <li>Bugfix: error when formula contains special whitespaces ("non-breaking space")
-    </li>
-    <li>Bugfix: error in data transfer to displaying app
-    </li>
-    <li>Improvement: internal improvements, e.g. update of used libraries
-    </li>
-</ul>
+Version 1.2.28:
+
+- Bugfix: error when formula contains special whitespaces ("non-breaking space")
+- Bugfix: error in data transfer to displaying app
+- Improvement: internal improvements, e.g. update of used libraries
+

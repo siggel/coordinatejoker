@@ -1,7 +1,5 @@
-<p>Version 1.3.31:</p>
-<ul>
-    <li>Neu: Anpassung an neue technische Vorgaben des Google Play Store (dadurch wird Android 4 nicht mehr unterstützt)
-    </li>
-    <li>Neu: Neues Icon aufgrund neuer Vorgaben für Locus Map Add-ons
-    </li>
-</ul>
+Version 1.3.31:
+
+- Neu: Anpassung an neue technische Vorgaben des Google Play Store (dadurch wird Android 4 nicht mehr unterstützt)
+- Neu: Neues Icon aufgrund neuer Vorgaben für Locus Map Add-ons
+

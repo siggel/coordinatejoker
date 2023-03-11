@@ -1,33 +1,33 @@
-<p>Version 1.0.14:</p>
-<ul>
-    <li>Improvement: update screenshot and texts</li>
-</ul>
-<p>Version 1.0.13:</p>
-<ul>
-    <li>New: presets for Locus Map and c:geo</li>
-    <li>New: simplification for c:geo</li>
-    <li>New: enforce using the desired app</li>
-    <li>Bugfix: don't autoconfigure when entering intro via menu</li>
-</ul>
-<p>Version 1.0.12:</p>
-<ul>
-    <li>New: Autoconfigure on first start</li>
-    <li>New: First steps intro on first start</li>
-</ul>
-<p>Version 1.0.11:</p>
-<ul>
-    <li>Bugfix: Improved layout for button visibility</li>
-    <li>Improvement: Limit range to a maximum of 100 x-values</li>
-</ul>
-<p>Version 1.0.10:</p>
-<ul>
-    <li>Bugfix: Buttons disappear in landscape mode (solution yet suboptimal)</li>
-    <li>Bugfix: Terms of service crashing on Oreo</li>
-    <li>Bugfix: Exception handling missing when parsing x range</li>
-    <li>Improvement: Menu contents</li>
-    <li>Improvement: Code cleanup</li>
-</ul>
-<p>Version 1.0.9:</p>
-<ul>
-    <li>initial public version (open betatest)</li>
-</ul>
+Version 1.0.14:
+
+- Improvement: update screenshot and texts
+
+Version 1.0.13:
+
+- New: presets for Locus Map and c:geo
+- New: simplification for c:geo
+- New: enforce using the desired app
+- Bugfix: don't autoconfigure when entering intro via menu
+
+Version 1.0.12:
+
+- New: Autoconfigure on first start
+- New: First steps intro on first start
+
+Version 1.0.11:
+
+- Bugfix: Improved layout for button visibility
+- Improvement: Limit range to a maximum of 100 x-values
+
+Version 1.0.10:
+
+- Bugfix: Buttons disappear in landscape mode (solution yet suboptimal)
+- Bugfix: Terms of service crashing on Oreo
+- Bugfix: Exception handling missing when parsing x range
+- Improvement: Menu contents
+- Improvement: Code cleanup
+
+Version 1.0.9:
+
+- initial public version (open betatest)
+

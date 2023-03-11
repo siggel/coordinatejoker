@@ -1,17 +1,17 @@
-<p>Version 1.2.20:</p>
-<ul>
-    <li>Bugfix: Display of long formulas that go beyond the page</li>
-    <li>Improvement: Use of linebreak as separator for import</li>
-    <li>Improvement: Help section for import functionality</li>
-</ul>
-<p>Version 1.2.19:</p>
-<ul>
-    <li>Improvement: Import incl. projection</li>
-    <li>Improvement: Use of *, ×, or x for multiplication in import</li>
-</ul>
-<p>Version 1.2.18:</p>
-<ul>
-    <li>New: Import from clipboard</li>
-</ul>
+Version 1.2.20:
+
+- Bugfix: Display of long formulas that go beyond the page
+- Improvement: Use of linebreak as separator for import
+- Improvement: Help section for import functionality
+
+Version 1.2.19:
+
+- Improvement: Import incl. projection
+- Improvement: Use of *, ×, or x for multiplication in import
+
+Version 1.2.18:
+
+- New: Import from clipboard
+
 
 
