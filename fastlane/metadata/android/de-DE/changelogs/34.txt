@@ -1,0 +1,4 @@
+Version 1.4.34:
+
+- Korrektur: Kompatibilitätproblem für Android < 8.0
+
