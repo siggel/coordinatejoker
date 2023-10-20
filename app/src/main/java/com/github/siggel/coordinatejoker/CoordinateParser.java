@@ -118,7 +118,6 @@ class CoordinateParser {
         }
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void parseString(String input) {
         final Pattern patternIncludingProjection = Pattern.compile(
                 northDegreePattern + spacePattern + minutesPattern + spaceOrCommaPattern +

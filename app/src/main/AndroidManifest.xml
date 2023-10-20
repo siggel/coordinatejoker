@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.github.siggel.coordinatejoker">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- rtl support this for textStart orientation to work, strange -->
     <application
@@ -16,6 +15,7 @@
         <!-- main activity -->
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:windowSoftInputMode="stateHidden"> <!-- hide keyboard on start -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -95,6 +95,7 @@
         <!-- checkbox explanation activity -->
         <activity
             android:name=".CheckboxExplanationActivity"
+            android:exported="true"
             android:label="@string/title_activity_checkbox_explanation"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
@@ -130,6 +131,7 @@
         <!-- import activity -->
         <activity
             android:name=".ImportActivity"
+            android:exported="true"
             android:label="@string/title_activity_import"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">

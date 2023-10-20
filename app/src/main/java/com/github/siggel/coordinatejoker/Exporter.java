@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.List;
 
 /**
@@ -99,7 +100,7 @@ abstract class Exporter {
 
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
-            try (InputStream inputStream = new FileInputStream(file)) {
+            try (InputStream inputStream = Files.newInputStream(file.toPath())) {
                 FileHelper.writeContentToFile(out, inputStream);
             }
 

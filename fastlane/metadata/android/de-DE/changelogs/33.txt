@@ -1,0 +1,4 @@
+Version 1.4.33:
+
+- Neu: Anpassung an neue Vorgaben des Google Play Store
+

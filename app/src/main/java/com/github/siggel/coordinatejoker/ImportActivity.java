@@ -70,7 +70,6 @@ public class ImportActivity extends AppCompatActivity {
         importClipboard();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void importClipboard() {
         // copy clipboard to input field and try to parse it
         String clipboardContent = "";

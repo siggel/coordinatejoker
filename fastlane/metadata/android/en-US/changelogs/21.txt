@@ -1,5 +1,7 @@
 Version 1.2.21:
 
-- Bugfix: Don't stop in case of an invalid number, e.g. 01.(x/4)23 for x=1, but continue with next point
+- Bugfix: Don't stop in case of an invalid number, e.g. 01.(x/4)23 for x=1, but continue with
+        next point
+
 - Improvement: Several updates (Android SDK, Java, refactoring)
 
