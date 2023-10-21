@@ -4,7 +4,6 @@
 
     <!-- rtl support this for textStart orientation to work, strange -->
     <application
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/title_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -72,16 +71,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AboutActivity" />
         </activity>
-        <!-- open source license activity -->
+        <!-- open source license activities -->
         <activity
-            android:name=".OpenSourceLicensesActivity"
-            android:label="@string/title_activity_open_source_licenses"
+            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:parentActivityName=".AboutActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AboutActivity" />
-        </activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
+            android:theme="@style/AppTheme" />
         <!-- help activity -->
         <activity
             android:name=".HelpActivity"

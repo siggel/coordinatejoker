@@ -1,4 +1,8 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+    id 'com.google.android.gms.oss-licenses-plugin'
+}
 
 android {
     signingConfigs {
@@ -70,9 +74,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'net.objecthunter:exp4j:0.4.8'
-    implementation 'com.asamm:locus-api-android:0.9.39'
+    implementation 'com.asamm:locus-api-android:0.9.49'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
 
     // test
     androidTestImplementation 'junit:junit:4.13.2'

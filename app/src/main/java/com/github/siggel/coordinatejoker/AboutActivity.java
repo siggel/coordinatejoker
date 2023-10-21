@@ -35,6 +35,8 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.NavUtils;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -81,7 +83,8 @@ public class AboutActivity extends AppCompatActivity {
      * @param view view just required syntactically here
      */
     public void openOpenSourceLicenses(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
-        startActivity(new Intent(this, OpenSourceLicensesActivity.class));
+        startActivity(new Intent(this, OssLicensesMenuActivity.class));
+        OssLicensesMenuActivity.setActivityTitle(getString(R.string.title_activity_open_source_licenses));
     }
 
     public void openAcknowledgements(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
@@ -155,13 +158,8 @@ public class AboutActivity extends AppCompatActivity {
     @SuppressWarnings("SameParameterValue")
     private void setRightDrawableOfTextView(int viewId, int drawableId) {
         Drawable drawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = AppCompatResources
-                    .getDrawable(this, drawableId);
-        } else {
-            drawable = VectorDrawableCompat
-                    .create(this.getResources(), drawableId, null);
-        }
+        drawable = AppCompatResources
+                .getDrawable(this, drawableId);
         TextView textView = findViewById(viewId);
         textView.setCompoundDrawablesWithIntrinsicBounds(
                 null, null, drawable, null);
