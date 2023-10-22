@@ -1,6 +1,6 @@
 # This workflow will build and submit dependency tree, it needs write permission and thus cannot be triggered by pull requests 
 
-name: Dependencies
+name: Generate and Submit Dependencies
 
 on:
   push:
