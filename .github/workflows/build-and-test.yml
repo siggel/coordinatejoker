@@ -1,14 +1,16 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-name: Java CI with Gradle
+name: Build and Test
 
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
     
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -24,9 +26,8 @@ jobs:
         distribution: 'temurin'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
+    - name: Build and test with Gradle
       uses: gradle/gradle-build-action@v2.9.0
       with:
-        dependency-graph: generate-and-submit
         arguments: build
         
