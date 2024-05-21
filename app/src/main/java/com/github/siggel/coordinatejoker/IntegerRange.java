@@ -51,7 +51,7 @@ class IntegerRange {
         try {
             text = text.trim(); // avoid string containing just blanks
             Set<Integer> numbers = new HashSet<>();
-            if (text.length() > 0) {
+            if (!text.isEmpty()) {
                 String[] splits = text.split(SPLIT_REGEX);
                 for (String split : splits) {
                     String trimmedSplit = split.trim();

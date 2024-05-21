@@ -42,6 +42,8 @@ import androidx.core.app.NavUtils;
 import static android.content.ClipDescription.MIMETYPE_TEXT_HTML;
 import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
+import java.util.Objects;
+
 public class ImportActivity extends AppCompatActivity {
 
     private final int DARK_GREEN = 0xFF00AA00;
@@ -77,13 +79,13 @@ public class ImportActivity extends AppCompatActivity {
             ClipboardManager clipboard =
                     (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             // NullPointerException is handled
-            if (clipboard.getPrimaryClipDescription().hasMimeType(MIMETYPE_TEXT_PLAIN)) {
+            if (Objects.requireNonNull(clipboard.getPrimaryClipDescription()).hasMimeType(MIMETYPE_TEXT_PLAIN)) {
                 // NullPointerException is handled
-                ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+                ClipData.Item item = Objects.requireNonNull(clipboard.getPrimaryClip()).getItemAt(0);
                 clipboardContent = item.getText().toString();
             } else if (clipboard.getPrimaryClipDescription().hasMimeType(MIMETYPE_TEXT_HTML)) {
                 // NullPointerException is handled
-                ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+                ClipData.Item item = Objects.requireNonNull(clipboard.getPrimaryClip()).getItemAt(0);
                 clipboardContent = Html.fromHtml(item.getHtmlText()).toString();
             } else {
                 showError(getString(R.string.string_error_clipboard_failed));

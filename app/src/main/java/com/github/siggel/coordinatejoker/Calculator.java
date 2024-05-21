@@ -257,7 +257,7 @@ class Calculator {
 
     @NonNull
     private List<Integer> replaceWithDefaultIfEmpty(@NonNull List<Integer> xValues) {
-        if (xValues.size() == 0) {
+        if (xValues.isEmpty()) {
             xValues = new ArrayList<>(1);
             xValues.add(0);
         }
@@ -267,10 +267,10 @@ class Calculator {
     @NonNull
     private String createPointName(int x, int y) {
         StringBuilder name = new StringBuilder();
-        if (IntegerRange.getValues(context, mainModel.getXRange()).size() > 0) {
+        if (!IntegerRange.getValues(context, mainModel.getXRange()).isEmpty()) {
             name.append("x=").append(x);
         }
-        if (IntegerRange.getValues(context, mainModel.getYRange()).size() > 0) {
+        if (!IntegerRange.getValues(context, mainModel.getYRange()).isEmpty()) {
             if (name.length() > 0) {
                 name.append(", ");
             }

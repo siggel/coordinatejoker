@@ -19,6 +19,7 @@
 
 package com.github.siggel.coordinatejoker;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -143,17 +144,17 @@ class CoordinateParser {
             modelIsValid = true;
 
             // we found at least coordinates
-            model.setNorth(matcher.group(1).trim().equals("N"));
-            model.setDegreesNorth(matcher.group(2).trim());
-            model.setMinutesNorth(matcher.group(3).trim());
-            model.setEast(!matcher.group(4).trim().equals("W"));
-            model.setDegreesEast(matcher.group(5).trim());
-            model.setMinutesEast(matcher.group(6).trim());
+            model.setNorth(Objects.requireNonNull(matcher.group(1)).trim().equals("N"));
+            model.setDegreesNorth(Objects.requireNonNull(matcher.group(2)).trim());
+            model.setMinutesNorth(Objects.requireNonNull(matcher.group(3)).trim());
+            model.setEast(!Objects.requireNonNull(matcher.group(4)).trim().equals("W"));
+            model.setDegreesEast(Objects.requireNonNull(matcher.group(5)).trim());
+            model.setMinutesEast(Objects.requireNonNull(matcher.group(6)).trim());
             if (matches == 9) {
                 // we also found projection data
-                model.setDistance(matcher.group(7).trim());
-                model.setFeet(matcher.group(8).trim().equals("ft"));
-                model.setAzimuth(matcher.group(9).trim());
+                model.setDistance(Objects.requireNonNull(matcher.group(7)).trim());
+                model.setFeet(Objects.requireNonNull(matcher.group(8)).trim().equals("ft"));
+                model.setAzimuth(Objects.requireNonNull(matcher.group(9)).trim());
             } else {
                 model.setDistance("0");
                 model.setFeet(false);
@@ -228,7 +229,7 @@ class CoordinateParser {
         String variableReplacementInfo = "";
         if (modelIsValid) {
             if (foundLetters.length() <= 2) {
-                if (foundLetters.length() >= 1) {
+                if (!foundLetters.isEmpty()) {
                     variableReplacementInfo = foundLetters.charAt(0) + " >> "
                             + targetLetters.charAt(0);
                 }
