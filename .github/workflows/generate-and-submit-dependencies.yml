@@ -23,9 +23,9 @@ jobs:
         distribution: 'temurin'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Generate and submit dependency tree
+    - name: setup Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
         dependency-graph: generate-and-submit
-        arguments: build
-        
+    - name: Generate and submit dependency tree
+      run: ./gradlew build
