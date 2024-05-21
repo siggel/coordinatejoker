@@ -52,14 +52,17 @@ android {
     productFlavors {
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     namespace 'com.github.siggel.coordinatejoker'
+    buildFeatures {
+        buildConfig true
+    }
 }
 
-android.applicationVariants.all { variant ->
-    variant.outputs.all {
+android.applicationVariants.configureEach { variant ->
+    variant.outputs.configureEach {
         outputFileName = applicationId
         outputFileName += "-" + android.defaultConfig.versionName
         if (variant.buildType.name == "release") {
@@ -74,9 +77,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'net.objecthunter:exp4j:0.4.8'
-    implementation 'com.asamm:locus-api-android:0.9.49'
+    implementation 'com.github.asamm:logger-asamm:2.2'
+    implementation 'com.asamm:locus-api-android:0.9.55'
     implementation 'androidx.preference:preference:1.2.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
 
     // test
@@ -91,7 +95,7 @@ afterEvaluate {
     assembleDebug.finalizedBy(copyGermanReleaseNotesForFDroid)
 }
 
-task copyGermanReleaseNotesForFDroid(type: Copy) {
+tasks.register('copyGermanReleaseNotesForFDroid', Copy) {
     from "src/main/assets"
     include "changes_version_*_de.html"
     into "../fastlane/metadata/android/de-DE/changelogs"
@@ -104,7 +108,7 @@ task copyGermanReleaseNotesForFDroid(type: Copy) {
     rename '.+_([0-9]+)_de.html', '$1.txt'
 }
 
-task copyEnglishReleaseNotesForFDroid(type: Copy) {
+tasks.register('copyEnglishReleaseNotesForFDroid', Copy) {
     from "src/main/assets"
     include "changes_version_*_en.html"
     into "../fastlane/metadata/android/en-US/changelogs"
