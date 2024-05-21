@@ -28,6 +28,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build and test with Gradle
       uses: gradle/actions/setup-gradle@v3
-      with:
-        arguments: build
+      run: ./gradlew build
+
         
