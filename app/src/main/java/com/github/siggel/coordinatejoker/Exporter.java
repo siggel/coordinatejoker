@@ -99,7 +99,6 @@ abstract class Exporter {
 
             // copy content to be shared to shared directory
             File out = new File(sharedDir, file.getName());
-            //noinspection IOStreamConstructor
             try (InputStream inputStream = new FileInputStream(file)) {
                 FileHelper.writeContentToFile(out, inputStream);
             }

@@ -75,12 +75,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
             ((SwitchPreference) preference).setChecked(booleanValue);
         }
         // for ListPreferences update summary
-        else if (preference instanceof ListPreference) {
+        else if (preference instanceof ListPreference listPreference) {
 
             final String stringValue = sharedPreferences.getString(key, "");
 
             // set summary to translated value (entry value -> entry)
-            ListPreference listPreference = (ListPreference) preference;
             int index = listPreference.findIndexOfValue(stringValue);
             preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
         }
