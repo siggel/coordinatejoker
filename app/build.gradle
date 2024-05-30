@@ -75,7 +75,7 @@ android.applicationVariants.configureEach { variant ->
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'net.objecthunter:exp4j:0.4.8'
     implementation 'com.github.asamm:logger-asamm:2.2'
     implementation 'com.asamm:locus-api-android:0.9.55'
