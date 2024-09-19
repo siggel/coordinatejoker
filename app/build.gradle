@@ -7,7 +7,7 @@ plugins {
 android {
     signingConfigs {
     }
-    compileSdkVersion 34
+    compileSdkVersion 35
 
     /*
     // autoincrement version with each release assembly
@@ -36,7 +36,7 @@ android {
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 34
         versionName "1.4.34"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
