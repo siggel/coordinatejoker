@@ -69,7 +69,7 @@ public class ImportActivity extends AppCompatActivity {
 
         connectToUiElements();
         addListeners();
-        importClipboard();
+        editText.post(this::importClipboard);
     }
 
     private void importClipboard() {
