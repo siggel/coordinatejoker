@@ -1,0 +1,7 @@
+Version 1.4.35:
+
+- Korrektur: Importproblem für höhere Android-Versionen
+- Neu: Automatisierte Übersicht von Abhängigkeiten/zugehörigen Lizenzen
+- Verbesserung: Update auf Java 17
+- Verbesserung: Update auf API-Level 35 (Android 15)
+
