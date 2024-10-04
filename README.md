@@ -10,6 +10,11 @@ A geocaching add-on – Generates waypoints from formulas with up to 2 variables
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/com.github.siggel.coordinatejoker/)
 
+<img src="https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github"
+     alt="release version">
+<img src="https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta"
+     alt="beta version">
+
 Copyright (c) 2018-2024 by siggel <siggel-apps@gmx.de>
 
     This file is part of Coordinate Joker.
