@@ -19,9 +19,10 @@
 
 package com.github.siggel.coordinatejoker;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
@@ -85,13 +86,13 @@ public class CalculatorTest {
         assertEquals(665.0, Calculator.evaluate("(y-1)(abs(-x)+1)(x)", 5, 7));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void illegalSyntax() {
-        Calculator.evaluate("x + ", 10, 20);
+        assertThrows(IllegalArgumentException.class, () -> Calculator.evaluate("x + ", 10, 20));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void unclosedParenthesis() {
-        Calculator.evaluate("x(y/5", 10, 20);
+        assertThrows(IllegalArgumentException.class, () -> Calculator.evaluate("x(y/5", 10, 20));
     }
 }

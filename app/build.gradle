@@ -84,8 +84,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-oss-licenses:17.1.0'
 
     // test
-    androidTestImplementation 'junit:junit:4.13.2'
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 afterEvaluate {

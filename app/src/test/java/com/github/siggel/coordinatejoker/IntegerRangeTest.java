@@ -19,11 +19,12 @@
 
 package com.github.siggel.coordinatejoker;
 
-import org.junit.Test;
-
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class IntegerRangeTest {
 
@@ -98,25 +99,26 @@ public class IntegerRangeTest {
         assertEquals(33, values.get(8).intValue());
     }
 
-    @Test(expected = ParseException.class)
+    @Test
     public void noNegativeNumbers() {
-        IntegerRange.getValues(null, "-42");
+        assertThrows(ParseException.class, () -> IntegerRange.getValues(null, "-42"));
     }
 
-    @Test(expected = ParseException.class)
+    @Test
     public void fromIsHigherThanTo() {
-        IntegerRange.getValues(null, "30-20");
+        assertThrows(ParseException.class, () -> IntegerRange.getValues(null, "30-20"));
     }
 
-    @Test(expected = ParseException.class)
+    @Test
     public void negativeStep() {
-        IntegerRange.getValues(null, "10-20#-5");
+        assertThrows(ParseException.class, () -> IntegerRange.getValues(null, "10-20#-5"));
     }
 
-    @Test(expected = ParseException.class)
+    @Test
     public void noDigits() {
-        IntegerRange.getValues(null, "12,abc");
+        assertThrows(ParseException.class, () -> IntegerRange.getValues(null, "12,abc"));
     }
+
 
 }
 
