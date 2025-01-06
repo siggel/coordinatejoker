@@ -1,0 +1,4 @@
+Version 1.4.37:
+
+- Verbesserung: Etwas zukunftsträchtigere Lösung für das vorherige Android 15 Problem
+

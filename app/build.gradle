@@ -36,9 +36,9 @@ android {
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
         minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 36
-        versionName "1.4.36"
+        targetSdkVersion 35
+        versionCode 37
+        versionName "1.4.37"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
