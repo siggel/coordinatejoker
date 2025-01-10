@@ -15,7 +15,7 @@ A geocaching add-on – Generates waypoints from formulas with up to 2 variables
 <img src="https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta"
      alt="beta version">
 
-Copyright (c) 2018-2024 by siggel <siggel-apps@gmx.de>
+Copyright (c) 2018-2025 by siggel <siggel-apps@gmx.de>
 
     This file is part of Coordinate Joker.
 
