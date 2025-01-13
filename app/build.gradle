@@ -1,37 +1,14 @@
 //apply plugin: 'com.android.application'
 plugins {
     id 'com.android.application'
-    id 'com.google.android.gms.oss-licenses-plugin'
+    id 'org.cyclonedx.bom' version '2.0.0-alpha-1'
 }
 
 android {
     signingConfigs {
     }
+    //noinspection GrDeprecatedAPIUsage
     compileSdkVersion 35
-
-    /*
-    // autoincrement version with each release assembly
-    Properties versionProps = new Properties()
-    def versionPropsFile = file('version.properties')
-    if (versionPropsFile.exists())
-        versionProps.load(new FileInputStream(versionPropsFile))
-    List<String> runTasks = gradle.startParameter.getTaskNames()
-    def value = 0
-    for (String item : runTasks)
-        if (item.contains("assembleRelease")) {
-            value = 1
-        }
-    def code = (versionProps['VERSION_CODE'] ?: "0").toInteger() + value
-    versionProps['VERSION_CODE'] = code.toString()
-    versionProps.store(versionPropsFile.newWriter(), null)
-    */
-    /*
-    Properties versionProps = new Properties()
-    def versionPropsFile = file('version.properties')
-    if (versionPropsFile.exists())
-        versionProps.load(new FileInputStream(versionPropsFile))
-    def code = (versionProps['VERSION_CODE'] ?: "0").toInteger()
-    */
 
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
@@ -81,13 +58,17 @@ dependencies {
     implementation 'com.asamm:locus-api-android:0.9.61'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'com.google.android.material:material:1.12.0'
-    implementation 'com.google.android.gms:play-services-oss-licenses:17.1.0'
 
     // test
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 }
 
 afterEvaluate {
+    preBuild.finalizedBy(cyclonedxBom)
+    preBuild.finalizedBy(buildHtmlFromSBOM)
+    buildHtmlFromSBOM.mustRunAfter(cyclonedxBom)
+    mergeDebugAssets.mustRunAfter(buildHtmlFromSBOM)
+    mergeReleaseAssets.mustRunAfter(buildHtmlFromSBOM)
     assembleRelease.finalizedBy(copyEnglishReleaseNotesForFDroid)
     assembleRelease.finalizedBy(copyGermanReleaseNotesForFDroid)
     assembleDebug.finalizedBy(copyEnglishReleaseNotesForFDroid)
@@ -120,3 +101,50 @@ tasks.register('copyEnglishReleaseNotesForFDroid', Copy) {
     rename '.+_([0-9]+)_en.html', '$1.txt'
 }
 
+tasks.register('buildHtmlFromSBOM', Copy) {
+    from "../docs"
+    include "sbom.json"
+    into "src/main/assets"
+    // remove first and last line of json (brackets without indentation)
+    filter { String line -> line.startsWith('{') ? null : line }
+    filter { String line -> line.startsWith('}') ? null : line }
+    // remove all lines about the app itself
+    filter { String line -> line.contains('coordinatejoker') ? null : line }
+    // remove all lines except for the library package and license id
+    // start new paragraph with each pkg:maven entry and shift leftmost
+    filter { String line -> line.replaceFirst('[ ]+"bom-ref" : "pkg:maven/', '<p>') }
+    // we are not interested in the type info, instead insert a : to be later followed by license name
+    filter { String line -> line.replaceFirst('\\?type=.*', ': ') }
+    // "id" lines contain the license name, also shift leftmost
+    filter { String line -> line.replaceFirst('[ ]+"id" : "', '') }
+    // " are only left after the license name, those end the paragraph
+    filter { String line -> line.replaceAll('".*', '</p>') }
+    // everything that is still indented is not of interest
+    filter { String line -> line.startsWith(' ') ? null : line }
+    // repair logger-asamm that is missing license field, manually set it to MIT and end paragraph
+    filter { String line -> line.contains('logger-asamm') ? line + '\nMIT</p>' : line }
+    rename 'sbom.json', 'sbom.html'
+    // uncomment this when changing this task to enforce applying the change
+    //outputs.upToDateWhen { false }
+}
+
+import org.cyclonedx.model.*
+cyclonedxBom {
+    // includeConfigs is the list of configuration names to include when generating the BOM (leave empty to include every configuration), regex is supported
+    includeConfigs = ["implementation", "runtimeClasspath", "releaseImplementation", "releaseRuntimeClasspath"]
+    // skipConfigs is a list of configuration names to exclude when generating the BOM, regex is supported
+    skipConfigs = ['testImplementation']
+    // Specified the type of project being built. Defaults to 'library'
+    projectType = "application"
+    // Boms destination directory. Defaults to 'build/reports'
+    destination = file("../docs")
+    // The file name for the generated BOMs (before the file format suffix). Defaults to 'bom'
+    outputName = "sbom"
+    // The file format generated, can be xml, json or all for generating both. Defaults to 'all'
+    outputFormat = "json"
+    // Include License Text. Defaults to 'true'
+    includeLicenseText = true
+    // Override component version. Defaults to the project version
+    componentVersion = android.defaultConfig.versionName
+    includeBomSerialNumber = false
+}

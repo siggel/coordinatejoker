@@ -73,12 +73,14 @@
         </activity>
         <!-- open source license activities -->
         <activity
-            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            android:name=".OpenSourceLicensesActivity"
+            android:label="@string/title_activity_open_source_licenses"
             android:parentActivityName=".AboutActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AboutActivity" />
+        </activity>
         <!-- help activity -->
         <activity
             android:name=".HelpActivity"

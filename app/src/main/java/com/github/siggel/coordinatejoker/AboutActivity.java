@@ -33,8 +33,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.NavUtils;
 
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -81,8 +79,7 @@ public class AboutActivity extends AppCompatActivity {
      * @param view view just required syntactically here
      */
     public void openOpenSourceLicenses(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
-        startActivity(new Intent(this, OssLicensesMenuActivity.class));
-        OssLicensesMenuActivity.setActivityTitle(getString(R.string.title_activity_open_source_licenses));
+        startActivity(new Intent(this, OpenSourceLicensesActivity.class));
     }
 
     public void openAcknowledgements(@SuppressWarnings({"unused", "RedundantSuppression"}) View view) {
