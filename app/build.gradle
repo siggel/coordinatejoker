@@ -69,6 +69,7 @@ afterEvaluate {
     buildHtmlFromSBOM.mustRunAfter(cyclonedxBom)
     generateDebugLintReportModel.mustRunAfter(buildHtmlFromSBOM)
     generateReleaseLintReportModel.mustRunAfter(buildHtmlFromSBOM)
+    generateReleaseLintVitalReportModel.mustRunAfter(buildHtmlFromSBOM)
     mergeDebugAssets.mustRunAfter(buildHtmlFromSBOM)
     mergeReleaseAssets.mustRunAfter(buildHtmlFromSBOM)
     assembleRelease.finalizedBy(copyEnglishReleaseNotesForFDroid)
