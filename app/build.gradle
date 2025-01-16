@@ -64,14 +64,8 @@ dependencies {
 }
 
 afterEvaluate {
-    preBuild.finalizedBy(cyclonedxBom)
-    preBuild.finalizedBy(buildHtmlFromSBOM)
-    buildHtmlFromSBOM.mustRunAfter(cyclonedxBom)
-    generateDebugLintReportModel.mustRunAfter(buildHtmlFromSBOM)
-    generateReleaseLintReportModel.mustRunAfter(buildHtmlFromSBOM)
-    generateReleaseLintVitalReportModel.mustRunAfter(buildHtmlFromSBOM)
-    mergeDebugAssets.mustRunAfter(buildHtmlFromSBOM)
-    mergeReleaseAssets.mustRunAfter(buildHtmlFromSBOM)
+    buildHtmlFromSBOM.dependsOn(cyclonedxBom)
+    preBuild.dependsOn(buildHtmlFromSBOM)
     assembleRelease.finalizedBy(copyEnglishReleaseNotesForFDroid)
     assembleRelease.finalizedBy(copyGermanReleaseNotesForFDroid)
     assembleDebug.finalizedBy(copyEnglishReleaseNotesForFDroid)
