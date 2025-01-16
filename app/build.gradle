@@ -67,6 +67,8 @@ afterEvaluate {
     preBuild.finalizedBy(cyclonedxBom)
     preBuild.finalizedBy(buildHtmlFromSBOM)
     buildHtmlFromSBOM.mustRunAfter(cyclonedxBom)
+    generateDebugLintReportModel.mustRunAfter(buildHtmlFromSBOM)
+    generateReleaseLintReportModel.mustRunAfter(buildHtmlFromSBOM)
     mergeDebugAssets.mustRunAfter(buildHtmlFromSBOM)
     mergeReleaseAssets.mustRunAfter(buildHtmlFromSBOM)
     assembleRelease.finalizedBy(copyEnglishReleaseNotesForFDroid)
