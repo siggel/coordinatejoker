@@ -1,0 +1,4 @@
+Version 1.4.38 + 1.4.39:
+
+- Improvement: Replacement of Google's license dialog in order to avoid non-FLOSS dependencies
+

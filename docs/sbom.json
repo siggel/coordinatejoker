@@ -3,24 +3,25 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-01-13T21:50:38Z",
+    "timestamp" : "2025-01-17T15:54:22Z",
     "tools" : {
       "components" : [
         {
           "type" : "application",
           "author" : "CycloneDX",
           "name" : "cyclonedx-gradle-plugin",
-          "version" : "2.0.0-alpha-1"
+          "version" : "2.0.0"
         }
-      ]
+      ],
+      "services" : [ ]
     },
     "component" : {
       "type" : "application",
-      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.37",
+      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.39",
       "group" : "coordinatejoker",
       "name" : "app",
-      "version" : "1.4.37",
-      "purl" : "pkg:maven/coordinatejoker/app@1.4.37",
+      "version" : "1.4.39",
+      "purl" : "pkg:maven/coordinatejoker/app@1.4.39",
       "modified" : false,
       "externalReferences" : [
         {
