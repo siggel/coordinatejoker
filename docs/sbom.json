@@ -3,7 +3,7 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-01-17T15:54:22Z",
+    "timestamp" : "2025-01-21T14:54:57Z",
     "tools" : {
       "components" : [
         {
@@ -17,11 +17,11 @@
     },
     "component" : {
       "type" : "application",
-      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.39",
+      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.40",
       "group" : "coordinatejoker",
       "name" : "app",
-      "version" : "1.4.39",
-      "purl" : "pkg:maven/coordinatejoker/app@1.4.39",
+      "version" : "1.4.40",
+      "purl" : "pkg:maven/coordinatejoker/app@1.4.40",
       "modified" : false,
       "externalReferences" : [
         {

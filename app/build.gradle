@@ -14,8 +14,9 @@ android {
         applicationId 'com.github.siggel.coordinatejoker'
         minSdkVersion 21
         targetSdkVersion 35
-        versionCode 39
-        versionName "1.4." + versionCode
+        versionCode 40
+        // do not simplify the following to concatenation with versionCode, as F-Droid will not handle it correctly
+        versionName "1.4.40"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -109,11 +110,11 @@ tasks.register('buildHtmlFromSBOM', Copy) {
     filter { String line -> line.contains('coordinatejoker') ? null : line }
     // remove all lines except for the library package and license id
     // start new paragraph with each pkg:maven entry and shift leftmost
-    filter { String line -> line.replaceFirst('[ ]+"bom-ref" : "pkg:maven/', '<p>') }
+    filter { String line -> line.replaceFirst(' +"bom-ref" : "pkg:maven/', '<p>') }
     // we are not interested in the type info, instead insert a : to be later followed by license name
     filter { String line -> line.replaceFirst('\\?type=.*', ': ') }
     // "id" lines contain the license name, also shift leftmost
-    filter { String line -> line.replaceFirst('[ ]+"id" : "', '') }
+    filter { String line -> line.replaceFirst(' +"id" : "', '') }
     // " are only left after the license name, those end the paragraph
     filter { String line -> line.replaceAll('".*', '</p>') }
     // everything that is still indented is not of interest
@@ -125,7 +126,6 @@ tasks.register('buildHtmlFromSBOM', Copy) {
     //outputs.upToDateWhen { false }
 }
 
-import org.cyclonedx.model.*
 cyclonedxBom {
     // includeConfigs is the list of configuration names to include when generating the BOM (leave empty to include every configuration), regex is supported
     includeConfigs = ["implementation", "runtimeClasspath", "releaseImplementation", "releaseRuntimeClasspath"]
@@ -133,7 +133,7 @@ cyclonedxBom {
     skipConfigs = ['testImplementation']
     // Specified the type of project being built. Defaults to 'library'
     projectType = "application"
-    // Boms destination directory. Defaults to 'build/reports'
+    // SBOM destination directory. Defaults to 'build/reports'
     destination = file("../docs")
     // The file name for the generated BOMs (before the file format suffix). Defaults to 'bom'
     outputName = "sbom"

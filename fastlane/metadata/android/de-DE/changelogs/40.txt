@@ -1,0 +1,4 @@
+Version 1.4.40:
+
+- Korrektur: Versionsbezeichner kaputt (nur F-Droid betroffen)
+
