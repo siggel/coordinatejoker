@@ -32,6 +32,7 @@ import java.util.Scanner;
  */
 public class OpenSourceLicensesActivity extends AbstractWebViewActivity {
 
+    @Override
     protected void setContent() {
         String html = readFromAsset("open_source_licenses_header_"
                 + getString(R.string.string_html_page_language_id)
