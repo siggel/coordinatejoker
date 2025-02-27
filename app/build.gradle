@@ -1,7 +1,7 @@
 //apply plugin: 'com.android.application'
 plugins {
     id 'com.android.application'
-    id 'org.cyclonedx.bom' version '2.1.0'
+    id 'org.cyclonedx.bom' version '2.2.0'
 }
 
 android {
