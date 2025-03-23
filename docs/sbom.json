@@ -3,25 +3,25 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-01-21T14:54:57Z",
+    "timestamp" : "2025-03-23T13:14:34Z",
     "tools" : {
       "components" : [
         {
           "type" : "application",
           "author" : "CycloneDX",
           "name" : "cyclonedx-gradle-plugin",
-          "version" : "2.0.0"
+          "version" : "2.2.0"
         }
       ],
       "services" : [ ]
     },
     "component" : {
       "type" : "application",
-      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.40",
+      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.40?project_path=%3Aapp",
       "group" : "coordinatejoker",
       "name" : "app",
       "version" : "1.4.40",
-      "purl" : "pkg:maven/coordinatejoker/app@1.4.40",
+      "purl" : "pkg:maven/coordinatejoker/app@1.4.40?project_path=%3Aapp",
       "modified" : false,
       "externalReferences" : [
         {
@@ -30,7 +30,6 @@
         }
       ]
     },
-    "manufacture" : { },
     "licenses" : [ ]
   },
   "components" : [
@@ -3576,11 +3575,11 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/coordinatejoker/app@unspecified",
+      "bom-ref" : "pkg:maven/coordinatejoker/app@unspecified?project_path=%3Aapp",
       "group" : "coordinatejoker",
       "name" : "app",
       "version" : "unspecified",
-      "purl" : "pkg:maven/coordinatejoker/app@unspecified",
+      "purl" : "pkg:maven/coordinatejoker/app@unspecified?project_path=%3Aapp",
       "modified" : false,
       "properties" : [
         {
@@ -4800,7 +4799,7 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/coordinatejoker/app@unspecified",
+      "ref" : "pkg:maven/coordinatejoker/app@unspecified?project_path=%3Aapp",
       "dependsOn" : [
         "pkg:maven/net.objecthunter/exp4j@0.4.8?type=jar",
         "pkg:maven/androidx.preference/preference@1.2.1?type=aar",
