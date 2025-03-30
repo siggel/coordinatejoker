@@ -8,7 +8,7 @@ android {
     signingConfigs {
     }
     //noinspection GrDeprecatedAPIUsage
-    compileSdkVersion 35
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
