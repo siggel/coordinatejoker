@@ -1,0 +1,4 @@
+Version 1.4.41:
+
+- Improvement: Startup example without projection such that it cannot be forgotten to set it to 0
+
