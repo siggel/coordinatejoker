@@ -271,6 +271,8 @@ class Calculator {
             name.append("x=").append(x);
         }
         if (!IntegerRange.getValues(context, mainModel.getYRange()).isEmpty()) {
+            // minSdk 35 would be required for using isEmpty, so ignore that proposal
+            //noinspection SizeReplaceableByIsEmpty
             if (name.length() > 0) {
                 name.append(", ");
             }

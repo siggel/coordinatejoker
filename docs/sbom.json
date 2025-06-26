@@ -3,14 +3,14 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-04-15T22:42:41Z",
+    "timestamp" : "2025-06-26T09:31:49Z",
     "tools" : {
       "components" : [
         {
           "type" : "application",
           "author" : "CycloneDX",
           "name" : "cyclonedx-gradle-plugin",
-          "version" : "2.2.0"
+          "version" : "2.3.1"
         }
       ],
       "services" : [ ]
@@ -307,32 +307,32 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.0?type=aar",
+      "bom-ref" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.1?type=aar",
       "publisher" : "The Android Open Source Project",
       "group" : "androidx.appcompat",
       "name" : "appcompat-resources",
-      "version" : "1.7.0",
+      "version" : "1.7.1",
       "description" : "Provides backward-compatible implementations of resource-related Android SDKfunctionality, including color state list theming.",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "d27cef78f3124062a7a39483ad87b38b"
+          "content" : "c958c7fb99e287a845ce663bd693b0ec"
         },
         {
           "alg" : "SHA-1",
-          "content" : "2a42c0283578a8a40fc83b45b5cd06924bd1a385"
+          "content" : "a0696fa573503263c7d5570ecd5e6032d397a287"
         },
         {
           "alg" : "SHA-256",
-          "content" : "55b6778602680f3c288ce350a2c2d3dd158d97dbffc63476275826655582c388"
+          "content" : "8e2db31224ca53b108c784da2b361959062716d416b210cfef3d5a3828306df0"
         },
         {
           "alg" : "SHA-512",
-          "content" : "b189ccafe5dcc6972789770bfe87f7b067c4762592e525d113dca16ff3bed5e4f1949a2a56cc08180a1bd1fb1809e44874dfee063e6853d81c09a1fadfc2a0ca"
+          "content" : "9f3f8334ccb2bc0aa3507881009104446d0c1aece093fb62e5366df8c816cdf9b3292ae24a0c8f315580d7617b47d6d2d6e6cd16cf8cc5cd1520f12a79e0452d"
         },
         {
           "alg" : "SHA-384",
-          "content" : "0815f5daade3b4ea09146123ebf9320b9a882df2c7acd6b20d3c5d39d3dd1bbc32e2628128b25644155e135148ce8842"
+          "content" : "a3a8022ca1be5bd8043029ecd976cdb192e293536c3e31e74e5d80e22f6d0817c39b3dac83ddc699fa6270dd3500b80e"
         }
       ],
       "licenses" : [
@@ -347,7 +347,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.0?type=aar",
+      "purl" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.1?type=aar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -364,32 +364,32 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
+      "bom-ref" : "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
       "publisher" : "The Android Open Source Project",
       "group" : "androidx.appcompat",
       "name" : "appcompat",
-      "version" : "1.7.0",
+      "version" : "1.7.1",
       "description" : "Provides backwards-compatible implementations of UI-related Android SDK functionality, including dark mode and Material theming.",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "b717158e253ee555711bde7732be45a2"
+          "content" : "e60eb556bcaec4b65b67789ff433e070"
         },
         {
           "alg" : "SHA-1",
-          "content" : "d44656e67ab2123393e5f3e957ecc3641a600c7b"
+          "content" : "6c5b56046c7b08e7bf94b6dd14cb616453e6be11"
         },
         {
           "alg" : "SHA-256",
-          "content" : "67189713b30a3fab6971713cc5fab1cb7f022bcf648a257563715c91d719d584"
+          "content" : "2ad334a323b28046e89b738c77d184cb3dcca32a551ab048851b2fda23a3ba26"
         },
         {
           "alg" : "SHA-512",
-          "content" : "27d808c54851431b0c74983b894ed9ecc36e561cf89afeb16ad0e40127f334b7828e618c7b74b8a552b9b7f1ce2691eb008a48f317f5c0a7b73691929af6af00"
+          "content" : "27fe0fb4042f9de44261a55eacf9a4da65cc31006db5c4cc9fa3d04ee6c460adb7e146f92a6c318419c4dc0a6bb9be56d119a5ac4c34972c7f294da232ae0067"
         },
         {
           "alg" : "SHA-384",
-          "content" : "d0151d33e3e2f0cca128b20cb78a1f1e6846768b4b2a04b023fba676a6af5c50f8359df8583bf1b4ad6909f4b08296bc"
+          "content" : "982ba0bd5101658775369b1d54652196749798c36fad55d631e611a8f69344b57fe3ea38ef42f7cb857c3002b69f60bd"
         }
       ],
       "licenses" : [
@@ -404,7 +404,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
+      "purl" : "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3280,31 +3280,31 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/com.asamm/locus-api-android@0.9.61?type=aar",
+      "bom-ref" : "pkg:maven/com.asamm/locus-api-android@0.9.64?type=aar",
       "group" : "com.asamm",
       "name" : "locus-api-android",
-      "version" : "0.9.61",
+      "version" : "0.9.64",
       "description" : "Core library for Android \"Locus Map/Locus GIS\" applications",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "a935d92624f11462dd30bfa3eac10fd0"
+          "content" : "84b7980b466b06afa5e3e3799f23a9ac"
         },
         {
           "alg" : "SHA-1",
-          "content" : "e2b765d3b723a3bce6b59b1d82e6d851725127b5"
+          "content" : "edafbcbcdf18c053c7e1659ece8b9fbf84d07f6d"
         },
         {
           "alg" : "SHA-256",
-          "content" : "6dae92d17ec975dc606c35c88222b0d96b7f86fbde6e12403745fa16371e1e0b"
+          "content" : "21ba0d6fe99dbe6ab8f450be69816cd805adbefdd31c26ef5ba50ed3c26e9eb8"
         },
         {
           "alg" : "SHA-512",
-          "content" : "f29c748cb9aff3d57607253e7de62bf4ebcb14a5a32a1e23ac13851c47f7582e89871d336d44b915550ec934973decdaed8bc289d66f869a7d337c032cda4592"
+          "content" : "9aa1a0a48b3334413aa631389c55edc126a7de1fa5d1996e95604c2f2e8c22019f2cbb23962b1a2789e9267f45433e8a09ee3ee28d2ee1010bf7e2a1e9e2ce94"
         },
         {
           "alg" : "SHA-384",
-          "content" : "e473d4e6af70a8ad7720748c18c139e08627c79dabc9a1f379b6450f091a6352d4e20fbe1db30653df6da361dbe4139e"
+          "content" : "2e51a836750435e2bd091570a0004b945b5e4bda100146611034f7b3138d79dce3262fa2de86ce701ae12a5376c4cca5"
         }
       ],
       "licenses" : [
@@ -3320,7 +3320,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/com.asamm/locus-api-android@0.9.61?type=aar",
+      "purl" : "pkg:maven/com.asamm/locus-api-android@0.9.64?type=aar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3337,31 +3337,31 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/com.asamm/locus-api-core@0.9.61?type=jar",
+      "bom-ref" : "pkg:maven/com.asamm/locus-api-core@0.9.64?type=jar",
       "group" : "com.asamm",
       "name" : "locus-api-core",
-      "version" : "0.9.61",
+      "version" : "0.9.64",
       "description" : "Core library for Android \"Locus Map/Locus GIS\" applications",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "21259430aff8b1b537157f96b7b26a8e"
+          "content" : "1d91739bf63b1720556d5ae2566c0ae8"
         },
         {
           "alg" : "SHA-1",
-          "content" : "720e3c06ced980dbb61a0b39bb648ff3b58e5eea"
+          "content" : "3977f16e0d2d925e40b1c40215e0ac6a323a8a1a"
         },
         {
           "alg" : "SHA-256",
-          "content" : "fb562e83cee66692361dd163c4da63f9833470bb9fe950a8ef6282707b2aed93"
+          "content" : "7c1b7f897acc696e42c2023ebe0b16e246f1f6948466d169ff690d336eedce6f"
         },
         {
           "alg" : "SHA-512",
-          "content" : "b77095fd4377ea648b3bcfd0fd383fbb3d12e7dcf59035a173afc527f86a84524976d543efe49d40f7c2082604856978ad44518c31bc967eb9f2ca021dd67bc0"
+          "content" : "32c979d03035d4a813a723e734cda962c09ff1518d633a938f302d2d4be53b4f668444460fef5188c564e8a999af2a2b34aaa717d8fb8b18c43728c529d21dd5"
         },
         {
           "alg" : "SHA-384",
-          "content" : "e82f6ceaa7ebc4fea505aa6991b5a2196369fcda29124419add9c13d46e4f9e21cf9caa57325f91e2e3147d74a9f30cb"
+          "content" : "605374e3a94153455591eb579c4b88d46ca750b7669c714ab7444ea0edfbe7ac3445cdf11e7a4a80d4a7eecc83bdd260"
         }
       ],
       "licenses" : [
@@ -3377,7 +3377,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/com.asamm/locus-api-core@0.9.61?type=jar",
+      "purl" : "pkg:maven/com.asamm/locus-api-core@0.9.64?type=jar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3704,33 +3704,11 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar",
+      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom",
       "group" : "org.jetbrains.kotlin",
       "name" : "kotlin-stdlib-common",
-      "version" : "1.8.22",
-      "description" : "Kotlin Common Standard Library",
-      "hashes" : [
-        {
-          "alg" : "MD5",
-          "content" : "cd121f14e612ec4a897a47b96566da07"
-        },
-        {
-          "alg" : "SHA-1",
-          "content" : "1a8e3601703ae14bb58757ea6b2d8e8e5935a586"
-        },
-        {
-          "alg" : "SHA-256",
-          "content" : "d0c2365e2437ef70f34586d50f055743f79716bcfe65e4bc7239cdd2669ef7c5"
-        },
-        {
-          "alg" : "SHA-512",
-          "content" : "abf0ed302d8c6bde132f2912e85a1d9abcb89067565a79bb023aabdcd00101c6ba414297fd49eeb528380921794a7ef95574ca5bda4bdcd9f6f78f9e91852c2f"
-        },
-        {
-          "alg" : "SHA-384",
-          "content" : "9e2602e7f004b9d582a4662ad84df8e3eb7d8227f8112d35576e5a7c6cc70b893093534cd5fc7c07ed45247c6421d2fc"
-        }
-      ],
+      "version" : "2.0.20",
+      "description" : "Kotlin Common Standard Library (legacy, use kotlin-stdlib instead)",
       "licenses" : [
         {
           "license" : {
@@ -3743,7 +3721,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar",
+      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3760,31 +3738,31 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.8.22?type=jar",
+      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
       "group" : "org.jetbrains.kotlin",
       "name" : "kotlin-stdlib-jdk7",
-      "version" : "1.8.22",
+      "version" : "2.0.20",
       "description" : "Kotlin Standard Library JDK 7 extension",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "7322c7a99624ed411f43661de56a0d60"
+          "content" : "871ba1497a11dc6fec28ae8ddf312692"
         },
         {
           "alg" : "SHA-1",
-          "content" : "04dabb8248310d833bb6a8b516024a91fd3d275c"
+          "content" : "d70dafddc862404c4ecdb59eeb4bdfac8019937d"
         },
         {
           "alg" : "SHA-256",
-          "content" : "055f5cb24287fa106100995a7b47ab92126b81e832e875f5fa2cf0bd55693d0b"
+          "content" : "f4dad806a01ac5aab44e8250813d1d3eaa6cd52fec9ec59d7fbf04a873a445aa"
         },
         {
           "alg" : "SHA-512",
-          "content" : "903a748df5bbdfa2ac3fd0b117920719a32d0aaf8ed76567d14ad6fc3617370412378c5d3da6d3b3f2c3dc913a1acfa0cb7041346d4903806eaf9e550d25db30"
+          "content" : "03b61ad96e297009c4c6b03842e118b8ae554b95025d5e1732f3ff4ea33926cd64b52ff2a6154954112ce88e6e7b49e1872fa8e9cdf6c50ec6960747cda4b79b"
         },
         {
           "alg" : "SHA-384",
-          "content" : "400905c43c28ed8e2c97f12faa67b080757ad7693527b1d82a4e53bf9908ef05c193338b81a99265cf6c64aead4bd690"
+          "content" : "66ce60cc31fdd671644e363e07c24aacc8673ece0a70bb8a7fb9f76f1ca8c2426ba9dd11d0be6e9042c8e5ff11b4f4ee"
         }
       ],
       "licenses" : [
@@ -3799,7 +3777,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.8.22?type=jar",
+      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3816,31 +3794,31 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
+      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
       "group" : "org.jetbrains.kotlin",
       "name" : "kotlin-stdlib-jdk8",
-      "version" : "1.8.22",
+      "version" : "2.0.20",
       "description" : "Kotlin Standard Library JDK 8 extension",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "801e8c0cf2bdc17b22fbf28ea27097f2"
+          "content" : "579181c4eb377d9c456136e4bed819c9"
         },
         {
           "alg" : "SHA-1",
-          "content" : "b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1"
+          "content" : "764dd55ea8b14f76a3d66c403cfed212287a23dd"
         },
         {
           "alg" : "SHA-256",
-          "content" : "4198b0eaf090a4f25b6f7e5a59581f4314ba8c9f6cd1d13ee9d348e65ed8f707"
+          "content" : "e9e73558df903fcb93152273e86e4b8a3e3a4d5377898c4e5273cb42c49e00a8"
         },
         {
           "alg" : "SHA-512",
-          "content" : "84dcd075a8d500fe6233eac8e07348bc4f4d0a1aaa1db216a77ccc9b1f2a94f14bc49a210931fe3daa71b3fe900e095c9ae32aeb32a370259228b1dbe31f3f7e"
+          "content" : "f1a29d71d86d41812d6fd3d40a6b3cb2b1b67fdf5b8fcd1a6eafc4330efad61deda5f9d65fab6f6c63a463591e9b6132f7cf8eb0fbb125931304b532c01bc79f"
         },
         {
           "alg" : "SHA-384",
-          "content" : "02c68ea806f46d8928d3a90a463a1e6ed032e74bc639d45142b0e23112cbb8cfb0cda36cdb61185867549922d71ec03e"
+          "content" : "690dde5514fe63863fdf851b0225317c996e86db455d95c3755a18b21f5a8d3d1c7962692a27efe4bf60a18743e6f08b"
         }
       ],
       "licenses" : [
@@ -3855,7 +3833,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
+      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -3872,31 +3850,31 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
+      "bom-ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
       "group" : "org.jetbrains.kotlin",
       "name" : "kotlin-stdlib",
-      "version" : "1.8.22",
-      "description" : "Kotlin Standard Library for JVM",
+      "version" : "2.0.20",
+      "description" : "Kotlin Standard Library",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "89b453019c1f723ebd807e622cd0eb7c"
+          "content" : "1ff18c14651c34e7fdcd2de19b5c923d"
         },
         {
           "alg" : "SHA-1",
-          "content" : "636bf8b320e7627482771bbac9ed7246773c02bd"
+          "content" : "7388d355f7cceb002cd387ccb7ab3850e4e0a07f"
         },
         {
           "alg" : "SHA-256",
-          "content" : "03a5c3965cc37051128e64e46748e394b6bd4c97fa81c6de6fc72bfd44e3421b"
+          "content" : "fb169596659a518357c4b2c16f43dc75ab1c4980565ed4b4a317a050e5e39006"
         },
         {
           "alg" : "SHA-512",
-          "content" : "dc3a94c627234bfc2fe6421610e86cb6945d294257d1f4814295370ca6bc2f0db99c582b24d3e3bf7e5e484dbb3e06823eea5e947ce66a4bf6d6fd182c8ca5fd"
+          "content" : "5cd5cd7db1c83963f74338d19765c866a4908fdcebb2dbb58da2e4a9ce2dbbf036b6b043e8a2efaa43dad9b409f693f44ea6876a421551e1c6208ba58f1b2250"
         },
         {
           "alg" : "SHA-384",
-          "content" : "574c92acf377022e3a5240c5dc3fb59bdff41b6e23f7e9ee99530ae37f1f0ea9903e534b51febf65f3ef8cafe47db829"
+          "content" : "4f078b1c58761e78f86fe2f06ba35c93eff2e3215bbf74be2c97bd2f22597bdd18dc11de33c0a0069e12b1ea656550a2"
         }
       ],
       "licenses" : [
@@ -3911,7 +3889,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
+      "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
       "modified" : false,
       "externalReferences" : [
         {
@@ -4174,9 +4152,9 @@
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
         "pkg:maven/androidx.savedstate/savedstate-ktx@1.2.1?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
-        "pkg:maven/androidx.activity/activity@1.8.0?type=aar"
+        "pkg:maven/androidx.activity/activity@1.8.0?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
@@ -4188,9 +4166,9 @@
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
         "pkg:maven/androidx.tracing/tracing@1.0.0?type=aar",
         "pkg:maven/androidx.savedstate/savedstate@1.2.1?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.activity/activity-ktx@1.8.0?type=aar"
       ]
@@ -4198,13 +4176,13 @@
     {
       "ref" : "pkg:maven/androidx.annotation/annotation-experimental@1.4.0?type=aar",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
       "ref" : "pkg:maven/androidx.annotation/annotation-jvm@1.6.0?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
@@ -4214,18 +4192,18 @@
       ]
     },
     {
-      "ref" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.0?type=aar",
+      "ref" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.1?type=aar",
       "dependsOn" : [
+        "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
         "pkg:maven/androidx.core/core@1.13.0?type=aar",
         "pkg:maven/androidx.vectordrawable/vectordrawable-animated@1.1.0?type=aar",
-        "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
         "pkg:maven/androidx.vectordrawable/vectordrawable@1.1.0?type=aar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
     },
     {
-      "ref" : "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
+      "ref" : "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
       "dependsOn" : [
         "pkg:maven/androidx.drawerlayout/drawerlayout@1.1.1?type=aar",
         "pkg:maven/androidx.profileinstaller/profileinstaller@1.3.1?type=aar",
@@ -4236,13 +4214,13 @@
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.activity/activity@1.8.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.fragment/fragment@1.5.4?type=aar",
+        "pkg:maven/androidx.appcompat/appcompat-resources@1.7.1?type=aar",
         "pkg:maven/androidx.resourceinspection/resourceinspection-annotation@1.0.1?type=jar",
-        "pkg:maven/androidx.appcompat/appcompat-resources@1.7.0?type=aar",
         "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.emoji2/emoji2-views-helper@1.3.0?type=aar"
       ]
     },
@@ -4269,7 +4247,7 @@
       "ref" : "pkg:maven/androidx.collection/collection-ktx@1.1.0?type=jar",
       "dependsOn" : [
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
@@ -4292,8 +4270,8 @@
     {
       "ref" : "pkg:maven/androidx.constraintlayout/constraintlayout@2.0.1?type=aar",
       "dependsOn" : [
+        "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
         "pkg:maven/androidx.core/core@1.13.0?type=aar",
-        "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
         "pkg:maven/androidx.constraintlayout/constraintlayout-solver@2.0.1?type=jar"
       ]
     },
@@ -4310,7 +4288,7 @@
       "ref" : "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
       "dependsOn" : [
         "pkg:maven/androidx.core/core@1.13.0?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
     },
@@ -4320,10 +4298,10 @@
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
         "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
         "pkg:maven/androidx.annotation/annotation-experimental@1.4.0?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.interpolator/interpolator@1.0.0?type=aar",
         "pkg:maven/androidx.versionedparcelable/versionedparcelable@1.1.1?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.concurrent/concurrent-futures@1.1.0?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
@@ -4389,10 +4367,10 @@
         "pkg:maven/androidx.fragment/fragment@1.5.4?type=aar",
         "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
         "pkg:maven/androidx.savedstate/savedstate-ktx@1.2.1?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.collection/collection-ktx@1.1.0?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.activity/activity-ktx@1.8.0?type=aar"
       ]
     },
@@ -4407,9 +4385,9 @@
         "pkg:maven/androidx.savedstate/savedstate@1.2.1?type=aar",
         "pkg:maven/androidx.annotation/annotation-experimental@1.4.0?type=aar",
         "pkg:maven/androidx.loader/loader@1.0.0?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.activity/activity@1.8.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
     },
@@ -4437,12 +4415,12 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
@@ -4455,10 +4433,10 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
     },
@@ -4470,12 +4448,12 @@
         "pkg:maven/androidx.arch.core/core-runtime@2.2.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.arch.core/core-common@2.2.0?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
     },
@@ -4487,12 +4465,12 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.arch.core/core-runtime@2.2.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.arch.core/core-common@2.2.0?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
     },
@@ -4504,11 +4482,11 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.startup/startup-runtime@1.1.1?type=aar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
@@ -4520,12 +4498,12 @@
         "pkg:maven/androidx.lifecycle/lifecycle-common@2.6.2?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
@@ -4537,13 +4515,13 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-common@2.6.2?type=jar",
         "pkg:maven/androidx.arch.core/core-runtime@2.2.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.arch.core/core-common@2.2.0?type=jar"
@@ -4557,11 +4535,11 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
     },
@@ -4573,13 +4551,13 @@
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-common@2.6.2?type=jar",
         "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar"
       ]
@@ -4592,10 +4570,10 @@
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
         "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar"
       ]
@@ -4618,8 +4596,8 @@
     {
       "ref" : "pkg:maven/androidx.preference/preference@1.2.1?type=aar",
       "dependsOn" : [
+        "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
         "pkg:maven/androidx.core/core@1.13.0?type=aar",
-        "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
         "pkg:maven/androidx.fragment/fragment-ktx@1.3.6?type=aar",
         "pkg:maven/androidx.recyclerview/recyclerview@1.1.0?type=aar",
@@ -4662,7 +4640,7 @@
       "ref" : "pkg:maven/androidx.savedstate/savedstate-ktx@1.2.1?type=aar",
       "dependsOn" : [
         "pkg:maven/androidx.savedstate/savedstate@1.2.1?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
@@ -4670,8 +4648,8 @@
       "dependsOn" : [
         "pkg:maven/androidx.lifecycle/lifecycle-common@2.6.2?type=jar",
         "pkg:maven/androidx.savedstate/savedstate-ktx@1.2.1?type=aar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/androidx.arch.core/core-common@2.2.0?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
     },
@@ -4753,28 +4731,28 @@
       "dependsOn" : [
         "pkg:maven/androidx.core/core@1.13.0?type=aar",
         "pkg:maven/androidx.collection/collection@1.1.0?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom"
       ]
     },
     {
-      "ref" : "pkg:maven/com.asamm/locus-api-android@0.9.61?type=aar",
+      "ref" : "pkg:maven/com.asamm/locus-api-android@0.9.64?type=aar",
       "dependsOn" : [
-        "pkg:maven/com.asamm/locus-api-core@0.9.61?type=jar"
+        "pkg:maven/com.asamm/locus-api-core@0.9.64?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/com.asamm/locus-api-core@0.9.61?type=jar",
+      "ref" : "pkg:maven/com.asamm/locus-api-core@0.9.64?type=jar",
       "dependsOn" : [
         "pkg:maven/com.github.asamm/logger-asamm@2.2?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar"
       ]
     },
     {
       "ref" : "pkg:maven/com.github.asamm/logger-asamm@2.2?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar"
       ]
     },
     {
@@ -4791,9 +4769,9 @@
         "pkg:maven/androidx.annotation/annotation@1.6.0?type=pom",
         "pkg:maven/androidx.fragment/fragment@1.5.4?type=aar",
         "pkg:maven/com.google.errorprone/error_prone_annotations@2.15.0?type=jar",
+        "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
         "pkg:maven/androidx.resourceinspection/resourceinspection-annotation@1.0.1?type=jar",
         "pkg:maven/androidx.coordinatorlayout/coordinatorlayout@1.1.0?type=aar",
-        "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
         "pkg:maven/androidx.cardview/cardview@1.0.0?type=aar",
         "pkg:maven/androidx.annotation/annotation-experimental@1.4.0?type=aar",
         "pkg:maven/androidx.recyclerview/recyclerview@1.1.0?type=aar",
@@ -4810,14 +4788,18 @@
       "dependsOn" : [ ]
     },
     {
+      "ref" : "pkg:maven/coordinatejoker/app@1.4.41?project_path=%3Aapp",
+      "dependsOn" : [ ]
+    },
+    {
       "ref" : "pkg:maven/coordinatejoker/app@unspecified?project_path=%3Aapp",
       "dependsOn" : [
+        "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
         "pkg:maven/net.objecthunter/exp4j@0.4.8?type=jar",
+        "pkg:maven/com.asamm/locus-api-android@0.9.64?type=aar",
         "pkg:maven/androidx.preference/preference@1.2.1?type=aar",
-        "pkg:maven/androidx.appcompat/appcompat@1.7.0?type=aar",
         "pkg:maven/com.google.android.material/material@1.12.0?type=aar",
-        "pkg:maven/com.github.asamm/logger-asamm@2.2?type=jar",
-        "pkg:maven/com.asamm/locus-api-android@0.9.61?type=aar"
+        "pkg:maven/com.github.asamm/logger-asamm@2.2?type=jar"
       ]
     },
     {
@@ -4827,42 +4809,46 @@
     {
       "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-bom@1.8.22?type=pom",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom"
       ]
     },
     {
-      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar",
-      "dependsOn" : [ ]
-    },
-    {
-      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.8.22?type=jar",
+      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
+      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@1.8.22?type=jar",
+      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
       "dependsOn" : [
         "pkg:maven/org.jetbrains/annotations@13.0?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom"
       ]
     },
     {
       "ref" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
       "dependsOn" : [
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.6.4?type=pom",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.6.4?type=pom"
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.6.4?type=pom",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar"
       ]
     },
     {
@@ -4877,8 +4863,8 @@
       "ref" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar",
       "dependsOn" : [
         "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.6.4?type=pom",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.22?type=jar",
-        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@1.8.22?type=jar"
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom"
       ]
     },
     {

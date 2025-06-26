@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId 'com.github.siggel.coordinatejoker'
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 35
         versionCode 41
         // do not simplify the following to concatenation with versionCode, as F-Droid will not handle it correctly
@@ -59,7 +59,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'net.objecthunter:exp4j:0.4.8'
     implementation 'com.github.asamm:logger-asamm:2.2'
-    implementation 'com.asamm:locus-api-android:0.9.61'
+    implementation 'com.asamm:locus-api-android:0.9.64'
     implementation 'androidx.preference:preference:1.2.1'
     implementation 'com.google.android.material:material:1.12.0'
 
