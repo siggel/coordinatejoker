@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by bubendorf <markus@bubendorf.ch>
+ * Copyright (c) 2018-2025 by bubendorf <markus@bubendorf.ch>
  *
  *     This file is part of Coordinate Joker.
  *

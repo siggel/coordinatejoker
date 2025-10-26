@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by siggel <siggel-apps@gmx.de> and bubendorf <markus@bubendorf.ch>
+ * Copyright (c) 2018-2025 by siggel <siggel-apps@gmx.de> and bubendorf <markus@bubendorf.ch>
  *
  *     This file is part of Coordinate Joker.
  *
