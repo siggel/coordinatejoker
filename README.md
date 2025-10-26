@@ -3,8 +3,13 @@ Coordinate Joker
 
 A geocaching add-on – Generates waypoints from formulas with up to 2 variables 
 
-[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png)](https://play.google.com/store/apps/details?id=com.github.siggel.coordinatejoker)
-[![Get it on F-Droid](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](https://f-droid.org/packages/com.github.siggel.coordinatejoker/)
+<!--- html syntax required here for scaling down the banners -->
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=com.github.siggel.coordinatejoker)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.github.siggel.coordinatejoker/)
 
 ![release version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github)
 ![beta version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta)
