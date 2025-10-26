@@ -166,5 +166,8 @@ cyclonedxDirectBom {
     LicenseChoice licenseChoice = new LicenseChoice()
     licenseChoice.addLicense(license)
     setLicenseChoice(licenseChoice)
+}
 
+tasks.withType(AbstractTestTask).configureEach {
+    failOnNoDiscoveredTests = false
 }
