@@ -28,9 +28,11 @@
         {% endif %}
 
         {% if page.lang == "de" %}
-        <p><div><div style="float: left;">Inhalt:</div><div style="float: right;"><a href="about_en">English &#x1F1EC;&#x1F1E7;</a> | <a href="about_de"><b>Deutsch</b> &#x1F1E9;&#x1F1EA;</a></div><br>
+        <p><div style="float: right;"><a href="about_en">English &#x1F1EC;&#x1F1E7;</a> | <a href="about_de"><b>Deutsch</b> &#x1F1E9;&#x1F1EA;</a></div></p>
+        <p>Inhalt:<br>
         {% else %}
-        <p><div><div style="float: left;">Contents:</div><div style="float: right;"><a href="about_en"><b>English</b> &#x1F1EC;&#x1F1E7;</a> | <a href="about_de">Deutsch &#x1F1E9;&#x1F1EA;</a></div><br>
+        <p><div style="float: right;"><a href="about_en"><b>English</b> &#x1F1EC;&#x1F1E7;</a> | <a href="about_de">Deutsch &#x1F1E9;&#x1F1EA;</a></div></p>
+        <p>Inhalt:<br>
         {% endif %}
         {% assign sorted = site.html_pages | sort:"rank" %}
         {% for item in sorted %}
@@ -38,7 +40,7 @@
         <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a><br>
         {% endif %}
         {% endfor %}
-        </div></p>
+        </p>
     </header>
     <section>
 
