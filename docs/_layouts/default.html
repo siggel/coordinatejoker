@@ -28,11 +28,12 @@
         {% endif %}
 
         {% if page.lang == "de" %}
-        <p>Inhalt:<br>
+        <p><div style="float: left;">Inhalt:</div><div style="float: right;"><a href="about_en">EN</a> | <b><a href="about_de">DE</a></b></div></p>
         {% else %}
-        <p>Contents:<br>
+        <p><div style="float: left;">Contents:</div><div style="float: right;"><b><a href="about_en">EN</a></b> | <a href="about_de">DE</a></div></p>
         {% endif %}
         {% assign sorted = site.html_pages | sort:"rank" %}
+        <p>
         {% for item in sorted %}
         {% if item.path != "index.md" and item.title and item.rank and item.lang == page.lang %}
         <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a><br>
