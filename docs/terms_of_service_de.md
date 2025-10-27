@@ -1,6 +1,6 @@
 ---
 title: Nutzungsbedingungen
-lang: en
+lang: de
 ref: terms_of_service
 rank: 3
 ---
