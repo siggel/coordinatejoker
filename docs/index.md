@@ -1,9 +1,8 @@
 ---
-layout: default
 title: About
 lang: en
 ref: index
-rank: 0
+rank: 1
 ---
 
 # About

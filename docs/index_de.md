@@ -1,7 +1,7 @@
 ---
 title: Über
 lang: de
-ref: about
+ref: index
 rank: 1
 ---
 
