@@ -5,7 +5,7 @@ ref: about
 rank: 1
 ---
 
-![Coordinate Joker Banner](../images/playstore/banner.png)
+![Coordinate Joker Banner](https://raw.githubusercontent.com/siggel/coordinatejoker/refs/heads/master/images/playstore/banner.png)
 
 Coordinate Joker ist ein Geocaching-Addon für Locus Map, funktioniert aber auch mit anderen Apps, die Wegpunkte aus einer gpx-, kml- oder kmz-Datei darstellen können.
 
