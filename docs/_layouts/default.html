@@ -38,7 +38,7 @@
         {% endif %}
         {% assign sorted = site.html_pages | sort:"rank" %}
         {% for item in sorted %}
-        {% if item.path != "index.md" and item.title and item.rank and item.lang == page.lang %}
+        {% if item.title and item.rank and item.lang == page.lang %}
             <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a><br>
         {% endif %}
         {% endfor %}
