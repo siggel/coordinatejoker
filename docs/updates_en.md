@@ -11,7 +11,7 @@ rank: 5
 
 The current (official) version is recommended for general use. You may experience a slight delay in receiving it, as the app is being rolled out gradually. This means that the app will first be delivered to a small percentage of users and will only be distributed further if no significant issues have been encountered.
 
-If you use F-Droid instead of the Google Play Store, you will only find the last number of the version listed above. More information can be found under [Download](download).
+If you use F-Droid instead of the Google Play Store, you will only find the last number of the version listed above. More information can be found under [Download](download_en).
 
 ## Current beta version
 ![beta version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta)
