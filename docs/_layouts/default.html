@@ -39,9 +39,11 @@
         </ul>
         {% endif %}
         {% assign sorted = site.html_pages | sort:"rank" %}
+
+        Site contents:
         <ul>
         {% for item in sorted %}
-        {% if item.path != "index.md" and item.title and item.rank and item.lang == "en" %}
+        {% if item.path != "index.md" and item.title and item.rank and item.lang == page.lang %}
             <li><a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a></li>
         {% endif %}
         {% endfor %}
