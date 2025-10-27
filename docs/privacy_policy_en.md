@@ -2,7 +2,7 @@
 title: Privacy Policy
 lang: en
 ref: privacy_policy
-rank: 4
+rank: 6
 ---
 
 # Privacy Policy

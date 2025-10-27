@@ -2,7 +2,7 @@
 title: Issues
 lang: en
 ref: issues
-rank: 7
+rank: 8
 ---
 
 # Issues

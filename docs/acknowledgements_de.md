@@ -2,7 +2,7 @@
 title: Danksagung
 lang: de
 ref: acknowledgements
-rank: 2
+rank: 4
 ---
 
 # Danksagung

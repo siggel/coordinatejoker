@@ -2,7 +2,7 @@
 title: Datenschutzerklärung
 lang: de
 ref: privacy_policy
-rank: 4
+rank: 6
 ---
 
 # Datenschutzerklärung

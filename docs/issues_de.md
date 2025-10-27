@@ -2,7 +2,7 @@
 title: Tickets
 lang: de
 ref: issues
-rank: 7
+rank: 8
 ---
 
 # Tickets

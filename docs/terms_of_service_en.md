@@ -2,7 +2,7 @@
 title: Terms of Service
 lang: en
 ref: terms_of_service
-rank: 3
+rank: 5
 ---
 
 # Terms of Service

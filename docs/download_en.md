@@ -2,7 +2,7 @@
 title: Download
 lang: en
 ref: download
-rank: 6
+rank: 2
 ---
 
 # Download

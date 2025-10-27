@@ -2,7 +2,7 @@
 title: Open Source Lizenzen
 lang: de
 ref: open_source_licenses
-rank: 5
+rank: 7
 ---
 
 # Open Source Lizenzen

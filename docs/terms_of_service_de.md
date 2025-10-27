@@ -2,7 +2,7 @@
 title: Nutzungsbedingungen
 lang: de
 ref: terms_of_service
-rank: 3
+rank: 5
 ---
 
 # Nutzungsbedingungen
