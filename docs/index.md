@@ -1,8 +1,9 @@
 ---
+layout: default
 title: About
 lang: en
-ref: about
-rank: 1
+ref: index
+rank: 0
 ---
 
 ![Coordinate Joker Banner](https://raw.githubusercontent.com/siggel/coordinatejoker/refs/heads/master/images/playstore/banner.png)
