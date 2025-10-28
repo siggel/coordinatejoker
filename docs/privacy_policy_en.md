@@ -29,7 +29,7 @@ Sven Siggelkow
 Diemelkoppel 4  
 21406 Melbeck  
 Germany  
-siggel-apps@gmx.de  
+siggel-apps (at) gmx.de  
 https://siggel.github.io/coordinatejoker/
 
 Types of processed data

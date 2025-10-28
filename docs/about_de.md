@@ -1,14 +1,14 @@
 ---
 title: Über
 lang: de
-ref: index
+ref: about
 rank: 1
 ---
 
 # Über
 ![Coordinate Joker Banner](https://raw.githubusercontent.com/siggel/coordinatejoker/refs/heads/master/images/playstore/banner.png)
 
-Coordinate Joker ist ein Geocaching-Addon für Locus Map, funktioniert aber auch mit anderen Apps, die Wegpunkte aus einer gpx-, kml- oder kmz-Datei darstellen können.
+Coordinate Joker ist ein Geocaching-Addon für Locus Map auf Android, funktioniert aber auch mit anderen Apps, die Wegpunkte aus einer gpx-, kml- oder kmz-Datei darstellen können.
 
 Da ist man seit drei Stunden bei einem Multi unterwegs und dann direkt vorm Final das: Die Brücke, deren Bohlen man zählen sollte, wurde abgerissen. Was tun ...? Telefonjoker? Nein - da male ich mir doch lieber eine Linie auf die Karte, wo das Final bei fehlendem x liegen könnte ...
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="{{ site.lang | default: "en-US" }}">
 <head>
     <meta charset="UTF-8">
@@ -28,18 +29,18 @@
         {% endif %}
 
         {% if page.lang == "de" %}
-        <p style="float: right;"><a href="index">English <img src="English.png" alt="EN"></a> | <a href="index_de"><b>Deutsch</b> <img src="German.png" alt="DE"></a></p>
+        <p style="float: right;"><a href="{{ page.ref }}_en">English <img src="English.png" alt="EN"></a> | <a href="{{ page.ref }}_de"><b>Deutsch</b> <img src="German.png" alt="DE"></a></p>
         <p><br>
             <b>Inhalt:</b><br>
         {% else %}
-        <p style="float: right;"><a href="index"><b>English</b> <img src="English.png" alt="EN"></a> | <a href="index_de">Deutsch <img src="German.png" alt="DE"></a></p>
+        <p style="float: right;"><a href="{{ page.ref }}_en"><b>English</b> <img src="English.png" alt="EN"></a> | <a href="{{ page.ref }}_de">Deutsch <img src="German.png" alt="DE"></a></p>
         <p><br>
             <b>Contents:</b><br>
         {% endif %}
         {% assign sorted = site.html_pages | sort:"rank" %}
         {% for item in sorted %}
-        {% if item.title and item.rank and item.lang == page.lang %}
-            <a href="{{ item.path | replace:'.md','.html' }}">{{ item.title }}</a><br>
+        {% if item.path != "index.html" and item.title and item.rank and item.lang == page.lang %}
+            <a href="{{ item.path | replace:'.md','' }}">{{ item.title }}</a><br>
         {% endif %}
         {% endfor %}
         </p>

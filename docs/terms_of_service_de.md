@@ -6,7 +6,7 @@ rank: 5
 ---
 
 # Nutzungsbedingungen
-Copyright &copy; 2018-2025 by siggel <siggel-apps@gmx.de>
+Copyright &copy; 2018-2025 by siggel <siggel-apps (at) gmx.de>
 
 Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version.
 
