@@ -1,3 +1,8 @@
+<head>
+    <meta http-equiv="refresh" content="0;url=https://siggel.github.io/coordinatejoker/about_en">
+</head>
+<body>
+
 Coordinate Joker
 ================
 
@@ -30,3 +35,4 @@ Copyright (c) 2018-2025 by siggel <siggel-apps@gmx.de>
 
     You should have received a copy of the GNU General Public License
     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
+</body>
