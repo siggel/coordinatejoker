@@ -16,7 +16,7 @@ For a more detailed description and all the legal stuff visit the [project's pag
 ![release version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github)
 ![beta version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta)
 
-Copyright (c) 2018-2025 by siggel <siggel-apps@gmx.de>
+Copyright &copy; 2018-2025 by siggel <siggel-apps (at) gmx.de>
 
     This file is part of Coordinate Joker.
 
