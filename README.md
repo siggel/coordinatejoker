@@ -3,7 +3,7 @@ Coordinate Joker
 
 A geocaching add-on – Generates waypoints from formulas with up to 2 variables
 
-For a more detailed insight visit [Coordinate Joker's pages](https://siggel.github.io/coordinatejoker/)
+For a more detailed description and all the legal stuff visit the [project's page](https://siggel.github.io/coordinatejoker/)
 
 <!--- html syntax required here for scaling down the banners -->
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
