@@ -1,12 +1,9 @@
-<head>
-    <meta http-equiv="refresh" content="0;url=https://siggel.github.io/coordinatejoker/about_en">
-</head>
-<body>
-
 Coordinate Joker
 ================
 
-A geocaching add-on – Generates waypoints from formulas with up to 2 variables 
+A geocaching add-on – Generates waypoints from formulas with up to 2 variables
+
+For a more detailed insight visit [Coordinate Joker's pages](https://siggel.github.io/coordinatejoker/)
 
 <!--- html syntax required here for scaling down the banners -->
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
@@ -35,4 +32,3 @@ Copyright (c) 2018-2025 by siggel <siggel-apps@gmx.de>
 
     You should have received a copy of the GNU General Public License
     along with Coordinate Joker.  If not, see <http://www.gnu.org/licenses/>.
-</body>
