@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <!--suppress ALL -->
-<html lang="{{ site.lang | default: "en-US" }}">
+{% if page.lang == "de" %}
+<html lang="de">
+{% else %}
+<html lang="en">
+{% endif %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
