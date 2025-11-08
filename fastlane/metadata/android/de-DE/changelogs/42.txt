@@ -1,0 +1,4 @@
+Version 1.4.42:
+
+- Verbesserung: Bibliotheksupdates und Zielversion Android 16
+

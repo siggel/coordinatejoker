@@ -19,9 +19,9 @@ android {
         applicationId 'com.github.siggel.coordinatejoker'
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 41
+        versionCode 42
         // do not simplify the following to concatenation with versionCode, as F-Droid will not handle it correctly
-        versionName "1.4.41"
+        versionName "1.4.42"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }

@@ -3,7 +3,7 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-11-07T19:38:58Z",
+    "timestamp" : "2025-11-08T11:32:03Z",
     "tools" : {
       "components" : [
         {
@@ -16,11 +16,11 @@
     },
     "component" : {
       "type" : "application",
-      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.41?project_path=%3Aapp",
+      "bom-ref" : "pkg:maven/coordinatejoker/app@1.4.42?project_path=%3Aapp",
       "group" : "coordinatejoker",
       "name" : "app",
-      "version" : "1.4.41",
-      "purl" : "pkg:maven/coordinatejoker/app@1.4.41?project_path=%3Aapp",
+      "version" : "1.4.42",
+      "purl" : "pkg:maven/coordinatejoker/app@1.4.42?project_path=%3Aapp",
       "modified" : false,
       "externalReferences" : [
         {
@@ -4268,7 +4268,7 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/coordinatejoker/app@1.4.41?project_path=%3Aapp",
+      "ref" : "pkg:maven/coordinatejoker/app@1.4.42?project_path=%3Aapp",
       "dependsOn" : [
         "pkg:maven/com.google.android.material/material@1.13.0?type=aar",
         "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
