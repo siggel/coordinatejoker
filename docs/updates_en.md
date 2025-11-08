@@ -16,7 +16,7 @@ If you use F-Droid instead of the Google Play Store, you will only find the last
 ## Current beta version
 ![beta version icon](https://img.shields.io/github/v/release/siggel/coordinatejoker?logo=github&include_prereleases&label=beta)
 
-The current beta version will only be distributed to users who have signed up for the app's beta test in the Google Play Store. Typically, a beta version becomes the current, official version after a successful testing phase without any further changes.
+The current beta version will only be distributed to users who have signed up for the app's beta test in the Google Play Store or who use F-Droid. Typically, a beta version becomes the current, official version after a successful testing phase without any further changes.
 
 ## Change History
 After an app update, the app automatically displays all changes compared to the previously installed version.
