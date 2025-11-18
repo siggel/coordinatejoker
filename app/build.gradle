@@ -6,7 +6,7 @@ import org.apache.tools.ant.filters.HeadFilter
 //apply plugin: 'com.android.application'
 plugins {
     id 'com.android.application'
-    id 'org.cyclonedx.bom' version '3.0.1'
+    id 'org.cyclonedx.bom' version '3.0.2'
 }
 
 android {
