@@ -6,7 +6,7 @@ import org.apache.tools.ant.filters.HeadFilter
 //apply plugin: 'com.android.application'
 plugins {
     id 'com.android.application'
-    id 'org.cyclonedx.bom' version '3.0.1'
+    id 'org.cyclonedx.bom' version '3.2.0'
 }
 
 android {
@@ -66,7 +66,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.13.0'
 
     // test
-    testImplementation 'org.junit.jupiter:junit-jupiter:6.0.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:6.0.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

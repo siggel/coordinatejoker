@@ -3,14 +3,14 @@
   "specVersion" : "1.6",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2025-11-08T11:32:03Z",
+    "timestamp" : "2026-02-16T18:19:08Z",
     "tools" : {
       "components" : [
         {
           "type" : "application",
           "author" : "CycloneDX",
           "name" : "cyclonedx-gradle-plugin",
-          "version" : "3.0.1"
+          "version" : "3.2.0"
         }
       ]
     },
@@ -87,7 +87,12 @@
       ],
       "purl" : "pkg:maven/androidx.activity/activity-ktx@1.8.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -139,7 +144,12 @@
       ],
       "purl" : "pkg:maven/androidx.activity/activity@1.8.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -191,7 +201,12 @@
       ],
       "purl" : "pkg:maven/androidx.annotation/annotation-experimental@1.4.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -243,7 +258,12 @@
       ],
       "purl" : "pkg:maven/androidx.annotation/annotation-jvm@1.8.1?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -273,7 +293,12 @@
       ],
       "purl" : "pkg:maven/androidx.annotation/annotation@1.8.1?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -325,7 +350,12 @@
       ],
       "purl" : "pkg:maven/androidx.appcompat/appcompat-resources@1.7.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -377,7 +407,12 @@
       ],
       "purl" : "pkg:maven/androidx.appcompat/appcompat@1.7.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -428,7 +463,12 @@
       ],
       "purl" : "pkg:maven/androidx.arch.core/core-common@2.2.0?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -479,7 +519,12 @@
       ],
       "purl" : "pkg:maven/androidx.arch.core/core-runtime@2.2.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -530,7 +575,12 @@
       ],
       "purl" : "pkg:maven/androidx.cardview/cardview@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -582,7 +632,12 @@
       ],
       "purl" : "pkg:maven/androidx.collection/collection-jvm@1.4.2?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -634,7 +689,12 @@
       ],
       "purl" : "pkg:maven/androidx.collection/collection-ktx@1.4.2?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -664,7 +724,12 @@
       ],
       "purl" : "pkg:maven/androidx.collection/collection@1.4.2?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -715,7 +780,12 @@
       ],
       "purl" : "pkg:maven/androidx.concurrent/concurrent-futures@1.1.0?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -766,7 +836,12 @@
       ],
       "purl" : "pkg:maven/androidx.constraintlayout/constraintlayout-core@1.0.0?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/androidx/constraintlayout"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -817,7 +892,12 @@
       ],
       "purl" : "pkg:maven/androidx.constraintlayout/constraintlayout@2.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/androidx/constraintlayout"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -868,7 +948,12 @@
       ],
       "purl" : "pkg:maven/androidx.coordinatorlayout/coordinatorlayout@1.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -920,7 +1005,12 @@
       ],
       "purl" : "pkg:maven/androidx.core/core-ktx@1.13.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -972,7 +1062,12 @@
       ],
       "purl" : "pkg:maven/androidx.core/core@1.13.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1023,7 +1118,12 @@
       ],
       "purl" : "pkg:maven/androidx.cursoradapter/cursoradapter@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1074,7 +1174,12 @@
       ],
       "purl" : "pkg:maven/androidx.customview/customview@1.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1125,7 +1230,12 @@
       ],
       "purl" : "pkg:maven/androidx.drawerlayout/drawerlayout@1.1.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1177,7 +1287,12 @@
       ],
       "purl" : "pkg:maven/androidx.dynamicanimation/dynamicanimation@1.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1228,7 +1343,12 @@
       ],
       "purl" : "pkg:maven/androidx.emoji2/emoji2-views-helper@1.3.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1279,7 +1399,12 @@
       ],
       "purl" : "pkg:maven/androidx.emoji2/emoji2@1.3.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1330,7 +1455,12 @@
       ],
       "purl" : "pkg:maven/androidx.fragment/fragment-ktx@1.3.6?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1381,7 +1511,12 @@
       ],
       "purl" : "pkg:maven/androidx.fragment/fragment@1.5.4?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1433,7 +1568,12 @@
       ],
       "purl" : "pkg:maven/androidx.graphics/graphics-shapes-android@1.0.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1463,7 +1603,12 @@
       ],
       "purl" : "pkg:maven/androidx.graphics/graphics-shapes@1.0.1?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1514,7 +1659,12 @@
       ],
       "purl" : "pkg:maven/androidx.interpolator/interpolator@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1565,7 +1715,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-common@2.6.2?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1616,7 +1771,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-livedata-core-ktx@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1667,7 +1827,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-livedata-core@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1718,7 +1883,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-livedata@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1769,7 +1939,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-process@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1820,7 +1995,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-runtime-ktx@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1871,7 +2051,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1922,7 +2107,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-ktx@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -1973,7 +2163,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-savedstate@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2024,7 +2219,12 @@
       ],
       "purl" : "pkg:maven/androidx.lifecycle/lifecycle-viewmodel@2.6.2?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2075,7 +2275,12 @@
       ],
       "purl" : "pkg:maven/androidx.loader/loader@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2126,7 +2331,12 @@
       ],
       "purl" : "pkg:maven/androidx.preference/preference@1.2.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2177,7 +2387,12 @@
       ],
       "purl" : "pkg:maven/androidx.profileinstaller/profileinstaller@1.3.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2228,7 +2443,12 @@
       ],
       "purl" : "pkg:maven/androidx.recyclerview/recyclerview@1.2.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2279,7 +2499,12 @@
       ],
       "purl" : "pkg:maven/androidx.resourceinspection/resourceinspection-annotation@1.0.1?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2330,7 +2555,12 @@
       ],
       "purl" : "pkg:maven/androidx.savedstate/savedstate-ktx@1.2.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2381,7 +2611,12 @@
       ],
       "purl" : "pkg:maven/androidx.savedstate/savedstate@1.2.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2432,7 +2667,12 @@
       ],
       "purl" : "pkg:maven/androidx.slidingpanelayout/slidingpanelayout@1.2.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2483,7 +2723,12 @@
       ],
       "purl" : "pkg:maven/androidx.startup/startup-runtime@1.1.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2534,7 +2779,12 @@
       ],
       "purl" : "pkg:maven/androidx.tracing/tracing@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2586,7 +2836,12 @@
       ],
       "purl" : "pkg:maven/androidx.transition/transition@1.5.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2637,7 +2892,12 @@
       ],
       "purl" : "pkg:maven/androidx.vectordrawable/vectordrawable-animated@1.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2688,7 +2948,12 @@
       ],
       "purl" : "pkg:maven/androidx.vectordrawable/vectordrawable@1.1.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2739,7 +3004,12 @@
       ],
       "purl" : "pkg:maven/androidx.versionedparcelable/versionedparcelable@1.1.1?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2790,7 +3060,12 @@
       ],
       "purl" : "pkg:maven/androidx.viewpager/viewpager@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2841,7 +3116,12 @@
       ],
       "purl" : "pkg:maven/androidx.viewpager2/viewpager2@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://source.android.com"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2892,7 +3172,12 @@
       ],
       "purl" : "pkg:maven/androidx.window/window@1.0.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2944,7 +3229,12 @@
       ],
       "purl" : "pkg:maven/com.asamm/locus-api-android@0.9.64?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/asamm/locus-api"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -2996,7 +3286,12 @@
       ],
       "purl" : "pkg:maven/com.asamm/locus-api-core@0.9.64?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/asamm/locus-api"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3084,7 +3379,12 @@
       ],
       "purl" : "pkg:maven/com.google.android.material/material@1.13.0?type=aar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/material-components/material-components-android"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3235,7 +3535,24 @@
       ],
       "purl" : "pkg:maven/net.objecthunter/exp4j@0.4.8?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "distribution",
+          "url" : "http://www.objecthunter.net/exp4j"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/fasseg/exp4j/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://groups.google.com/forum/#!forum/exp4j"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/fasseg/exp4j"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3264,7 +3581,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-bom@1.8.22?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/kotlin"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3293,7 +3615,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-common@2.0.20?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/kotlin"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3344,7 +3671,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk7@2.0.20?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/kotlin"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3395,7 +3727,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@2.0.20?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/kotlin"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3446,7 +3783,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.0.20?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/kotlin"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3497,7 +3839,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.6.4?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3526,7 +3873,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.6.4?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3577,7 +3929,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.6.4?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3606,7 +3963,12 @@
       ],
       "purl" : "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.6.4?type=pom",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3657,7 +4019,16 @@
       ],
       "purl" : "pkg:maven/org.jetbrains/annotations@13.0?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "distribution",
+          "url" : "http://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/JetBrains/intellij-community"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
@@ -3708,7 +4079,12 @@
       ],
       "purl" : "pkg:maven/org.jspecify/jspecify@1.0.0?type=jar",
       "modified" : false,
-      "externalReferences" : [ ],
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/jspecify/jspecify/"
+        }
+      ],
       "properties" : [
         {
           "name" : "cdx:maven:package:test",
