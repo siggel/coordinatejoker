@@ -63,7 +63,7 @@ dependencies {
     implementation 'com.github.asamm:logger-asamm:2.2'
     implementation 'com.asamm:locus-api-android:0.9.64'
     implementation 'androidx.preference:preference:1.2.1'
-    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'com.google.android.material:material:1.14.0'
 
     // test
     testImplementation 'org.junit.jupiter:junit-jupiter:6.0.3'
